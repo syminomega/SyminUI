@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sv="clr-namespace:SyminUI.Controls"
+                    xmlns:cvt="clr-namespace:SyminUI.Convertor">
+    <Style TargetType="{x:Type sv:DraggableCanvas}">
+        <Style.Resources>
+            <cvt:DoubleToViewportSize x:Key="DTVS"/>
+            <cvt:PointSingleElementX x:Key="PSEX"/>
+            <cvt:PointSingleElementY x:Key="PSEY"/>
+        </Style.Resources>
+        <Setter Property="Background">
+            <Setter.Value>
+                <VisualBrush TileMode="Tile" ViewportUnits="Absolute">
+                    <VisualBrush.Visual>
+                        <Path Fill="#40808080" Data="M0,0 L0,100 L2,100 L2,2 L100,2 L100,0z"/>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

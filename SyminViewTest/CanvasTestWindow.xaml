@@ -1,0 +1,45 @@
+﻿<Window x:Class="SyminViewTest.CanvasTestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SyminViewTest"
+        xmlns:sv="clr-namespace:SyminUI.Controls;assembly=SyminUI"
+        mc:Ignorable="d"
+        Title="CanvasTestWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border ClipToBounds="True">
+            <sv:DraggableCanvas  x:Name="dragCanvas" Offset="40,20">
+                <Path sv:DraggableCanvas.LeftAnchor="200"
+                      sv:DraggableCanvas.TopAnchor="25"
+                      Data="M0,0 C25,0 50,25 75,25"
+                      Stroke="Black"
+                      StrokeThickness="2"
+                      />
+                <sv:DraggableCanvasItem>
+                    <Border Height="100" Width="100" Background="Orange"/>
+                </sv:DraggableCanvasItem>
+                <sv:DraggableCanvasItem
+                    sv:DraggableCanvas.TopAnchor="125">
+                    <Border Height="100" Width="100" Background="Green"
+                        ToolTip="124"/>
+                </sv:DraggableCanvasItem>
+                <sv:DraggableCanvasItem
+                    sv:DraggableCanvas.LeftAnchor="125">
+                    <sv:NodeView Title="节点视图" x:Name="NodeTest"/>
+                </sv:DraggableCanvasItem>
+            </sv:DraggableCanvas >
+        </Border>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Label x:Name="xLabel" Content="x" Width="120"/>
+            <Label x:Name="yLabel" Content="y" Width="120"/>
+            <Button Content="测试按钮"
+                    Click="TestButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

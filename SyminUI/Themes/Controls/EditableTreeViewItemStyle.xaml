@@ -103,7 +103,7 @@
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="Background" TargetName="SelectedBorder" 
-                                    Value="{StaticResource PrimaryColor}"/>
+                                    Value="{StaticResource PrimaryBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

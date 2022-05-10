@@ -12,12 +12,11 @@
     <StackPanel Orientation="Vertical"
                 Background="{StaticResource Background.Main}">
         <sv:PropertyField PropertyName="属性" PropertyValue="123" Margin="6"/>
-        <sd:EmbossBorder Height="60" Margin="8,0" CornerRadius="8" Content="边框测试" FontSize="18"
-                         HorizontalContentAlignment="Left" EmbossRatio="1"/>
-        <sd:EmbossBorder Height="60" Margin="8,0" CornerRadius="8" Content="边框测试" FontSize="18"/>
-        <sd:EmbossBorder Height="60" Margin="8,0" CornerRadius="8" Content="边框测试" FontSize="18"/>
-        <sd:EmbossBorder Height="60" Margin="8,0" CornerRadius="8" Content="边框测试" FontSize="18"/>
-
+        <Button Content="主要按钮" Margin="6,0" Style="{StaticResource ButtonPrimary}"/>
+        <Button Content="默认按钮" Margin="6,0"/>
+        <Button Content="默认按钮" Margin="6,0"/>
+        <Button Content="默认按钮" Margin="6,0"/>
+        <Button Content="默认按钮" Margin="6,0"/>
         <sv:EditableTreeView x:Name="myTreeView">
             <sv:EditableTreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}">
@@ -30,8 +29,7 @@
         </sv:EditableTreeView>
         <TextBox Text="文本输入"/>
 
-        <Button Content="主要按钮"  Style="{StaticResource ButtonPrimary}" Margin="6"/>
-        <Button Content="默认按钮" Margin="6"/>
+
         <TextBox Text="123123" Margin="6"/>
         
         <TreeView x:Name="OldTreeView">

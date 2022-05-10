@@ -8,7 +8,7 @@
         xmlns:v ="clr-namespace:SyminViewTest.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="{StaticResource Background.Main}">
         <Grid.Resources>
             <v:TestView x:Key="TV"/>
         </Grid.Resources>

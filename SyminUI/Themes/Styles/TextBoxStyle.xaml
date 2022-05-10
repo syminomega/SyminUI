@@ -50,9 +50,9 @@
                             <!--TODO:此处需要在深色模式下指定资源-->
                             <!--<Setter Property="Background" TargetName="border" Value="White"/>-->
                             <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{StaticResource PrimaryColor}"/>
+                                    Value="{StaticResource PrimaryBrush}"/>
                             <Setter Property="Background" TargetName="underLineBorder" 
-                                    Value="{StaticResource PrimaryColor}"/>
+                                    Value="{StaticResource PrimaryBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

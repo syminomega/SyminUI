@@ -7,8 +7,8 @@
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="Background" Value="{StaticResource Background.Main}"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Radius" Value="4"/>
         <Setter Property="ShaderEnabled" Value="True"/>
         <Setter Property="BorderThickness" Value="1"/>

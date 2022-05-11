@@ -13,7 +13,12 @@
         <GradientStop Color="{StaticResource PrimaryColor}"/>
         <GradientStop Color="{StaticResource SecondaryColor}" Offset="1"/>
     </LinearGradientBrush>
-    
+    <LinearGradientBrush x:Key="PrimaryGradient.Shadow" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource PrimaryColor.Shadow}"/>
+        <GradientStop Color="{StaticResource PrimaryColor.Light}" Offset="1"/>
+    </LinearGradientBrush>
+
+
     <!--背景色-->
     <SolidColorBrush x:Key="Background.Main" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>

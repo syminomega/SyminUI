@@ -18,10 +18,10 @@
                             <ColumnDefinition Width="{TemplateBinding ValueAreaWidth}"/>
                         </Grid.ColumnDefinitions>
                         <Label Content="{TemplateBinding PropertyName}" 
-                               Grid.Column="0" Margin="0,0,3,0"/>
+                               Grid.Column="0" />
                         <TextBox Text="{TemplateBinding PropertyValue}" 
                                  IsReadOnly="{TemplateBinding ReadOnly}"
-                                 Grid.Column="1" Margin="3,0,0,0"/>
+                                 Grid.Column="1" />
                     </Grid>
 
                 </ControlTemplate>

@@ -1,18 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!--文本对象-->
-    <Style TargetType="{x:Type TextBlock}">
-        <!--设置属性后会覆盖所有ContentControl的TextElement属性-->
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="10,5"/>
-    </Style>
     <!--标签对象-->
     <Style TargetType="{x:Type Label}">
         <Setter Property="Background" Value="{StaticResource Function.LightBackground}"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Padding" Value="20,5"/>
+        <Setter Property="Padding" Value="20,8"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
@@ -22,7 +15,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             Padding="{TemplateBinding Padding}" 
-                            CornerRadius="6"
+                            CornerRadius="4" Margin="4"
                             SnapsToDevicePixels="true">
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

@@ -8,8 +8,8 @@
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="Background" Value="{StaticResource Background.Main}"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Intensity" Value="1"/>
         <Setter Property="LightBrush" Value="{StaticResource Shader.Light}"/>

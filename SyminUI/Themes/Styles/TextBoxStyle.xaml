@@ -16,7 +16,7 @@
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Padding" Value="10,10"/>
+        <Setter Property="Padding" Value="10,8"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
@@ -56,19 +56,26 @@
                                         BorderThickness="{TemplateBinding BorderThickness}" 
                                         SnapsToDevicePixels="True">
                             <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
+                                          Margin="0,0,0,2"
                                       HorizontalScrollBarVisibility="Hidden" 
                                       VerticalScrollBarVisibility="Hidden"/>
                         </svd:SlotBorder>
+                        <!--下方横线光影-->
+                        <Border x:Name="underLineBorderShader"
+                                CornerRadius="2" Margin="7" Height="4"
+                                Background="{StaticResource PrimaryGradient}"
+                                VerticalAlignment="Bottom"
+                                SnapsToDevicePixels="True">
+                            <Border.Effect>
+                                <BlurEffect Radius="8"/>
+                            </Border.Effect>
+                        </Border>
                         <!--下方横线-->
                         <Border x:Name="underLineBorder"
                                 CornerRadius="2" Margin="7" Height="4"
                                 Background="{TemplateBinding BorderBrush}"
                                 VerticalAlignment="Bottom"
                                 SnapsToDevicePixels="True">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="4" ShadowDepth="1" 
-                                                  Color="{StaticResource SecondaryColor}"/>
-                            </Border.Effect>
                         </Border>
 
                     </Grid>
@@ -97,7 +104,8 @@
                                 <Condition Property="IsMouseOver" Value="false"/>
                                 <Condition Property="IsKeyboardFocused" Value="false"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Effect" TargetName="underLineBorder" Value="{x:Null}"/>
+                            <Setter Property="Visibility" TargetName="underLineBorderShader" 
+                                    Value="Hidden"/>
                             <MultiTrigger.EnterActions>
                                 <BeginStoryboard Storyboard="{StaticResource HideEffect}"/>
                             </MultiTrigger.EnterActions>

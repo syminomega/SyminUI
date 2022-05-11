@@ -1,9 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:svd="clr-namespace:SyminUI.Controls.Decorations">
+
+    <LinearGradientBrush x:Key="TextBoxLight" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Transparent"/>
+        <GradientStop Color="{StaticResource Shader.LightColor}" Offset="1"/>
+        <LinearGradientBrush.RelativeTransform>
+            <RotateTransform Angle="-45" CenterX="0.5" CenterY="0.5"/>
+        </LinearGradientBrush.RelativeTransform>
+    </LinearGradientBrush>
 
     <Style TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{StaticResource Additional.Background}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Function.LightBorder}"/>
+        <Setter Property="Background" Value="{StaticResource Background.Pure}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Background.Border}"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="FontSize" Value="14"/>
@@ -14,46 +23,88 @@
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="ShowEffect">
+                            <DoubleAnimation To="0.8" Duration="0:0:0.2"
+                                             Storyboard.TargetName="border"
+                                             Storyboard.TargetProperty="Intensity"/>
+                            <BooleanAnimationUsingKeyFrames Duration="0"
+                                                            Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="ShaderEnabled">
+                                <DiscreteBooleanKeyFrame Value="True" KeyTime="0"/>
+                            </BooleanAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="HideEffect">
+                            <DoubleAnimation To="0" Duration="0:0:0.2"
+                                             Storyboard.TargetName="border"
+                                             Storyboard.TargetProperty="Intensity"/>
+                            <BooleanAnimationUsingKeyFrames Duration="0:0:0.2"
+                                                            Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="ShaderEnabled">
+                                <DiscreteBooleanKeyFrame Value="False" KeyTime="0:0:0.2"/>
+                            </BooleanAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
                     <Grid>
-                        <Border x:Name="border" Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="6"
-                            SnapsToDevicePixels="True">
+                        <svd:SlotBorder x:Name="border" Background="{TemplateBinding Background}"
+                                        ShaderEnabled="False" Intensity="0"
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        SnapsToDevicePixels="True">
                             <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
                                       HorizontalScrollBarVisibility="Hidden" 
                                       VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
+                        </svd:SlotBorder>
                         <!--下方横线-->
                         <Border x:Name="underLineBorder"
-                                CornerRadius="0,0,6,6" Margin="1,0" Height="3"
+                                CornerRadius="2" Margin="7" Height="4"
                                 Background="{TemplateBinding BorderBrush}"
                                 VerticalAlignment="Bottom"
-                                SnapsToDevicePixels="True"/>
+                                SnapsToDevicePixels="True">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="4" ShadowDepth="1" 
+                                                  Color="{StaticResource SecondaryColor}"/>
+                            </Border.Effect>
+                        </Border>
 
                     </Grid>
                     
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+
                         </Trigger>
+
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{StaticResource PrimaryHighlight}"/>
+                                    Value="{StaticResource TextBoxLight}"/>
                             <Setter Property="Background" TargetName="underLineBorder" 
-                                    Value="{StaticResource PrimaryHighlight}"/>
+                                    Value="{StaticResource PrimaryGradient}"/>
                         </Trigger>
+                        
                         <Trigger Property="IsKeyboardFocused" Value="true">
-                            <!--TODO:此处需要在深色模式下指定资源-->
-                            <!--<Setter Property="Background" TargetName="border" Value="White"/>-->
                             <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{StaticResource PrimaryBrush}"/>
+                                    Value="{StaticResource TextBoxLight}"/>
                             <Setter Property="Background" TargetName="underLineBorder" 
-                                    Value="{StaticResource PrimaryBrush}"/>
+                                    Value="{StaticResource PrimaryGradient}"/>
+                            
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="false"/>
+                                <Condition Property="IsKeyboardFocused" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Effect" TargetName="underLineBorder" Value="{x:Null}"/>
+                            <MultiTrigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource HideEffect}"/>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource ShowEffect}"/>
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

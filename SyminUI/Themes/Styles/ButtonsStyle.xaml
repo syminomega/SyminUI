@@ -30,7 +30,7 @@
                         <Storyboard x:Key="ShowEffect">
                             <DoubleAnimation To="1" Duration="0:0:0.2"
                                              Storyboard.TargetName="border"
-                                             Storyboard.TargetProperty="EmbossRatio"/>
+                                             Storyboard.TargetProperty="Intensity"/>
                             <BooleanAnimationUsingKeyFrames Duration="0"
                                                             Storyboard.TargetName="border"
                                                             Storyboard.TargetProperty="ShaderEnabled">
@@ -40,7 +40,7 @@
                         <Storyboard x:Key="HideEffect">
                             <DoubleAnimation To="0" Duration="0:0:0.2"
                                              Storyboard.TargetName="border"
-                                             Storyboard.TargetProperty="EmbossRatio"
+                                             Storyboard.TargetProperty="Intensity"
                                              />
                             <BooleanAnimationUsingKeyFrames Duration="0:0:0.2"
                                                             Storyboard.TargetName="border"
@@ -51,7 +51,7 @@
                         <Storyboard x:Key="PressEffect">
                             <DoubleAnimation To="0.5" Duration="0"
                                              Storyboard.TargetName="border"
-                                             Storyboard.TargetProperty="EmbossRatio"
+                                             Storyboard.TargetProperty="Intensity"
                                              />
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -59,7 +59,7 @@
                                       CornerRadius="4" 
                                       LightBrush="{DynamicResource ButtonBorderLight}"
                                       ShadowBrush="{DynamicResource ButtonBorderShadow}"
-                                      EmbossRatio="0" ShaderEnabled="False"
+                                      Intensity="0" ShaderEnabled="False"
                                       Background="{TemplateBinding Background}" 
                                       BorderBrush="{TemplateBinding BorderBrush}" 
                                       BorderThickness="{TemplateBinding BorderThickness}" 
@@ -82,7 +82,7 @@
                             <Setter Property="BorderBrush" TargetName="border" 
                                     Value="{DynamicResource ButtonHighlightBorder}"/>
                             <Trigger.EnterActions>
-                                <BeginStoryboard x:Name="showEffectBegin" 
+                                <BeginStoryboard x:Name="showEffectBegin"
                                                  Storyboard="{StaticResource ShowEffect}" />
                             </Trigger.EnterActions>
                             <Trigger.ExitActions>

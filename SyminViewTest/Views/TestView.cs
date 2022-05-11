@@ -84,7 +84,7 @@ namespace SyminViewTest.Views
                 }
                 .Cols("*",("2*",200, 400),"*")
                 .Rows("*","auto","auto")
-                .Height(90),
+                .Height(100),
             new ItemsView()
                 .Foreach(textCollection,x => new HStack
                 {

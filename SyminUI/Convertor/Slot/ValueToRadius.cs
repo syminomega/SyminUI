@@ -4,19 +4,18 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 
-namespace SyminUI.Convertor.Emboss
+namespace SyminUI.Convertor.Slot
 {
-    [ValueConversion(typeof(double), typeof(double))]
-    public class RatioToBlur : IValueConverter
+    [ValueConversion(typeof(double), typeof(CornerRadius))]
+    public class ValueToRadius : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var ratio = (double)value;
-            //数值最大的时候，模糊达到预设最大值 4~16
-            var blur = 4 + ratio * 12;
-            return blur;
+            var uniformValue = (double)value;
+            return new CornerRadius(uniformValue);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

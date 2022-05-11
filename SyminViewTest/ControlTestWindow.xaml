@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyminViewTest"
         xmlns:sv ="clr-namespace:SyminUI.Controls;assembly=SyminUI"
-        xmlns:sd ="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
+        xmlns:svd ="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         mc:Ignorable="d"
         
         Height="400" Width="400">
@@ -14,6 +14,7 @@
         <sv:PropertyField PropertyName="属性" PropertyValue="123" Margin="6"/>
         <Button Content="主要按钮" Margin="6,0" Style="{StaticResource ButtonPrimary}"/>
         <Button Content="默认按钮" Margin="6,0"/>
+        <svd:SlotBorder Height="48" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>

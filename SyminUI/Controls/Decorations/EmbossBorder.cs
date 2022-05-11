@@ -28,10 +28,10 @@ namespace SyminUI.Controls.Decorations
         /// Weight of emboss effect, Range 0~1
         /// 浮现高度比例，范围0~1
         /// </summary>
-        public double EmbossRatio
+        public double Intensity
         {
-            get { return (double)GetValue(EmbossRatioProperty); }
-            set { SetValue(EmbossRatioProperty, value); }
+            get { return (double)GetValue(IntensityProperty); }
+            set { SetValue(IntensityProperty, value); }
         }
 
         public CornerRadius CornerRadius
@@ -64,9 +64,9 @@ namespace SyminUI.Controls.Decorations
 
         #region Dependency Properties
 
-        // Using a DependencyProperty as the backing store for EmbossRatio.
-        public static readonly DependencyProperty EmbossRatioProperty =
-            DependencyProperty.Register("EmbossRatio",
+        // Using a DependencyProperty as the backing store for Intensity.
+        public static readonly DependencyProperty IntensityProperty =
+            DependencyProperty.Register("Intensity",
                 typeof(double), typeof(EmbossBorder),
                 new PropertyMetadata(1.0));
 

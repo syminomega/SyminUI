@@ -25,6 +25,14 @@
     
     <SolidColorBrush x:Key="Shader.Light" Color="{StaticResource Shader.LightColor}"/>
     <SolidColorBrush x:Key="Shader.Shadow" Color="{StaticResource Shader.ShadowColor}"/>
+    
+    <LinearGradientBrush x:Key="Shader.Slot" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="{StaticResource Shader.ShadowColor}" Offset="0.49"/>
+        <GradientStop Color="{StaticResource Shader.LightColor}" Offset="0.51"/>
+        <LinearGradientBrush.RelativeTransform>
+            <RotateTransform Angle="52" CenterX="0.5" CenterY="0.5"/>
+        </LinearGradientBrush.RelativeTransform>
+    </LinearGradientBrush>
 
     <!--左侧菜单背景色-->
     <SolidColorBrush x:Key="Function.Dark" Color="#191A23"/>

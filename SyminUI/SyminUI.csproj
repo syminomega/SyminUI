@@ -7,7 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Shaders\AngleGradientPS.ps" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Shaders\AngleGradientPS.ps" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SyminData\SyminData.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Shaders\AngleGradientPS.fx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

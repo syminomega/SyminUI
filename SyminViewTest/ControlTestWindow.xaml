@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SyminViewTest"
         xmlns:sv ="clr-namespace:SyminUI.Controls;assembly=SyminUI"
         xmlns:svd ="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
+        xmlns:se="clr-namespace:SyminUI.Effects;assembly=SyminUI"
         mc:Ignorable="d"
         
         Height="400" Width="400">
@@ -17,12 +18,21 @@
         <Button Content="默认按钮" Margin="6,0"/>
         <svd:SlotBorder  Margin="6,0" Content="内容" Padding="10,6" 
                          Foreground="{StaticResource PrimaryGradient}"/>
+        <Border Width="48" Height="48" CornerRadius="0,0,0,24" Background="Black">
+            <Border.Effect>
+                <se:AngleGradientEffect 
+                    Color1="{StaticResource Shader.ShadowColor}" 
+                    Color2="{StaticResource Shader.LightColor}" 
+                    AngleRange="0.8,0.95"
+                    Center="1,0"/>
+            </Border.Effect>
+        </Border>
 
 
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>
-        
+
         <sv:EditableTreeView x:Name="myTreeView">
             <sv:EditableTreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}">
@@ -41,11 +51,11 @@
                 </DataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
-        
+
         <TreeViewItem Header="TreeItem"/>
         <ItemsControl x:Name="testItemsControl"></ItemsControl>
 
-        
-        
+
+
     </StackPanel>
 </Window>

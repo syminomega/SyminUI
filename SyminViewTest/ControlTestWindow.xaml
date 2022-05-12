@@ -28,7 +28,6 @@
             </Border.Effect>
         </Border>
 
-
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>

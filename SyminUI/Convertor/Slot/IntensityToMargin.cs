@@ -16,7 +16,7 @@ namespace SyminUI.Convertor.Slot
         {
             var intensity = (double)value;
             //边距越小，留下的边框越窄
-            var uniformValue = 4 * intensity;
+            var uniformValue = 4 * intensity + 4;
             return new Thickness(uniformValue);
         }
 

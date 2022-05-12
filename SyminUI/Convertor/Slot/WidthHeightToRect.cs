@@ -18,7 +18,7 @@ namespace SyminUI.Convertor.Slot
 
             var paramStr = parameter as string;
             _ = double.TryParse(paramStr, out double margin);
-            return new Rect(0, 0, width - (2 * margin), height - (2 * margin));
+            return new Rect(margin, margin, width - (2 * margin), height - (2 * margin));
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

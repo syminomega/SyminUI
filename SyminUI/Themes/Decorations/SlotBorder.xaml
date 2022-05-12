@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations"
                     xmlns:cvts="clr-namespace:SyminUI.Convertor.Slot"
-                    xmlns:cvt="clr-namespace:SyminUI.Convertor">
+                    xmlns:cvt="clr-namespace:SyminUI.Convertor"
+                    xmlns:se="clr-namespace:SyminUI.Effects">
     <Style TargetType="{x:Type svd:SlotBorder}">
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
@@ -20,9 +21,10 @@
                 <ControlTemplate TargetType="{x:Type svd:SlotBorder}">
                     <ControlTemplate.Resources>
                         <cvts:WidthHeightToRect x:Key="WHTR"/>
-                        <cvts:ValueToRadius x:Key="VTR"/>
                         <cvts:IntensityToBlur x:Key="ITB"/>
+                        <cvts:HalfValue x:Key="HV"/>
                         <cvts:IntensityToMargin x:Key="ITM"/>
+                        <cvt:ValueToRadius x:Key="VTR"/>
                         <cvt:BoolToVisibility x:Key="BTV"/>
                     </ControlTemplate.Resources>
 
@@ -31,22 +33,40 @@
                         <Border Margin="4" CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
                                 Background="{TemplateBinding Background}"/>
                         <!--内阴影效果-->
-                        <Grid Margin="4" Visibility="{TemplateBinding ShaderEnabled,
+                        <Grid Visibility="{TemplateBinding ShaderEnabled,
                                                         Converter={StaticResource BTV}}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
                             <!--边框和底色-->
-                            <Rectangle Fill="{StaticResource Shader.Slot}" Margin="4"/>
-                            <Rectangle Height="8" VerticalAlignment="Bottom" Margin="0,0,0,-4"
-                                           Fill="{StaticResource Shader.Light}"/>
-                            <Rectangle Width="8" HorizontalAlignment="Left" Margin="-4,0,0,0"
-                                           Fill="{StaticResource Shader.Shadow}"/>
-                            <Rectangle Height="8" VerticalAlignment="Top" Margin="0,-4,0,0"
-                                           Fill="{StaticResource Shader.Shadow}"/>
-                            <Rectangle Width="8" HorizontalAlignment="Right" Margin="0,0,-4,0"
-                                           Fill="{StaticResource Shader.Light}"/>
+                            <Border Background="{StaticResource Shader.Shadow}"/>
+                            <!--转角过渡-->
+                            <Border Background="Black" HorizontalAlignment="Right"
+                                    Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                                                    Path=ActualHeight,Converter={StaticResource HV}}">
+                                <Border.Effect>
+                                    <se:AngleGradientEffect Color1="{StaticResource Shader.ShadowColor}"
+                                                            Color2="{StaticResource Shader.LightColor}"
+                                                            Center="0,1" AngleRange="0.3,0.45"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border Background="{StaticResource Shader.Light}" Grid.Row="1"/>
+                            <!--转角过渡-->
+                            <Border Background="Black" HorizontalAlignment="Left" Grid.Row="1"
+                                    Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                                                    Path=ActualHeight,Converter={StaticResource HV}}">
+                                <Border.Effect>
+                                    <se:AngleGradientEffect Color1="{StaticResource Shader.LightColor}"
+                                                            Color2="{StaticResource Shader.ShadowColor}"
+                                                            Center="1,0" AngleRange="0.8,0.95"/>
+                                </Border.Effect>
+                            </Border>
                             <!--背景-->
-                            <Border Background="{TemplateBinding Background}" 
+                            <Border Background="{TemplateBinding Background}" Grid.RowSpan="2"
                                     CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
                                     Margin="{TemplateBinding Intensity,Converter={StaticResource ITM}}"/>
+                            <!--裁切区域-->
                             <Grid.Clip>
                                 <RectangleGeometry RadiusX="{Binding RelativeSource={RelativeSource TemplatedParent}, 
                                                                 Path=Radius}" 

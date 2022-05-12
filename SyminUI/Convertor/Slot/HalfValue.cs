@@ -9,13 +9,12 @@ using System.Windows.Data;
 
 namespace SyminUI.Convertor.Slot
 {
-    [ValueConversion(typeof(double), typeof(CornerRadius))]
-    public class ValueToRadius : IValueConverter
+    public class HalfValue : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var uniformValue = (double)value;
-            return new CornerRadius(uniformValue);
+            var originValue = (double)value;
+            return originValue / 2;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

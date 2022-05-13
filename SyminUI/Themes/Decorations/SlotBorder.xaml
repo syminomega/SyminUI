@@ -68,10 +68,16 @@
                                     Margin="{TemplateBinding Intensity,Converter={StaticResource ITM}}"/>
                             <!--裁切区域-->
                             <Grid.Clip>
-                                <RectangleGeometry RadiusX="{Binding RelativeSource={RelativeSource TemplatedParent}, 
-                                                                Path=Radius}" 
+                                <RectangleGeometry RadiusX="{Binding Radius, Mode=OneWay,
+                                                        RelativeSource={RelativeSource FindAncestor, 
+                                                        AncestorType={x:Type svd:SlotBorder}},FallbackValue=4}" 
+                                                   RadiusY="{Binding Radius, Mode=OneWay,
+                                                        RelativeSource={RelativeSource FindAncestor, 
+                                                        AncestorType={x:Type svd:SlotBorder}},FallbackValue=4}">
+                                    <!--RadiusX="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                                                                Path=Radius,Mode=OneWay}" 
                                                    RadiusY="{Binding RelativeSource={RelativeSource TemplatedParent}, 
-                                                                Path=Radius}" >
+                                                                Path=Radius,Mode=OneWay}" >-->
                                     <RectangleGeometry.Rect>
                                         <MultiBinding Converter="{StaticResource WHTR}" Mode="OneWay"
                                                           ConverterParameter="4">

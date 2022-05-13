@@ -74,7 +74,7 @@
                     
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
-
+                                
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="true">

@@ -20,7 +20,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type svd:SlotBorder}">
                     <ControlTemplate.Resources>
-                        <cvts:WidthHeightToRect x:Key="WHTR"/>
+                        <cvts:CreateClipGeometry x:Key="CCG"/>
                         <cvts:IntensityToBlur x:Key="ITB"/>
                         <cvts:HalfValue x:Key="HV"/>
                         <cvts:IntensityToMargin x:Key="ITM"/>
@@ -68,26 +68,15 @@
                                     Margin="{TemplateBinding Intensity,Converter={StaticResource ITM}}"/>
                             <!--裁切区域-->
                             <Grid.Clip>
-                                <RectangleGeometry RadiusX="{Binding Radius, Mode=OneWay,
-                                                        RelativeSource={RelativeSource FindAncestor, 
-                                                        AncestorType={x:Type svd:SlotBorder}},FallbackValue=4}" 
-                                                   RadiusY="{Binding Radius, Mode=OneWay,
-                                                        RelativeSource={RelativeSource FindAncestor, 
-                                                        AncestorType={x:Type svd:SlotBorder}},FallbackValue=4}">
-                                    <!--RadiusX="{Binding RelativeSource={RelativeSource TemplatedParent}, 
-                                                                Path=Radius,Mode=OneWay}" 
-                                                   RadiusY="{Binding RelativeSource={RelativeSource TemplatedParent}, 
-                                                                Path=Radius,Mode=OneWay}" >-->
-                                    <RectangleGeometry.Rect>
-                                        <MultiBinding Converter="{StaticResource WHTR}" Mode="OneWay"
+                                <MultiBinding Converter="{StaticResource CCG}" Mode="OneWay"
                                                           ConverterParameter="4">
-                                            <Binding RelativeSource="{RelativeSource TemplatedParent}" 
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
+                                             Path="Radius" Mode="OneWay"/>
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
                                              Path="ActualWidth" Mode="OneWay"/>
-                                            <Binding RelativeSource="{RelativeSource TemplatedParent}" 
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
                                              Path="ActualHeight" Mode="OneWay"/>
-                                        </MultiBinding>
-                                    </RectangleGeometry.Rect>
-                                </RectangleGeometry>
+                                </MultiBinding>
                             </Grid.Clip>
                             <Grid.Effect>
                                 <BlurEffect Radius="{Binding RelativeSource={RelativeSource TemplatedParent}, 

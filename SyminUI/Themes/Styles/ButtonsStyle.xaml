@@ -7,15 +7,15 @@
             <SolidColorBrush x:Key="ButtonBorderLight" Color="{StaticResource Shader.LightColor}"/>
             <SolidColorBrush x:Key="ButtonBorderShadow" Color="{StaticResource Shader.ShadowColor}"/>
             <LinearGradientBrush x:Key="ButtonHighlightBorder" StartPoint="0,0" EndPoint="1,0">
-                <GradientStop Color="{StaticResource Shader.LightColor}"/>
+                <GradientStop Color="White"/>
                 <GradientStop Color="{StaticResource Shader.ShadowColor}" Offset="1"/>
                 <LinearGradientBrush.RelativeTransform>
-                    <RotateTransform Angle="30" CenterX="0.5" CenterY="0.5"/>
+                    <RotateTransform Angle="52" CenterX="0.5" CenterY="0.5"/>
                 </LinearGradientBrush.RelativeTransform>
             </LinearGradientBrush>
         </Style.Resources>
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Background.Main}"/>
+        <Setter Property="Background" Value="{StaticResource Background.Button}"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Background.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -80,7 +80,7 @@
                         <!--隐藏边框，显示阴影-->
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{DynamicResource ButtonHighlightBorder}"/>
+                                    Value="{StaticResource Shader.BorderGradient}"/>
                             <Trigger.EnterActions>
                                 <BeginStoryboard x:Name="showEffectBegin"
                                                  Storyboard="{StaticResource ShowEffect}" />
@@ -122,10 +122,10 @@
             <SolidColorBrush x:Key="ButtonBorderLight" Color="{StaticResource PrimaryColor.Light}"/>
             <SolidColorBrush x:Key="ButtonBorderShadow" Color="{StaticResource PrimaryColor.Shadow}"/>
             <LinearGradientBrush x:Key="ButtonHighlightBorder" StartPoint="0,0" EndPoint="1,0">
-                <GradientStop Color="{StaticResource PrimaryColor.Light}"/>
+                <GradientStop Color="White"/>
                 <GradientStop Color="{StaticResource PrimaryColor.Shadow}" Offset="1"/>
                 <LinearGradientBrush.RelativeTransform>
-                    <RotateTransform Angle="30" CenterX="0.5" CenterY="0.5"/>
+                    <RotateTransform Angle="52" CenterX="0.5" CenterY="0.5"/>
                 </LinearGradientBrush.RelativeTransform>
             </LinearGradientBrush>
         </Style.Resources>

@@ -14,8 +14,8 @@ namespace SyminUI.Convertor.Emboss
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var intensity = (double)value;
-            //数值最大的时候，模糊达到预设最大值 4~16
-            var blur = 4 + intensity * 12;
+            //数值最大的时候，模糊达到预设最大值 4~12
+            var blur = 4 + intensity * 8;
             return blur;
         }
 

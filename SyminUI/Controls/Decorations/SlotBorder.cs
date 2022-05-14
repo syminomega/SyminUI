@@ -42,6 +42,18 @@ namespace SyminUI.Controls.Decorations
             set { SetValue(ShaderEnabledProperty, value); }
         }
 
+        public SolidColorBrush LightBrush
+        {
+            get { return (SolidColorBrush)GetValue(LightBrushProperty); }
+            set { SetValue(LightBrushProperty, value); }
+        }
+
+        public SolidColorBrush ShadowBrush
+        {
+            get { return (SolidColorBrush)GetValue(ShadowBrushProperty); }
+            set { SetValue(ShadowBrushProperty, value); }
+        }
+
 
         #region Dependency Properties
 
@@ -62,6 +74,16 @@ namespace SyminUI.Controls.Decorations
             DependencyProperty.Register("ShaderEnabled",
                 typeof(bool), typeof(SlotBorder),
                 new PropertyMetadata(true));
+
+        // Using a DependencyProperty as the backing store for LightBrush.
+        public static readonly DependencyProperty LightBrushProperty =
+            DependencyProperty.Register("LightBrush",
+                typeof(SolidColorBrush), typeof(SlotBorder));
+
+        // Using a DependencyProperty as the backing store for ShadowBrush.
+        public static readonly DependencyProperty ShadowBrushProperty =
+            DependencyProperty.Register("ShadowBrush",
+                typeof(SolidColorBrush), typeof(SlotBorder));
 
         #endregion
 

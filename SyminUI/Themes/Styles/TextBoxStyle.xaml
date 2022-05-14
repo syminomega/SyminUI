@@ -47,6 +47,8 @@
                                         ShaderEnabled="False" Intensity="0"
                                         BorderBrush="{TemplateBinding BorderBrush}" 
                                         BorderThickness="{TemplateBinding BorderThickness}" 
+                                        LightBrush="{StaticResource Primary.Light}"
+                                        ShadowBrush="{StaticResource Primary.Shadow}"
                                         SnapsToDevicePixels="True">
                             <ScrollViewer x:Name="PART_ContentHost" Focusable="false"
                                       HorizontalScrollBarVisibility="Hidden" 

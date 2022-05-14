@@ -16,9 +16,8 @@
         <TextBox Text="文本输入" HorizontalContentAlignment="Center" Margin="6,0"/>
         <Button Content="主要按钮" Margin="6,0" Style="{StaticResource ButtonPrimary}"/>
         <Button Content="默认按钮" Margin="6,0"/>
-        <svd:SlotBorder  Margin="6,0" Content="内容" Padding="10,6" 
-                         Foreground="{StaticResource PrimaryGradient}"/>
-
+        <svd:SlotBorder  Margin="6,0" Height="120" Radius="40"/>
+        <svd:EmbossBorder Margin="6,0" Height="48" CornerRadius="16"/>
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>

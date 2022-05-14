@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace SyminUI.Convertor.Slot
+namespace SyminUI.Convertor
 {
     public class HalfValue : IValueConverter
     {

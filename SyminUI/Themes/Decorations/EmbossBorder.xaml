@@ -2,7 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:svd ="clr-namespace:SyminUI.Controls.Decorations"
                     xmlns:cvte ="clr-namespace:SyminUI.Convertor.Emboss"
-                    xmlns:cvt="clr-namespace:SyminUI.Convertor">
+                    xmlns:cvt="clr-namespace:SyminUI.Convertor"
+                    xmlns:se="clr-namespace:SyminUI.Effects"
+                    xmlns:cvtfx="clr-namespace:SyminUI.Convertor.Effect">
     <Style TargetType="{x:Type svd:EmbossBorder}">
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="CornerRadius" Value="4"/>
@@ -21,29 +23,114 @@
                     <ControlTemplate.Resources>
                         <cvte:IntensityToMargin x:Key="ITM"/>
                         <cvte:IntensityToBlur x:Key="ITB"/>
-                        <cvte:LightAndShadow x:Key="LAS"/>
                         <cvt:BoolToVisibility x:Key="BTV"/>
-                        
+                        <cvt:CornerRadiusMultiply x:Key="CRM"/>
+                        <cvt:HalfValue x:Key="HV"/>
+                        <cvtfx:RadiusToGradientAngle x:Key="RTGA"/>
                     </ControlTemplate.Resources>
                     <Grid>
+
                         <!--光影区域-->
-                        <Border x:Name="shadowBorder"
-                                CornerRadius="{TemplateBinding CornerRadius}"
-                                Visibility="{TemplateBinding ShaderEnabled,Converter={StaticResource BTV}}"
-                                Margin="{TemplateBinding Intensity,Converter={StaticResource ITM}}">
-                            <Border.Background>
-                                <MultiBinding Converter="{StaticResource LAS}" Mode="OneWay">
-                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
-                                             Path="LightBrush" Mode="OneWay"/>
-                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
-                                             Path="ShadowBrush" Mode="OneWay"/>
-                                </MultiBinding>
-                            </Border.Background>
-                            <Border.Effect>
+                        <Grid Visibility="{TemplateBinding ShaderEnabled,Converter={StaticResource BTV}}"
+                              Margin="{TemplateBinding Intensity,Converter={StaticResource ITM}}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <!--上方-->
+                            <Border Background="{TemplateBinding LightBrush}">
+                                <Border.CornerRadius>
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                             Path="CornerRadius" Mode="OneWay"
+                                             Converter="{StaticResource CRM}"
+                                             ConverterParameter="1,1,0,0"/>
+                                </Border.CornerRadius>
+                            </Border>
+                            <!--右上转角过渡-->
+                            <Border Background="Black" HorizontalAlignment="Right"
+                                    Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                                                    Path=ActualHeight,Converter={StaticResource HV},
+                                                    Mode=OneWay}">
+                                <Border.CornerRadius>
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                             Path="CornerRadius" Mode="OneWay"
+                                             Converter="{StaticResource CRM}"
+                                             ConverterParameter="0,1,0,0"/>
+                                </Border.CornerRadius>
+                                <Border.Effect>
+                                    <se:AngleGradientEffect Center="0,1">
+                                        <se:AngleGradientEffect.Color1>
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                     Path="LightBrush.Color" Mode="OneWay"/>
+                                        </se:AngleGradientEffect.Color1>
+                                        <se:AngleGradientEffect.Color2>
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                     Path="ShadowBrush.Color" Mode="OneWay"/>
+                                        </se:AngleGradientEffect.Color2>
+                                        <se:AngleGradientEffect.AngleRange>
+                                            <MultiBinding Mode="OneWay" ConverterParameter="0.25"
+                                                          Converter="{StaticResource RTGA}">
+                                                <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                         Path="CornerRadius.TopRight" Mode="OneWay"/>
+                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type Border}}" 
+                                                         Path="ActualWidth" Mode="OneWay"/>
+                                            </MultiBinding>
+                                        </se:AngleGradientEffect.AngleRange>
+                                    </se:AngleGradientEffect>
+                                </Border.Effect>
+                            </Border>
+                            <!--下方-->
+                            <Border Background="{TemplateBinding ShadowBrush}" Grid.Row="1">
+                                <Border.CornerRadius>
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                             Path="CornerRadius" Mode="OneWay"
+                                             Converter="{StaticResource CRM}"
+                                             ConverterParameter="0,0,1,1"/>
+                                </Border.CornerRadius>
+                            </Border>
+                            <!--左下转角过渡-->
+                            <Border Background="Black" HorizontalAlignment="Left" Grid.Row="1"
+                                    Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                                                    Path=ActualHeight,Converter={StaticResource HV},
+                                                    Mode=OneWay}">
+                                <Border.CornerRadius>
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                             Path="CornerRadius" Mode="OneWay"
+                                             Converter="{StaticResource CRM}"
+                                             ConverterParameter="0,0,0,1"/>
+                                </Border.CornerRadius>
+                                <Border.Effect>
+                                    <se:AngleGradientEffect Center="1,0">
+                                        <se:AngleGradientEffect.Color1>
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                     Path="ShadowBrush.Color" Mode="OneWay"/>
+                                        </se:AngleGradientEffect.Color1>
+                                        <se:AngleGradientEffect.Color2>
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                     Path="LightBrush.Color" Mode="OneWay"/>
+                                        </se:AngleGradientEffect.Color2>
+                                        <se:AngleGradientEffect.AngleRange>
+                                            <MultiBinding Mode="OneWay" ConverterParameter="0.75"
+                                                          Converter="{StaticResource RTGA}">
+                                                <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                         Path="CornerRadius.BottomLeft" Mode="OneWay"/>
+                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type Border}}" 
+                                                         Path="ActualWidth" Mode="OneWay"/>
+                                            </MultiBinding>
+                                        </se:AngleGradientEffect.AngleRange>
+                                    </se:AngleGradientEffect>
+                                    
+                                </Border.Effect>
+                            </Border>
+                            
+                            <!--模糊效果-->
+                            <Grid.Effect>
                                 <BlurEffect Radius="{Binding RelativeSource={RelativeSource TemplatedParent}, 
                                     Path=Intensity, Converter={StaticResource ITB},Mode=OneWay}"/>
-                            </Border.Effect>
-                        </Border>
+                            </Grid.Effect>
+                        </Grid>
+                        
+                        
                         <!--内容区域-->
                         <Border Background="{TemplateBinding Background}" Margin="4" 
                                 CornerRadius="{TemplateBinding CornerRadius}"

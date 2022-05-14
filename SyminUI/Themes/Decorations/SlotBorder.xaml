@@ -3,7 +3,8 @@
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations"
                     xmlns:cvts="clr-namespace:SyminUI.Convertor.Slot"
                     xmlns:cvt="clr-namespace:SyminUI.Convertor"
-                    xmlns:se="clr-namespace:SyminUI.Effects">
+                    xmlns:se="clr-namespace:SyminUI.Effects"
+                    xmlns:cvtfx="clr-namespace:SyminUI.Convertor.Effect">
     <Style TargetType="{x:Type svd:SlotBorder}">
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
@@ -22,10 +23,11 @@
                     <ControlTemplate.Resources>
                         <cvts:CreateClipGeometry x:Key="CCG"/>
                         <cvts:IntensityToBlur x:Key="ITB"/>
-                        <cvts:HalfValue x:Key="HV"/>
+                        <cvt:HalfValue x:Key="HV"/>
                         <cvts:IntensityToMargin x:Key="ITM"/>
                         <cvt:ValueToRadius x:Key="VTR"/>
                         <cvt:BoolToVisibility x:Key="BTV"/>
+                        <cvtfx:RadiusToGradientAngle x:Key="RTGA"/>
                     </ControlTemplate.Resources>
 
                     <Grid>
@@ -39,27 +41,50 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <!--边框和底色-->
+                            <!--上方-->
                             <Border Background="{StaticResource Shader.Shadow}"/>
-                            <!--转角过渡-->
+                            <!--右上转角过渡-->
                             <Border Background="Black" HorizontalAlignment="Right"
                                     Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
-                                                    Path=ActualHeight,Converter={StaticResource HV}}">
+                                                    Path=ActualHeight,Converter={StaticResource HV},
+                                                    Mode=OneWay}">
                                 <Border.Effect>
                                     <se:AngleGradientEffect Color1="{StaticResource Shader.ShadowColor}"
                                                             Color2="{StaticResource Shader.LightColor}"
-                                                            Center="0,1" AngleRange="0.3,0.45"/>
+                                                            Center="0,1">
+                                        <se:AngleGradientEffect.AngleRange>
+                                            <MultiBinding Mode="OneWay" ConverterParameter="0.25"
+                                                          Converter="{StaticResource RTGA}">
+                                                <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                         Path="Radius" Mode="OneWay"/>
+                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type Border}}" 
+                                                         Path="ActualWidth" Mode="OneWay"/>
+                                            </MultiBinding>
+                                        </se:AngleGradientEffect.AngleRange>
+                                    </se:AngleGradientEffect>
                                 </Border.Effect>
                             </Border>
+                            <!--下方-->
                             <Border Background="{StaticResource Shader.Light}" Grid.Row="1"/>
-                            <!--转角过渡-->
+                            <!--左下转角过渡-->
                             <Border Background="Black" HorizontalAlignment="Left" Grid.Row="1"
                                     Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
-                                                    Path=ActualHeight,Converter={StaticResource HV}}">
+                                                    Path=ActualHeight,Converter={StaticResource HV},
+                                                    Mode=OneWay}">
                                 <Border.Effect>
                                     <se:AngleGradientEffect Color1="{StaticResource Shader.LightColor}"
                                                             Color2="{StaticResource Shader.ShadowColor}"
-                                                            Center="1,0" AngleRange="0.8,0.95"/>
+                                                            Center="1,0">
+                                        <se:AngleGradientEffect.AngleRange>
+                                            <MultiBinding Mode="OneWay" ConverterParameter="0.75"
+                                                          Converter="{StaticResource RTGA}">
+                                                <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                         Path="Radius" Mode="OneWay"/>
+                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type Border}}" 
+                                                         Path="ActualWidth" Mode="OneWay"/>
+                                            </MultiBinding>
+                                        </se:AngleGradientEffect.AngleRange>
+                                    </se:AngleGradientEffect>
                                 </Border.Effect>
                             </Border>
                             <!--背景-->

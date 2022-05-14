@@ -6,13 +6,6 @@
         <Style.Resources>
             <SolidColorBrush x:Key="ButtonBorderLight" Color="{StaticResource Shader.LightColor}"/>
             <SolidColorBrush x:Key="ButtonBorderShadow" Color="{StaticResource Shader.ShadowColor}"/>
-            <LinearGradientBrush x:Key="ButtonHighlightBorder" StartPoint="0,0" EndPoint="1,0">
-                <GradientStop Color="White"/>
-                <GradientStop Color="{StaticResource Shader.ShadowColor}" Offset="1"/>
-                <LinearGradientBrush.RelativeTransform>
-                    <RotateTransform Angle="52" CenterX="0.5" CenterY="0.5"/>
-                </LinearGradientBrush.RelativeTransform>
-            </LinearGradientBrush>
         </Style.Resources>
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Background.Button}"/>
@@ -117,17 +110,11 @@
     <!--默认按钮-->
     <Style BasedOn="{StaticResource ResourceKey=ButtonBasic}"  TargetType="{x:Type Button}"/>
     <!--主要按钮-->
-    <Style x:Key="ButtonPrimary" BasedOn="{StaticResource ResourceKey=ButtonBasic}"  TargetType="{x:Type Button}">
+    <Style x:Key="ButtonPrimary" 
+           BasedOn="{StaticResource ResourceKey=ButtonBasic}"  TargetType="{x:Type Button}">
         <Style.Resources>
             <SolidColorBrush x:Key="ButtonBorderLight" Color="{StaticResource PrimaryColor.Light}"/>
             <SolidColorBrush x:Key="ButtonBorderShadow" Color="{StaticResource PrimaryColor.Shadow}"/>
-            <LinearGradientBrush x:Key="ButtonHighlightBorder" StartPoint="0,0" EndPoint="1,0">
-                <GradientStop Color="White"/>
-                <GradientStop Color="{StaticResource PrimaryColor.Shadow}" Offset="1"/>
-                <LinearGradientBrush.RelativeTransform>
-                    <RotateTransform Angle="52" CenterX="0.5" CenterY="0.5"/>
-                </LinearGradientBrush.RelativeTransform>
-            </LinearGradientBrush>
         </Style.Resources>
         <Setter Property="Foreground" Value="{StaticResource Text.Contrast}"/>
         <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>

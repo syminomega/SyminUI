@@ -14,13 +14,14 @@
                 Background="{StaticResource Background.Main}">
         <sv:PropertyField PropertyName="属性" PropertyValue="123" Margin="6,0"/>
         <TextBox Text="文本输入" HorizontalContentAlignment="Center" Margin="6,0"/>
+        <Button Content="主要按钮" Margin="6,0" Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
         <Button Content="主要按钮" Margin="6,0" Style="{StaticResource ButtonPrimary}"/>
         <Button Content="默认按钮" Margin="6,0"/>
-        <svd:SlotBorder  Margin="6,0" Height="120" Radius="40"/>
+        <Button Content="默认按钮" Margin="6,0"/>
+        <Button Content="默认按钮" Margin="6,0" IsEnabled="False"/>
+        <svd:SlotBorder  Margin="6,0" Height="60" Radius="20"/>
         <svd:EmbossBorder Margin="6,0" Height="48" CornerRadius="16"/>
-        <Button Content="默认按钮" Margin="6,0"/>
-        <Button Content="默认按钮" Margin="6,0"/>
-        <Button Content="默认按钮" Margin="6,0"/>
+
 
         <sv:EditableTreeView x:Name="myTreeView">
             <sv:EditableTreeView.ItemTemplate>

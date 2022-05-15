@@ -75,6 +75,7 @@
                     </Grid>
                     
                     <ControlTemplate.Triggers>
+                        <!--TODO:禁用效果-->
                         <Trigger Property="IsEnabled" Value="false">
                                 
                         </Trigger>

@@ -1,10 +1,31 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations">
-
+    <!--聚焦对象-->
+    <Storyboard x:Key="TextBox.FocusEffect">
+        <DoubleAnimation To="0.8" Duration="0:0:0.2"
+                         Storyboard.TargetName="border"
+                         Storyboard.TargetProperty="Intensity"/>
+        <BooleanAnimationUsingKeyFrames Duration="0"
+                                        Storyboard.TargetName="border"
+                                        Storyboard.TargetProperty="ShaderEnabled">
+            <DiscreteBooleanKeyFrame Value="True" KeyTime="0"/>
+        </BooleanAnimationUsingKeyFrames>
+    </Storyboard>
+    <!--取消聚焦对象-->
+    <Storyboard x:Key="TextBox.LeaveEffect">
+        <DoubleAnimation To="0" Duration="0:0:0.2"
+                         Storyboard.TargetName="border"
+                         Storyboard.TargetProperty="Intensity"/>
+        <BooleanAnimationUsingKeyFrames Duration="0:0:0.2"
+                                        Storyboard.TargetName="border"
+                                        Storyboard.TargetProperty="ShaderEnabled">
+            <DiscreteBooleanKeyFrame Value="False" KeyTime="0:0:0.2"/>
+        </BooleanAnimationUsingKeyFrames>
+    </Storyboard>
 
     <Style TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{StaticResource Background.Pure}"/>
+        <Setter Property="Background" Value="{StaticResource Background.TextField}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Background.Border}"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -16,39 +37,15 @@
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <ControlTemplate.Resources>
-                        <Storyboard x:Key="ShowEffect">
-                            <DoubleAnimation To="0.8" Duration="0:0:0.2"
-                                             Storyboard.TargetName="border"
-                                             Storyboard.TargetProperty="Intensity"/>
-                            <BooleanAnimationUsingKeyFrames Duration="0"
-                                                            Storyboard.TargetName="border"
-                                                            Storyboard.TargetProperty="ShaderEnabled">
-                                <DiscreteBooleanKeyFrame Value="True" KeyTime="0"/>
-                            </BooleanAnimationUsingKeyFrames>
-                        </Storyboard>
-                        <Storyboard x:Key="HideEffect">
-                            <DoubleAnimation To="0" Duration="0:0:0.2"
-                                             Storyboard.TargetName="border"
-                                             Storyboard.TargetProperty="Intensity"/>
-                            <BooleanAnimationUsingKeyFrames Duration="0:0:0.2"
-                                                            Storyboard.TargetName="border"
-                                                            Storyboard.TargetProperty="ShaderEnabled">
-                                <DiscreteBooleanKeyFrame Value="False" KeyTime="0:0:0.2"/>
-                            </BooleanAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </ControlTemplate.Resources>
                     <Grid>
                         <svd:SlotBorder x:Name="border" Background="{TemplateBinding Background}"
                                         ShaderEnabled="False" Intensity="0"
                                         BorderBrush="{TemplateBinding BorderBrush}" 
-                                        BorderThickness="{TemplateBinding BorderThickness}" 
-                                        LightBrush="{StaticResource Primary.Light}"
-                                        ShadowBrush="{StaticResource Primary.Shadow}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
                                         SnapsToDevicePixels="True">
                             <ScrollViewer x:Name="PART_ContentHost" Focusable="false"
                                       HorizontalScrollBarVisibility="Hidden" 
@@ -73,11 +70,11 @@
                         </Border>
 
                     </Grid>
-                    
+
                     <ControlTemplate.Triggers>
                         <!--TODO:禁用效果-->
                         <Trigger Property="IsEnabled" Value="false">
-                                
+
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="true">
@@ -86,13 +83,13 @@
                             <Setter Property="Background" TargetName="underLineBorder" 
                                     Value="{StaticResource PrimaryGradient}"/>
                         </Trigger>
-                        
+
                         <Trigger Property="IsKeyboardFocused" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" 
                                     Value="Transparent"/>
                             <Setter Property="Background" TargetName="underLineBorder" 
                                     Value="{StaticResource PrimaryGradient}"/>
-                            
+
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -104,10 +101,10 @@
                             <Setter Property="Margin" TargetName="underLineBorder" 
                                     Value="5,4.5"/>
                             <MultiTrigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HideEffect}"/>
+                                <BeginStoryboard Storyboard="{StaticResource TextBox.LeaveEffect}"/>
                             </MultiTrigger.EnterActions>
                             <MultiTrigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource ShowEffect}"/>
+                                <BeginStoryboard Storyboard="{StaticResource TextBox.FocusEffect}"/>
                             </MultiTrigger.ExitActions>
                         </MultiTrigger>
                     </ControlTemplate.Triggers>

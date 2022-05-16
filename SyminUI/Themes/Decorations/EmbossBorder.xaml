@@ -26,7 +26,7 @@
                         <cvt:BoolToVisibility x:Key="BTV"/>
                         <cvt:CornerRadiusMultiply x:Key="CRM"/>
                         <cvt:HalfValue x:Key="HV"/>
-                        <cvtfx:RadiusToGradientAngle x:Key="RTGA"/>
+                        <cvtfx:CreateGradientEffect x:Key="CGE"/>
                     </ControlTemplate.Resources>
                     <Grid>
 
@@ -58,25 +58,17 @@
                                              ConverterParameter="0,1,0,0"/>
                                 </Border.CornerRadius>
                                 <Border.Effect>
-                                    <se:AngleGradientEffect Center="0,1">
-                                        <se:AngleGradientEffect.Color1>
-                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                     Path="LightBrush.Color" Mode="OneWay"/>
-                                        </se:AngleGradientEffect.Color1>
-                                        <se:AngleGradientEffect.Color2>
-                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                     Path="ShadowBrush.Color" Mode="OneWay"/>
-                                        </se:AngleGradientEffect.Color2>
-                                        <se:AngleGradientEffect.AngleRange>
-                                            <MultiBinding Mode="OneWay" ConverterParameter="0.25"
-                                                          Converter="{StaticResource RTGA}">
-                                                <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                         Path="CornerRadius.TopRight" Mode="OneWay"/>
-                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type Border}}" 
-                                                         Path="ActualWidth" Mode="OneWay"/>
-                                            </MultiBinding>
-                                        </se:AngleGradientEffect.AngleRange>
-                                    </se:AngleGradientEffect>
+                                    <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay"
+                                                  ConverterParameter="0,1,0.25">
+                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="LightBrush" Mode="OneWay"/>
+                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="ShadowBrush" Mode="OneWay"/>
+                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="CornerRadius.TopRight" Mode="OneWay"/>
+                                        <Binding RelativeSource="{RelativeSource AncestorType={x:Type Border}}" 
+                                                 Path="ActualWidth" Mode="OneWay"/>
+                                    </MultiBinding>
                                 </Border.Effect>
                             </Border>
                             <!--下方-->
@@ -100,26 +92,17 @@
                                              ConverterParameter="0,0,0,1"/>
                                 </Border.CornerRadius>
                                 <Border.Effect>
-                                    <se:AngleGradientEffect Center="1,0">
-                                        <se:AngleGradientEffect.Color1>
-                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                     Path="ShadowBrush.Color" Mode="OneWay"/>
-                                        </se:AngleGradientEffect.Color1>
-                                        <se:AngleGradientEffect.Color2>
-                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                     Path="LightBrush.Color" Mode="OneWay"/>
-                                        </se:AngleGradientEffect.Color2>
-                                        <se:AngleGradientEffect.AngleRange>
-                                            <MultiBinding Mode="OneWay" ConverterParameter="0.75"
-                                                          Converter="{StaticResource RTGA}">
-                                                <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                         Path="CornerRadius.BottomLeft" Mode="OneWay"/>
-                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type Border}}" 
-                                                         Path="ActualWidth" Mode="OneWay"/>
-                                            </MultiBinding>
-                                        </se:AngleGradientEffect.AngleRange>
-                                    </se:AngleGradientEffect>
-                                    
+                                    <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay"
+                                                  ConverterParameter="1,0,0.75">
+                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="ShadowBrush" Mode="OneWay"/>
+                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="LightBrush" Mode="OneWay"/>
+                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="CornerRadius.BottomLeft" Mode="OneWay"/>
+                                        <Binding RelativeSource="{RelativeSource AncestorType={x:Type Border}}" 
+                                                 Path="ActualWidth" Mode="OneWay"/>
+                                    </MultiBinding>
                                 </Border.Effect>
                             </Border>
                             

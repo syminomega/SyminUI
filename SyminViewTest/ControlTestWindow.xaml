@@ -19,6 +19,9 @@
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0"/>
         <Button Content="默认按钮" Margin="6,0" IsEnabled="False"/>
+        <CheckBox >
+            <Rectangle Width="80" Height="32" Fill="Yellow"/>
+        </CheckBox>
         <svd:SlotBorder  Margin="6,0" Height="60" Radius="20"/>
         <svd:EmbossBorder Margin="6,0" Height="48" CornerRadius="16"/>
 

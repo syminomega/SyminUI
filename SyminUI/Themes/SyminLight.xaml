@@ -18,6 +18,7 @@
     <SolidColorBrush x:Key="Background.Button" Color="#EDEEF2"/>
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>
+    <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>
     <SolidColorBrush x:Key="Background.Border" Color="#A6A9BB"/>
 
     <!--光照-->

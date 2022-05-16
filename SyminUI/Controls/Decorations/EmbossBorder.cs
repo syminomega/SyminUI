@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -93,6 +94,7 @@ namespace SyminUI.Controls.Decorations
                 typeof(SolidColorBrush), typeof(EmbossBorder));
 
         #endregion
+
     }
 }
 

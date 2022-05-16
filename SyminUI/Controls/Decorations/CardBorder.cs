@@ -22,5 +22,6 @@ namespace SyminUI.Controls.Decorations
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CardBorder),
                 new FrameworkPropertyMetadata(typeof(CardBorder)));
         }
+
     }
 }

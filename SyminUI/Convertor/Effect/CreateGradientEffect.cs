@@ -15,7 +15,7 @@ namespace SyminUI.Convertor.Effect
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            
+
             var brushA = (SolidColorBrush)values[0];
             var brushB = (SolidColorBrush)values[1];
             var radiusValue = (double)values[2];

@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace SyminUI.Controls.Decorations
 {
-    public class CardBorder : ContentControl
+    public class CardBorder : DecorationBase
     {
         static CardBorder()
         {

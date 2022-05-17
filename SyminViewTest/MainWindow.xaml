@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SyminViewTest"
         xmlns:sv ="clr-namespace:SyminUI;assembly=SyminUI"
         xmlns:v ="clr-namespace:SyminViewTest.Views"
+        xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="{StaticResource Background.Main}">
@@ -13,5 +14,6 @@
             <v:TestView x:Key="TV"/>
         </Grid.Resources>
         <sv:ViewBody ViewDefinition="{StaticResource ResourceKey=TV}"/>
+        <!--<svd:EmbossBorder Width="400" Height="200" CornerRadius="32"/>-->
     </Grid>
 </Window>

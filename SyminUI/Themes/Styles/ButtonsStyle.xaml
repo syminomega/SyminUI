@@ -61,7 +61,7 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           TextElement.Foreground="{TemplateBinding Foreground}"/>
                     </svd:EmbossBorder>
-                    
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" 
@@ -101,9 +101,9 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
     <!--默认按钮-->
-    <Style BasedOn="{StaticResource ResourceKey=ButtonBasic}"  TargetType="{x:Type Button}"/>
+    <Style BasedOn="{StaticResource ResourceKey=ButtonBasic}"  
+           TargetType="{x:Type Button}"/>
     <!--主要按钮-->
     <Style x:Key="ButtonPrimary" 
            BasedOn="{StaticResource ResourceKey=ButtonBasic}"  TargetType="{x:Type Button}">

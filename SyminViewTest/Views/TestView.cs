@@ -34,12 +34,7 @@ namespace SyminViewTest.Views
             new HStack
             {
                 new Text("左侧文本"),
-                new Button("打开测试界面")
-                    .OnClick(() =>
-                    {
-                        ControlTestWindow testWindow = new();
-                        testWindow.Show();
-                    })
+                new Button("按钮测试")
                     .Margin(5,0,5,0),
                 new Button("打开Canvas界面")
                     .OnClick(() =>

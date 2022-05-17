@@ -3,8 +3,8 @@
     <!--顶部背景、按钮、可点击文字-->
     <SolidColorBrush x:Key="PrimaryBrush" Color="#1A56F2"/>
     <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>
-    <SolidColorBrush x:Key="Primary.Light" Color="#ECF2FF"/>
-    <SolidColorBrush x:Key="Primary.Shadow" Color="#A4ACBF"/>
+    <SolidColorBrush x:Key="Primary.Light" Color="#FFCFEAFF"/>
+    <SolidColorBrush x:Key="Primary.Shadow" Color="#FF889AC4"/>
     
     <SolidColorBrush x:Key="SecondaryBrush" Color="#3CD9E0"/>
 

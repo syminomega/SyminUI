@@ -4,16 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyminViewTest"
-        xmlns:sv ="clr-namespace:SyminUI;assembly=SyminUI"
-        xmlns:v ="clr-namespace:SyminViewTest.Views"
-        xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="{StaticResource Background.Main}">
-        <Grid.Resources>
-            <v:TestView x:Key="TV"/>
-        </Grid.Resources>
-        <sv:ViewBody ViewDefinition="{StaticResource ResourceKey=TV}"/>
-        <!--<svd:EmbossBorder Width="400" Height="200" CornerRadius="32"/>-->
-    </Grid>
+        Title="MainWindow" Height="450" Width="320">
+    <StackPanel Background="{StaticResource Background.Main}" 
+                Orientation="Vertical" >
+        <Border Height="4"/>
+        <Button Content="Styles Demo"
+                Click="OpenStyleDemo_Click"/>
+        <Button Content="CSharp UI Demo"
+                Click="OpenCSharpUI_Click"/>
+        <Button Content="Custom Control Test"
+                Click="OpenCustomControlDemo_Click"/>
+    </StackPanel>
 </Window>

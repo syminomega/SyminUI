@@ -13,15 +13,6 @@
     <StackPanel Orientation="Vertical"
                 Background="{StaticResource Background.Main}">
         <sv:PropertyField PropertyName="属性" PropertyValue="123" Margin="6,0"/>
-        <TextBox Text="文本输入" HorizontalContentAlignment="Center" Margin="6,0"/>
-        <Button Content="主要按钮" Margin="6,0" Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
-        <Button Content="主要按钮" Margin="6,0" Style="{StaticResource ButtonPrimary}" />
-        <Button Content="默认按钮" Margin="6,0"/>
-        <Button Content="默认按钮" Margin="6,0" IsEnabled="False"/>
-        <svd:EmbossBorder Margin="6,0" Height="180" CornerRadius="40" />
-        <svd:SlotBorder  Margin="6,0" Height="180" Radius="40"/>
-        
-
 
         <sv:EditableTreeView x:Name="myTreeView">
             <sv:EditableTreeView.ItemTemplate>

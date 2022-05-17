@@ -25,5 +25,20 @@ namespace SyminViewTest
         {
             InitializeComponent();
         }
+
+        private void OpenStyleDemo_Click(object sender, RoutedEventArgs e)
+        {
+            new StyleTestWindow().Show();
+        }
+
+        private void OpenCSharpUI_Click(object sender, RoutedEventArgs e)
+        {
+            new ViewTestWindow().Show();
+        }
+
+        private void OpenCustomControlDemo_Click(object sender, RoutedEventArgs e)
+        {
+            new ControlTestWindow().Show();
+        }
     }
 }

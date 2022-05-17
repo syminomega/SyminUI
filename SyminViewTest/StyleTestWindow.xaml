@@ -1,0 +1,46 @@
+﻿<Window x:Class="SyminViewTest.StyleTestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SyminViewTest"
+        xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
+        mc:Ignorable="d"
+        Title="Styles Demo" Height="450" Width="800"
+        Background="{StaticResource Background.Main}"
+        >
+    <Grid Margin="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical">
+            <Button Content="Button Basic"/>
+            <Button Content="Button Basic Disabled" IsEnabled="False"/>
+            <Button Content="Button Primary" 
+                    Style="{StaticResource ButtonPrimary}"/>
+            <Button Content="Button Primary Disabled" 
+                    Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <Grid Height="120" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <svd:SlotBorder Content="Slot" VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                Foreground="{StaticResource PrimaryGradient}"
+                                  FontSize="24" Radius="16"/>
+                <svd:EmbossBorder Content="Emboss" VerticalContentAlignment="Center"
+                                  HorizontalContentAlignment="Center" Grid.Column="1"
+                                  Foreground="{StaticResource PrimaryGradient}"
+                                  FontSize="24" CornerRadius="16"/>
+
+            </Grid>
+            <TextBox Text="Text Box (Input Field)"/>
+            <ProgressBar Height="24" Value="25"/>
+        </StackPanel>
+    </Grid>
+</Window>

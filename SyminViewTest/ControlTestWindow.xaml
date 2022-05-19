@@ -8,8 +8,9 @@
         xmlns:svd ="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         xmlns:se="clr-namespace:SyminUI.Effects;assembly=SyminUI"
         mc:Ignorable="d"
-        
-        Height="400" Width="400">
+        Title="Custom Control Test"
+        Style="{StaticResource Window.Normal}"
+        Height="400" Width="440">
     <StackPanel Orientation="Vertical"
                 Background="{StaticResource Background.Main}">
         <sv:PropertyField PropertyName="属性" PropertyValue="123" Margin="6,0"/>

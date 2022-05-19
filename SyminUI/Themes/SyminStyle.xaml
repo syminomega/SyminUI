@@ -3,6 +3,7 @@
                     xmlns:Controls="clr-namespace:SyminUI.Controls">
     <!--使用SyminStyle前需要先导入Light或Dark颜色资源-->
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Styles/WindowStyle.xaml"/>
         <ResourceDictionary Source="Styles/LabelStyle.xaml"/>
         <ResourceDictionary Source="Styles/ToolTipStyle.xaml"/>
         <ResourceDictionary Source="Styles/ButtonsStyle.xaml"/>

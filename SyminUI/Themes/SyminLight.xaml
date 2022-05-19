@@ -15,7 +15,7 @@
     
     <!--背景色-->
     <SolidColorBrush x:Key="Background.Main" Color="#E8E9EC"/>
-    <SolidColorBrush x:Key="Background.Button" Color="#EDEEF2"/>
+    <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>
     <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>

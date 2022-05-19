@@ -7,8 +7,9 @@
         xmlns:sv ="clr-namespace:SyminUI;assembly=SyminUI"
         xmlns:v ="clr-namespace:SyminViewTest.Views"
         mc:Ignorable="d"
-        Title="ViewTestWindow" Height="450" Width="800">
-    <Grid Background="{StaticResource Background.Main}">
+        Style="{StaticResource Window.Normal}"
+        Title="CSharp UI View" Height="450" Width="800">
+    <Grid>
         <Grid.Resources>
             <v:TestView x:Key="TV"/>
         </Grid.Resources>

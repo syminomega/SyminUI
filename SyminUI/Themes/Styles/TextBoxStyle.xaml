@@ -26,7 +26,7 @@
 
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="{StaticResource Background.TextField}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Background.Border}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="FontSize" Value="14"/>

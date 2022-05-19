@@ -1,0 +1,105 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:svd="clr-namespace:SyminUI.Controls.Decorations">
+
+    <SolidColorBrush x:Key="ProgressBar.Background" Color="#FFE6E6E6"/>
+    <SolidColorBrush x:Key="ProgressBar.Border" Color="#FFBCBCBC"/>
+    <Style TargetType="{x:Type ProgressBar}">
+
+        <Setter Property="Foreground" Value="{StaticResource PrimaryGradient}"/>
+        <Setter Property="Background" Value="{StaticResource Background.Main}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Grid x:Name="TemplateRoot" Margin="8,4">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Determinate"/>
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Animation" 
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.25"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <PointAnimationUsingKeyFrames Storyboard.TargetName="Animation" 
+                                            Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                                            <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5"/>
+                                            <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5"/>
+                                            <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5"/>
+                                        </PointAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <svd:SlotBorder x:Name="backgroundBorder"
+                                        Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        Intensity="0.75" Margin="-8,-4"/>
+                        <Rectangle x:Name="PART_Track" RadiusX="3" RadiusY="3"/>
+                        <Grid x:Name="PART_Indicator" Margin="0,4"
+                              HorizontalAlignment="Left">
+                            <!--自带的，不知道是干啥的-->
+                            <!--<Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" 
+                                       RadiusX="3" RadiusY="3" >
+                                <Rectangle.Effect>
+                                    <BlurEffect Radius="12"/>
+                                </Rectangle.Effect>
+                            </Rectangle>-->
+                            <Grid x:Name="Animation" RenderTransformOrigin="0.5,0.5">
+                                <Grid.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Grid.RenderTransform>
+                                <Border Background="{TemplateBinding Foreground}" 
+                                        CornerRadius="3">
+                                    <Border.Effect>
+                                        <BlurEffect Radius="12"/>
+                                    </Border.Effect>
+                                </Border>
+                                <Border Background="{TemplateBinding Foreground}" 
+                                        CornerRadius="3"/>
+
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--设置水平或垂直-->
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="LayoutTransform" TargetName="TemplateRoot">
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90"/>
+                                </Setter.Value>
+                            </Setter>
+                            <!--调整外边框光影-->
+                            <Setter Property="LayoutTransform" TargetName="backgroundBorder">
+                                <Setter.Value>
+                                    <RotateTransform Angle="90"/>
+                                </Setter.Value>
+                            </Setter>
+                            <!--调整旋转后的边距-->
+                            <Setter Property="Margin" TargetName="backgroundBorder"
+                                    Value="-4,-8"/>
+                            <Setter Property="Margin" TargetName="PART_Indicator"
+                                    Value="4,0"/>
+                        </Trigger>
+                        <!--TODO: Indeterminate Effect-->
+                        <Trigger Property="IsIndeterminate" Value="true">
+                            <!--<Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>-->
+                            <Setter Property="ClipToBounds" TargetName="PART_Indicator" Value="True"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

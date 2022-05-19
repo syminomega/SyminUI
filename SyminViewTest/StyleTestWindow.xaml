@@ -40,7 +40,10 @@
 
             </Grid>
             <TextBox Text="Text Box (Input Field)"/>
-            <ProgressBar Height="24" Value="25"/>
+            <ProgressBar Height="24" IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
+                         Value="{Binding ElementName=progressSlider,Path=Value}"/>
+            <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25"/>
+            <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate"/>
         </StackPanel>
     </Grid>
 </Window>

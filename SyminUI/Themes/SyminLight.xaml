@@ -19,18 +19,28 @@
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>
     <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>
-    <SolidColorBrush x:Key="Background.Border" Color="#A6A9BB"/>
-
-    <!--光照-->
-    <SolidColorBrush x:Key="Shader.Light" Color="#F9FAFE"/>
-    <SolidColorBrush x:Key="Shader.Shadow" Color="#B3B5C1"/>
-    <LinearGradientBrush x:Key="Shader.BorderGradient" StartPoint="0,0" EndPoint="1,0">
+    <!--边框色-->
+    <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
+    <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="White" Offset="0"/>
         <GradientStop Color="Transparent" Offset="1"/>
         <LinearGradientBrush.RelativeTransform>
             <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
         </LinearGradientBrush.RelativeTransform>
     </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Border.Primary.Shaded" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#FF74EAFF" Offset="0"/>
+        <GradientStop Color="Transparent" Offset="1"/>
+        <LinearGradientBrush.RelativeTransform>
+            <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+        </LinearGradientBrush.RelativeTransform>
+    </LinearGradientBrush>
+
+    <!--光照-->
+    <SolidColorBrush x:Key="Shader.Light" Color="#F9FAFE"/>
+    <SolidColorBrush x:Key="Shader.Shadow" Color="#B3B5C1"/>
+
+
 
     <!--左侧菜单背景色-->
     <SolidColorBrush x:Key="Function.Dark" Color="#191A23"/>

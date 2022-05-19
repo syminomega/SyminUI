@@ -36,7 +36,7 @@
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Background.Button}"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Background.Border}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -70,7 +70,7 @@
                         <!--隐藏边框，显示阴影-->
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{StaticResource Shader.BorderGradient}"/>
+                                    Value="{StaticResource Border.Main.Shaded}"/>
                             <Trigger.EnterActions>
                                 <BeginStoryboard x:Name="showEffectBegin"
                                                  Storyboard="{StaticResource Button.FocusEffect}" />
@@ -138,7 +138,7 @@
                         <!--隐藏边框，显示阴影-->
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{StaticResource Shader.BorderGradient}"/>
+                                    Value="{StaticResource Border.Primary.Shaded}"/>
                             <Trigger.EnterActions>
                                 <BeginStoryboard x:Name="showEffectBegin"
                                                  Storyboard="{StaticResource Button.FocusEffect}" />

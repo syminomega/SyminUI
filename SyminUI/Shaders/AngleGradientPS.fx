@@ -9,15 +9,15 @@ static const float PI = 3.14159265f;
 
 float4 main(float2 uv : TEXCOORD) : COLOR
 {
-    //UIµÄÍ¸Ã÷Í¨µÀ
+    //UIçš„é€æ˜é€šé“
     float alpha = tex2D(inputTex, uv).a;
-    //ÇóµÃ¼Ğ½Ç»¡¶È
+    //æ±‚å¾—å¤¹è§’å¼§åº¦
     float angle = atan2(uv.y - center.y, uv.x - center.x) + PI;
-    //×ª»¯Îª 0~1 ·¶Î§
+    //è½¬åŒ–ä¸º 0~1 èŒƒå›´
     angle = (angle / (2 * PI));
-    //ÇóÈ¡·¶Î§³¤¶È
+    //æ±‚å–èŒƒå›´é•¿åº¦
     float rangeWidth = range.y - range.x;
-    //¸ù¾İ·¶Î§½Ø¶Ï
+    //æ ¹æ®èŒƒå›´æˆªæ–­
     angle = max(range.x, angle);
     angle = min(range.y, angle);
 

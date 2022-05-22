@@ -59,6 +59,15 @@
                                   HorizontalContentAlignment="Center" Grid.Column="1"
                                   Foreground="{StaticResource PrimaryGradient}"
                                   FontSize="24" CornerRadius="16"/>
+                <Border Grid.Column="2" Margin="4" CornerRadius="16" BorderThickness="1"
+                        BorderBrush="{StaticResource Border.Main.Shaded}"
+                        Background="{StaticResource Background.Main}">
+                    <TextBlock Text="Card" FontSize="24" HorizontalAlignment="Center"
+                               VerticalAlignment="Center" Foreground="{StaticResource PrimaryGradient}"/>
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="12" Color="#B3B5C1" Opacity="0.6"/>
+                    </Border.Effect>
+                </Border>
 
             </Grid>
             <TextBox Text="Text Box (Input Field)"/>

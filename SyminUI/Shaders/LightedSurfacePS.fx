@@ -1,18 +1,29 @@
 sampler2D inputTex : register(S0);
 float2 mousePos : register(C0);
 float2 uiSize : register(C1);
-float2 lightSize : register(C2);
+float lightSize : register(C2);
 float intensity: register(C3);
+float4 lightColor : register(C4);
 
+static const float PI = 3.14159265f;
 
 float4 main(float2 uv : TEXCOORD) : COLOR
 {
     //UI的透明通道
-    float alpha = tex2D(inputTex, uv).a;
-    //计算鼠标在UV空间位置
-    float2 mousePercent = mousePos / uiSize;
-    //
+    float4 sourceColor = tex2D(inputTex, uv);
+    //计算当前UV值的实际尺寸坐标
+    float xPos = uv.x * uiSize.x;
+    float yPos = uv.y * uiSize.y;
+    //计算当前片元和鼠标位置的实际距离
+    float distanceMouseFrag = length(float2(xPos - mousePos.x, yPos - mousePos.y));
+    //归一化距离(0~1)
+    float uniformedDistance =min(distanceMouseFrag / lightSize,1);
+    //距离转渐进强度(1~0)
+    float intensityFrag = cos(uniformedDistance * PI)/2.0f + 0.5f;
+    //计算线性减淡
+    float3 linearDodge = sourceColor.xyz + lightColor.xyz * intensityFrag * intensity;
+    //计算透明度影响
+    float3 finalColor = linearDodge * sourceColor.a;
 
-
-    return float4(1,1,1, alpha);
+    return float4(finalColor, sourceColor.a);
 }

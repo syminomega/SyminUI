@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <None Remove="Shaders\AngleGradientPS.ps" />
+    <None Remove="Shaders\LightedSurfacePS.ps" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Shaders\AngleGradientPS.ps" />
+    <Resource Include="Shaders\LightedSurfacePS.ps" />
   </ItemGroup>
 
   <ItemGroup>

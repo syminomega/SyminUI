@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Title="Styles Demo" Height="450" Width="800"
         Style="{StaticResource Window.Normal}"
+        xmlns:sve ="clr-namespace:SyminUI.Effects;assembly=SyminUI"
         >
     <Grid Margin="4">
         <Grid.ColumnDefinitions>
@@ -75,6 +76,13 @@
                          Value="{Binding ElementName=progressSlider,Path=Value}"/>
             <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25"/>
             <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate"/>
+            <Border Background="#FF256CEE" Width="200" Height="40" CornerRadius="16">
+                <TextBlock Text="123123123123123" Foreground="{StaticResource Text.Secondary}" FontSize="18"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Effect>
+                    <sve:LightedSurfaceEffect Intensity="0.4" LightSize="80"/>
+                </Border.Effect>
+            </Border>
         </StackPanel>
     </Grid>
 </Window>

@@ -83,6 +83,7 @@
                     <sve:LightedSurfaceEffect Intensity="0.4" LightSize="80"/>
                 </Border.Effect>
             </Border>
+            <svd:LightedSurface Width="300" Height="80" Background="AliceBlue"/>
         </StackPanel>
     </Grid>
 </Window>

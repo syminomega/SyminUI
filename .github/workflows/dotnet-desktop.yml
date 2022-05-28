@@ -1,0 +1,45 @@
+name: dotnet package
+
+on: 
+  push:
+    # branches-ignore:
+    #   - 'archive'
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  pull_request:
+    # branches-ignore:
+    #   - 'archive'
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        configuration: 
+          - Debug
+          #- Release
+        dotnet-version:
+          - '6.0.x'
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1.7.2
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore --configuration ${{ matrix.configuration }} --output bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+    - name: Upload articraft
+      uses: actions/upload-artifact@v2
+      with:
+        name: SyminUI-${{ matrix.configuration }}-${{ github.sha }}
+        path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}

@@ -3,7 +3,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Decorations/EmbossBorder.xaml"/>
         <ResourceDictionary Source="Decorations/SlotBorder.xaml"/>
-        <ResourceDictionary Source="Decorations/CardBorder.xaml"/>
         <ResourceDictionary Source="Decorations/LightedSurface.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

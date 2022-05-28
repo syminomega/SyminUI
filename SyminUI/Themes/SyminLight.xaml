@@ -23,7 +23,7 @@
     <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="White" Offset="0"/>
-        <GradientStop Color="Transparent" Offset="1"/>
+        <GradientStop Color="#FFA7ADBF" Offset="1"/>
         <LinearGradientBrush.RelativeTransform>
             <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
         </LinearGradientBrush.RelativeTransform>
@@ -37,8 +37,10 @@
     </LinearGradientBrush>
 
     <!--光照-->
+    <Color x:Key="Shader.ShadowColor">#B3B5C1</Color>
+    
     <SolidColorBrush x:Key="Shader.Light" Color="#F9FAFE"/>
-    <SolidColorBrush x:Key="Shader.Shadow" Color="#B3B5C1"/>
+    <SolidColorBrush x:Key="Shader.Shadow" Color="{StaticResource Shader.ShadowColor}"/>
 
 
 

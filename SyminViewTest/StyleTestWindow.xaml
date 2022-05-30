@@ -14,6 +14,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
         <!--菜单栏-->
         <Grid Height="32" VerticalAlignment="Top" Margin="0,-32,0,0">
@@ -55,7 +56,7 @@
                 <svd:SlotBorder Content="Slot" VerticalContentAlignment="Center"
                                 HorizontalContentAlignment="Center"
                                 Foreground="{StaticResource PrimaryGradient}"
-                                  FontSize="24" Radius="16"/>
+                                FontSize="24" Radius="16"/>
                 <svd:EmbossBorder Content="Emboss" VerticalContentAlignment="Center"
                                   HorizontalContentAlignment="Center" Grid.Column="1"
                                   Foreground="{StaticResource PrimaryGradient}"
@@ -74,6 +75,13 @@
             <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate"/>
             <svd:LightedSurface  Height="80" Background="{StaticResource Background.Main}" CornerRadius="16"/>
             <svc:CardBorder Height="40" Margin="4"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="2">
+            <Slider x:Name="progressVerticalSlider" Orientation="Vertical" 
+                    Minimum="0" Maximum="100" Value="25"/>
+            <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100"
+                         Width="32" Value="{Binding ElementName=progressVerticalSlider,Path=Value}"/>
         </StackPanel>
     </Grid>
 </Window>

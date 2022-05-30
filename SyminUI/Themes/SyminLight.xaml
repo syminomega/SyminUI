@@ -8,11 +8,11 @@
     
     <SolidColorBrush x:Key="SecondaryBrush" Color="#3CD9E0"/>
 
-    <LinearGradientBrush x:Key="PrimaryGradient" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="PrimaryGradient" StartPoint="0,1" EndPoint="1,0">
         <GradientStop Color="#1A56F2"/>
         <GradientStop Color="#3CD9E0" Offset="1"/>
     </LinearGradientBrush>
-    
+
     <!--背景色-->
     <SolidColorBrush x:Key="Background.Main" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>

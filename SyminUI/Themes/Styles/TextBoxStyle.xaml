@@ -3,7 +3,7 @@
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations">
     <!--聚焦对象-->
     <Storyboard x:Key="TextBox.FocusEffect">
-        <DoubleAnimation To="0.8" Duration="0:0:0.2"
+        <DoubleAnimation To="0.4" Duration="0:0:0.2"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="Intensity"/>
         <BooleanAnimationUsingKeyFrames Duration="0"

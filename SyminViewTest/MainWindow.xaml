@@ -7,9 +7,8 @@
         mc:Ignorable="d"
         Title="Symin UI" Height="450" Width="400"
         Style="{StaticResource Window.Normal}">
-    <StackPanel Background="{StaticResource Background.Main}" 
+    <StackPanel Background="{StaticResource Background.Main}" Margin="4" 
                 Orientation="Vertical" >
-        <Border Height="4"/>
         <Button Content="Styles Demo"
                 Click="OpenStyleDemo_Click"/>
         <Button Content="CSharp UI Demo"

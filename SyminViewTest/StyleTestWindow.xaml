@@ -55,16 +55,16 @@
                 </Grid.ColumnDefinitions>
                 <svd:SlotBorder Content="Slot" VerticalContentAlignment="Center"
                                 HorizontalContentAlignment="Center"
-                                Foreground="{StaticResource PrimaryGradient}"
+                                Foreground="{StaticResource Gradient.Primary}"
                                 FontSize="24" Radius="16"/>
                 <svd:EmbossBorder Content="Emboss" VerticalContentAlignment="Center"
                                   HorizontalContentAlignment="Center" Grid.Column="1"
-                                  Foreground="{StaticResource PrimaryGradient}"
+                                  Foreground="{StaticResource Gradient.Primary}"
                                   FontSize="24" CornerRadius="16"/>
                 <svc:CardBorder Content="Card" Grid.Column="2" FontSize="24"
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center" 
-                                Foreground="{StaticResource PrimaryGradient}"
+                                Foreground="{StaticResource Gradient.Primary}"
                                 CornerRadius="16"/>
 
             </Grid>

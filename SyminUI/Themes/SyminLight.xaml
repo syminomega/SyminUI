@@ -1,18 +1,38 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!--顶部背景、按钮、可点击文字-->
-    <SolidColorBrush x:Key="PrimaryBrush" Color="#1A56F2"/>
-    <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>
-    <SolidColorBrush x:Key="Primary.Light" Color="#FFCFEAFF"/>
-    <SolidColorBrush x:Key="Primary.Shadow" Color="#FF889AC4"/>
+    <Color x:Key="PrimaryColor">#1A56F2</Color>
+    <Color x:Key="SecondaryColor">#3CD9E0</Color>
     
-    <SolidColorBrush x:Key="SecondaryBrush" Color="#3CD9E0"/>
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+    <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>
+    <SolidColorBrush x:Key="Primary.Light" Color="#CFEAFF"/>
+    <SolidColorBrush x:Key="Primary.Shadow" Color="#889AC4"/>
+    
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}"/>
 
-    <LinearGradientBrush x:Key="PrimaryGradient" StartPoint="0,1" EndPoint="1,0">
-        <GradientStop Color="#1A56F2"/>
-        <GradientStop Color="#3CD9E0" Offset="1"/>
+    <LinearGradientBrush x:Key="Gradient.Primary" StartPoint="0,1" EndPoint="1,0">
+        <GradientStop Color="{StaticResource PrimaryColor}"/>
+        <GradientStop Color="{StaticResource SecondaryColor}" Offset="1"/>
     </LinearGradientBrush>
-
+    
+    <Color x:Key="DangerColor">#EB2E1F</Color>
+    <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>
+    <SolidColorBrush x:Key="Danger.Disabled" Color="#D27F79"/>
+    <SolidColorBrush x:Key="Danger.Light" Color="#FFCFCF"/>
+    <SolidColorBrush x:Key="Danger.Shadow" Color="#C48888"/>
+    
+    <Color x:Key="WarningColor">#F0BD15</Color>
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
+    <SolidColorBrush x:Key="Warning.Disabled" Color="#E9D48E"/>
+    <SolidColorBrush x:Key="Warning.Light" Color="#FFFECF"/>
+    <SolidColorBrush x:Key="Warning.Shadow" Color="#C4BF88"/>
+    
+    <Color x:Key="SuccessColor">#28B82F</Color>
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
+    <SolidColorBrush x:Key="Success.Disabled" Color="#8CB68E"/>
+    <SolidColorBrush x:Key="Success.Light" Color="#D4FFCF"/>
+    <SolidColorBrush x:Key="Success.Shadow" Color="#8FC488"/>
+    
     <!--背景色-->
     <SolidColorBrush x:Key="Background.Main" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>

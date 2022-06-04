@@ -45,6 +45,14 @@
                     Style="{StaticResource ButtonPrimary}"/>
             <Button Content="Button Primary Disabled" 
                     Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
+            <Button Content="Button Danger" 
+                    Style="{StaticResource ButtonDanger}"/>
+            <Button Content="Button Danger Disabled" 
+                    Style="{StaticResource ButtonDanger}" IsEnabled="False"/>
+            <Button Content="Button Success" 
+                    Style="{StaticResource ButtonSuccess}"/>
+            <Button Content="Button Success Disabled" 
+                    Style="{StaticResource ButtonSuccess}" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Column="1">
             <Grid Height="120" >

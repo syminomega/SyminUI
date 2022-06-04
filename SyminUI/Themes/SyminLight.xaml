@@ -42,14 +42,7 @@
     <!--边框色-->
     <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
-        <GradientStop Color="White" Offset="0"/>
-        <GradientStop Color="Transparent" Offset="1"/>
-        <LinearGradientBrush.RelativeTransform>
-            <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
-        </LinearGradientBrush.RelativeTransform>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="Border.Primary.Shaded" StartPoint="0,0" EndPoint="1,0">
-        <GradientStop Color="#FF74EAFF" Offset="0"/>
+        <GradientStop Color="#AAFFFFFF" Offset="0"/>
         <GradientStop Color="Transparent" Offset="1"/>
         <LinearGradientBrush.RelativeTransform>
             <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>

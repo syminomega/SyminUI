@@ -81,7 +81,10 @@
                          Value="{Binding ElementName=progressSlider,Path=Value}"/>
             <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25"/>
             <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate"/>
-            <svd:LightedSurface  Height="80" Background="{StaticResource Background.Main}" CornerRadius="16"/>
+            <CheckBox Content="Check Box Indeterminate Disabled" IsChecked="{x:Null}" IsEnabled="False"/>
+            <svd:LightedSurface  Height="80" Margin="4"
+                                 Background="{StaticResource Background.Main}"
+                                 CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
             <svc:CardBorder Height="40" Margin="4"/>
         </StackPanel>
 

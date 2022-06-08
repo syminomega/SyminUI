@@ -10,12 +10,11 @@ namespace SyminUI.Controls.Attach
 {
     public class ShadingElement
     {
-
+        #region LightBrush
         public static SolidColorBrush GetLightBrush(DependencyObject obj)
         {
             return (SolidColorBrush)obj.GetValue(LightBrushProperty);
         }
-
         public static void SetLightBrush(DependencyObject obj, SolidColorBrush value)
         {
             obj.SetValue(LightBrushProperty, value);
@@ -27,9 +26,9 @@ namespace SyminUI.Controls.Attach
                 typeof(SolidColorBrush), typeof(ShadingElement),
                 new PropertyMetadata(Brushes.White));
 
+        #endregion
 
-
-
+        #region ShadowBrush
         public static SolidColorBrush GetShadowBrush(DependencyObject obj)
         {
             return (SolidColorBrush)obj.GetValue(ShadowBrushProperty);
@@ -46,9 +45,9 @@ namespace SyminUI.Controls.Attach
                 typeof(SolidColorBrush), typeof(ShadingElement),
                 new PropertyMetadata(Brushes.Black));
 
+        #endregion
 
-
-
+        #region DisabledBackground
         public static Brush GetDisabledBackground(DependencyObject obj)
         {
             return (Brush)obj.GetValue(DisabledBackgroundProperty);
@@ -65,8 +64,9 @@ namespace SyminUI.Controls.Attach
                 typeof(Brush), typeof(ShadingElement),
                 new PropertyMetadata(Brushes.Gray));
 
+        #endregion
 
-
+        #region DisabledForeground
         public static Brush GetDisabledForeground(DependencyObject obj)
         {
             return (Brush)obj.GetValue(DisabledForegroundProperty);
@@ -83,8 +83,9 @@ namespace SyminUI.Controls.Attach
                 typeof(Brush), typeof(ShadingElement),
                 new PropertyMetadata(Brushes.GhostWhite));
 
+        #endregion
 
-
+        #region LightedBorder
         public static Brush GetLightedBorder(DependencyObject obj)
         {
             return (Brush)obj.GetValue(LightedBorderProperty);
@@ -100,6 +101,8 @@ namespace SyminUI.Controls.Attach
             DependencyProperty.RegisterAttached("LightedBorder",
                 typeof(Brush), typeof(ShadingElement),
                 new PropertyMetadata(Brushes.White));
+
+        #endregion
 
 
     }

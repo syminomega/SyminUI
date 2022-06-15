@@ -40,6 +40,7 @@
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>
     <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>
+    <SolidColorBrush x:Key="Background.Label" Color="#F2F2F2"/>
     <!--边框色-->
     <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">

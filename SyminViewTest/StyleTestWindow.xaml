@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SyminViewTest"
         xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         mc:Ignorable="d"
-        Title="Styles Demo" Height="450" Width="800"
+        Title="Styles Demo" Height="500" Width="800"
         Style="{StaticResource Window.Normal}"
         xmlns:svc="clr-namespace:SyminUI.Controls;assembly=SyminUI"
         >
@@ -85,7 +85,12 @@
             <svd:LightedSurface  Height="80" Margin="4"
                                  Background="{StaticResource Background.Main}"
                                  CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
-            <svc:CardBorder Height="40" Margin="4"/>
+            <UniformGrid Rows="2" Columns="2">
+                <Label Content="Label Default"/>
+                <Label Content="Label Primary" Style="{StaticResource LabelPrimary}"/>
+                <Label Content="Label Danger" Style="{StaticResource LabelDanger}"/>
+                <Label Content="Label Success" Style="{StaticResource LabelSuccess}"/>
+            </UniformGrid>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Column="2">

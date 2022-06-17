@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SyminUI.Controls
+namespace SyminUI.Controls.Decorations
 {
     public class CardBorder : ContentControl
     {
@@ -46,7 +46,7 @@ namespace SyminUI.Controls
 
         // Using a DependencyProperty as the backing store for LightSize.
         public static readonly DependencyProperty LightSizeProperty =
-            DependencyProperty.Register("LightSize", 
+            DependencyProperty.Register("LightSize",
                 typeof(double), typeof(CardBorder),
                 new PropertyMetadata(200.0));
 

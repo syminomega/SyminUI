@@ -8,7 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/TestStyles.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminLight.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminDecoration.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminBasic.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminExtra.xaml"/>
             </ResourceDictionary.MergedDictionaries>

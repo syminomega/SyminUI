@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:SyminViewTest"
         xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         mc:Ignorable="d"
-        Title="Styles Demo" Height="500" Width="800"
+        Title="Styles Demo" Height="300" Width="800"
         Style="{StaticResource Window.Normal}"
-        xmlns:svc="clr-namespace:SyminUI.Controls;assembly=SyminUI"
         >
     <Grid Margin="4">
         <Grid.ColumnDefinitions>
@@ -37,23 +36,26 @@
             </Menu>
 
         </Grid>
-
-        <StackPanel Orientation="Vertical">
-            <Button Content="Button Basic"/>
-            <Button Content="Button Basic Disabled" IsEnabled="False"/>
-            <Button Content="Button Primary" 
+        
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <Button Content="Button Basic"/>
+                <Button Content="Button Basic Disabled" IsEnabled="False"/>
+                <Button Content="Button Primary" 
                     Style="{StaticResource ButtonPrimary}"/>
-            <Button Content="Button Primary Disabled" 
+                <Button Content="Button Primary Disabled" 
                     Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
-            <Button Content="Button Danger" 
+                <Button Content="Button Danger" 
                     Style="{StaticResource ButtonDanger}"/>
-            <Button Content="Button Danger Disabled" 
+                <Button Content="Button Danger Disabled" 
                     Style="{StaticResource ButtonDanger}" IsEnabled="False"/>
-            <Button Content="Button Success" 
+                <Button Content="Button Success" 
                     Style="{StaticResource ButtonSuccess}"/>
-            <Button Content="Button Success Disabled" 
+                <Button Content="Button Success Disabled" 
                     Style="{StaticResource ButtonSuccess}" IsEnabled="False"/>
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        
         <StackPanel Orientation="Vertical" Grid.Column="1">
             <Grid Height="120" >
                 <Grid.ColumnDefinitions>
@@ -69,7 +71,7 @@
                                   HorizontalContentAlignment="Center" Grid.Column="1"
                                   Foreground="{StaticResource Gradient.Primary}"
                                   FontSize="24" CornerRadius="16"/>
-                <svc:CardBorder Content="Card" Grid.Column="2" FontSize="24"
+                <svd:CardBorder Content="Card" Grid.Column="2" FontSize="24"
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center" 
                                 Foreground="{StaticResource Gradient.Primary}"
@@ -98,6 +100,7 @@
                     Minimum="0" Maximum="100" Value="25"/>
             <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100"
                          Width="24" Value="{Binding ElementName=progressVerticalSlider,Path=Value}"/>
+            <ScrollBar Orientation="Vertical"/>
         </StackPanel>
     </Grid>
 </Window>

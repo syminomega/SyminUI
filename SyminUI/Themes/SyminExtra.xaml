@@ -8,6 +8,6 @@
         <ResourceDictionary Source="Controls/DraggableCanvasItemStyle.xaml"/>
         <ResourceDictionary Source="Controls/DraggableCanvasStyle.xaml"/>
         <ResourceDictionary Source="Controls/NodeViewStyle.xaml"/>
-        <ResourceDictionary Source="Controls/CardBorder.xaml"/>
+        <ResourceDictionary Source="Decorations/CardBorder.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:svc="clr-namespace:SyminUI.Controls"
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations">
-    <Style TargetType="{x:Type svc:CardBorder}">
+    <Style TargetType="{x:Type svd:CardBorder}">
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="Background" Value="{StaticResource Background.Main}"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
@@ -10,7 +10,7 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type svc:CardBorder}">
+                <ControlTemplate TargetType="{x:Type svd:CardBorder}">
                     <Border>
                         <svd:LightedSurface CornerRadius="{TemplateBinding CornerRadius}"
                                             Foreground="{TemplateBinding Foreground}"

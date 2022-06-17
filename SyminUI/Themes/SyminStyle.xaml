@@ -4,6 +4,7 @@
     <!--使用SyminStyle前需要先导入Light或Dark颜色资源-->
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Styles/WindowStyle.xaml"/>
+        <ResourceDictionary Source="Styles/ScrollViewerStyle.xaml"/>
         <ResourceDictionary Source="Styles/LabelStyle.xaml"/>
         <ResourceDictionary Source="Styles/ToolTipStyle.xaml"/>
         <ResourceDictionary Source="Styles/ButtonsStyle.xaml"/>
@@ -12,5 +13,4 @@
         <ResourceDictionary Source="Styles/SliderStyle.xaml"/>
         <ResourceDictionary Source="Styles/CheckBoxStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-
 </ResourceDictionary>

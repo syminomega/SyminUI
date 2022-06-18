@@ -25,8 +25,8 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Border x:Name="PART_Header" Grid.ColumnSpan="2" CornerRadius="6" BorderThickness="1" 
-                                BorderBrush="{StaticResource Function.LightBorder}"
-                                Background="{StaticResource Function.LightBackground}">
+                                BorderBrush="{StaticResource Border.MainBrush}"
+                                Background="{StaticResource Background.Button}">
                                 <Border Margin="36,0,0,0" >
                                     <ContentPresenter ContentSource="Header" 
                                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
@@ -35,7 +35,7 @@
                             </Border>
                             <!--左侧折叠按钮-->
                             <Button x:Name="PART_FoldButton" Padding="0" Style="{StaticResource LeftCornerButton}"
-                                    Background="{StaticResource Function.LightBorder}" >
+                                    Background="{StaticResource Border.MainBrush}" >
                                 <Viewbox Height="18" RenderTransformOrigin="0.5,0.5" x:Name="ArrowViewBox">
                                     <Viewbox.RenderTransform>
                                         <TransformGroup>
@@ -52,11 +52,11 @@
                                     <Button.Content>
                                         <Viewbox Height="18">
                                             <Grid>
-                                                <Path Fill="{StaticResource Function.Delete}" Width="1024" Height="1024"
+                                                <Path Fill="{StaticResource DangerBrush}" Width="1024" Height="1024"
                                                   Data="M188.1 925.2c-22.9 0-45.7-8.7-63.2-26.2-34.9-34.9-34.9-91.4 0-126.3l647.8-647.8
                                                       c34.9-34.9 91.4-34.9 126.3 0 34.9 34.9 34.9 91.4 0 126.3L251.3 899.1
                                                       c-17.5 17.4-40.3 26.1-63.2 26.1z"/>
-                                                <Path Fill="{StaticResource Function.Delete}" Width="1024" Height="1024"
+                                                <Path Fill="{StaticResource DangerBrush}" Width="1024" Height="1024"
                                                   Data="M835.9 925.2c-22.9 0-45.7-8.7-63.2-26.2L124.9 251.3
                                                       C90 216.4 90 159.9 124.9 125s91.4-34.9 126.3 0L899 772.8
                                                       c34.9 34.9 34.9 91.4 0 126.3-17.4 17.4-40.2 26.1-63.1 26.1z"/>
@@ -66,7 +66,7 @@
                                 </Button>
                                 <!--添加对象按钮-->
                                 <Button Width="32" Padding="4" Style="{StaticResource RightCornerButton}"
-                                    Background="{StaticResource Additional.Green}">
+                                    Background="{StaticResource SuccessBrush}">
                                     <Button.Content>
                                         <Viewbox Height="22">
                                             <Grid>

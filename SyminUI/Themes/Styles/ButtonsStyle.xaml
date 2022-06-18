@@ -155,8 +155,8 @@
             <CornerRadius x:Key="RoundedCorner" TopLeft="6" TopRight="6" BottomRight="6" BottomLeft="6"/>
         </Style.Resources>
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Function.LightBackground}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Function.LightBorder}"/>
+        <Setter Property="Background" Value="{StaticResource Background.Button}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -188,7 +188,7 @@
                             <Setter Property="Background" TargetName="border" 
                                     Value="#F3F3F3"/>
                             <Setter Property="BorderBrush" TargetName="border"
-                                    Value="{StaticResource PrimaryHighlight}"/>
+                                    Value="{StaticResource Primary.Light}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" TargetName="border" 
@@ -198,7 +198,7 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="border" 
-                                    Value="{StaticResource Function.Grey}"/>
+                                    Value="{StaticResource Background.Button.Disabled}"/>
                             <Setter Property="BorderBrush" TargetName="border" 
                                     Value="{StaticResource Additional.Grey}"/>
                             <Setter Property="TextElement.Foreground" TargetName="contentPresenter" 
@@ -259,7 +259,7 @@
                             <Setter Property="Background" TargetName="border" 
                                     Value="{StaticResource Additional.Grey}"/>
                             <Setter Property="TextElement.Foreground" TargetName="contentPresenter" 
-                                    Value="{StaticResource Function.Grey}"/>
+                                    Value="{StaticResource Background.Button.Disabled}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

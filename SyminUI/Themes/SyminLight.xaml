@@ -41,6 +41,9 @@
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>
     <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>
     <SolidColorBrush x:Key="Background.Label" Color="#F2F2F2"/>
+    <!--实色填充的系统控件：滚动条、GridSplitter等-->
+    <SolidColorBrush x:Key="Background.Handler" Color="#87898A"/>
+    <SolidColorBrush x:Key="Background.Handler.Focused" Color="#5E5E5E"/>
     <!--边框色-->
     <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
@@ -57,32 +60,6 @@
     <SolidColorBrush x:Key="Shader.Light" Color="#F9FAFE"/>
     <SolidColorBrush x:Key="Shader.Shadow" Color="{StaticResource Shader.ShadowColor}"/>
 
-
-
-    <!--左侧菜单背景色-->
-    <SolidColorBrush x:Key="Function.Dark" Color="#191A23"/>
-    <!--按钮选择、点缀色-->
-    <SolidColorBrush x:Key="PrimaryLight" Color="#57A3F3"/>
-    <!--按钮高亮-->
-    <SolidColorBrush x:Key="PrimaryHighlight" Color="#FF78B6F7"/>
-    <!--亮色背景色-->
-    <SolidColorBrush x:Key="Function.LightBackground" Color="#F8F8F8"/>
-    <!--亮色边框色-->
-    <SolidColorBrush x:Key="Function.LightBorder" Color="#FFC8C8C8"/>
-    <!--提示、警戒反馈-->
-    <SolidColorBrush x:Key="Function.Alert" Color="#FF9900"/>
-    <!--删除按钮-->
-    <SolidColorBrush x:Key="Function.Delete" Color="#ED4014"/>
-    <!--不可用状态、分割线-->
-    <SolidColorBrush x:Key="Function.Grey" Color="#CCCCCC"/>
-    <!--附加颜色-->
-    <SolidColorBrush x:Key="Additional.Green" Color="#2FC25A"/>
-    <SolidColorBrush x:Key="Additional.Red" Color="#F46C6C"/>
-    <!--不可用对象文本-->
-    <SolidColorBrush x:Key="Additional.Grey" Color="#90939A"/>
-    <SolidColorBrush x:Key="Additional.Blue" Color="#35B5E6"/>
-    <SolidColorBrush x:Key="Additional.Purple" Color="#9A66E4"/>
-    <SolidColorBrush x:Key="Additional.Background" Color="#F6F7F9"/>
     <!--文本颜色-->
     <SolidColorBrush x:Key="Text.Main" Color="#515A6E"/>
     <SolidColorBrush x:Key="Text.Main.Disabled" Color="#80515A6E"/>
@@ -90,13 +67,16 @@
     <SolidColorBrush x:Key="Text.Contrast" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="Text.Contrast.Disabled" Color="#80FFFFFF"/>
 
+    <SolidColorBrush x:Key="Additional.Blue" Color="#35B5E6"/>
+    <SolidColorBrush x:Key="Additional.Purple" Color="#9A66E4"/>
+
     <!--聚焦对象视觉效果-->
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
                     <Rectangle Margin="2" StrokeDashArray="4 1" RadiusX="5" RadiusY="5"
-                               Stroke="{StaticResource Additional.Grey}" 
+                               Stroke="{StaticResource Additional.Blue}" 
                                SnapsToDevicePixels="true" StrokeThickness="1"/>
                 </ControlTemplate>
             </Setter.Value>

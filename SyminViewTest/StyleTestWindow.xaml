@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SyminViewTest"
         xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         mc:Ignorable="d"
-        Title="Styles Demo" Height="300" Width="800"
+        Title="Styles Demo" Height="600" Width="800"
         Style="{StaticResource Window.Normal}"
         >
     <Grid Margin="4">
@@ -38,7 +38,7 @@
         </Grid>
         
         <ScrollViewer>
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" Margin="4">
                 <Button Content="Button Basic"/>
                 <Button Content="Button Basic Disabled" IsEnabled="False"/>
                 <Button Content="Button Primary" 
@@ -100,7 +100,6 @@
                     Minimum="0" Maximum="100" Value="25"/>
             <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100"
                          Width="24" Value="{Binding ElementName=progressVerticalSlider,Path=Value}"/>
-            <ScrollBar Orientation="Vertical"/>
         </StackPanel>
     </Grid>
 </Window>

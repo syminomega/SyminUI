@@ -12,6 +12,8 @@ Currently is in early preview stage. **Pull requests are not available at this m
 ![Styles Demo](./Images/StylesDemo.jpg)
 
 ## Known Issues 已知问题
++ Preview error in designer.\
+在VS的设计器中会显示异常无法预览。
 + Progress bar vertical style does not show shader effect.\
 进度条垂直样式不显示辉光效果。
 + Progress indeterminate style does not work correctly.\

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SyminViewTest"
         xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         mc:Ignorable="d"
-        Title="Styles Demo" Height="600" Width="800"
+        Title="Styles Demo" Height="480" Width="800"
         Style="{StaticResource Window.Normal}"
         >
     <Grid Margin="4">
@@ -53,6 +53,14 @@
                     Style="{StaticResource ButtonSuccess}"/>
                 <Button Content="Button Success Disabled" 
                     Style="{StaticResource ButtonSuccess}" IsEnabled="False"/>
+
+                <Label Content="Label Default Disabled" IsEnabled="False"/>
+                <Label Content="Label Primary Disabled" 
+                       Style="{StaticResource LabelPrimary}" IsEnabled="False"/>
+                <Label Content="Label Danger Disabled" 
+                       Style="{StaticResource LabelDanger}" IsEnabled="False"/>
+                <Label Content="Label Success Disabled" 
+                       Style="{StaticResource LabelSuccess}" IsEnabled="False"/>
             </StackPanel>
         </ScrollViewer>
         
@@ -89,9 +97,12 @@
                                  CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
             <UniformGrid Rows="2" Columns="2">
                 <Label Content="Label Default"/>
-                <Label Content="Label Primary" Style="{StaticResource LabelPrimary}"/>
-                <Label Content="Label Danger" Style="{StaticResource LabelDanger}"/>
-                <Label Content="Label Success" Style="{StaticResource LabelSuccess}"/>
+                <Label Content="Label Primary" 
+                       Style="{StaticResource LabelPrimary}"/>
+                <Label Content="Label Danger" 
+                       Style="{StaticResource LabelDanger}"/>
+                <Label Content="Label Success" 
+                       Style="{StaticResource LabelSuccess}"/>
             </UniformGrid>
         </StackPanel>
 

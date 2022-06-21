@@ -4,6 +4,7 @@
         <ResourceDictionary Source="Decorations/EmbossBorder.xaml"/>
         <ResourceDictionary Source="Decorations/SlotBorder.xaml"/>
         <ResourceDictionary Source="Decorations/LightedSurface.xaml"/>
+        <ResourceDictionary Source="Primitives/CommonGeometry.xaml"/>
         <ResourceDictionary Source="Primitives/RepeatButtonTransparent.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

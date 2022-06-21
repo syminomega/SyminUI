@@ -2,23 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sva="clr-namespace:SyminUI.Controls.Attach">
 
-    <PathGeometry x:Key="UpArrow" 
-                  Figures="M12.84,7.43,7,17.55A3.65,3.65,0,0,0,10.16,23
-                  H21.84A3.65,3.65,0,0,0,25,17.55L19.16,7.43
-                  A3.65,3.65,0,0,0,12.84,7.43Z"/>
-    <PathGeometry x:Key="DownArrow"
-                  Figures="M19.16,24.57,25,14.45A3.65,3.65,0,0,0,21.84,9
-                  H10.16A3.65,3.65,0,0,0,7,14.45l5.84,10.12
-                  A3.65,3.65,0,0,0,19.16,24.57Z"/>
-    <PathGeometry x:Key="LeftArrow"
-                  Figures="M7.43,19.16,17.55,25A3.65,3.65,0,0,0,23,21.84
-                  V10.16A3.65,3.65,0,0,0,17.55,7
-                  L7.43,12.84A3.65,3.65,0,0,0,7.43,19.16Z"/>
-    <PathGeometry x:Key="RightArrow"
-                  Figures="M24.57,12.84,14.45,7A3.65,3.65,0,0,0,9,10.16
-                  V21.84A3.65,3.65,0,0,0,14.45,25l10.12-5.84
-                  A3.65,3.65,0,0,0,24.57,12.84Z"/>
-    
     <!--显示两端按钮-->
     <Storyboard x:Key="ShowScrollItem">
         <DoubleAnimation To="1" Duration="0:0:0.2"

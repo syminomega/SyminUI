@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyminViewTest"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Symin UI" Height="450" Width="400"
         Style="{StaticResource Window.Normal}">
-    <StackPanel Background="{StaticResource Background.Main}" Margin="4" 
-                Orientation="Vertical" >
+    <StackPanel Margin="4" Orientation="Vertical" >
         <Button Content="Styles Demo"
                 Click="OpenStyleDemo_Click"/>
         <Button Content="CSharp UI Demo"

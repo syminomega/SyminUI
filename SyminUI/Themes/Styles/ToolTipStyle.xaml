@@ -1,45 +1,4 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style TargetType="{x:Type ToolTip}">
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Top"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ToolTip">
-                    <Grid Margin="10">
-                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                            <Grid.Effect>
-                                <DropShadowEffect Direction="-45" BlurRadius="10" ShadowDepth="0" Color="Black" Opacity="0.4"/>
-                            </Grid.Effect>
-                            <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition Height="5*"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition Width="1*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Viewbox Grid.Row="0" Grid.Column="0" Stretch="Uniform"	HorizontalAlignment="Left" Margin="10,0,0,0">
-                                <Path Data="M48.75,116.75 L40.5,124 57.25,124 z" Fill="{TemplateBinding Background}" HorizontalAlignment="Left" Height="8.25"  Stretch="Fill" Stroke="{TemplateBinding Background}" VerticalAlignment="Top" Width="17.75"/>
-                            </Viewbox>
-                            <Border Grid.Row="1" x:Name="Root" Grid.ColumnSpan="2"  CornerRadius="6" Margin="0,-2,0,0"
-                                    Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
-                                <Border.Resources>
-                                    <Storyboard x:Key="Visible State"/>
-                                    <Storyboard x:Key="Normal State"/>
-                                </Border.Resources>
-                                <ContentPresenter TextBlock.Foreground="{StaticResource Text.Main}"
-                              Content="{TemplateBinding Content}"
-                              ContentTemplate="{TemplateBinding ContentTemplate}"
-                              Cursor="{TemplateBinding Cursor}"
-                              Margin="{TemplateBinding Padding}"/>
-                            </Border>
-                        </Grid>
-                    </Grid>
-                    
-                </ControlTemplate>
-            </Setter.Value>
-
-        </Setter>
-    </Style>
+    
 </ResourceDictionary>

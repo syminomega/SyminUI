@@ -12,22 +12,36 @@
         >
     
     <sva:WindowElement.TitleBar>
-        <Menu Background="Transparent" FontSize="14"
-              Foreground="{StaticResource Text.Main}">
+        <Menu>
             <MenuItem Header="File" >
                 <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
             </MenuItem>
 
             <MenuItem Header="Edit">
-
+                <MenuItem Header="Delete"/>
+                <MenuItem Header="Edit Mode" IsCheckable="True" IsChecked="True"/>
             </MenuItem>
+
+            <MenuItem Header="Check" IsCheckable="True" IsChecked="True"/>
+
             <MenuItem Header="Help">
                 <MenuItem Header="About"/>
             </MenuItem>
 
         </Menu>
     </sva:WindowElement.TitleBar>
-    
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenuDemo">
+            <MenuItem Header="MenuItem01"/>
+            <MenuItem Header="MenuItem02"/>
+            <MenuItem Header="MenuItem03">
+                <MenuItem Header="MenuItemA1"/>
+                <MenuItem Header="MenuItemA2"/>
+                <MenuItem Header="MenuItemA3"/>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>
     <Grid Margin="4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240"/>
@@ -76,7 +90,8 @@
                 <svd:EmbossBorder Content="Emboss" VerticalContentAlignment="Center"
                                   HorizontalContentAlignment="Center" Grid.Column="1"
                                   Foreground="{StaticResource Gradient.Primary}"
-                                  FontSize="24" CornerRadius="16"/>
+                                  FontSize="24" CornerRadius="16"
+                                  ContextMenu="{StaticResource ContextMenuDemo}"/>
                 <svd:CardBorder Content="Card" Grid.Column="2" FontSize="24"
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center" 

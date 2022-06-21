@@ -23,12 +23,12 @@
                                 <StackPanel Orientation="Horizontal">
                                     <ContentControl Content="{TemplateBinding sva:WindowElement.TitleBar}"
                                                     WindowChrome.IsHitTestVisibleInChrome="True"
-                                                    VerticalAlignment="Center" Margin="12,6,12,0"
+                                                    VerticalAlignment="Center" Margin="8,6,8,0"
                                                     VerticalContentAlignment="Center"/>
                                     <!--标题栏-->
-                                    <Label Margin="0,6,0,0">
+                                    <Label Margin="0,6,0,0" Padding="12,2">
                                         <TextBlock Foreground="{StaticResource Text.Main}" 
-                                           FontSize="18" Text="{TemplateBinding Title}" />
+                                           FontSize="14" Text="{TemplateBinding Title}" />
                                     </Label>
                                 </StackPanel>
 

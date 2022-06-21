@@ -15,14 +15,14 @@
         <Menu Background="Transparent" FontSize="14"
               Foreground="{StaticResource Text.Main}">
             <MenuItem Header="File" >
-                
+                <MenuItem Header="Open"/>
             </MenuItem>
 
             <MenuItem Header="Edit">
 
             </MenuItem>
             <MenuItem Header="Help">
-
+                <MenuItem Header="About"/>
             </MenuItem>
 
         </Menu>

@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace SyminUI.Controls.Attach
 {
-    public class IconElement
+    public class IconElement : DependencyObject
     {
         public static Geometry GetGeometry(DependencyObject obj)
         {

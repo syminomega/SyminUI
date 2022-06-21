@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace SyminUI.Controls.Attach
 {
-    public class ShadingElement
+    public class ShadingElement : DependencyObject
     {
         #region LightBrush
         public static SolidColorBrush GetLightBrush(DependencyObject obj)
@@ -81,7 +81,7 @@ namespace SyminUI.Controls.Attach
         public static readonly DependencyProperty DisabledForegroundProperty =
             DependencyProperty.RegisterAttached("DisabledForeground",
                 typeof(Brush), typeof(ShadingElement),
-                new PropertyMetadata(Brushes.GhostWhite));
+                new PropertyMetadata(Brushes.DarkGray));
 
         #endregion
 

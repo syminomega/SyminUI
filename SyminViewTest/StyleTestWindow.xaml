@@ -7,6 +7,7 @@
         xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         xmlns:sva="clr-namespace:SyminUI.Controls.Attach;assembly=SyminUI"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Styles Demo" Height="480" Width="800"
         Style="{StaticResource Window.Normal}"
         >
@@ -16,6 +17,11 @@
             <MenuItem Header="File" >
                 <MenuItem Header="Open"/>
                 <MenuItem Header="Save"/>
+                <MenuItem Header="Open Recent File...">
+                    <MenuItem Header="File01"/>
+                    <MenuItem Header="File02"/>
+                    <MenuItem Header="File03"/>
+                </MenuItem>
             </MenuItem>
 
             <MenuItem Header="Edit">

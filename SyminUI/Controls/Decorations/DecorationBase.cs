@@ -94,12 +94,14 @@ namespace SyminUI.Controls.Decorations
         // Using a DependencyProperty as the backing store for LightBrush.
         public static readonly DependencyProperty LightBrushProperty =
             DependencyProperty.Register("LightBrush",
-                typeof(SolidColorBrush), typeof(DecorationBase));
+                typeof(SolidColorBrush), typeof(DecorationBase), 
+                new PropertyMetadata(Brushes.WhiteSmoke));
 
         // Using a DependencyProperty as the backing store for ShadowBrush.
         public static readonly DependencyProperty ShadowBrushProperty =
             DependencyProperty.Register("ShadowBrush",
-                typeof(SolidColorBrush), typeof(DecorationBase));
+                typeof(SolidColorBrush), typeof(DecorationBase),
+                new PropertyMetadata(Brushes.DarkGray));
 
         // Using a DependencyProperty as the backing store for IsWidthGreaterThanHeight.
         public static readonly DependencyProperty IsWidthGreaterThanHeightProperty =

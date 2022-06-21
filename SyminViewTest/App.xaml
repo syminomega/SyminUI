@@ -6,7 +6,6 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles/TestStyles.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminLight.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminBasic.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminStyle.xaml"/>

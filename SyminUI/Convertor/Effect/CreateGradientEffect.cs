@@ -36,6 +36,7 @@ namespace SyminUI.Convertor.Effect
             var angleGradientEffect = new AngleGradientEffect
             {
                 Center = center,
+                //TODO:此处出现null异常
                 Color1 = brushA.Color,
                 Color2 = brushB.Color
             };

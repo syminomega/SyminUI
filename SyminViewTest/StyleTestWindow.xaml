@@ -114,15 +114,18 @@
             <svd:LightedSurface  Height="80" Margin="4"
                                  Background="{StaticResource Background.Main}"
                                  CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
-            <UniformGrid Rows="2" Columns="2">
-                <Label Content="Label Default"/>
-                <Label Content="Label Primary" 
+            <GroupBox Header="Group Box">
+                <UniformGrid Rows="2" Columns="2">
+                    <Label Content="Label Default"/>
+                    <Label Content="Label Primary" 
                        Style="{StaticResource LabelPrimary}"/>
-                <Label Content="Label Danger" 
+                    <Label Content="Label Danger" 
                        Style="{StaticResource LabelDanger}"/>
-                <Label Content="Label Success" 
+                    <Label Content="Label Success" 
                        Style="{StaticResource LabelSuccess}"/>
-            </UniformGrid>
+                </UniformGrid>
+            </GroupBox>
+            
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Column="2">

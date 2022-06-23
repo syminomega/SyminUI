@@ -187,7 +187,8 @@
                        Placement="Bottom" 
                        PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}" 
                        PlacementTarget="{Binding ElementName=templateRoot}">
-                    <svd:LightedSurface Margin="8" Padding="0" >
+                    <svd:LightedSurface Margin="8" Padding="0" BorderThickness="1"
+                                        BorderBrush="{StaticResource Border.Main.Shaded}">
                         <Border x:Name="SubMenuBorder" Margin="0,4">
                             <ScrollViewer x:Name="SubMenuScrollViewer"
                                       Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, 
@@ -252,7 +253,7 @@
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
-                Height="22" SnapsToDevicePixels="true">
+                Height="28" SnapsToDevicePixels="true">
             <Grid Margin="-1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="22" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
@@ -325,7 +326,7 @@
                 Background="{TemplateBinding Background}" 
                 BorderBrush="{TemplateBinding BorderBrush}" 
                 BorderThickness="{TemplateBinding BorderThickness}" 
-                Height="22" SnapsToDevicePixels="true">
+                Height="28" SnapsToDevicePixels="true">
             <Grid Margin="-1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="22" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
@@ -366,7 +367,8 @@
                        IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
                        Placement="Right" VerticalOffset="-3"
                        PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
-                    <svd:LightedSurface Margin="8" Padding="0">
+                    <svd:LightedSurface Margin="8" Padding="0" BorderThickness="1"
+                                        BorderBrush="{StaticResource Border.Main.Shaded}">
                         <Border x:Name="SubMenuBorder" Margin="0,4">
                             <ScrollViewer x:Name="SubMenuScrollViewer" 
                                           Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, 
@@ -428,7 +430,7 @@
     </ControlTemplate>
     <!--菜单栏项目样式-->
     <Style TargetType="{x:Type MenuItem}">
-        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="HorizontalContentAlignment" 
                 Value="{Binding HorizontalContentAlignment, 
                         RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
@@ -447,7 +449,6 @@
         <Style.Triggers>
             <!--顶层带子项的菜单-->
             <Trigger Property="Role" Value="TopLevelHeader">
-                <Setter Property="FontSize" Value="14"/>
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="BorderBrush" Value="Transparent"/>
                 <Setter Property="Template" 
@@ -457,7 +458,6 @@
             </Trigger>
             <!--顶层菜单-->
             <Trigger Property="Role" Value="TopLevelItem">
-                <Setter Property="FontSize" Value="14"/>
                 <Setter Property="Background" Value="{StaticResource Background.Main}"/>
                 <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
                 <Setter Property="Template" 
@@ -475,7 +475,7 @@
     </Style>
     <!--右键菜单样式-->
     <Style TargetType="{x:Type ContextMenu}">
-        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -483,7 +483,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContextMenu}">
-                    <svd:LightedSurface x:Name="Border" Margin="8" Padding="0">
+                    <svd:LightedSurface x:Name="Border" Margin="8" Padding="0" BorderThickness="1"
+                                        BorderBrush="{StaticResource Border.Main.Shaded}">
                         <StackPanel IsItemsHost="True" Margin="0,4"
                                     KeyboardNavigation.DirectionalNavigation="Cycle" />
                         <svd:LightedSurface.Effect>

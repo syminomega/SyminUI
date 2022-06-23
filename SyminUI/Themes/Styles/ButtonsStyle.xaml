@@ -76,7 +76,7 @@
                             <Setter Property="BorderBrush" TargetName="border" 
                                     Value="{StaticResource PrimaryBrush}"/>
                         </Trigger>
-                        <!--隐藏边框，显示阴影-->
+                        <!--切换边框效果，显示阴影-->
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" 
                                     Value="{Binding Path=(sva:ShadingElement.LightedBorder),
@@ -127,6 +127,17 @@
         <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Primary.Shadow}"/>
         <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Primary.Disabled}"/>
         <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Contrast.Disabled}"/>
+        <Setter Property="sva:ShadingElement.LightedBorder">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="{StaticResource Primary.LightColor}" Offset="0"/>
+                    <GradientStop Color="Transparent" Offset="0.5"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                    </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
     </Style>
     <!--危险按钮-->
     <Style x:Key="ButtonDanger" 
@@ -136,8 +147,19 @@
         <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Danger.Light}"/>
         <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Danger.Shadow}"/>
         <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Danger.Disabled}"/>
+        <Setter Property="sva:ShadingElement.LightedBorder">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="{StaticResource Danger.LightColor}" Offset="0"/>
+                    <GradientStop Color="Transparent" Offset="0.5"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                    </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
     </Style>
-    <!--危险按钮-->
+    <!--成功按钮-->
     <Style x:Key="ButtonSuccess" 
            BasedOn="{StaticResource ResourceKey=ButtonPrimary}"  TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource SuccessBrush}"/>
@@ -145,80 +167,26 @@
         <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Success.Light}"/>
         <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Success.Shadow}"/>
         <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Success.Disabled}"/>
-    </Style>
-    
-
-    <!--以下弃用-->
-
-    <Style x:Key="ButtonNormal" TargetType="{x:Type Button}">
-        <Style.Resources>
-            <CornerRadius x:Key="RoundedCorner" TopLeft="6" TopRight="6" BottomRight="6" BottomLeft="6"/>
-        </Style.Resources>
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Background.Button}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="20,5"/>
-        <Setter Property="Template">
+        <Setter Property="sva:ShadingElement.LightedBorder">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border" 
-                            CornerRadius="{StaticResource ResourceKey=RoundedCorner}"
-                            Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            SnapsToDevicePixels="true">
-                        <ContentPresenter x:Name="contentPresenter" Focusable="False" 
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{StaticResource PrimaryBrush}"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="border" 
-                                    Value="#F3F3F3"/>
-                            <Setter Property="BorderBrush" TargetName="border"
-                                    Value="{StaticResource Primary.Light}"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="border" 
-                                    Value="#FFEAEAEA"/>
-                            <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="#FFD0D0D0"/>
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" 
-                                    Value="{StaticResource Background.Button.Disabled}"/>
-                            <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{StaticResource Additional.Grey}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" 
-                                    Value="{StaticResource Additional.Grey}"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="{StaticResource Success.LightColor}" Offset="0"/>
+                    <GradientStop Color="Transparent" Offset="0.5"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                    </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
             </Setter.Value>
         </Setter>
     </Style>
-
-    <!--主要颜色按钮-->
-    <Style x:Key="ButtonBlue" TargetType="{x:Type Button}">
-        <Style.Resources>
-            <CornerRadius x:Key="ButtonCorner" TopLeft="6" TopRight="6" BottomRight="6" BottomLeft="6"/>
-        </Style.Resources>
+    
+    <!--扁平默认按钮-->
+    <Style x:Key="ButtonFlatten" TargetType="{x:Type Button}">
+        <Setter Property="sva:BorderElement.CornerRadius" Value="4"/>
+        <Setter Property="Background" Value="{StaticResource Background.Button}"/>
+        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Foreground" Value="{StaticResource Text.Contrast}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="20,5"/>
@@ -227,7 +195,7 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
                         <Border x:Name="border" 
-                            CornerRadius="{DynamicResource ResourceKey=ButtonCorner}"
+                            CornerRadius="{TemplateBinding sva:BorderElement.CornerRadius}"
                             Background="{TemplateBinding Background}" 
                             SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" 
@@ -237,52 +205,34 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <!--点击的时候覆盖一层高亮-->
-                        <Border x:Name="highlightBorder"
-                                CornerRadius="{DynamicResource ResourceKey=ButtonCorner}"
+                        <Border x:Name="highlightBorder" Opacity="0"
+                                CornerRadius="{TemplateBinding sva:BorderElement.CornerRadius}"
+                                Background="{StaticResource Background.LightMask}"
                                 SnapsToDevicePixels="true"/>
                     </Grid>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="highlightBorder" 
-                                    Value="transparent"/>
+                            <Setter Property="Opacity" TargetName="highlightBorder" 
+                                    Value="0"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="highlightBorder" 
-                                    Value="#10C3FFF9"/>
+                            <Setter Property="Opacity" TargetName="highlightBorder" 
+                                    Value="0.6"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="highlightBorder" 
-                                    Value="#25B9FFE3"/>
+                            <Setter Property="Opacity" TargetName="highlightBorder" 
+                                    Value="0.3"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" 
-                                    Value="{StaticResource Additional.Grey}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" 
+                            <Setter Property="Background"
                                     Value="{StaticResource Background.Button.Disabled}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" 
+                                    Value="{StaticResource Text.Main.Disabled}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
-    
-    <!--左侧圆角的按钮-->
-    <Style x:Key="LeftCornerButton" BasedOn="{StaticResource ResourceKey=ButtonBlue}"  TargetType="{x:Type Button}">
-        <Style.Resources>
-            <CornerRadius x:Key="ButtonCorner" TopLeft="6" TopRight="0" BottomRight="0" BottomLeft="6"/>
-        </Style.Resources>
-    </Style>
-    <!--右侧圆角的按钮-->
-    <Style x:Key="RightCornerButton" BasedOn="{StaticResource ResourceKey=ButtonBlue}"  TargetType="{x:Type Button}">
-        <Style.Resources>
-            <CornerRadius x:Key="ButtonCorner" TopLeft="0" TopRight="6" BottomRight="6" BottomLeft="0"/>
-        </Style.Resources>
-    </Style>
-    <!--无圆角的按钮-->
-    <Style x:Key="SharpButton" BasedOn="{StaticResource ResourceKey=ButtonBlue}"  TargetType="{x:Type Button}">
-        <Style.Resources>
-            <CornerRadius x:Key="ButtonCorner" TopLeft="0" TopRight="0" BottomRight="0" BottomLeft="0"/>
-        </Style.Resources>
     </Style>
 </ResourceDictionary>

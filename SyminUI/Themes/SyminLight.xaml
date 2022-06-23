@@ -2,11 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Color x:Key="PrimaryColor">#1A56F2</Color>
     <Color x:Key="SecondaryColor">#3CD9E0</Color>
+    <Color x:Key="Primary.LightColor">#CFEAFF</Color>
     <Color x:Key="Primary.ShadowColor">#889AC4</Color>
-    
+
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
     <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>
-    <SolidColorBrush x:Key="Primary.Light" Color="#CFEAFF"/>
+    <SolidColorBrush x:Key="Primary.Light" Color="{StaticResource Primary.LightColor}"/>
     <SolidColorBrush x:Key="Primary.Shadow" Color="{StaticResource Primary.ShadowColor}"/>
     
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}"/>
@@ -17,26 +18,31 @@
     </LinearGradientBrush>
     
     <Color x:Key="DangerColor">#EB2E1F</Color>
+    <Color x:Key="Danger.LightColor">#FFCFCF</Color>
     <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>
     <SolidColorBrush x:Key="Danger.Disabled" Color="#D27F79"/>
-    <SolidColorBrush x:Key="Danger.Light" Color="#FFCFCF"/>
+    <SolidColorBrush x:Key="Danger.Light" Color="{StaticResource Danger.LightColor}"/>
     <SolidColorBrush x:Key="Danger.Shadow" Color="#C48888"/>
     
     <Color x:Key="WarningColor">#F0BD15</Color>
+    <Color x:Key="Warning.LightColor">#FFFECF</Color>
     <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
     <SolidColorBrush x:Key="Warning.Disabled" Color="#E9D48E"/>
-    <SolidColorBrush x:Key="Warning.Light" Color="#FFFECF"/>
+    <SolidColorBrush x:Key="Warning.Light" Color="{StaticResource Warning.LightColor}"/>
     <SolidColorBrush x:Key="Warning.Shadow" Color="#C4BF88"/>
     
     <Color x:Key="SuccessColor">#28B82F</Color>
+    <Color x:Key="Success.LightColor">#D4FFCF</Color>
     <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
     <SolidColorBrush x:Key="Success.Disabled" Color="#8CB68E"/>
-    <SolidColorBrush x:Key="Success.Light" Color="#D4FFCF"/>
+    <SolidColorBrush x:Key="Success.Light" Color="{StaticResource Success.LightColor}"/>
     <SolidColorBrush x:Key="Success.Shadow" Color="#8FC488"/>
     
     <!--背景色-->
-    <SolidColorBrush x:Key="Background.Main" Color="#E8E9EC"/>
+    <Color x:Key="Background.MainColor">#E8E9EC</Color>
+    <SolidColorBrush x:Key="Background.Main" Color="{StaticResource Background.MainColor}"/>
     <SolidColorBrush x:Key="Background.FocusedMask" Color="#7F9FA2AC"/>
+    <SolidColorBrush x:Key="Background.LightMask" Color="#7FFFFFFF"/>
     <SolidColorBrush x:Key="Background.Section" Color="#DFE1E7"/>
     <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
@@ -50,8 +56,9 @@
     <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
     <SolidColorBrush x:Key="Border.Section" Color="#A8ABBD"/>
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
-        <GradientStop Color="#AAFFFFFF" Offset="0"/>
-        <GradientStop Color="Transparent" Offset="1"/>
+        <GradientStop Color="#FFFFFF" Offset="0"/>
+        <GradientStop Color="{StaticResource Background.MainColor}" Offset="0.5"/>
+        <GradientStop Color="#CCD3DD" Offset="1"/>
         <LinearGradientBrush.RelativeTransform>
             <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
         </LinearGradientBrush.RelativeTransform>

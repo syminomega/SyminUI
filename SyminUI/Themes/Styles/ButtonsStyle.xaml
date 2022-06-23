@@ -53,8 +53,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <svd:EmbossBorder x:Name="border"
-                                      CornerRadius="4" 
+                    <svd:EmbossBorder x:Name="border" CornerRadius="4"
                                       LightBrush="{Binding Path=(sva:ShadingElement.LightBrush),
                                                     RelativeSource={RelativeSource TemplatedParent}}"
                                       ShadowBrush="{Binding Path=(sva:ShadingElement.ShadowBrush),
@@ -149,7 +148,8 @@
     </Style>
     
 
-    <!--普通按钮-->
+    <!--以下弃用-->
+
     <Style x:Key="ButtonNormal" TargetType="{x:Type Button}">
         <Style.Resources>
             <CornerRadius x:Key="RoundedCorner" TopLeft="6" TopRight="6" BottomRight="6" BottomLeft="6"/>
@@ -266,8 +266,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-
     
     <!--左侧圆角的按钮-->
     <Style x:Key="LeftCornerButton" BasedOn="{StaticResource ResourceKey=ButtonBlue}"  TargetType="{x:Type Button}">

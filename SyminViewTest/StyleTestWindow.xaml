@@ -57,28 +57,43 @@
 
         <ScrollViewer>
             <StackPanel Orientation="Vertical" Margin="4">
-                <Button Content="Button Basic"/>
-                <Button Content="Button Basic Disabled" IsEnabled="False"/>
-                <Button Content="Button Primary" 
-                    Style="{StaticResource ButtonPrimary}"/>
-                <Button Content="Button Primary Disabled" 
-                    Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
-                <Button Content="Button Danger" 
-                    Style="{StaticResource ButtonDanger}"/>
-                <Button Content="Button Danger Disabled" 
-                    Style="{StaticResource ButtonDanger}" IsEnabled="False"/>
-                <Button Content="Button Success" 
-                    Style="{StaticResource ButtonSuccess}"/>
-                <Button Content="Button Success Disabled" 
-                    Style="{StaticResource ButtonSuccess}" IsEnabled="False"/>
+                <GroupBox Header="Button Styles">
+                    <StackPanel Orientation="Vertical">
+                        <Button Content="Button Basic"/>
+                        <Button Content="Button Basic Disabled" IsEnabled="False"/>
+                        <Button Content="Button Primary" 
+                                Style="{StaticResource ButtonPrimary}"/>
+                        <Button Content="Button Primary Disabled" 
+                                Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
+                        <Button Content="Button Danger" 
+                                 Style="{StaticResource ButtonDanger}"/>
+                        <Button Content="Button Danger Disabled" 
+                                Style="{StaticResource ButtonDanger}" IsEnabled="False"/>
+                        <Button Content="Button Success" 
+                                Style="{StaticResource ButtonSuccess}"/>
+                        <Button Content="Button Success Disabled" 
+                                Style="{StaticResource ButtonSuccess}" IsEnabled="False"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Label Styles">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Label Default"/>
+                        <Label Content="Label Default Disabled" IsEnabled="False"/>
+                        <Label Content="Label Primary" 
+                               Style="{StaticResource LabelPrimary}"/>
+                        <Label Content="Label Primary Disabled" 
+                               Style="{StaticResource LabelPrimary}" IsEnabled="False"/>
+                        <Label Content="Label Danger" 
+                               Style="{StaticResource LabelDanger}"/>
+                        <Label Content="Label Danger Disabled" 
+                               Style="{StaticResource LabelDanger}" IsEnabled="False"/>
+                        <Label Content="Label Success" 
+                               Style="{StaticResource LabelSuccess}"/>
+                        <Label Content="Label Success Disabled" 
+                                Style="{StaticResource LabelSuccess}" IsEnabled="False"/>
+                    </StackPanel>
+                </GroupBox>
 
-                <Label Content="Label Default Disabled" IsEnabled="False"/>
-                <Label Content="Label Primary Disabled" 
-                       Style="{StaticResource LabelPrimary}" IsEnabled="False"/>
-                <Label Content="Label Danger Disabled" 
-                       Style="{StaticResource LabelDanger}" IsEnabled="False"/>
-                <Label Content="Label Success Disabled" 
-                       Style="{StaticResource LabelSuccess}" IsEnabled="False"/>
             </StackPanel>
         </ScrollViewer>
         
@@ -114,18 +129,7 @@
             <svd:LightedSurface  Height="80" Margin="4"
                                  Background="{StaticResource Background.Main}"
                                  CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
-            <GroupBox Header="Group Box">
-                <UniformGrid Rows="2" Columns="2">
-                    <Label Content="Label Default"/>
-                    <Label Content="Label Primary" 
-                       Style="{StaticResource LabelPrimary}"/>
-                    <Label Content="Label Danger" 
-                       Style="{StaticResource LabelDanger}"/>
-                    <Label Content="Label Success" 
-                       Style="{StaticResource LabelSuccess}"/>
-                </UniformGrid>
-            </GroupBox>
-            
+
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Column="2">

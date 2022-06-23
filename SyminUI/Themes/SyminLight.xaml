@@ -37,6 +37,7 @@
     <!--背景色-->
     <SolidColorBrush x:Key="Background.Main" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.FocusedMask" Color="#7F9FA2AC"/>
+    <SolidColorBrush x:Key="Background.Section" Color="#DFE1E7"/>
     <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>
@@ -47,6 +48,7 @@
     <SolidColorBrush x:Key="Background.Handler.Focused" Color="#5E5E5E"/>
     <!--边框色-->
     <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
+    <SolidColorBrush x:Key="Border.Section" Color="#A8ABBD"/>
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="#AAFFFFFF" Offset="0"/>
         <GradientStop Color="Transparent" Offset="1"/>

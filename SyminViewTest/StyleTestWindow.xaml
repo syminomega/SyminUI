@@ -56,7 +56,7 @@
         </Grid.ColumnDefinitions>
 
         <ScrollViewer>
-            <StackPanel Orientation="Vertical" Margin="4">
+            <StackPanel Orientation="Vertical">
                 <GroupBox Header="Button Styles">
                     <StackPanel Orientation="Vertical">
                         <Button Content="Button Basic"/>
@@ -97,7 +97,7 @@
             </StackPanel>
         </ScrollViewer>
         
-        <StackPanel Orientation="Vertical" Grid.Column="1">
+        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="12,0">
             <Grid Height="120" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -131,12 +131,13 @@
                                  CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
 
         </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="2">
-            <Slider x:Name="progressVerticalSlider" Orientation="Vertical" 
+        <GroupBox Header="Vertical" Grid.Column="2">
+            <StackPanel Orientation="Horizontal" >
+                <Slider x:Name="progressVerticalSlider" Orientation="Vertical" 
                     Minimum="0" Maximum="100" Value="25"/>
-            <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100"
+                <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100"
                          Width="24" Value="{Binding ElementName=progressVerticalSlider,Path=Value}"/>
-        </StackPanel>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Window>

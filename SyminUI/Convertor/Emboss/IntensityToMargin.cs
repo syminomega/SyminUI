@@ -16,7 +16,7 @@ namespace SyminUI.Convertor.Emboss
         {
             var intensity = (double)value;
             //数值为1的时候边距最小，露出的着色边框越大
-            var marginValue = 4 * (1 - intensity);
+            var marginValue = 5 * (1 - intensity);
             return new Thickness(marginValue);
         }
 

@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Color x:Key="PrimaryColor">#1A56F2</Color>
     <Color x:Key="SecondaryColor">#3CD9E0</Color>
-    <Color x:Key="Primary.LightColor">#CFEAFF</Color>
-    <Color x:Key="Primary.ShadowColor">#889AC4</Color>
+    <Color x:Key="Primary.LightColor">#E3F3FF</Color>
+    <Color x:Key="Primary.ShadowColor">#7a8cb7</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
     <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>
@@ -22,21 +22,21 @@
     <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>
     <SolidColorBrush x:Key="Danger.Disabled" Color="#D27F79"/>
     <SolidColorBrush x:Key="Danger.Light" Color="{StaticResource Danger.LightColor}"/>
-    <SolidColorBrush x:Key="Danger.Shadow" Color="#C48888"/>
+    <SolidColorBrush x:Key="Danger.Shadow" Color="#FFBD8080"/>
     
     <Color x:Key="WarningColor">#F0BD15</Color>
     <Color x:Key="Warning.LightColor">#FFFECF</Color>
     <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
     <SolidColorBrush x:Key="Warning.Disabled" Color="#E9D48E"/>
     <SolidColorBrush x:Key="Warning.Light" Color="{StaticResource Warning.LightColor}"/>
-    <SolidColorBrush x:Key="Warning.Shadow" Color="#C4BF88"/>
+    <SolidColorBrush x:Key="Warning.Shadow" Color="#FFBDB87F"/>
     
     <Color x:Key="SuccessColor">#28B82F</Color>
     <Color x:Key="Success.LightColor">#D4FFCF</Color>
     <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
     <SolidColorBrush x:Key="Success.Disabled" Color="#8CB68E"/>
     <SolidColorBrush x:Key="Success.Light" Color="{StaticResource Success.LightColor}"/>
-    <SolidColorBrush x:Key="Success.Shadow" Color="#8FC488"/>
+    <SolidColorBrush x:Key="Success.Shadow" Color="#FF88BE81"/>
     
     <!--背景色-->
     <Color x:Key="Background.MainColor">#E8E9EC</Color>

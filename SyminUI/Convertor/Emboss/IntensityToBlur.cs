@@ -15,7 +15,7 @@ namespace SyminUI.Convertor.Emboss
         {
             var intensity = (double)value;
             //数值最大的时候，模糊达到预设最大值 4~12
-            var blur = 4 + intensity * 8;
+            var blur = 4 + intensity * 9;
             return blur;
         }
 

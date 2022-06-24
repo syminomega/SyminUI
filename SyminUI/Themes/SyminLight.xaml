@@ -41,6 +41,7 @@
     <!--背景色-->
     <Color x:Key="Background.MainColor">#E8E9EC</Color>
     <SolidColorBrush x:Key="Background.Main" Color="{StaticResource Background.MainColor}"/>
+    <SolidColorBrush x:Key="Background.Window" Color="#E8E9EC"/>
     <SolidColorBrush x:Key="Background.FocusedMask" Color="#7F9FA2AC"/>
     <SolidColorBrush x:Key="Background.LightMask" Color="#7FFFFFFF"/>
     <SolidColorBrush x:Key="Background.Section" Color="#DFE1E7"/>

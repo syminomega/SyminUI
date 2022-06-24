@@ -60,17 +60,17 @@
                 <GroupBox Header="Button Styles">
                     <StackPanel Orientation="Vertical">
                         <Button Content="Button Basic"/>
-                        <Button Content="Button Basic Disabled" IsEnabled="False"/>
                         <Button Content="Button Primary" 
                                 Style="{StaticResource ButtonPrimary}"/>
-                        <Button Content="Button Primary Disabled" 
-                                Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
                         <Button Content="Button Danger" 
                                  Style="{StaticResource ButtonDanger}"/>
-                        <Button Content="Button Danger Disabled" 
-                                Style="{StaticResource ButtonDanger}" IsEnabled="False"/>
                         <Button Content="Button Success" 
                                 Style="{StaticResource ButtonSuccess}"/>
+                        <Button Content="Button Basic Disabled" IsEnabled="False"/>
+                        <Button Content="Button Primary Disabled" 
+                                Style="{StaticResource ButtonPrimary}" IsEnabled="False"/>
+                        <Button Content="Button Danger Disabled" 
+                                Style="{StaticResource ButtonDanger}" IsEnabled="False"/>
                         <Button Content="Button Success Disabled" 
                                 Style="{StaticResource ButtonSuccess}" IsEnabled="False"/>
                     </StackPanel>
@@ -130,7 +130,6 @@
                 <svd:LightedSurface  Height="80" Margin="4"
                                  Background="{StaticResource Background.Main}"
                                  CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
-
             </StackPanel>
         </GroupBox>
 

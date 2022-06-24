@@ -4,19 +4,20 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 
 namespace SyminUI.Convertor.Emboss
 {
-    [ValueConversion(typeof(double), typeof(double))]
-    public class IntensityToBlur : IValueConverter
+    [ValueConversion(typeof(double), typeof(Thickness))]
+    public class IntensityToMarginRightBottom : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var intensity = (double)value;
-            //数值最大的时候，模糊达到预设最大值 4~12
-            var blur = 4 + intensity * 8;
-            return blur;
+            //数值为1的时候边距最小，露出的着色边框越大
+            var marginValue = 4 * intensity;
+            return new Thickness(marginValue, marginValue, -marginValue, -marginValue);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

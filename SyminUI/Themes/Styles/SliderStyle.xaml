@@ -34,7 +34,7 @@
             <Trigger Property="IsDragging" Value="true">
                 <Setter Property="Effect" TargetName="grip">
                     <Setter.Value>
-                        <DropShadowEffect BlurRadius="12" Opacity="0.6" ShadowDepth="3"
+                        <DropShadowEffect BlurRadius="4" Opacity="0.6" ShadowDepth="3"
                                       Color="{StaticResource Shader.ShadowColor}"/>
                     </Setter.Value>
                 </Setter>

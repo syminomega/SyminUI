@@ -45,11 +45,15 @@
     <SolidColorBrush x:Key="Background.FocusedMask" Color="#7F9FA2AC"/>
     <SolidColorBrush x:Key="Background.LightMask" Color="#7FFFFFFF"/>
     <SolidColorBrush x:Key="Background.Section" Color="#DFE1E7"/>
+    
     <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
+
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>
     <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>
     <SolidColorBrush x:Key="Background.Label" Color="#F2F2F2"/>
+    <SolidColorBrush x:Key="Background.Toggle" Color="#C3C6D6"/>
+    <SolidColorBrush x:Key="Background.Toggle.Disabled" Color="#E5E6EC"/>
     <!--实色填充的系统控件：滚动条、GridSplitter等-->
     <SolidColorBrush x:Key="Background.Handler" Color="#87898A"/>
     <SolidColorBrush x:Key="Background.Handler.Focused" Color="#5E5E5E"/>

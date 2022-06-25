@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations">
+    <!--PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}"-->
     <!--菜单栏样式-->
     <Style TargetType="{x:Type Menu}">
         <Setter Property="Background" Value="Transparent"/>
@@ -185,7 +186,7 @@
                 <Popup x:Name="PART_Popup" AllowsTransparency="true" Focusable="false" 
                        IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
                        Placement="Bottom" 
-                       PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}" 
+                       PopupAnimation="Fade"
                        PlacementTarget="{Binding ElementName=templateRoot}">
                     <svd:LightedSurface Margin="8" Padding="0" BorderThickness="1"
                                         BorderBrush="{StaticResource Border.Main.Shaded}">
@@ -366,7 +367,7 @@
                        Focusable="false" HorizontalOffset="-2" 
                        IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
                        Placement="Right" VerticalOffset="-3"
-                       PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+                       PopupAnimation="Fade">
                     <svd:LightedSurface Margin="8" Padding="0" BorderThickness="1"
                                         BorderBrush="{StaticResource Border.Main.Shaded}">
                         <Border x:Name="SubMenuBorder" Margin="0,4">

@@ -98,43 +98,64 @@
         </ScrollViewer>
 
         <GroupBox Header="Other Styles" Grid.Column="1" Margin="12,4">
-            <StackPanel Orientation="Vertical" Margin="4">
-                <Grid Height="120" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <svd:SlotBorder Content="Slot" VerticalContentAlignment="Center"
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical" Margin="4">
+                    <Grid Height="120" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <svd:SlotBorder Content="Slot" VerticalContentAlignment="Center"
                                 HorizontalContentAlignment="Center"
                                 Foreground="{StaticResource Gradient.Primary}"
                                 FontSize="24" Radius="16"/>
-                    <svd:EmbossBorder Content="Emboss" VerticalContentAlignment="Center"
+                        <svd:EmbossBorder Content="Emboss" VerticalContentAlignment="Center"
                                   HorizontalContentAlignment="Center" Grid.Column="1"
                                   Foreground="{StaticResource Gradient.Primary}"
                                   FontSize="24" CornerRadius="16"
                                   ContextMenu="{StaticResource ContextMenuDemo}"/>
-                    <svd:CardBorder Content="Card" Grid.Column="2" FontSize="24"
+                        <svd:CardBorder Content="Card" Grid.Column="2" FontSize="24"
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center" 
                                 Foreground="{StaticResource Gradient.Primary}"
                                 CornerRadius="16"/>
 
-                </Grid>
-                <TextBox Text="Text Box (Input Field)"/>
-                <ProgressBar Height="24" IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
+                    </Grid>
+                    <TextBox Text="Text Box (Input Field)"/>
+                    <ProgressBar Height="24" IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
                          Value="{Binding ElementName=progressSlider,Path=Value}"/>
-                <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25"/>
-                <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate"/>
-                <CheckBox Content="Check Box Indeterminate Disabled" IsChecked="{x:Null}" IsEnabled="False"/>
-                <svd:LightedSurface  Height="80" Margin="4"
+                    <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25"/>
+                    <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate"/>
+                    <CheckBox Content="Check Box Indeterminate Disabled" IsChecked="{x:Null}" IsEnabled="False"/>
+                    <UniformGrid Columns="2" Rows="1">
+                        <ComboBox SelectedIndex="0" >
+                            <ComboBoxItem Content="Selection A"/>
+                            <ComboBoxItem Content="Selection B"/>
+                            <ComboBoxItem Content="Selection C"/>
+                        </ComboBox>
+                        <ComboBox SelectedIndex="0" IsEditable="True" >
+                            <ComboBoxItem Content="Selection Editable"/>
+                            <ComboBoxItem Content="Selection B"/>
+                            <ComboBoxItem Content="Selection C"/>
+                        </ComboBox>
+                    </UniformGrid>
+                    <svd:LightedSurface  Height="80" Margin="4"
                                  Background="{StaticResource Background.Main}"
                                  CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
-                <StackPanel Orientation="Horizontal">
-                    <ToggleButton Content="Toggle"/>
-                    <ToggleButton Style="{StaticResource SwitchButton}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton Content="Toggle" IsChecked="True"/>
+                        <ToggleButton Style="{StaticResource SwitchButton}"
+                                  IsChecked="True"/>
+                        <ToggleButton Content="Toggle Disabled" 
+                                  IsEnabled="False"/>
+                        <ToggleButton Style="{StaticResource SwitchButton}" 
+                                  IsEnabled="False"/>
+                    </StackPanel>
+
                 </StackPanel>
-            </StackPanel>
+            </ScrollViewer>
+            
         </GroupBox>
 
         <GroupBox Header="Vertical" Grid.Column="2">

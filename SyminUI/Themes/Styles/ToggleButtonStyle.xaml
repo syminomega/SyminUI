@@ -149,6 +149,8 @@
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="circle" 
                                     Value="{StaticResource Background.Button.Disabled}"/>
+                            <Setter Property="Effect" TargetName="circle" 
+                                    Value="{x:Null}"/>
                             <Setter Property="Background" TargetName="borderOn"
                                     Value="{StaticResource Primary.Disabled}"/>
                             <Setter Property="Background" TargetName="borderOff"

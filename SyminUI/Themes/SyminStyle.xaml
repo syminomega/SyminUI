@@ -10,6 +10,7 @@
         <ResourceDictionary Source="Styles/ButtonsStyle.xaml"/>
         <ResourceDictionary Source="Styles/ToggleButtonStyle.xaml"/>
         <ResourceDictionary Source="Styles/TextBoxStyle.xaml"/>
+        <ResourceDictionary Source="Styles/ComboBoxStyle.xaml"/>
         <ResourceDictionary Source="Styles/ProgressBarStyle.xaml"/>
         <ResourceDictionary Source="Styles/SliderStyle.xaml"/>
         <ResourceDictionary Source="Styles/CheckBoxStyle.xaml"/>

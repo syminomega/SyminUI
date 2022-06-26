@@ -28,7 +28,8 @@
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                           TextElement.Foreground="{TemplateBinding Foreground}"/>
                             <svd:LightedSurface.Effect>
-                                <DropShadowEffect BlurRadius="12" Color="{StaticResource Shader.ShadowColor}" Opacity="0.6"/>
+                                <DropShadowEffect BlurRadius="12" Color="{StaticResource Shader.ShadowColor}" 
+                                                  Opacity="0.6"/>
                             </svd:LightedSurface.Effect>
                         </svd:LightedSurface>
                         

@@ -11,6 +11,24 @@ Currently is in early preview stage. **Pull requests are not available at this m
 
 ![Styles Demo](./Images/StylesDemo.jpg)
 
+## Quick Start 快速使用
+1. Add SyminData and SyminUI reference to your project.\
+在项目中添加 SyminData 和 SyminUI 引用.
+2. Add these code to App.xaml.\
+将以下代码添加至 App.xaml 中。
+
+```
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminLight.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminBasic.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SyminUI;component/Themes/SyminExtra.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+```
 ## Known Issues 已知问题
 + Progress bar vertical style does not show shader effect.\
 进度条垂直样式不显示辉光效果。

@@ -121,7 +121,7 @@
                         Background="{StaticResource Background.Main}" 
                         BorderBrush="{StaticResource Border.MainBrush}" 
                         BorderThickness="1">
-                    <ScrollViewer x:Name="DropDownScrollViewer" Margin="0,8">
+                    <ScrollViewer x:Name="DropDownScrollViewer" Margin="2,1">
                         <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
                             <Canvas x:Name="canvas" Height="0" Width="0"
                                     HorizontalAlignment="Left" 
@@ -212,7 +212,7 @@
                         Background="{StaticResource Background.Main}" 
                         BorderBrush="{StaticResource Border.MainBrush}" 
                         BorderThickness="1">
-                    <ScrollViewer x:Name="DropDownScrollViewer" Margin="0,8">
+                    <ScrollViewer x:Name="DropDownScrollViewer" Margin="2,1">
                         <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
                             <Canvas x:Name="canvas" Height="0" Width="0"
                                     HorizontalAlignment="Left" 

@@ -99,7 +99,6 @@
         </Setter>
     </Style>
 
-
     <!--顶层菜单-->
     <ControlTemplate x:Key="{ComponentResourceKey ResourceId=TopLevelItemTemplateKey, 
             TypeInTargetAssembly={x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
@@ -190,7 +189,7 @@
                        PlacementTarget="{Binding ElementName=templateRoot}">
                     <svd:LightedSurface Margin="8" Padding="0" BorderThickness="1"
                                         BorderBrush="{StaticResource Border.Main.Shaded}">
-                        <Border x:Name="SubMenuBorder" Margin="0,4">
+                        <Border x:Name="SubMenuBorder" Margin="2,1">
                             <ScrollViewer x:Name="SubMenuScrollViewer"
                                       Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, 
                                                     TypeInTargetAssembly={x:Type FrameworkElement}}}">
@@ -201,8 +200,6 @@
                                                Height="{Binding ActualHeight, ElementName=SubMenuBorder}" 
                                                Width="{Binding ActualWidth, ElementName=SubMenuBorder}"/>
                                     </Canvas>
-                                    <Rectangle Fill="{StaticResource Border.MainBrush}" 
-                                               HorizontalAlignment="Left" Margin="29,2,0,2" Width="1"/>
                                     <ItemsPresenter x:Name="ItemsPresenter" 
                                                     KeyboardNavigation.DirectionalNavigation="Cycle" 
                                                     Grid.IsSharedSizeScope="true" 
@@ -250,7 +247,7 @@
     <!--弹出菜单-->
     <ControlTemplate x:Key="{ComponentResourceKey ResourceId=SubmenuItemTemplateKey, 
             TypeInTargetAssembly={x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
-        <Border x:Name="templateRoot"
+        <Border x:Name="templateRoot" Margin="0,1" CornerRadius="4"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -258,7 +255,6 @@
             <Grid Margin="-1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="22" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
-                    <ColumnDefinition Width="13"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="30"/>
                     <ColumnDefinition SharedSizeGroup="MenuItemIGTColumnGroup" Width="Auto"/>
@@ -268,22 +264,26 @@
                                   HorizontalAlignment="Center" Height="16" Margin="3" 
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                   VerticalAlignment="Center" Width="16"/>
-                <Border x:Name="GlyphPanel" ClipToBounds="False" 
-                        HorizontalAlignment="Center" Height="22" Margin="0" 
-                        VerticalAlignment="Center" Visibility="Hidden" Width="22">
-                    <Path x:Name="Glyph" Data="{StaticResource MenuCheckmark}" 
-                          FlowDirection="LeftToRight" Margin="6,0,0,0"
+                <Border x:Name="GlyphPanel" Visibility="Hidden" Margin="3"
+                        Width="22" Height="22" CornerRadius="4"
+                        ClipToBounds="False" 
+                        Background="{StaticResource Background.SelectedMask}"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"  >
+                    <Path x:Name="Glyph" Margin="4"
+                          Data="{StaticResource MenuCheckmark}" 
+                          FlowDirection="LeftToRight" Stretch="Uniform"
                           Fill="{StaticResource Gradient.Primary}" 
-                          Height="11" Width="10"/>
+                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
                 <ContentPresenter x:Name="menuHeaderContainer" 
-                                  ContentSource="Header" Grid.Column="2" 
+                                  ContentSource="Header" Grid.Column="1" 
                                   HorizontalAlignment="Left" 
                                   Margin="{TemplateBinding Padding}" 
                                   RecognizesAccessKey="True" 
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                   VerticalAlignment="Center"/>
-                <TextBlock x:Name="menuGestureText" Grid.Column="4" 
+                <TextBlock x:Name="menuGestureText" Grid.Column="3" 
                            Margin="{TemplateBinding Padding}" Opacity="0.7" 
                            Text="{TemplateBinding InputGestureText}" 
                            VerticalAlignment="Center"/>
@@ -323,7 +323,7 @@
     <!--弹出带子项菜单-->
     <ControlTemplate x:Key="{ComponentResourceKey ResourceId=SubmenuHeaderTemplateKey, 
             TypeInTargetAssembly={x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
-        <Border x:Name="templateRoot"
+        <Border x:Name="templateRoot" Margin="0,1" CornerRadius="4"
                 Background="{TemplateBinding Background}" 
                 BorderBrush="{TemplateBinding BorderBrush}" 
                 BorderThickness="{TemplateBinding BorderThickness}" 
@@ -331,7 +331,6 @@
             <Grid Margin="-1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="22" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
-                    <ColumnDefinition Width="13"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="30"/>
                     <ColumnDefinition SharedSizeGroup="MenuItemIGTColumnGroup" Width="Auto"/>
@@ -341,23 +340,27 @@
                                   HorizontalAlignment="Center" Height="16" Margin="3" 
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                   VerticalAlignment="Center" Width="16"/>
-                <Border x:Name="GlyphPanel" Height="22" Margin="0" 
-                        VerticalAlignment="Center" Visibility="Hidden" Width="22">
-                    <Path x:Name="Glyph" Data="{DynamicResource MenuCheckmark}"
-                          FlowDirection="LeftToRight" 
+                <Border x:Name="GlyphPanel" Visibility="Hidden" Margin="3"
+                        Height="22" Width="22" CornerRadius="4"
+                        Background="{StaticResource Background.SelectedMask}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" >
+                    <Path x:Name="Glyph" Margin="4"
+                          Data="{DynamicResource MenuCheckmark}"
+                          FlowDirection="LeftToRight" Stretch="Uniform"
                           Fill="{StaticResource Gradient.Primary}"
-                          Height="11" Width="9"/>
+                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
-                <ContentPresenter ContentSource="Header" Grid.Column="2" 
+                <ContentPresenter ContentSource="Header" Grid.Column="1" 
                                   HorizontalAlignment="Left" 
                                   Margin="{TemplateBinding Padding}" 
                                   RecognizesAccessKey="True"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                   VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="4" Margin="{TemplateBinding Padding}" 
+                <TextBlock Grid.Column="3" Margin="{TemplateBinding Padding}" 
                            Opacity="0.7" Text="{TemplateBinding InputGestureText}" 
                            VerticalAlignment="Center"/>
-                <Path x:Name="RightArrow" Grid.Column="5" 
+                <Path x:Name="RightArrow" Grid.Column="4" 
                       Data="{StaticResource RightArrow}" 
                       Stretch="Uniform" Margin="3"
                       Fill="{StaticResource Text.Main}" 
@@ -370,7 +373,7 @@
                        PopupAnimation="Fade">
                     <svd:LightedSurface Margin="8" Padding="0" BorderThickness="1"
                                         BorderBrush="{StaticResource Border.Main.Shaded}">
-                        <Border x:Name="SubMenuBorder" Margin="0,4">
+                        <Border x:Name="SubMenuBorder" Margin="2,1">
                             <ScrollViewer x:Name="SubMenuScrollViewer" 
                                           Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, 
                                                         TypeInTargetAssembly={x:Type FrameworkElement}}}">
@@ -381,8 +384,6 @@
                                                    Height="{Binding ActualHeight, ElementName=SubMenuBorder}" 
                                                    Width="{Binding ActualWidth, ElementName=SubMenuBorder}"/>
                                     </Canvas>
-                                    <Rectangle Fill="{StaticResource Border.MainBrush}" 
-                                               HorizontalAlignment="Left" Margin="29,2,0,2" Width="1"/>
                                     <ItemsPresenter x:Name="ItemsPresenter" 
                                                     KeyboardNavigation.DirectionalNavigation="Cycle" 
                                                     Grid.IsSharedSizeScope="true" 
@@ -432,6 +433,7 @@
     <!--菜单栏项目样式-->
     <Style TargetType="{x:Type MenuItem}">
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="2,0"/>
         <Setter Property="HorizontalContentAlignment" 
                 Value="{Binding HorizontalContentAlignment, 
                         RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
@@ -477,6 +479,7 @@
     <!--右键菜单样式-->
     <Style TargetType="{x:Type ContextMenu}">
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="2,0"/>
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -486,7 +489,7 @@
                 <ControlTemplate TargetType="{x:Type ContextMenu}">
                     <svd:LightedSurface x:Name="Border" Margin="8" Padding="0" BorderThickness="1"
                                         BorderBrush="{StaticResource Border.Main.Shaded}">
-                        <StackPanel IsItemsHost="True" Margin="0,4"
+                        <StackPanel IsItemsHost="True" Margin="2,1"
                                     KeyboardNavigation.DirectionalNavigation="Cycle" />
                         <svd:LightedSurface.Effect>
                             <DropShadowEffect Color="Black" Opacity="0.4" ShadowDepth="2" BlurRadius="12"/>

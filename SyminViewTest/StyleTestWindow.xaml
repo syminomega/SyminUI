@@ -16,12 +16,14 @@
         <Menu>
             <MenuItem Header="File" >
                 <MenuItem Header="Open"/>
-                <MenuItem Header="Save"/>
                 <MenuItem Header="Open Recent File...">
                     <MenuItem Header="File01"/>
                     <MenuItem Header="File02"/>
                     <MenuItem Header="File03"/>
                 </MenuItem>
+                <Separator/>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Save As..."/>
             </MenuItem>
 
             <MenuItem Header="Edit">
@@ -41,9 +43,11 @@
         <ContextMenu x:Key="ContextMenuDemo">
             <MenuItem Header="MenuItem01"/>
             <MenuItem Header="MenuItem02"/>
+            <Separator/>
             <MenuItem Header="MenuItem03">
                 <MenuItem Header="MenuItemA1"/>
                 <MenuItem Header="MenuItemA2"/>
+                <Separator/>
                 <MenuItem Header="MenuItemA3"/>
             </MenuItem>
         </ContextMenu>
@@ -126,6 +130,7 @@
                     <ProgressBar Height="24" IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
                          Value="{Binding ElementName=progressSlider,Path=Value}"/>
                     <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25"/>
+                    <Separator/>
                     <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate"/>
                     <CheckBox Content="Check Box Indeterminate Disabled" IsChecked="{x:Null}" IsEnabled="False"/>
                     <UniformGrid Columns="2" Rows="1">
@@ -157,7 +162,7 @@
             </ScrollViewer>
             
         </GroupBox>
-
+        
         <GroupBox Header="Vertical" Grid.Column="2">
             <StackPanel Orientation="Horizontal" >
                 <Slider x:Name="progressVerticalSlider" Orientation="Vertical" 
@@ -166,5 +171,6 @@
                          Width="24" Value="{Binding ElementName=progressVerticalSlider,Path=Value}"/>
             </StackPanel>
         </GroupBox>
+
     </Grid>
 </Window>

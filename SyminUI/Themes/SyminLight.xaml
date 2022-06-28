@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Color x:Key="PrimaryColor">#2c63f2</Color>
     <Color x:Key="SecondaryColor">#3CD9E0</Color>
-    <Color x:Key="Primary.LightColor">#E3F3FF</Color>
-    <Color x:Key="Primary.ShadowColor">#7a8cb7</Color>
+    <Color x:Key="Primary.LightColor">#bbe5ff</Color>
+    <Color x:Key="Primary.ShadowColor">#7488b7</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
     <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>
@@ -61,6 +61,8 @@
     <!--边框色-->
     <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
     <SolidColorBrush x:Key="Border.Section" Color="#A8ABBD"/>
+    <SolidColorBrush x:Key="Border.Separator.Main" Color="#FFB0B2BD"/>
+    <SolidColorBrush x:Key="Border.Separator.Menu" Color="#FFCFD1DE"/>
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="#FFFFFF" Offset="0"/>
         <GradientStop Color="{StaticResource Background.MainColor}" Offset="0.5"/>

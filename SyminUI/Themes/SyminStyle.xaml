@@ -16,6 +16,7 @@
         <ResourceDictionary Source="Styles/CheckBoxStyle.xaml"/>
         <ResourceDictionary Source="Styles/MenuStyle.xaml"/>
         <ResourceDictionary Source="Styles/GroupBoxStyle.xaml"/>
+        <ResourceDictionary Source="Styles/SeparatorStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

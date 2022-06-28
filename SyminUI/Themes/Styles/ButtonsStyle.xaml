@@ -8,6 +8,14 @@
         <DoubleAnimation To="1" Duration="0:0:0.2"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="Intensity"/>
+        <DoubleAnimation To="1.01" Duration="0"
+                         Storyboard.TargetName="border"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform)
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"/>
+        <DoubleAnimation To="1.01" Duration="0"
+                         Storyboard.TargetName="border"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform)
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"/>
         <BooleanAnimationUsingKeyFrames Duration="0"
                                         Storyboard.TargetName="border"
                                         Storyboard.TargetProperty="ShaderEnabled">
@@ -19,6 +27,14 @@
         <DoubleAnimation To="0" Duration="0:0:0.2"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="Intensity"/>
+        <DoubleAnimation To="1" Duration="0"
+                         Storyboard.TargetName="border"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform)
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"/>
+        <DoubleAnimation To="1" Duration="0"
+                         Storyboard.TargetName="border"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform)
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"/>
         <BooleanAnimationUsingKeyFrames Duration="0:0:0.2"
                                         Storyboard.TargetName="border"
                                         Storyboard.TargetProperty="ShaderEnabled">
@@ -27,6 +43,14 @@
     </Storyboard>
     <!--按钮按下-->
     <Storyboard x:Key="Button.PressEffect">
+        <DoubleAnimation To="0.99" Duration="0"
+                         Storyboard.TargetName="border"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform)
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"/>
+        <DoubleAnimation To="0.99" Duration="0"
+                         Storyboard.TargetName="border"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform)
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"/>
         <DoubleAnimation To="0.5" Duration="0"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="Intensity"/>
@@ -53,7 +77,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <svd:EmbossBorder x:Name="border" CornerRadius="4"
+                    <svd:EmbossBorder x:Name="border" CornerRadius="4" RenderTransformOrigin="0.5,0.5"
                                       LightBrush="{Binding Path=(sva:ShadingElement.LightBrush),
                                                     RelativeSource={RelativeSource TemplatedParent}}"
                                       ShadowBrush="{Binding Path=(sva:ShadingElement.ShadowBrush),
@@ -69,6 +93,14 @@
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        <svd:EmbossBorder.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </svd:EmbossBorder.RenderTransform>
                     </svd:EmbossBorder>
 
                     <ControlTemplate.Triggers>

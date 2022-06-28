@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="{x:Type Separator}">
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+        <Setter Property="Background" Value="{StaticResource Border.Separator.Menu}"/>
         <Setter Property="Margin" Value="0,2"/>
         <Setter Property="Focusable" Value="false"/>
         <Setter Property="Template">
@@ -18,8 +18,8 @@
     </Style>
     
     <Style TargetType="{x:Type Separator}">
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
-        <Setter Property="Margin" Value="0,2,0,2"/>
+        <Setter Property="Background" Value="{StaticResource Border.Separator.Main}"/>
+        <Setter Property="Margin" Value="0,4"/>
         <Setter Property="Focusable" Value="false"/>
         <Setter Property="Template">
             <Setter.Value>

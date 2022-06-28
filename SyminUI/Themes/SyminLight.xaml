@@ -61,6 +61,8 @@
     <!--边框色-->
     <SolidColorBrush x:Key="Border.MainBrush" Color="#A6A9BB"/>
     <SolidColorBrush x:Key="Border.Section" Color="#A8ABBD"/>
+    <SolidColorBrush x:Key="Border.Separator.Main" Color="#FFB0B2BD"/>
+    <SolidColorBrush x:Key="Border.Separator.Menu" Color="#FFCFD1DE"/>
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="#FFFFFF" Offset="0"/>
         <GradientStop Color="{StaticResource Background.MainColor}" Offset="0.5"/>

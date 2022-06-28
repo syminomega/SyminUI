@@ -7,7 +7,15 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Symin UI" Height="450" Width="400"
-        Style="{StaticResource Window.Normal}">
+        Style="{StaticResource Window.Normal}"
+        xmlns:sva="clr-namespace:SyminUI.Controls.Attach;assembly=SyminUI">
+    <sva:WindowElement.TitleBar>
+        <Menu>
+            <MenuItem Header="Help">
+                <MenuItem Header="About"/>
+            </MenuItem>
+        </Menu>
+    </sva:WindowElement.TitleBar>
     <StackPanel Margin="4" Orientation="Vertical" >
         <Button Content="Styles Demo"
                 Click="OpenStyleDemo_Click"/>

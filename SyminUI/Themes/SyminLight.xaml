@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Color x:Key="PrimaryColor">#2c63f2</Color>
     <Color x:Key="SecondaryColor">#3CD9E0</Color>
-    <Color x:Key="Primary.LightColor">#E3F3FF</Color>
-    <Color x:Key="Primary.ShadowColor">#7a8cb7</Color>
+    <Color x:Key="Primary.LightColor">#bbe5ff</Color>
+    <Color x:Key="Primary.ShadowColor">#7488b7</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
     <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>

@@ -53,9 +53,9 @@
                                 Margin="0" SnapsToDevicePixels="true" 
                                 Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
                             <Path x:Name="arrow" Margin="0" 
-                                  Data="F1 M 0,0 L 2.667,2.66665 L 5.3334,0 L 5.3334,-1.78168 
-                                  L 2.6667,0.88501 L0,-1.78168 L0,0 Z" 
-                                  Fill="{StaticResource Text.Main}" 
+                                  Data="M 0,0 L 4,3 L 8,0" 
+                                  Stroke="{StaticResource Text.Main}"
+                                  StrokeThickness="1"
                                   HorizontalAlignment="Center" 
                                   VerticalAlignment="Center"/>
                         </Border>

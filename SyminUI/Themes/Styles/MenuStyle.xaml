@@ -34,8 +34,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RepeatButton}">
-                    <Border x:Name="templateRoot" Background="Transparent" BorderBrush="Transparent" BorderThickness="1" SnapsToDevicePixels="true">
-                        <ContentPresenter HorizontalAlignment="Center" Margin="6" VerticalAlignment="Center"/>
+                    <Border x:Name="templateRoot" 
+                            Background="Transparent" 
+                            BorderBrush="Transparent" 
+                            BorderThickness="1" 
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                          Margin="6" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

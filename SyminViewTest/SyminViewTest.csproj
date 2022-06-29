@@ -11,13 +11,19 @@
 
   <ItemGroup>
     <None Remove="Resources\Images\ImageTest.png" />
+    <None Remove="Resources\Images\SyminUI.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\Images\ImageTest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\SyminUI.ico" />
+    <Content Include="Resources\Images\SyminUI.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SyminUI.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

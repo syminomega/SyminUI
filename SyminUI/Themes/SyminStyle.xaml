@@ -17,6 +17,7 @@
         <ResourceDictionary Source="Styles/MenuStyle.xaml"/>
         <ResourceDictionary Source="Styles/GroupBoxStyle.xaml"/>
         <ResourceDictionary Source="Styles/SeparatorStyle.xaml"/>
+        <ResourceDictionary Source="Styles/CalendarStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

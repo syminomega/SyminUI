@@ -6,91 +6,91 @@
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Margin="14,0,0,0" StrokeDashArray="1 2" 
-                               Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
-                               SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    <Rectangle Margin="0" RadiusX="5" RadiusY="5"
+                               Stroke="{StaticResource Additional.Blue}"
+                               SnapsToDevicePixels="true" StrokeThickness="2" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
     <Style TargetType="{x:Type CheckBox}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Background.Pure}"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Background" Value="{StaticResource Background.Pure}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
-                    <Grid x:Name="templateRoot" 
+                    <Grid x:Name="templateRoot"
                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <svd:SlotBorder x:Name="checkBoxBorder" Margin="0" Width="26" Height="26"
                                         Intensity="0.2"
-                                        Background="{TemplateBinding Background}" 
-                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}">
                             <Grid x:Name="markGrid">
-                                <Polyline x:Name="optionMark" Points="5.5,39.5 28,54 57.5,4.5" 
+                                <Polyline x:Name="optionMark" Points="5.5,39.5 28,54 57.5,4.5"
                                           StrokeThickness="3" Margin="1.5" Opacity="0"
-                                          Stroke="{StaticResource Gradient.Primary}" 
-                                          Stretch="UniformToFill"/>
+                                          Stroke="{StaticResource Gradient.Primary}"
+                                          Stretch="UniformToFill" />
                                 <Rectangle x:Name="indeterminateMark" RadiusX="3" RadiusY="3"
-                                           Fill="{StaticResource Gradient.Primary}" 
-                                           Margin="2" Opacity="0"/>
+                                           Fill="{StaticResource Gradient.Primary}"
+                                           Margin="2" Opacity="0" />
                                 <Grid.Effect>
-                                    <DropShadowEffect Color="{StaticResource SecondaryColor}" 
-                                                      ShadowDepth="0" Opacity="0.7"/>
+                                    <DropShadowEffect Color="{StaticResource SecondaryColor}"
+                                                      ShadowDepth="0" Opacity="0.7" />
                                 </Grid.Effect>
                             </Grid>
                         </svd:SlotBorder>
 
-                        <ContentPresenter x:Name="contentPresenter" Grid.Column="1"  Focusable="False" 
+                        <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="HasContent" Value="true">
-                            <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
-                            <Setter Property="Padding" Value="4,-1,0,0"/>
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}" />
+                            <Setter Property="Padding" Value="4,-1,0,0" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Intensity" TargetName="checkBoxBorder" 
-                                    Value="0.4"/>
+                            <Setter Property="Intensity" TargetName="checkBoxBorder"
+                                    Value="0.4" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="ShaderEnabled" TargetName="checkBoxBorder" 
-                                    Value="false"/>
-                            <Setter Property="Effect" TargetName="markGrid" Value="{x:Null}"/>
-                            <Setter Property="BorderBrush" TargetName="checkBoxBorder" 
-                                    Value="{StaticResource Background.Button.Disabled}"/>
-                            <Setter Property="Fill" TargetName="optionMark" 
-                                    Value="{StaticResource Primary.Disabled}"/>
-                            <Setter Property="Fill" TargetName="indeterminateMark" 
-                                    Value="{StaticResource Primary.Disabled}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" 
-                                    Value="{StaticResource Text.Main.Disabled}"/>
+                            <Setter Property="ShaderEnabled" TargetName="checkBoxBorder"
+                                    Value="false" />
+                            <Setter Property="Effect" TargetName="markGrid" Value="{x:Null}" />
+                            <Setter Property="BorderBrush" TargetName="checkBoxBorder"
+                                    Value="{StaticResource Background.Button.Disabled}" />
+                            <Setter Property="Fill" TargetName="optionMark"
+                                    Value="{StaticResource Primary.Disabled}" />
+                            <Setter Property="Fill" TargetName="indeterminateMark"
+                                    Value="{StaticResource Primary.Disabled}" />
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter"
+                                    Value="{StaticResource Text.Main.Disabled}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Intensity" TargetName="checkBoxBorder" 
-                                    Value="0.2"/>
-                            </Trigger>
+                            <Setter Property="Intensity" TargetName="checkBoxBorder"
+                                    Value="0.2" />
+                        </Trigger>
                         <Trigger Property="IsChecked" Value="true">
-                            <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
-                            <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
+                            <Setter Property="Opacity" TargetName="optionMark" Value="1" />
+                            <Setter Property="Opacity" TargetName="indeterminateMark" Value="0" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="{x:Null}">
-                            <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
-                            <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                            <Setter Property="Opacity" TargetName="optionMark" Value="0" />
+                            <Setter Property="Opacity" TargetName="indeterminateMark" Value="1" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

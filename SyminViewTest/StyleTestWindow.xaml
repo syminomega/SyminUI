@@ -148,7 +148,7 @@
                     </UniformGrid>
                     <svd:LightedSurface  Height="80" Margin="4"
                                  Background="{StaticResource Background.Main}"
-                                 CornerRadius="16" Content="Lighed Surface" FontSize="24"/>
+                                 CornerRadius="16" Content="Lighted Surface" FontSize="24"/>
                     <StackPanel Orientation="Horizontal">
                         <ToggleButton Content="Toggle" IsChecked="True"/>
                         <ToggleButton Style="{StaticResource SwitchButton}"

@@ -6,83 +6,84 @@
                     xmlns:se="clr-namespace:SyminUI.Effects"
                     xmlns:cvtfx="clr-namespace:SyminUI.Convertor.Effect">
     <Style TargetType="{x:Type svd:SlotBorder}">
-        <Setter Property="Focusable" Value="False"/>
-        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
-        <Setter Property="Background" Value="{StaticResource Background.Main}"/>
-        <Setter Property="LightBrush" Value="{StaticResource Shader.Light}"/>
-        <Setter Property="ShadowBrush" Value="{StaticResource Shader.Shadow}"/>
-        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-        <Setter Property="Radius" Value="4"/>
-        <Setter Property="ShaderEnabled" Value="True"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Intensity" Value="1"/>
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
+        <Setter Property="Background" Value="{StaticResource Background.Main}" />
+        <Setter Property="LightBrush" Value="{StaticResource Shader.Light}" />
+        <Setter Property="ShadowBrush" Value="{StaticResource Shader.Shadow}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Radius" Value="4" />
+        <Setter Property="ShaderEnabled" Value="True" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Intensity" Value="1" />
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type svd:SlotBorder}">
                     <ControlTemplate.Resources>
-                        <cvts:CreateClipGeometry x:Key="CCG"/>
-                        <cvts:IntensityToBlur x:Key="ITB"/>
-                        <cvts:IntensityToMargin x:Key="ITM"/>
-                        <cvt:ValueToRadius x:Key="VTR"/>
-                        <cvt:BoolToVisibility x:Key="BTV"/>
-                        <cvtfx:CreateGradientEffect x:Key="CGE"/>
-                        <cvtfx:CornerSquareSize x:Key="CSS"/>
+                        <cvts:CreateClipGeometry x:Key="CCG" />
+                        <cvts:IntensityToBlur x:Key="ITB" />
+                        <cvts:IntensityToMargin x:Key="ITM" />
+                        <cvt:ValueToRadius x:Key="VTR" />
+                        <cvt:BoolToVisibility x:Key="BTV" />
+                        <cvtfx:CreateGradientEffect x:Key="CGE" />
+                        <cvtfx:CornerSquareSize x:Key="CSS" />
                     </ControlTemplate.Resources>
 
                     <Grid>
                         <!--呈现背景色-->
                         <Border Margin="4" CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
-                                Background="{TemplateBinding Background}"/>
+                                Background="{TemplateBinding Background}" />
                         <!--内阴影效果-->
-                        <Grid Visibility="{TemplateBinding ShaderEnabled,
+                        <Grid
+                            Visibility="{TemplateBinding ShaderEnabled,
                                                         Converter={StaticResource BTV}}">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <!--左/上方-->
                             <Border x:Name="leftTopShaderBorder" Grid.ColumnSpan="2"
-                                    Background="{TemplateBinding ShadowBrush}"/>
+                                    Background="{TemplateBinding ShadowBrush}" />
                             <!--右/下方-->
                             <Border x:Name="rightBottomShaderBorder" Grid.ColumnSpan="2"
-                                    Background="{TemplateBinding LightBrush}" Grid.Row="1"/>
+                                    Background="{TemplateBinding LightBrush}" Grid.Row="1" />
                             <!--右上转角过渡-->
                             <Border Background="Black" Grid.ColumnSpan="2" Grid.RowSpan="2"
                                     HorizontalAlignment="Right" VerticalAlignment="Top">
                                 <Border.Width>
                                     <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
                                         <Binding Path="ActualWidth" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}"/>
+                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                         <Binding Path="ActualHeight" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}"/>
+                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                     </MultiBinding>
                                 </Border.Width>
                                 <Border.Height>
                                     <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
                                         <Binding Path="ActualWidth" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}"/>
+                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                         <Binding Path="ActualHeight" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}"/>
+                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                     </MultiBinding>
                                 </Border.Height>
                                 <Border.Effect>
                                     <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay"
                                                   ConverterParameter="0,1,0.25">
                                         <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="ShadowBrush" Mode="OneWay"/>
+                                                 Path="ShadowBrush" Mode="OneWay" />
                                         <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="LightBrush" Mode="OneWay"/>
+                                                 Path="LightBrush" Mode="OneWay" />
                                         <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="Radius" Mode="OneWay"/>
-                                        <Binding RelativeSource="{RelativeSource Self}" 
-                                                 Path="ActualWidth" Mode="OneWay"/>
+                                                 Path="Radius" Mode="OneWay" />
+                                        <Binding RelativeSource="{RelativeSource Self}"
+                                                 Path="ActualWidth" Mode="OneWay" />
                                     </MultiBinding>
                                 </Border.Effect>
                             </Border>
@@ -92,77 +93,78 @@
                                 <Border.Width>
                                     <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
                                         <Binding Path="ActualWidth" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}"/>
+                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                         <Binding Path="ActualHeight" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}"/>
+                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                     </MultiBinding>
                                 </Border.Width>
                                 <Border.Height>
                                     <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
                                         <Binding Path="ActualWidth" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}"/>
+                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                         <Binding Path="ActualHeight" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}"/>
+                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                     </MultiBinding>
                                 </Border.Height>
                                 <Border.Effect>
                                     <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay"
                                                   ConverterParameter="1,0,0.75">
                                         <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="LightBrush" Mode="OneWay"/>
+                                                 Path="LightBrush" Mode="OneWay" />
                                         <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="ShadowBrush" Mode="OneWay"/>
+                                                 Path="ShadowBrush" Mode="OneWay" />
                                         <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="Radius" Mode="OneWay"/>
-                                        <Binding RelativeSource="{RelativeSource Self}" 
-                                                 Path="ActualWidth" Mode="OneWay"/>
+                                                 Path="Radius" Mode="OneWay" />
+                                        <Binding RelativeSource="{RelativeSource Self}"
+                                                 Path="ActualWidth" Mode="OneWay" />
                                     </MultiBinding>
                                 </Border.Effect>
                             </Border>
                             <!--背景-->
                             <Border Background="{TemplateBinding Background}" Grid.RowSpan="2" Grid.ColumnSpan="2"
                                     CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
-                                    Margin="{TemplateBinding Intensity,Converter={StaticResource ITM}}"/>
+                                    Margin="{TemplateBinding Intensity,Converter={StaticResource ITM}}" />
                             <!--裁切区域-->
                             <Grid.Clip>
                                 <MultiBinding Converter="{StaticResource CCG}" Mode="OneWay"
-                                                          ConverterParameter="4">
-                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
-                                             Path="Radius" Mode="OneWay"/>
-                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
-                                             Path="ActualWidth" Mode="OneWay"/>
-                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
-                                             Path="ActualHeight" Mode="OneWay"/>
+                                              ConverterParameter="4">
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                             Path="Radius" Mode="OneWay" />
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                             Path="ActualWidth" Mode="OneWay" />
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                             Path="ActualHeight" Mode="OneWay" />
                                 </MultiBinding>
                             </Grid.Clip>
                             <Grid.Effect>
-                                <BlurEffect Radius="{Binding RelativeSource={RelativeSource TemplatedParent}, 
-                                                    Path=Intensity,Converter={StaticResource ITB},Mode=OneWay}"/>
+                                <BlurEffect
+                                    Radius="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                                                    Path=Intensity,Converter={StaticResource ITB},Mode=OneWay}" />
                             </Grid.Effect>
                         </Grid>
-                        <Border CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}" 
+                        <Border CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}" Margin="4">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" 
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              TextElement.Foreground="{TemplateBinding Foreground}" />
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsWidthGreaterThanHeight" Value="False">
                             <Setter Property="Grid.ColumnSpan" TargetName="leftTopShaderBorder"
-                                    Value="1"/>
+                                    Value="1" />
                             <Setter Property="Grid.RowSpan" TargetName="leftTopShaderBorder"
-                                    Value="2"/>
+                                    Value="2" />
                             <Setter Property="Grid.Row" TargetName="rightBottomShaderBorder"
-                                    Value="0"/>
+                                    Value="0" />
                             <Setter Property="Grid.Column" TargetName="rightBottomShaderBorder"
-                                    Value="1"/>
+                                    Value="1" />
                             <Setter Property="Grid.RowSpan" TargetName="rightBottomShaderBorder"
-                                    Value="2"/>
+                                    Value="2" />
                         </Trigger>
                     </ControlTemplate.Triggers>
 

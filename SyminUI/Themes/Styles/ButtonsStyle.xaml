@@ -1,44 +1,44 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations"
-                    xmlns:sva ="clr-namespace:SyminUI.Controls.Attach">
-
+                    xmlns:sva="clr-namespace:SyminUI.Controls.Attach"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
     <!--按钮高亮-->
     <Storyboard x:Key="Button.FocusEffect">
         <DoubleAnimation To="1" Duration="0:0:0.2"
                          Storyboard.TargetName="border"
-                         Storyboard.TargetProperty="Intensity"/>
+                         Storyboard.TargetProperty="Intensity" />
         <DoubleAnimation To="1.01" Duration="0"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="(UIElement.RenderTransform)
-                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"/>
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" />
         <DoubleAnimation To="1.01" Duration="0"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="(UIElement.RenderTransform)
-                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"/>
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" />
         <BooleanAnimationUsingKeyFrames Duration="0"
                                         Storyboard.TargetName="border"
                                         Storyboard.TargetProperty="ShaderEnabled">
-            <DiscreteBooleanKeyFrame KeyTime="0" Value="True"/>
+            <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
         </BooleanAnimationUsingKeyFrames>
     </Storyboard>
     <!--按钮取消高亮-->
     <Storyboard x:Key="Button.LeaveEffect">
         <DoubleAnimation To="0" Duration="0:0:0.2"
                          Storyboard.TargetName="border"
-                         Storyboard.TargetProperty="Intensity"/>
+                         Storyboard.TargetProperty="Intensity" />
         <DoubleAnimation To="1" Duration="0"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="(UIElement.RenderTransform)
-                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"/>
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" />
         <DoubleAnimation To="1" Duration="0"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="(UIElement.RenderTransform)
-                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"/>
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" />
         <BooleanAnimationUsingKeyFrames Duration="0:0:0.2"
                                         Storyboard.TargetName="border"
                                         Storyboard.TargetProperty="ShaderEnabled">
-            <DiscreteBooleanKeyFrame KeyTime="0:0:0.2" Value="False"/>
+            <DiscreteBooleanKeyFrame KeyTime="0:0:0.2" Value="False" />
         </BooleanAnimationUsingKeyFrames>
     </Storyboard>
     <!--按钮按下-->
@@ -46,34 +46,34 @@
         <DoubleAnimation To="0.99" Duration="0"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="(UIElement.RenderTransform)
-                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"/>
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" />
         <DoubleAnimation To="0.99" Duration="0"
                          Storyboard.TargetName="border"
                          Storyboard.TargetProperty="(UIElement.RenderTransform)
-                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"/>
+                         .(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" />
         <DoubleAnimation To="0.5" Duration="0"
                          Storyboard.TargetName="border"
-                         Storyboard.TargetProperty="Intensity"/>
+                         Storyboard.TargetProperty="Intensity" />
     </Storyboard>
-    
+
     <!--普通按钮-->
     <Style x:Key="ButtonBasic" TargetType="{x:Type Button}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Background.Button}"/>
-        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
-        
-        <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Shader.Light}"/>
-        <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Shader.Shadow}"/>
-        <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Background.Button.Disabled}"/>
-        <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Main.Disabled}"/>
-        <Setter Property="sva:ShadingElement.LightedBorder" Value="{StaticResource Border.Main.Shaded}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Background" Value="{StaticResource Background.Button}" />
+        <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}" />
 
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="20,8"/>
+        <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Shader.Light}" />
+        <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Shader.Shadow}" />
+        <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Background.Button.Disabled}" />
+        <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Main.Disabled}" />
+        <Setter Property="sva:ShadingElement.LightedBorder" Value="{StaticResource Border.Main.Shaded}" />
+
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="20,8" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -83,36 +83,36 @@
                                       ShadowBrush="{Binding Path=(sva:ShadingElement.ShadowBrush),
                                                     RelativeSource={RelativeSource TemplatedParent}}"
                                       Intensity="0" ShaderEnabled="False"
-                                      Background="{TemplateBinding Background}" 
-                                      BorderBrush="{TemplateBinding BorderBrush}" 
-                                      BorderThickness="{TemplateBinding BorderThickness}" 
+                                      Background="{TemplateBinding Background}"
+                                      BorderBrush="{TemplateBinding BorderBrush}"
+                                      BorderThickness="{TemplateBinding BorderThickness}"
                                       SnapsToDevicePixels="true">
-                        <ContentPresenter x:Name="contentPresenter" Focusable="False" 
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                                          TextElement.Foreground="{TemplateBinding Foreground}" />
                         <svd:EmbossBorder.RenderTransform>
                             <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
+                                <ScaleTransform />
+                                <SkewTransform />
+                                <RotateTransform />
+                                <TranslateTransform />
                             </TransformGroup>
                         </svd:EmbossBorder.RenderTransform>
                     </svd:EmbossBorder>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" 
-                                    Value="{StaticResource PrimaryBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border"
+                                    Value="{StaticResource PrimaryBrush}" />
                         </Trigger>
                         <!--切换边框效果，显示阴影-->
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" 
+                            <Setter Property="BorderBrush" TargetName="border"
                                     Value="{Binding Path=(sva:ShadingElement.LightedBorder),
-                                               RelativeSource={RelativeSource TemplatedParent}}"/>
+                                               RelativeSource={RelativeSource TemplatedParent}}" />
                             <Trigger.EnterActions>
                                 <BeginStoryboard x:Name="showEffectBegin"
                                                  Storyboard="{StaticResource Button.FocusEffect}" />
@@ -124,21 +124,21 @@
                         <!--缩减阴影，下压效果-->
                         <Trigger Property="IsPressed" Value="true">
                             <Trigger.EnterActions>
-                                <BeginStoryboard x:Name="pressBegin" 
-                                                 Storyboard="{StaticResource Button.PressEffect}"/>
+                                <BeginStoryboard x:Name="pressBegin"
+                                                 Storyboard="{StaticResource Button.PressEffect}" />
                             </Trigger.EnterActions>
                             <Trigger.ExitActions>
-                                <RemoveStoryboard BeginStoryboardName="pressBegin"/>
+                                <RemoveStoryboard BeginStoryboardName="pressBegin" />
                             </Trigger.ExitActions>
                         </Trigger>
                         <!--按钮禁用效果-->
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" 
+                            <Setter Property="Background" TargetName="border"
                                     Value="{Binding Path=(sva:ShadingElement.DisabledBackground),
-                                                RelativeSource={RelativeSource TemplatedParent}}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" 
+                                                RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter"
                                     Value="{Binding Path=(sva:ShadingElement.DisabledForeground),
-                                                RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                RelativeSource={RelativeSource TemplatedParent}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -146,121 +146,120 @@
         </Setter>
     </Style>
     <!--默认按钮-->
-    <Style BasedOn="{StaticResource ResourceKey=ButtonBasic}"  
-           TargetType="{x:Type Button}"/>
+    <Style BasedOn="{StaticResource ResourceKey=ButtonBasic}"
+           TargetType="{x:Type Button}" />
     <!--主要按钮-->
-    <Style x:Key="ButtonPrimary" 
-           BasedOn="{StaticResource ResourceKey=ButtonBasic}"  TargetType="{x:Type Button}">
-        <Setter Property="Foreground" Value="{StaticResource Text.Contrast}"/>
-        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
+    <Style x:Key="ButtonPrimary"
+           BasedOn="{StaticResource ResourceKey=ButtonBasic}" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{StaticResource Text.Contrast}" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
 
-        <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Primary.Light}"/>
-        <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Primary.Shadow}"/>
-        <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Primary.Disabled}"/>
-        <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Contrast.Disabled}"/>
+        <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Primary.Light}" />
+        <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Primary.Shadow}" />
+        <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Primary.Disabled}" />
+        <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Contrast.Disabled}" />
         <Setter Property="sva:ShadingElement.LightedBorder">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="{StaticResource Primary.LightColor}" Offset="0"/>
-                    <GradientStop Color="Transparent" Offset="0.5"/>
+                    <GradientStop Color="{StaticResource Primary.LightColor}" Offset="0" />
+                    <GradientStop Color="Transparent" Offset="0.5" />
                     <LinearGradientBrush.RelativeTransform>
-                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5" />
                     </LinearGradientBrush.RelativeTransform>
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
     </Style>
     <!--危险按钮-->
-    <Style x:Key="ButtonDanger" 
-           BasedOn="{StaticResource ResourceKey=ButtonPrimary}"  TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{StaticResource DangerBrush}"/>
+    <Style x:Key="ButtonDanger"
+           BasedOn="{StaticResource ResourceKey=ButtonPrimary}" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource DangerBrush}" />
 
-        <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Danger.Light}"/>
-        <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Danger.Shadow}"/>
-        <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Danger.Disabled}"/>
+        <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Danger.Light}" />
+        <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Danger.Shadow}" />
+        <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Danger.Disabled}" />
         <Setter Property="sva:ShadingElement.LightedBorder">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="{StaticResource Danger.LightColor}" Offset="0"/>
-                    <GradientStop Color="Transparent" Offset="0.5"/>
+                    <GradientStop Color="{StaticResource Danger.LightColor}" Offset="0" />
+                    <GradientStop Color="Transparent" Offset="0.5" />
                     <LinearGradientBrush.RelativeTransform>
-                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5" />
                     </LinearGradientBrush.RelativeTransform>
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
     </Style>
     <!--成功按钮-->
-    <Style x:Key="ButtonSuccess" 
-           BasedOn="{StaticResource ResourceKey=ButtonPrimary}"  TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{StaticResource SuccessBrush}"/>
-
-        <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Success.Light}"/>
-        <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Success.Shadow}"/>
-        <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Success.Disabled}"/>
+    <Style x:Key="ButtonSuccess"
+           BasedOn="{StaticResource ResourceKey=ButtonPrimary}" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource SuccessBrush}" />
+        <Setter Property="sva:ShadingElement.LightBrush" Value="{StaticResource Success.Light}" />
+        <Setter Property="sva:ShadingElement.ShadowBrush" Value="{StaticResource Success.Shadow}" />
+        <Setter Property="sva:ShadingElement.DisabledBackground" Value="{StaticResource Success.Disabled}" />
         <Setter Property="sva:ShadingElement.LightedBorder">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="{StaticResource Success.LightColor}" Offset="0"/>
-                    <GradientStop Color="Transparent" Offset="0.5"/>
+                    <GradientStop Color="{StaticResource Success.LightColor}" Offset="0" />
+                    <GradientStop Color="Transparent" Offset="0.5" />
                     <LinearGradientBrush.RelativeTransform>
-                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5" />
                     </LinearGradientBrush.RelativeTransform>
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <!--扁平默认按钮-->
     <Style x:Key="ButtonFlatten" TargetType="{x:Type Button}">
-        <Setter Property="sva:BorderElement.CornerRadius" Value="4"/>
-        <Setter Property="Background" Value="{StaticResource Background.Button}"/>
-        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="20,5"/>
+        <Setter Property="sva:BorderElement.CornerRadius" Value="4" />
+        <Setter Property="Background" Value="{StaticResource Background.Button}" />
+        <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="20,5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
-                        <Border x:Name="border" 
-                            CornerRadius="{TemplateBinding sva:BorderElement.CornerRadius}"
-                            Background="{TemplateBinding Background}" 
-                            SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" 
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Border x:Name="border"
+                                CornerRadius="{TemplateBinding sva:BorderElement.CornerRadius}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Border>
                         <!--点击的时候覆盖一层高亮-->
                         <Border x:Name="highlightBorder" Opacity="0"
                                 CornerRadius="{TemplateBinding sva:BorderElement.CornerRadius}"
                                 Background="{StaticResource Background.LightMask}"
-                                SnapsToDevicePixels="true"/>
+                                SnapsToDevicePixels="true" />
                     </Grid>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="Opacity" TargetName="highlightBorder" 
-                                    Value="0"/>
+                            <Setter Property="Opacity" TargetName="highlightBorder"
+                                    Value="0" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Opacity" TargetName="highlightBorder" 
-                                    Value="0.6"/>
+                            <Setter Property="Opacity" TargetName="highlightBorder"
+                                    Value="0.6" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Opacity" TargetName="highlightBorder" 
-                                    Value="0.3"/>
+                            <Setter Property="Opacity" TargetName="highlightBorder"
+                                    Value="0.3" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background"
-                                    Value="{StaticResource Background.Button.Disabled}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" 
-                                    Value="{StaticResource Text.Main.Disabled}"/>
+                                    Value="{StaticResource Background.Button.Disabled}" />
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter"
+                                    Value="{StaticResource Text.Main.Disabled}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -26,14 +26,7 @@ namespace SyminUI.Controls.Decorations
         }
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
-            if (ActualWidth > ActualHeight)
-            {
-                IsWidthGreaterThanHeight = true;
-            }
-            else
-            {
-                IsWidthGreaterThanHeight = false;
-            }
+            IsWidthGreaterThanHeight = ActualWidth > ActualHeight;
 
             base.OnRenderSizeChanged(sizeInfo);
         }
@@ -44,8 +37,8 @@ namespace SyminUI.Controls.Decorations
         /// </summary>
         public double Intensity
         {
-            get { return (double)GetValue(IntensityProperty); }
-            set { SetValue(IntensityProperty, value); }
+            get => (double)GetValue(IntensityProperty);
+            set => SetValue(IntensityProperty, value);
         }
 
         /// <summary>
@@ -53,27 +46,15 @@ namespace SyminUI.Controls.Decorations
         /// </summary>
         public bool ShaderEnabled
         {
-            get { return (bool)GetValue(ShaderEnabledProperty); }
-            set { SetValue(ShaderEnabledProperty, value); }
-        }
-
-        public SolidColorBrush LightBrush
-        {
-            get { return (SolidColorBrush)GetValue(LightBrushProperty); }
-            set { SetValue(LightBrushProperty, value); }
-        }
-
-        public SolidColorBrush ShadowBrush
-        {
-            get { return (SolidColorBrush)GetValue(ShadowBrushProperty); }
-            set { SetValue(ShadowBrushProperty, value); }
+            get => (bool)GetValue(ShaderEnabledProperty);
+            set => SetValue(ShaderEnabledProperty, value);
         }
 
         [ReadOnly(true)]
         public bool IsWidthGreaterThanHeight
         {
-            get { return (bool)GetValue(IsWidthGreaterThanHeightProperty); }
-            set { SetValue(IsWidthGreaterThanHeightProperty, value); }
+            get => (bool)GetValue(IsWidthGreaterThanHeightProperty);
+            set => SetValue(IsWidthGreaterThanHeightProperty, value);
         }
 
 
@@ -90,18 +71,7 @@ namespace SyminUI.Controls.Decorations
             DependencyProperty.Register("ShaderEnabled",
                 typeof(bool), typeof(DecorationBase),
                 new PropertyMetadata(true));
-
-        // Using a DependencyProperty as the backing store for LightBrush.
-        public static readonly DependencyProperty LightBrushProperty =
-            DependencyProperty.Register("LightBrush",
-                typeof(SolidColorBrush), typeof(DecorationBase), 
-                new PropertyMetadata(Brushes.WhiteSmoke));
-
-        // Using a DependencyProperty as the backing store for ShadowBrush.
-        public static readonly DependencyProperty ShadowBrushProperty =
-            DependencyProperty.Register("ShadowBrush",
-                typeof(SolidColorBrush), typeof(DecorationBase),
-                new PropertyMetadata(Brushes.DarkGray));
+        
 
         // Using a DependencyProperty as the backing store for IsWidthGreaterThanHeight.
         public static readonly DependencyProperty IsWidthGreaterThanHeightProperty =

@@ -33,13 +33,14 @@
                     </ControlTemplate.Resources>
 
                     <Grid>
-                        <!--呈现背景色-->
-                        <Border Margin="4" CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
+                        <!--隐藏阴影的时候呈现背景色-->
+                        <Border Margin="4" 
+                                CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
                                 Background="{TemplateBinding Background}" />
                         <!--内阴影效果-->
                         <Grid
                             Visibility="{TemplateBinding ShaderEnabled,
-                                                        Converter={StaticResource BTV}}">
+                            Converter={StaticResource BTV}}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
@@ -55,7 +56,8 @@
                             <Border x:Name="rightBottomShaderBorder" Grid.ColumnSpan="2"
                                     Background="{TemplateBinding LightBrush}" Grid.Row="1" />
                             <!--右上转角过渡-->
-                            <Border Background="Black" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                            <Border x:Name="PART_TopRightCorner"
+                                    Background="Black" Grid.ColumnSpan="2" Grid.RowSpan="2"
                                     HorizontalAlignment="Right" VerticalAlignment="Top">
                                 <Border.Width>
                                     <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
@@ -73,22 +75,23 @@
                                                  RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                     </MultiBinding>
                                 </Border.Height>
-                                <Border.Effect>
-                                    <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay"
-                                                  ConverterParameter="0,1,0.25">
-                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="ShadowBrush" Mode="OneWay" />
-                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="LightBrush" Mode="OneWay" />
-                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="Radius" Mode="OneWay" />
-                                        <Binding RelativeSource="{RelativeSource Self}"
-                                                 Path="ActualWidth" Mode="OneWay" />
-                                    </MultiBinding>
-                                </Border.Effect>
+                                <!-- <Border.Effect> -->
+                                <!--     <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay" -->
+                                <!--                   ConverterParameter="0,1,0.25"> -->
+                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
+                                <!--                  Path="ShadowBrush" Mode="OneWay" /> -->
+                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
+                                <!--                  Path="LightBrush" Mode="OneWay" /> -->
+                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
+                                <!--                  Path="Radius" Mode="OneWay" /> -->
+                                <!--         <Binding RelativeSource="{RelativeSource Self}" -->
+                                <!--                  Path="ActualWidth" Mode="OneWay" /> -->
+                                <!--     </MultiBinding> -->
+                                <!-- </Border.Effect> -->
                             </Border>
                             <!--左下转角过渡-->
-                            <Border Background="Black" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                            <Border x:Name="PART_BottomLeftCorner"
+                                    Background="Black" Grid.ColumnSpan="2" Grid.RowSpan="2"
                                     HorizontalAlignment="Left" VerticalAlignment="Bottom">
                                 <Border.Width>
                                     <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
@@ -106,19 +109,19 @@
                                                  RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
                                     </MultiBinding>
                                 </Border.Height>
-                                <Border.Effect>
-                                    <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay"
-                                                  ConverterParameter="1,0,0.75">
-                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="LightBrush" Mode="OneWay" />
-                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="ShadowBrush" Mode="OneWay" />
-                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                 Path="Radius" Mode="OneWay" />
-                                        <Binding RelativeSource="{RelativeSource Self}"
-                                                 Path="ActualWidth" Mode="OneWay" />
-                                    </MultiBinding>
-                                </Border.Effect>
+                                <!-- <Border.Effect> -->
+                                <!--     <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay" -->
+                                <!--                   ConverterParameter="1,0,0.75"> -->
+                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
+                                <!--                  Path="LightBrush" Mode="OneWay" /> -->
+                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
+                                <!--                  Path="ShadowBrush" Mode="OneWay" /> -->
+                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
+                                <!--                  Path="Radius" Mode="OneWay" /> -->
+                                <!--         <Binding RelativeSource="{RelativeSource Self}" -->
+                                <!--                  Path="ActualWidth" Mode="OneWay" /> -->
+                                <!--     </MultiBinding> -->
+                                <!-- </Border.Effect> -->
                             </Border>
                             <!--背景-->
                             <Border Background="{TemplateBinding Background}" Grid.RowSpan="2" Grid.ColumnSpan="2"
@@ -142,6 +145,7 @@
                                                     Path=Intensity,Converter={StaticResource ITB},Mode=OneWay}" />
                             </Grid.Effect>
                         </Grid>
+                        <!-- 显示边框和内容 -->
                         <Border CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}" Margin="4">

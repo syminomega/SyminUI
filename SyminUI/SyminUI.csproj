@@ -8,12 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Shaders\AngleGradientPS.ps" />
     <None Remove="Shaders\LightedSurfacePS.ps" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Shaders\AngleGradientPS.ps" />
     <Resource Include="Shaders\LightedSurfacePS.ps" />
   </ItemGroup>
 
@@ -22,9 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Shaders\AngleGradientPS.fx">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Convertor\Effect\" />
   </ItemGroup>
 
 </Project>

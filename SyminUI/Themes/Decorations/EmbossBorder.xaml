@@ -2,9 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations"
                     xmlns:cvte="clr-namespace:SyminUI.Convertor.Emboss"
-                    xmlns:cvt="clr-namespace:SyminUI.Convertor"
-                    xmlns:se="clr-namespace:SyminUI.Effects"
-                    xmlns:cvtfx="clr-namespace:SyminUI.Convertor.Effect">
+                    xmlns:cvt="clr-namespace:SyminUI.Convertor">
     <Style TargetType="{x:Type svd:EmbossBorder}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="CornerRadius" Value="4" />

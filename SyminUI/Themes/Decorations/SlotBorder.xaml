@@ -2,9 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations"
                     xmlns:cvts="clr-namespace:SyminUI.Convertor.Slot"
-                    xmlns:cvt="clr-namespace:SyminUI.Convertor"
-                    xmlns:se="clr-namespace:SyminUI.Effects"
-                    xmlns:cvtfx="clr-namespace:SyminUI.Convertor.Effect">
+                    xmlns:cvt="clr-namespace:SyminUI.Convertor">
     <Style TargetType="{x:Type svd:SlotBorder}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
@@ -26,10 +24,10 @@
                         <cvts:CreateClipGeometry x:Key="CCG" />
                         <cvts:IntensityToBlur x:Key="ITB" />
                         <cvts:IntensityToMargin x:Key="ITM" />
+                        <cvts:IntensityToShadowMargin x:Key="ITSM"/>
+                        <cvts:IntensityToLightMargin x:Key="ITLM"/>
                         <cvt:ValueToRadius x:Key="VTR" />
                         <cvt:BoolToVisibility x:Key="BTV" />
-                        <cvtfx:CreateGradientEffect x:Key="CGE" />
-                        <cvtfx:CornerSquareSize x:Key="CSS" />
                     </ControlTemplate.Resources>
 
                     <Grid>
@@ -41,90 +39,18 @@
                         <Grid
                             Visibility="{TemplateBinding ShaderEnabled,
                             Converter={StaticResource BTV}}">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <!--左/上方-->
-                            <Border x:Name="leftTopShaderBorder" Grid.ColumnSpan="2"
-                                    Background="{TemplateBinding ShadowBrush}" />
-                            <!--右/下方-->
-                            <Border x:Name="rightBottomShaderBorder" Grid.ColumnSpan="2"
-                                    Background="{TemplateBinding LightBrush}" Grid.Row="1" />
-                            <!--右上转角过渡-->
-                            <Border x:Name="PART_TopRightCorner"
-                                    Background="Black" Grid.ColumnSpan="2" Grid.RowSpan="2"
-                                    HorizontalAlignment="Right" VerticalAlignment="Top">
-                                <Border.Width>
-                                    <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
-                                        <Binding Path="ActualWidth" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
-                                        <Binding Path="ActualHeight" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
-                                    </MultiBinding>
-                                </Border.Width>
-                                <Border.Height>
-                                    <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
-                                        <Binding Path="ActualWidth" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
-                                        <Binding Path="ActualHeight" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
-                                    </MultiBinding>
-                                </Border.Height>
-                                <!-- <Border.Effect> -->
-                                <!--     <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay" -->
-                                <!--                   ConverterParameter="0,1,0.25"> -->
-                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
-                                <!--                  Path="ShadowBrush" Mode="OneWay" /> -->
-                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
-                                <!--                  Path="LightBrush" Mode="OneWay" /> -->
-                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
-                                <!--                  Path="Radius" Mode="OneWay" /> -->
-                                <!--         <Binding RelativeSource="{RelativeSource Self}" -->
-                                <!--                  Path="ActualWidth" Mode="OneWay" /> -->
-                                <!--     </MultiBinding> -->
-                                <!-- </Border.Effect> -->
-                            </Border>
-                            <!--左下转角过渡-->
-                            <Border x:Name="PART_BottomLeftCorner"
-                                    Background="Black" Grid.ColumnSpan="2" Grid.RowSpan="2"
-                                    HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                                <Border.Width>
-                                    <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
-                                        <Binding Path="ActualWidth" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
-                                        <Binding Path="ActualHeight" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
-                                    </MultiBinding>
-                                </Border.Width>
-                                <Border.Height>
-                                    <MultiBinding Converter="{StaticResource CSS}" Mode="OneWay">
-                                        <Binding Path="ActualWidth" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
-                                        <Binding Path="ActualHeight" Mode="OneWay"
-                                                 RelativeSource="{RelativeSource AncestorType={x:Type Grid}}" />
-                                    </MultiBinding>
-                                </Border.Height>
-                                <!-- <Border.Effect> -->
-                                <!--     <MultiBinding Converter="{StaticResource CGE}" Mode="OneWay" -->
-                                <!--                   ConverterParameter="1,0,0.75"> -->
-                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
-                                <!--                  Path="LightBrush" Mode="OneWay" /> -->
-                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
-                                <!--                  Path="ShadowBrush" Mode="OneWay" /> -->
-                                <!--         <Binding RelativeSource="{RelativeSource TemplatedParent}" -->
-                                <!--                  Path="Radius" Mode="OneWay" /> -->
-                                <!--         <Binding RelativeSource="{RelativeSource Self}" -->
-                                <!--                  Path="ActualWidth" Mode="OneWay" /> -->
-                                <!--     </MultiBinding> -->
-                                <!-- </Border.Effect> -->
-                            </Border>
-                            <!--背景-->
-                            <Border Background="{TemplateBinding Background}" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                            <!--背景填充-->
+                            <Rectangle Fill="{TemplateBinding Background}"/>
+                            <!--左上阴影-->
+                            <Border CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
+                                    Background="{TemplateBinding ShadowBrush}"
+                                    Margin="{TemplateBinding Intensity,Converter={StaticResource ITSM}}" />
+                            <!--右下高亮-->
+                            <Border CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
+                                    Background="{TemplateBinding LightBrush}"
+                                    Margin="{TemplateBinding Intensity,Converter={StaticResource ITLM}}" />
+                            <!--背景中央-->
+                            <Border Background="{TemplateBinding Background}" 
                                     CornerRadius="{TemplateBinding Radius,Converter={StaticResource VTR}}"
                                     Margin="{TemplateBinding Intensity,Converter={StaticResource ITM}}" />
                             <!--裁切区域-->
@@ -157,20 +83,6 @@
                                               TextElement.Foreground="{TemplateBinding Foreground}" />
                         </Border>
                     </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsWidthGreaterThanHeight" Value="False">
-                            <Setter Property="Grid.ColumnSpan" TargetName="leftTopShaderBorder"
-                                    Value="1" />
-                            <Setter Property="Grid.RowSpan" TargetName="leftTopShaderBorder"
-                                    Value="2" />
-                            <Setter Property="Grid.Row" TargetName="rightBottomShaderBorder"
-                                    Value="0" />
-                            <Setter Property="Grid.Column" TargetName="rightBottomShaderBorder"
-                                    Value="1" />
-                            <Setter Property="Grid.RowSpan" TargetName="rightBottomShaderBorder"
-                                    Value="2" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
 
                 </ControlTemplate>
             </Setter.Value>

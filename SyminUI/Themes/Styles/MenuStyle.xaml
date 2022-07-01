@@ -26,9 +26,6 @@
     <SolidColorBrush x:Key="MenuItem.Highlight.Disabled.Border" Color="#21000000"/>
     <MenuScrollingVisibilityConverter x:Key="MenuScrollingVisibilityConverter"/>
 
-    <Geometry x:Key="MenuCheckmark">F1 M 10.0,1.2 L 4.7,9.1 L 4.5,9.1 
-        L 0,5.2 L 1.3,3.5 L 4.3,6.1L 8.3,0 L 10.0,1.2 Z</Geometry>
-    
     <Style x:Key="MenuScrollButton" BasedOn="{x:Null}" TargetType="{x:Type RepeatButton}">
         <Setter Property="ClickMode" Value="Hover"/>
         <Setter Property="Template">
@@ -122,7 +119,7 @@
                                   Height="16" Width="16" Margin="3" 
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                   VerticalAlignment="Center"/>
-                <Path x:Name="GlyphPanel" Data="{StaticResource MenuCheckmark}" 
+                <Path x:Name="GlyphPanel" Data="{StaticResource Checkmark}" 
                       Fill="{StaticResource Gradient.Primary}" FlowDirection="LeftToRight"
                       Margin="6,3,0,3" VerticalAlignment="Center" Visibility="Collapsed"/>
                 <ContentPresenter ContentSource="Header" Grid.Column="1" 
@@ -179,7 +176,7 @@
                                   HorizontalAlignment="Center" Height="16" Margin="3" 
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                   VerticalAlignment="Center" Width="16"/>
-                <Path x:Name="GlyphPanel" Data="{StaticResource MenuCheckmark}" 
+                <Path x:Name="GlyphPanel" Data="{StaticResource Checkmark}" 
                       FlowDirection="LeftToRight" Fill="{StaticResource Gradient.Primary}"
                       Margin="3" VerticalAlignment="Center" Visibility="Collapsed"/>
                 <ContentPresenter ContentSource="Header" Grid.Column="1" 
@@ -276,7 +273,7 @@
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Center"  >
                     <Path x:Name="Glyph" Margin="4"
-                          Data="{StaticResource MenuCheckmark}" 
+                          Data="{StaticResource Checkmark}" 
                           FlowDirection="LeftToRight" Stretch="Uniform"
                           Fill="{StaticResource Gradient.Primary}" 
                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -351,7 +348,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center" >
                     <Path x:Name="Glyph" Margin="4"
-                          Data="{DynamicResource MenuCheckmark}"
+                          Data="{DynamicResource Checkmark}"
                           FlowDirection="LeftToRight" Stretch="Uniform"
                           Fill="{StaticResource Gradient.Primary}"
                           HorizontalAlignment="Center" VerticalAlignment="Center"/>

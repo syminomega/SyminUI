@@ -3,11 +3,12 @@
                     xmlns:svc="clr-namespace:SyminUI.Controls"
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations">
     <Style TargetType="{x:Type svd:CardBorder}">
-        <Setter Property="CornerRadius" Value="4"/>
-        <Setter Property="Background" Value="{StaticResource Background.Main}"/>
-        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Border.Main.Shaded}"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Background" Value="{StaticResource Background.Main}" />
+        <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Border.Main.Shaded}" />
+        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type svd:CardBorder}">
@@ -21,18 +22,18 @@
                                             Padding="0" Margin="4"
                                             HorizontalContentAlignment="Stretch"
                                             VerticalContentAlignment="Stretch">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" 
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              TextElement.Foreground="{TemplateBinding Foreground}" />
                             <svd:LightedSurface.Effect>
-                                <DropShadowEffect BlurRadius="12" Color="{StaticResource Shader.ShadowColor}" 
-                                                  Opacity="0.6"/>
+                                <DropShadowEffect BlurRadius="12" Color="{StaticResource Shader.ShadowColor}"
+                                                  Opacity="0.6" />
                             </svd:LightedSurface.Effect>
                         </svd:LightedSurface>
-                        
+
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

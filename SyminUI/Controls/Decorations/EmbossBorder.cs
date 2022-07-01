@@ -27,10 +27,21 @@ namespace SyminUI.Controls.Decorations
 
         public CornerRadius CornerRadius
         {
-            get { return (CornerRadius)GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
+            get => (CornerRadius)GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
+        }
+        public SolidColorBrush LightBrush
+        {
+            get => (SolidColorBrush)GetValue(LightBrushProperty);
+            set => SetValue(LightBrushProperty, value);
         }
 
+        public SolidColorBrush ShadowBrush
+        {
+            get => (SolidColorBrush)GetValue(ShadowBrushProperty);
+            set => SetValue(ShadowBrushProperty, value);
+        }
+        
         #region Dependency Properties
 
         // Using a DependencyProperty as the backing store for CornerRadius.
@@ -38,7 +49,19 @@ namespace SyminUI.Controls.Decorations
             DependencyProperty.Register("CornerRadius",
                 typeof(CornerRadius), typeof(EmbossBorder),
                 new PropertyMetadata(new CornerRadius(4)));
-
+        
+        // Using a DependencyProperty as the backing store for LightBrush.
+        public static readonly DependencyProperty LightBrushProperty =
+            DependencyProperty.Register("LightBrush",
+                typeof(SolidColorBrush), typeof(EmbossBorder), 
+                new PropertyMetadata(Brushes.WhiteSmoke));
+        
+        // Using a DependencyProperty as the backing store for ShadowBrush.
+        public static readonly DependencyProperty ShadowBrushProperty =
+            DependencyProperty.Register("ShadowBrush",
+                typeof(SolidColorBrush), typeof(EmbossBorder),
+                new PropertyMetadata(Brushes.DarkGray));
+        
         #endregion
 
     }

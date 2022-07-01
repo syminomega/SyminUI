@@ -93,9 +93,9 @@
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Margin="2" StrokeDashArray="4 1" RadiusX="5" RadiusY="5"
+                    <Rectangle Margin="0" RadiusX="5" RadiusY="5"
                                Stroke="{StaticResource Additional.Blue}" 
-                               SnapsToDevicePixels="true" StrokeThickness="1"/>
+                               SnapsToDevicePixels="true" StrokeThickness="2"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

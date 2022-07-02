@@ -24,6 +24,7 @@
                 Click="OpenCSharpUI_Click"/>
         <Button Content="Custom Control Test"
                 Click="OpenCustomControlDemo_Click"/>
-
+        <Button Content="Developing"
+                Click="Developing_Click"/>
     </StackPanel>
 </Window>

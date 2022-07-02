@@ -214,6 +214,7 @@
     <!--扁平默认按钮-->
     <Style x:Key="ButtonFlatten" TargetType="{x:Type Button}">
         <Setter Property="sva:BorderElement.CornerRadius" Value="4" />
+        <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Main.Disabled}"/>
         <Setter Property="Background" Value="{StaticResource Background.Button}" />
         <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
@@ -259,7 +260,8 @@
                             <Setter Property="Background"
                                     Value="{StaticResource Background.Button.Disabled}" />
                             <Setter Property="TextElement.Foreground" TargetName="contentPresenter"
-                                    Value="{StaticResource Text.Main.Disabled}" />
+                                    Value="{Binding Path=(sva:ShadingElement.DisabledForeground),
+                                                RelativeSource={RelativeSource TemplatedParent}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

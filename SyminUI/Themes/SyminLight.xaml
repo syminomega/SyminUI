@@ -81,8 +81,10 @@
     <!--文本颜色-->
     <SolidColorBrush x:Key="Text.Main" Color="#515A6E"/>
     <SolidColorBrush x:Key="Text.Main.Disabled" Color="#80515A6E"/>
-    <SolidColorBrush x:Key="Text.Secondary" Color="#BABBBD"/>
-    <SolidColorBrush x:Key="Text.Contrast" Color="#FFFFFF"/>
+    <Color x:Key="Text.SecondaryColor">#BABBBD</Color>
+    <SolidColorBrush x:Key="Text.Secondary" Color="{StaticResource Text.SecondaryColor}"/>
+    <Color x:Key="Text.ContrastColor">#FFFFFF</Color>
+    <SolidColorBrush x:Key="Text.Contrast" Color="{StaticResource Text.ContrastColor}"/>
     <SolidColorBrush x:Key="Text.Contrast.Disabled" Color="#80FFFFFF"/>
 
     <SolidColorBrush x:Key="Additional.Blue" Color="#35B5E6"/>

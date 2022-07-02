@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
 	  <Version>0.5.1</Version>
+	  <PackageVersion>0.6.0</PackageVersion>
+	  <Company>SyminStudio</Company>
   </PropertyGroup>
 
   <ItemGroup>

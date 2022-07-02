@@ -40,5 +40,10 @@ namespace SyminViewTest
         {
             new ControlTestWindow().Show();
         }
+
+        private void Developing_Click(object sender, RoutedEventArgs e)
+        {
+            new DevelopingWindow().Show();
+        }
     }
 }

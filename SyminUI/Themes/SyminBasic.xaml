@@ -6,5 +6,6 @@
         <ResourceDictionary Source="Decorations/LightedSurface.xaml"/>
         <ResourceDictionary Source="Primitives/CommonGeometry.xaml"/>
         <ResourceDictionary Source="Primitives/RepeatButtonTransparent.xaml"/>
+        <ResourceDictionary Source="Primitives/FlattenButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

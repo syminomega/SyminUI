@@ -130,7 +130,12 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Calendar></Calendar>
+                        <Calendar>
+                            <Calendar.BlackoutDates>
+                                <CalendarDateRange Start="2022/7/5" End="2022/7/6">
+                                </CalendarDateRange>
+                            </Calendar.BlackoutDates>
+                        </Calendar>
                         <StackPanel Grid.Column="1" Margin="4"
                                     Orientation="Horizontal">
                             <Slider x:Name="ProgressVerticalSlider" Orientation="Vertical"

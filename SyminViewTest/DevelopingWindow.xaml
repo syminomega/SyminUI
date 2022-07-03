@@ -7,15 +7,15 @@
         xmlns:sva="clr-namespace:SyminUI.Controls.Attach;assembly=SyminUI"
         xmlns:local="clr-namespace:SyminViewTest"
         mc:Ignorable="d"
-        Title="Developing" Height="520" Width="300"
+        Title="Developing" Height="400" Width="300"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource Window.Normal}"
         Background="{StaticResource Background.Window}">
     <Window.Resources>
- 
-
+        
+        
     </Window.Resources>
-    <Grid>
-
-    </Grid>
+    <StackPanel Orientation="Vertical" Margin="4">
+        
+    </StackPanel>
 </Window>

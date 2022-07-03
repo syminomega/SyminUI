@@ -8,7 +8,7 @@
         xmlns:sva="clr-namespace:SyminUI.Controls.Attach;assembly=SyminUI"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Styles Demo" Height="600" Width="680"
+        Title="Styles Demo" Height="600" Width="1000"
         Style="{StaticResource Window.Normal}" Icon="/Resources/Images/SyminUI.png">
 
     <sva:WindowElement.TitleBar>
@@ -53,82 +53,66 @@
     </Window.Resources>
     <Grid Margin="4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="480" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <ScrollViewer>
             <StackPanel Orientation="Vertical">
-                <GroupBox Header="Button Styles">
+                <GroupBox Header="Button And Label">
                     <StackPanel Orientation="Vertical">
                         <Button Content="Button Basic" />
                         <Button Content="Button Primary"
                                 Style="{StaticResource ButtonPrimary}" />
-                        <Button Content="Button Danger"
-                                Style="{StaticResource ButtonDanger}" />
-                        <Button Content="Button Success"
-                                Style="{StaticResource ButtonSuccess}" />
+
                         <Button Content="Button Basic Disabled" IsEnabled="False" />
                         <Button Content="Button Primary Disabled"
                                 Style="{StaticResource ButtonPrimary}" IsEnabled="False" />
-                        <Button Content="Button Danger Disabled"
-                                Style="{StaticResource ButtonDanger}" IsEnabled="False" />
-                        <Button Content="Button Success Disabled"
-                                Style="{StaticResource ButtonSuccess}" IsEnabled="False" />
-                    </StackPanel>
-                </GroupBox>
-                <GroupBox Header="Label Styles">
-                    <StackPanel Orientation="Vertical">
+                        <Separator />
                         <Label Content="Label Default" />
                         <Label Content="Label Primary"
                                Style="{StaticResource LabelPrimary}" />
-                        <Label Content="Label Danger"
-                               Style="{StaticResource LabelDanger}" />
-                        <Label Content="Label Success"
-                               Style="{StaticResource LabelSuccess}" />
                         <Label Content="Label Default Disabled" IsEnabled="False" />
                         <Label Content="Label Primary Disabled"
                                Style="{StaticResource LabelPrimary}" IsEnabled="False" />
-                        <Label Content="Label Danger Disabled"
-                               Style="{StaticResource LabelDanger}" IsEnabled="False" />
-                        <Label Content="Label Success Disabled"
-                               Style="{StaticResource LabelSuccess}" IsEnabled="False" />
                     </StackPanel>
                 </GroupBox>
+                <Border BorderThickness="1" Margin="4" CornerRadius="4"
+                        BorderBrush="{StaticResource Border.MainBrush}">
+                    <Grid Margin="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <ToggleButton Grid.Column="0" Grid.Row="0"
+                                      Content="Toggle Button" IsChecked="True" />
+                        <ToggleButton Grid.Column="1" Grid.Row="0"
+                                      Style="{StaticResource SwitchButton}"
+                                      IsChecked="True" />
+                        <ToggleButton Grid.Column="0" Grid.Row="1"
+                                      IsEnabled="False"
+                                      Content="Toggle Disabled" />
+                        <ToggleButton Grid.Column="1" Grid.Row="1" IsEnabled="False"
+                                      Style="{StaticResource SwitchButton}" />
+                    </Grid>
+                </Border>
+
 
             </StackPanel>
         </ScrollViewer>
 
-        <GroupBox Header="Other Styles" Grid.Column="1" Margin="12,4">
+        <GroupBox Header="Control Styles" Grid.Column="1" Margin="4">
             <ScrollViewer>
-                <StackPanel Orientation="Vertical" Margin="4">
-                    <Grid Height="120">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <svd:SlotBorder Content="Slot" VerticalContentAlignment="Center"
-                                        HorizontalContentAlignment="Center"
-                                        Foreground="{StaticResource Gradient.Primary}"
-                                        FontSize="24" Radius="16" />
-                        <svd:EmbossBorder Content="Emboss" VerticalContentAlignment="Center"
-                                          HorizontalContentAlignment="Center" Grid.Column="1"
-                                          Foreground="{StaticResource Gradient.Primary}"
-                                          FontSize="24" CornerRadius="16"
-                                          ContextMenu="{StaticResource ContextMenuDemo}" />
-                        <svd:CardBorder Content="Card" Grid.Column="2" FontSize="24"
-                                        HorizontalContentAlignment="Center"
-                                        VerticalContentAlignment="Center"
-                                        Foreground="{StaticResource Gradient.Primary}"
-                                        CornerRadius="16" />
-
-                    </Grid>
-                    <TextBox Text="Text Box (Input Field)" />
+                <StackPanel Orientation="Vertical" Margin="4,0">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Calendar>
                             <Calendar.BlackoutDates>
@@ -144,23 +128,10 @@
                                          Width="24" Value="{Binding ElementName=ProgressVerticalSlider,Path=Value}" />
                         </StackPanel>
                     </Grid>
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <ToggleButton Grid.Column="0" 
-                                      Content="Toggle" IsChecked="True" />
-                        <ToggleButton Grid.Column="1" 
-                                      Style="{StaticResource SwitchButton}"
-                                      IsChecked="True" />
-                        <ToggleButton Grid.Column="2" IsEnabled="False" 
-                                      Content="Toggle Disabled"/>
-                        <ToggleButton Grid.Column="3" IsEnabled="False" 
-                                      Style="{StaticResource SwitchButton}"/>
-                    </Grid>
+                    <UniformGrid Columns="2">
+                        <TextBox Text="Text Box (Input Field)" />
+                        <PasswordBox Password="12345" />
+                    </UniformGrid>
                     <ProgressBar Height="24" IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
                                  Value="{Binding ElementName=progressSlider,Path=Value}" />
                     <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25" />
@@ -181,15 +152,38 @@
                         </ComboBox>
                     </UniformGrid>
                     <Separator />
-                    <svd:LightedSurface Height="80" Margin="4"
-                                        Background="{StaticResource Background.Main}"
-                                        CornerRadius="16" Content="Lighted Surface" FontSize="24" />
-                    
-                    
-                    
+
+
                 </StackPanel>
             </ScrollViewer>
 
+        </GroupBox>
+        <GroupBox Header="Other Styles" Grid.Column="2" Margin="12,4,4,4">
+            <StackPanel Orientation="Vertical">
+                <UniformGrid Columns="2" Rows="2">
+                    <svd:EmbossBorder Content="Emboss" Height="100"
+                                      VerticalContentAlignment="Center"
+                                      HorizontalContentAlignment="Center"
+                                      Foreground="{StaticResource Gradient.Primary}"
+                                      FontSize="24" CornerRadius="16"
+                                      ContextMenu="{StaticResource ContextMenuDemo}" />
+                    <svd:CardBorder Content="Card" Height="100"
+                                    Grid.Column="2" FontSize="24"
+                                    HorizontalContentAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    Foreground="{StaticResource Gradient.Primary}"
+                                    CornerRadius="16" />
+                    <svd:SlotBorder Content="Slot" Height="100"
+                                    VerticalContentAlignment="Center"
+                                    HorizontalContentAlignment="Center"
+                                    Foreground="{StaticResource Gradient.Primary}"
+                                    FontSize="24" Radius="16" />
+
+                </UniformGrid>
+                <svd:LightedSurface Height="80" Margin="4"
+                                    Background="{StaticResource Background.Main}"
+                                    CornerRadius="16" Content="Lighted Surface" FontSize="24" />
+            </StackPanel>
         </GroupBox>
     </Grid>
 </Window>

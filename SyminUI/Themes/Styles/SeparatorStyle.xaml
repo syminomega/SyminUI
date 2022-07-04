@@ -1,23 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="{x:Type Separator}">
-        <Setter Property="Background" Value="{StaticResource Border.Separator.Menu}" />
-        <Setter Property="Margin" Value="0,2" />
-        <Setter Property="Focusable" Value="false" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Separator}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Height="1" SnapsToDevicePixels="true" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style TargetType="{x:Type Separator}">
+    <!--水平分割-->
+    <Style x:Key="HorizontalSeparator" TargetType="{x:Type Separator}">
         <Setter Property="Background" Value="{StaticResource Border.Separator.Main}" />
         <Setter Property="Margin" Value="0,4" />
         <Setter Property="Focusable" Value="false" />
@@ -32,4 +16,36 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <!--默认水平分割-->
+    <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource HorizontalSeparator}"/>
+    <!--菜单分隔-->
+    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="{x:Type Separator}"
+           BasedOn="{StaticResource HorizontalSeparator}">
+        <Setter Property="Background" Value="{StaticResource Border.Separator.Menu}" />
+        <Setter Property="Margin" Value="0,2" />
+    </Style>
+
+    <!--垂直分割-->
+    <Style x:Key="VerticalSeparator" TargetType="{x:Type Separator}">
+        <Setter Property="Background" Value="{StaticResource Border.Separator.Main}" />
+        <Setter Property="Margin" Value="2,0" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Width="1" SnapsToDevicePixels="true" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--状态栏分割-->
+    <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="{x:Type Separator}"
+           BasedOn="{StaticResource VerticalSeparator}">
+        <Setter Property="Margin" Value="4,2"/>
+    </Style>
+
+
 </ResourceDictionary>

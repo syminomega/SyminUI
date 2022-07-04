@@ -14,8 +14,11 @@
     <Window.Resources>
         
         
-    </Window.Resources>
-    <StackPanel Orientation="Vertical" Margin="4">
+
         
-    </StackPanel>
+    </Window.Resources>
+
+    <Grid>
+
+    </Grid>
 </Window>

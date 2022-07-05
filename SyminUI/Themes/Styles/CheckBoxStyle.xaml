@@ -1,23 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:svd="clr-namespace:SyminUI.Controls.Decorations">
-
-    <Style x:Key="OptionMarkFocusVisual">
-        <Setter Property="Control.Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Rectangle Margin="0" RadiusX="5" RadiusY="5"
-                               Stroke="{StaticResource Additional.Blue}"
-                               SnapsToDevicePixels="true" StrokeThickness="2" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                    xmlns:svd="clr-namespace:SyminUI.Controls.Decorations"
+                    xmlns:sva="clr-namespace:SyminUI.Controls.Attach">
 
     <Style TargetType="{x:Type CheckBox}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource Background.Pure}" />
-        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}" />
         <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="FontSize" Value="14" />
@@ -32,30 +21,26 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <svd:SlotBorder x:Name="checkBoxBorder" Margin="0" Width="26" Height="26"
-                                        Intensity="0.2"
+                        <Border x:Name="checkBoxBorder" Margin="4,2" CornerRadius="4"
+                                Width="18" Height="18" RenderTransformOrigin="0.5,0.5"
                                         Background="{TemplateBinding Background}"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}">
-                            <Grid x:Name="markGrid" Margin="1">
+                            <Grid x:Name="markGrid" Margin="-1" >
                                 <Border x:Name="markBorder" Opacity="0"
                                         Background="{StaticResource PrimaryBrush}"
-                                        CornerRadius="3">
+                                        CornerRadius="4">
                                     <Path Data="{StaticResource Checkmark}"
-                                          Margin="2" Stretch="Uniform" 
+                                          Margin="3" Stretch="Uniform" 
                                           Fill="{TemplateBinding Background}"/>
                                 </Border>
                                 
                                 <Rectangle x:Name="indeterminateMark" RadiusX="3" RadiusY="3"
-                                           Fill="{StaticResource Gradient.Primary}"
-                                           Margin="1" Opacity="0" />
-                                <Grid.Effect>
-                                    <DropShadowEffect Color="{StaticResource SecondaryColor}"
-                                                      ShadowDepth="0" Opacity="0.7" 
-                                                      BlurRadius="3"/>
-                                </Grid.Effect>
+                                           Fill="{StaticResource PrimaryBrush}"
+                                           Margin="3" Opacity="0" />
+
                             </Grid>
-                        </svd:SlotBorder>
+                        </Border>
 
                         <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -68,14 +53,17 @@
                             <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}" />
                             <Setter Property="Padding" Value="4,-1,0,0" />
                         </Trigger>
+                        <!--鼠标高亮，隐藏边框，显示深度效果-->
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Intensity" TargetName="checkBoxBorder"
-                                    Value="0.4" />
+                            <Setter Property="BorderBrush" TargetName="checkBoxBorder" 
+                                    Value="{StaticResource Primary.Focused}"/>
+                            <Setter Property="Fill" TargetName="indeterminateMark"
+                                    Value="{StaticResource Primary.Focused}"/>
+                            <Setter Property="Background" TargetName="markBorder"
+                                    Value="{StaticResource Primary.Focused}"/>
+
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="ShaderEnabled" TargetName="checkBoxBorder"
-                                    Value="false" />
-                            <Setter Property="Effect" TargetName="markGrid" Value="{x:Null}" />
                             <Setter Property="BorderBrush" TargetName="checkBoxBorder"
                                     Value="{StaticResource Background.Button.Disabled}" />
                             <Setter Property="Background" TargetName="markBorder"
@@ -86,12 +74,16 @@
                                     Value="{StaticResource Text.Main.Disabled}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Intensity" TargetName="checkBoxBorder"
-                                    Value="0.2" />
+                            <Setter Property="RenderTransform" TargetName="checkBoxBorder">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="true">
                             <Setter Property="Opacity" TargetName="markBorder" Value="1" />
                             <Setter Property="Opacity" TargetName="indeterminateMark" Value="0" />
+                            
                         </Trigger>
                         <Trigger Property="IsChecked" Value="{x:Null}">
                             <Setter Property="Opacity" TargetName="indeterminateMark" Value="1" />

@@ -6,6 +6,7 @@
     <Color x:Key="Primary.ShadowColor">#7488b7</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+    <SolidColorBrush x:Key="Primary.Focused" Color="#5593FF"/>
     <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>
     <SolidColorBrush x:Key="Primary.Light" Color="{StaticResource Primary.LightColor}"/>
     <SolidColorBrush x:Key="Primary.Shadow" Color="{StaticResource Primary.ShadowColor}"/>
@@ -99,6 +100,18 @@
                     <Rectangle Margin="0" RadiusX="5" RadiusY="5"
                                Stroke="{StaticResource Additional.Blue}" 
                                SnapsToDevicePixels="true" StrokeThickness="2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="OptionMarkFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="0" RadiusX="5" RadiusY="5"
+                               Stroke="{StaticResource Additional.Blue}"
+                               SnapsToDevicePixels="true" StrokeThickness="2" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

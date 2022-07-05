@@ -13,12 +13,12 @@
         Background="{StaticResource Background.Window}">
     <Window.Resources>
         
-        
 
         
+        
+
     </Window.Resources>
+    <StackPanel Orientation="Vertical" Margin="4">
 
-    <Grid>
-
-    </Grid>
+    </StackPanel>
 </Window>

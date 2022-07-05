@@ -160,8 +160,9 @@
                                 <ComboBoxItem Content="Selection C" />
                             </ComboBox>
                         </UniformGrid>
-                        <Separator />
-
+                        <UniformGrid Columns="2">
+                            <DatePicker/>
+                        </UniformGrid>
 
                     </StackPanel>
                 </ScrollViewer>
@@ -189,6 +190,7 @@
                                     FontSize="24" Radius="16" />
 
                     </UniformGrid>
+                    <Separator />
                     <svd:LightedSurface Height="80" Margin="4"
                                     Background="{StaticResource Background.Main}"
                                     CornerRadius="16" Content="Lighted Surface" FontSize="24" />

@@ -8,6 +8,7 @@
 	  <Version>0.5.1</Version>
 	  <ApplicationIcon>Resources\SyminUI.ico</ApplicationIcon>
 	  <PackageVersion>0.6.0</PackageVersion>
+	  <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>

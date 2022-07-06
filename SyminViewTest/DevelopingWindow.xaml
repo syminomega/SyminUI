@@ -15,14 +15,8 @@
 
     <Window.Resources>
 
-
     </Window.Resources>
-    <StackPanel Orientation="Vertical">
-        <Border Background="#1f59a7" Height="20"/>
-        <Border Background="#1f59a7" Height="20">
-            <Border.Effect>
-                <sve:BrightnessContrastEffect Brightness="0.1"/>
-            </Border.Effect>
-        </Border>
-    </StackPanel>
+    <Grid Margin="4">
+
+    </Grid>
 </Window>

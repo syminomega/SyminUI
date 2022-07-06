@@ -126,13 +126,32 @@
                                     </CalendarDateRange>
                                 </Calendar.BlackoutDates>
                             </Calendar>
-                            <StackPanel Grid.Column="1" Margin="4"
-                                    Orientation="Horizontal">
-                                <Slider x:Name="ProgressVerticalSlider" Orientation="Vertical"
-                                    Minimum="0" Maximum="100" Value="25" />
-                                <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100"
-                                         Width="24" Value="{Binding ElementName=ProgressVerticalSlider,Path=Value}" />
-                            </StackPanel>
+                            <Grid Grid.Column="1" Margin="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="24"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Slider Grid.Column="0"
+                                        x:Name="ProgressVerticalSlider" Orientation="Vertical"
+                                        Minimum="0" Maximum="100" Value="25" />
+                                <ProgressBar Grid.Column="1"
+                                             Orientation="Vertical" Minimum="0" Maximum="100"
+                                             Value="{Binding ElementName=ProgressVerticalSlider,Path=Value}" />
+                                <Grid Grid.Column="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="120"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <ListBox  Margin="4" SelectedIndex="0">
+                                        <ListBoxItem>List Box Item 01</ListBoxItem>
+                                        <ListBoxItem>List Box Item 02</ListBoxItem>
+                                        <ListBoxItem>List Box Item 03</ListBoxItem>
+                                    </ListBox>
+                                </Grid>
+                                
+                            </Grid>
                         </Grid>
                         <UniformGrid Columns="2">
                             <TextBox Text="Text Box (Input Field)" />

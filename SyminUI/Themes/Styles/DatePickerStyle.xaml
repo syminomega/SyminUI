@@ -186,6 +186,7 @@
                                            Focusable="{TemplateBinding Focusable}"
                                            HorizontalContentAlignment="Left"
                                            VerticalContentAlignment="Center" />
+                        <Border Width="40" HorizontalAlignment="Right" Background="Transparent"/>
                         <Button x:Name="PART_Button" Margin="7,8,7,7"
                                 Width="28" HorizontalAlignment="Right"
                                 Style="{StaticResource CalendarPickerButton}" />

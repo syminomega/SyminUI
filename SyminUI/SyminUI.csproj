@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <Resource Include="Shaders\LightedSurfacePS.ps" />
+    <None Remove="Shaders\BrightnessContrastPS.ps" />
+    <Resource Include="Shaders\BrightnessContrastPS.ps" />
   </ItemGroup>
 
   <ItemGroup>

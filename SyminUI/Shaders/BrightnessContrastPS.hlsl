@@ -14,8 +14,7 @@ float4 main(float2 uv : TEXCOORD) : COLOR
     //计算对比度系数
     float k = tan((45 + 44 * contrast) / 180 * PI);
     //计算亮度对比度
-    float3 outColor = (sourceColor.xyz - 0.5 * (1 - brightness)) * k + 0.5 * (1 + brightness);
-    //应用透明度
-    float3 finalColor = outColor * sourceColor.a;
-    return float4(finalColor, sourceColor.a);
+    float4 outColor = (sourceColor - 0.5 * (1 - brightness)) * k + 0.5 * (1 + brightness);
+
+    return outColor;
 }

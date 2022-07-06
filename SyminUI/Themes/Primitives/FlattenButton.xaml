@@ -1,10 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sva="clr-namespace:SyminUI.Controls.Attach">
-        <!--扁平默认按钮-->
+                    xmlns:sva="clr-namespace:SyminUI.Controls.Attach"
+                    xmlns:sve="clr-namespace:SyminUI.Effects">
+    <!--扁平默认按钮-->
     <Style x:Key="ButtonFlatten" TargetType="{x:Type Button}">
         <Setter Property="sva:BorderElement.CornerRadius" Value="4" />
-        <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Main.Disabled}"/>
+        <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Main.Disabled}" />
         <Setter Property="Background" Value="{StaticResource Background.Button}" />
         <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
@@ -15,36 +16,36 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Grid>
-                        <Border x:Name="border"
-                                CornerRadius="{TemplateBinding sva:BorderElement.CornerRadius}"
-                                Background="{TemplateBinding Background}"
-                                SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        </Border>
-                        <!--点击的时候覆盖一层高亮-->
-                        <Border x:Name="highlightBorder" Opacity="0"
-                                CornerRadius="{TemplateBinding sva:BorderElement.CornerRadius}"
-                                Background="{StaticResource Background.LightMask}"
-                                SnapsToDevicePixels="true" />
-                    </Grid>
+
+                    <Border x:Name="border"
+                            CornerRadius="{TemplateBinding sva:BorderElement.CornerRadius}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="Opacity" TargetName="highlightBorder"
-                                    Value="0" />
+
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Opacity" TargetName="highlightBorder"
-                                    Value="0.6" />
+                            <Setter Property="Effect" TargetName="border">
+                                <Setter.Value>
+                                    <sve:BrightnessContrastEffect Brightness="0.1" />
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Opacity" TargetName="highlightBorder"
-                                    Value="0.3" />
+                            <Setter Property="Effect" TargetName="border">
+                                <Setter.Value>
+                                    <sve:BrightnessContrastEffect Brightness="0.05" />
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background"

@@ -13,8 +13,8 @@ namespace SyminUI.Effects
     {
         public Brush Input
         {
-            get { return (Brush)GetValue(InputProperty); }
-            set { SetValue(InputProperty, value); }
+            get => (Brush)GetValue(InputProperty);
+            set => SetValue(InputProperty, value);
         }
 
         public static readonly DependencyProperty InputProperty
@@ -27,8 +27,8 @@ namespace SyminUI.Effects
         /// </summary>
         public Point MousePosition
         {
-            get { return (Point)GetValue(MousePositionProperty); }
-            set { SetValue(MousePositionProperty, value); }
+            get => (Point)GetValue(MousePositionProperty);
+            set => SetValue(MousePositionProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for MousePosition.
@@ -42,8 +42,8 @@ namespace SyminUI.Effects
 
         public Point UISize
         {
-            get { return (Point)GetValue(UISizeProperty); }
-            set { SetValue(UISizeProperty, value); }
+            get => (Point)GetValue(UISizeProperty);
+            set => SetValue(UISizeProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for UISize.
@@ -57,8 +57,8 @@ namespace SyminUI.Effects
 
         public double LightSize
         {
-            get { return (double)GetValue(LightSizeProperty); }
-            set { SetValue(LightSizeProperty, value); }
+            get => (double)GetValue(LightSizeProperty);
+            set => SetValue(LightSizeProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for LightSize.
@@ -72,8 +72,8 @@ namespace SyminUI.Effects
 
         public double Intensity
         {
-            get { return (double)GetValue(IntensityProperty); }
-            set { SetValue(IntensityProperty, value); }
+            get => (double)GetValue(IntensityProperty);
+            set => SetValue(IntensityProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for Intensity.
@@ -87,8 +87,8 @@ namespace SyminUI.Effects
 
         public Color LightColor
         {
-            get { return (Color)GetValue(LightColorProperty); }
-            set { SetValue(LightColorProperty, value); }
+            get => (Color)GetValue(LightColorProperty);
+            set => SetValue(LightColorProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for LightColor.

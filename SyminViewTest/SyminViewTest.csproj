@@ -5,7 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-	  <Version>0.5.1</Version>
+	  <Version>0.6.0</Version>
 	  <ApplicationIcon>Resources\SyminUI.ico</ApplicationIcon>
 	  <PackageVersion>0.6.0</PackageVersion>
 	  <UseWindowsForms>true</UseWindowsForms>

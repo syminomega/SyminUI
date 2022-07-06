@@ -51,6 +51,10 @@
                             <Setter Property="Intensity" TargetName="slot" Value="0.6" />
                             <Setter Property="ShaderEnabled" TargetName="slot" Value="True" />
                         </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter"
+                                    Value="{StaticResource Gradient.Primary}" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

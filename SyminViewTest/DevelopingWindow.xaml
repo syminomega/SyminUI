@@ -5,17 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         xmlns:sva="clr-namespace:SyminUI.Controls.Attach;assembly=SyminUI"
+        xmlns:sve="clr-namespace:SyminUI.Effects;assembly=SyminUI"
         xmlns:local="clr-namespace:SyminViewTest"
         mc:Ignorable="d"
-        Title="Developing" Height="400" Width="300"
+        Title="Developing" Height="300" Width="300"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource Window.Normal}"
         Background="{StaticResource Background.Window}">
+
     <Window.Resources>
-        
-        
+
+
     </Window.Resources>
-    <StackPanel Orientation="Vertical" Margin="4">
-        
+    <StackPanel Orientation="Vertical">
+        <Border Background="#1f59a7" Height="20"/>
+        <Border Background="#1f59a7" Height="20">
+            <Border.Effect>
+                <sve:BrightnessContrastEffect Brightness="0.1"/>
+            </Border.Effect>
+        </Border>
     </StackPanel>
 </Window>

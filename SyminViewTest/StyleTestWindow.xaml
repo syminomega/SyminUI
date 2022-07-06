@@ -51,139 +51,159 @@
             </MenuItem>
         </ContextMenu>
     </Window.Resources>
-    <Grid Margin="4">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="260" />
-            <ColumnDefinition Width="480" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+        <!--中间部分-->
+        <Grid Margin="4" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260" />
+                <ColumnDefinition Width="460" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <ScrollViewer>
-            <StackPanel Orientation="Vertical">
-                <GroupBox Header="Button And Label">
-                    <StackPanel Orientation="Vertical">
-                        <Button Content="Button Basic" />
-                        <Button Content="Button Primary"
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <GroupBox Header="Button And Label">
+                        <StackPanel Orientation="Vertical">
+                            <Button Content="Button Basic" />
+                            <Button Content="Button Primary"
                                 Style="{StaticResource ButtonPrimary}" />
 
-                        <Button Content="Button Basic Disabled" IsEnabled="False" />
-                        <Button Content="Button Primary Disabled"
+                            <Button Content="Button Basic Disabled" IsEnabled="False" />
+                            <Button Content="Button Primary Disabled"
                                 Style="{StaticResource ButtonPrimary}" IsEnabled="False" />
-                        <Separator />
-                        <Label Content="Label Default" />
-                        <Label Content="Label Primary"
+                            <Separator />
+                            <Label Content="Label Default" />
+                            <Label Content="Label Primary"
                                Style="{StaticResource LabelPrimary}" />
-                        <Label Content="Label Default Disabled" IsEnabled="False" />
-                        <Label Content="Label Primary Disabled"
+                            <Label Content="Label Default Disabled" IsEnabled="False" />
+                            <Label Content="Label Primary Disabled"
                                Style="{StaticResource LabelPrimary}" IsEnabled="False" />
-                    </StackPanel>
-                </GroupBox>
-                <Border BorderThickness="1" Margin="4" CornerRadius="4"
+                        </StackPanel>
+                    </GroupBox>
+                    <Border BorderThickness="1" Margin="4" CornerRadius="4"
                         BorderBrush="{StaticResource Border.MainBrush}">
-                    <Grid Margin="4">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="auto" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <ToggleButton Grid.Column="0" Grid.Row="0"
+                        <Grid Margin="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <ToggleButton Grid.Column="0" Grid.Row="0"
                                       Content="Toggle Button" IsChecked="True" />
-                        <ToggleButton Grid.Column="1" Grid.Row="0"
+                            <ToggleButton Grid.Column="1" Grid.Row="0"
                                       Style="{StaticResource SwitchButton}"
                                       IsChecked="True" />
-                        <ToggleButton Grid.Column="0" Grid.Row="1"
+                            <ToggleButton Grid.Column="0" Grid.Row="1"
                                       IsEnabled="False"
                                       Content="Toggle Disabled" />
-                        <ToggleButton Grid.Column="1" Grid.Row="1" IsEnabled="False"
+                            <ToggleButton Grid.Column="1" Grid.Row="1" IsEnabled="False"
                                       Style="{StaticResource SwitchButton}" />
-                    </Grid>
-                </Border>
-
-
-            </StackPanel>
-        </ScrollViewer>
-
-        <GroupBox Header="Control Styles" Grid.Column="1" Margin="4">
-            <ScrollViewer>
-                <StackPanel Orientation="Vertical" Margin="4,0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Calendar>
-                            <Calendar.BlackoutDates>
-                                <CalendarDateRange Start="2022/7/5" End="2022/7/6">
-                                </CalendarDateRange>
-                            </Calendar.BlackoutDates>
-                        </Calendar>
-                        <StackPanel Grid.Column="1" Margin="4"
-                                    Orientation="Horizontal">
-                            <Slider x:Name="ProgressVerticalSlider" Orientation="Vertical"
-                                    Minimum="0" Maximum="100" Value="25" />
-                            <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100"
-                                         Width="24" Value="{Binding ElementName=ProgressVerticalSlider,Path=Value}" />
-                        </StackPanel>
-                    </Grid>
-                    <UniformGrid Columns="2">
-                        <TextBox Text="Text Box (Input Field)" />
-                        <PasswordBox Password="12345" />
-                    </UniformGrid>
-                    <ProgressBar Height="24" IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
-                                 Value="{Binding ElementName=progressSlider,Path=Value}" />
-                    <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25" />
-
-                    <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate" />
-
-                    <CheckBox Content="Check Box Indeterminate Disabled" IsChecked="{x:Null}" IsEnabled="False" />
-                    <UniformGrid Columns="2" Rows="1">
-                        <ComboBox SelectedIndex="0">
-                            <ComboBoxItem Content="Selection A" />
-                            <ComboBoxItem Content="Selection B" />
-                            <ComboBoxItem Content="Selection C" />
-                        </ComboBox>
-                        <ComboBox SelectedIndex="0" IsEditable="True">
-                            <ComboBoxItem Content="Selection Editable" />
-                            <ComboBoxItem Content="Selection B" />
-                            <ComboBoxItem Content="Selection C" />
-                        </ComboBox>
-                    </UniformGrid>
-                    <Separator />
+                        </Grid>
+                    </Border>
 
 
                 </StackPanel>
             </ScrollViewer>
+            <GroupBox Header="Control Styles" Grid.Column="1" Margin="4" >
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" Margin="4,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Calendar>
+                                <Calendar.BlackoutDates>
+                                    <CalendarDateRange Start="2022/7/10" End="2022/7/12">
+                                    </CalendarDateRange>
+                                </Calendar.BlackoutDates>
+                            </Calendar>
+                            <StackPanel Grid.Column="1" Margin="4"
+                                    Orientation="Horizontal">
+                                <Slider x:Name="ProgressVerticalSlider" Orientation="Vertical"
+                                    Minimum="0" Maximum="100" Value="25" />
+                                <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100"
+                                         Width="24" Value="{Binding ElementName=ProgressVerticalSlider,Path=Value}" />
+                            </StackPanel>
+                        </Grid>
+                        <UniformGrid Columns="2">
+                            <TextBox Text="Text Box (Input Field)" />
+                            <PasswordBox Password="12345" />
+                        </UniformGrid>
+                        <ProgressBar Height="24" IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
+                                 Value="{Binding ElementName=progressSlider,Path=Value}" />
+                        <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25" />
+                        <UniformGrid Columns="2" Rows="2">
+                            <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate" />
+                            <RadioButton Content="Radio Button A" GroupName="RadioG" IsChecked="{x:Null}"/>
+                            <CheckBox Content="Indeterminate Disabled" IsChecked="{x:Null}" IsEnabled="False" />
+                            <RadioButton Content="Radio Button B" GroupName="RadioG"/>
+                        </UniformGrid>
+                        
+                        <UniformGrid Columns="2" Rows="1">
+                            <ComboBox SelectedIndex="0">
+                                <ComboBoxItem Content="Selection A" />
+                                <ComboBoxItem Content="Selection B" />
+                                <ComboBoxItem Content="Selection C" />
+                            </ComboBox>
+                            <ComboBox SelectedIndex="0" IsEditable="True">
+                                <ComboBoxItem Content="Selection Editable" />
+                                <ComboBoxItem Content="Selection B" />
+                                <ComboBoxItem Content="Selection C" />
+                            </ComboBox>
+                        </UniformGrid>
+                        <UniformGrid Columns="2">
+                            <DatePicker/>
+                        </UniformGrid>
 
-        </GroupBox>
-        <GroupBox Header="Other Styles" Grid.Column="2" Margin="12,4,4,4">
-            <StackPanel Orientation="Vertical">
-                <UniformGrid Columns="2" Rows="2">
-                    <svd:EmbossBorder Content="Emboss" Height="100"
+                    </StackPanel>
+                </ScrollViewer>
+
+            </GroupBox>
+            <GroupBox Header="Other Styles" Grid.Column="2" Margin="12,4,4,4">
+                <StackPanel Orientation="Vertical">
+                    <UniformGrid Columns="2" Rows="2">
+                        <svd:EmbossBorder Content="Emboss" Height="100"
                                       VerticalContentAlignment="Center"
                                       HorizontalContentAlignment="Center"
                                       Foreground="{StaticResource Gradient.Primary}"
                                       FontSize="24" CornerRadius="16"
                                       ContextMenu="{StaticResource ContextMenuDemo}" />
-                    <svd:CardBorder Content="Card" Height="100"
+                        <svd:CardBorder Content="Card" Height="100"
                                     Grid.Column="2" FontSize="24"
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"
                                     Foreground="{StaticResource Gradient.Primary}"
                                     CornerRadius="16" />
-                    <svd:SlotBorder Content="Slot" Height="100"
+                        <svd:SlotBorder Content="Slot" Height="100"
                                     VerticalContentAlignment="Center"
                                     HorizontalContentAlignment="Center"
                                     Foreground="{StaticResource Gradient.Primary}"
                                     FontSize="24" Radius="16" />
 
-                </UniformGrid>
-                <svd:LightedSurface Height="80" Margin="4"
+                    </UniformGrid>
+                    <Separator />
+                    <svd:LightedSurface Height="80" Margin="4"
                                     Background="{StaticResource Background.Main}"
                                     CornerRadius="16" Content="Lighted Surface" FontSize="24" />
-            </StackPanel>
-        </GroupBox>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+        <!--状态栏部分-->
+        <StatusBar Grid.Row="2">
+            <TextBlock Text="★"/>
+            <TextBlock Text="StatusBar"/>
+            <Separator/>
+            <TextBlock Text="Message"/>
+        </StatusBar>
     </Grid>
+
 </Window>

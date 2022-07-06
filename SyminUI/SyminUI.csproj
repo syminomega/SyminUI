@@ -11,10 +11,13 @@
 
   <ItemGroup>
     <None Remove="Shaders\LightedSurfacePS.ps" />
+    <None Remove="Convertor\Effect\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Shaders\LightedSurfacePS.ps" />
+    <None Remove="Shaders\BrightnessContrastPS.ps" />
+    <Resource Include="Shaders\BrightnessContrastPS.ps" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +25,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Convertor\Effect\" />
+    <Compile Remove="Convertor\Effect\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Convertor\Effect\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Convertor\Effect\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Shaders\BrightnessContrastPS.hlsl" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&quot;$(ProjectDir)Resources\Tools\EffectShaderCompiler.exe&quot; -i &quot;$(ProjectDir)Shaders&quot; -o &quot;$(ProjectDir)Shaders&quot;" />
+  </Target>
 
 </Project>

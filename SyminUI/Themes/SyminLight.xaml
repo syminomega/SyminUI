@@ -6,6 +6,7 @@
     <Color x:Key="Primary.ShadowColor">#7488b7</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+    <SolidColorBrush x:Key="Primary.Focused" Color="#5593FF"/>
     <SolidColorBrush x:Key="Primary.Disabled" Color="#8CAAF8"/>
     <SolidColorBrush x:Key="Primary.Light" Color="{StaticResource Primary.LightColor}"/>
     <SolidColorBrush x:Key="Primary.Shadow" Color="{StaticResource Primary.ShadowColor}"/>
@@ -45,7 +46,7 @@
     <SolidColorBrush x:Key="Background.FocusedMask" Color="#7F9FA2AC"/>
     <SolidColorBrush x:Key="Background.SelectedMask" Color="#7FC8CBD4"/>
     <SolidColorBrush x:Key="Background.LightMask" Color="#7FFFFFFF"/>
-    <SolidColorBrush x:Key="Background.Section" Color="#DFE1E7"/>
+    <SolidColorBrush x:Key="Background.Section" Color="#E2E4E7"/>
     
     <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
@@ -53,6 +54,7 @@
     <SolidColorBrush x:Key="Background.Pure" Color="White"/>
     <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>
     <SolidColorBrush x:Key="Background.Label" Color="#F2F2F2"/>
+    <SolidColorBrush x:Key="Background.StatusBar" Color="#FFD5D7DD"/>
     <SolidColorBrush x:Key="Background.Toggle" Color="#CACCDB"/>
     <SolidColorBrush x:Key="Background.Toggle.Disabled" Color="#CCCDD2"/>
     <!--实色填充的系统控件：滚动条、GridSplitter等-->
@@ -98,6 +100,18 @@
                     <Rectangle Margin="0" RadiusX="5" RadiusY="5"
                                Stroke="{StaticResource Additional.Blue}" 
                                SnapsToDevicePixels="true" StrokeThickness="2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="OptionMarkFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="0" RadiusX="5" RadiusY="5"
+                               Stroke="{StaticResource Additional.Blue}"
+                               SnapsToDevicePixels="true" StrokeThickness="2" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

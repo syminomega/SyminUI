@@ -149,6 +149,16 @@
                                         <ListBoxItem>List Box Item 02</ListBoxItem>
                                         <ListBoxItem>List Box Item 03</ListBoxItem>
                                     </ListBox>
+                                    <RichTextBox Grid.Row="1">
+                                        <FlowDocument>
+                                            <Paragraph>
+                                                <Bold>Flow Document</Bold> in a
+                                                <Run Foreground="{StaticResource Gradient.Primary}">
+                                                    Rich Text Box.
+                                                </Run>
+                                            </Paragraph>
+                                        </FlowDocument>
+                                    </RichTextBox>
                                 </Grid>
                                 
                             </Grid>

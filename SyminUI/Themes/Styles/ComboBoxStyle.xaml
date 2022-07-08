@@ -164,12 +164,8 @@
                 
             </Trigger>
             <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
-                <Setter Property="Effect" TargetName="dropDownBorder">
-                    <Setter.Value>
-                        <DropShadowEffect BlurRadius="8" Color="{StaticResource Shader.ShadowColor}" 
-                                          Opacity="0.6" ShadowDepth="2"/>
-                    </Setter.Value>
-                </Setter>
+                <Setter Property="Effect" TargetName="dropDownBorder"
+                        Value="{StaticResource PopupShadow}"/>
             </Trigger>
             <Trigger Property="HasItems" Value="false">
                 <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
@@ -250,12 +246,8 @@
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
-                <Setter Property="Effect" TargetName="dropDownBorder">
-                    <Setter.Value>
-                        <DropShadowEffect BlurRadius="8" Color="{StaticResource Shader.ShadowColor}" 
-                                          Opacity="0.6" ShadowDepth="2"/>
-                    </Setter.Value>
-                </Setter>
+                <Setter Property="Effect" TargetName="dropDownBorder"
+                        Value="{StaticResource PopupShadow}"/>
             </Trigger>
             <Trigger Property="HasItems" Value="false">
                 <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>

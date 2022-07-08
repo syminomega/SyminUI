@@ -190,7 +190,8 @@
                        PopupAnimation="Fade"
                        PlacementTarget="{Binding ElementName=templateRoot}">
                     <svd:LightedSurface Margin="8" Padding="0" BorderThickness="1"
-                                        BorderBrush="{StaticResource Border.Main.Shaded}">
+                                        BorderBrush="{StaticResource Border.Main.Shaded}"
+                                        Effect="{StaticResource PopupShadow}">
                         <Border x:Name="SubMenuBorder" Margin="2,1">
                             <ScrollViewer x:Name="SubMenuScrollViewer"
                                       Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, 
@@ -210,9 +211,6 @@
                                 </Grid>
                             </ScrollViewer>
                         </Border>
-                        <svd:LightedSurface.Effect>
-                            <DropShadowEffect Color="Black" Opacity="0.4" ShadowDepth="2" BlurRadius="12"/>
-                        </svd:LightedSurface.Effect>
                     </svd:LightedSurface>
                 </Popup>
             </Grid>

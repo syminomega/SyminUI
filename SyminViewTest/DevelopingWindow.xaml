@@ -8,15 +8,15 @@
         xmlns:sve="clr-namespace:SyminUI.Effects;assembly=SyminUI"
         xmlns:local="clr-namespace:SyminViewTest"
         mc:Ignorable="d"
-        Title="Developing" Height="300" Width="300"
+        Title="Developing" Height="300" Width="400"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource Window.Normal}"
         Background="{StaticResource Background.Window}">
-
     <Window.Resources>
-
+    
     </Window.Resources>
     <Grid Margin="4">
+
 
     </Grid>
 </Window>

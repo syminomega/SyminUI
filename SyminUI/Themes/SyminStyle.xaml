@@ -21,6 +21,7 @@
         <ResourceDictionary Source="Styles/DatePickerStyle.xaml"/>
         <ResourceDictionary Source="Styles/StatusBarStyle.xaml"/>
         <ResourceDictionary Source="Styles/MenuStyle.xaml"/>
+        <ResourceDictionary Source="Styles/ToolBarStyle.xaml"/>
         <ResourceDictionary Source="Styles/ListBoxStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 

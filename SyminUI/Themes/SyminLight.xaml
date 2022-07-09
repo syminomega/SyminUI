@@ -47,16 +47,16 @@
     <SolidColorBrush x:Key="Background.SelectedMask" Color="#7FC8CBD4"/>
     <SolidColorBrush x:Key="Background.LightMask" Color="#7FFFFFFF"/>
     <SolidColorBrush x:Key="Background.Section" Color="#E2E4E7"/>
+    <SolidColorBrush x:Key="Background.Pure" Color="White"/>
     
     <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
-
-    <SolidColorBrush x:Key="Background.Pure" Color="White"/>
     <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>
     <SolidColorBrush x:Key="Background.Label" Color="#F2F2F2"/>
     <SolidColorBrush x:Key="Background.StatusBar" Color="#FFD5D7DD"/>
     <SolidColorBrush x:Key="Background.Toggle" Color="#CACCDB"/>
     <SolidColorBrush x:Key="Background.Toggle.Disabled" Color="#CCCDD2"/>
+    <SolidColorBrush x:Key="Background.Toolbar" Color="#DFE0E3"/>
     <!--实色填充的系统控件：滚动条、GridSplitter等-->
     <SolidColorBrush x:Key="Background.Handler" Color="#87898A"/>
     <SolidColorBrush x:Key="Background.Handler.Focused" Color="#5E5E5E"/>
@@ -92,6 +92,9 @@
     <SolidColorBrush x:Key="Additional.Blue" Color="#35B5E6"/>
     <SolidColorBrush x:Key="Additional.Purple" Color="#9A66E4"/>
 
+    <!--阴影效果-->
+    <DropShadowEffect x:Key="PopupShadow" Color="Black" 
+                      Opacity="0.3" ShadowDepth="2" BlurRadius="8"/>
     <!--聚焦对象视觉效果-->
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">

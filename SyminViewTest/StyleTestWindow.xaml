@@ -53,10 +53,34 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="24"/>
         </Grid.RowDefinitions>
+        <!--工具栏-->
+        <ToolBarTray Margin="4,4,4,0">
+            <ToolBar Header="ToolBar" 
+                     Foreground="{StaticResource Primary.Focused}">
+                <Button Content="Button"/>
+                <ToggleButton Content="Toggle"/>
+                <Separator/>
+                <RadioButton Content="RadioA" IsChecked="True"/>
+                <RadioButton Content="RadioB"/>
+                <TextBox Text="TextBox" Width="100"/>
+                <CheckBox Content="CheckBox"/>
+                <Separator/>
+                <ComboBox SelectedIndex="0" Width="100">
+                    <ComboBoxItem Content="Item01"/>
+                    <ComboBoxItem Content="Item02"/>
+                    <ComboBoxItem Content="Item03"/>
+                </ComboBox>
+            </ToolBar>
+            <ToolBar Header="ToolBar" 
+                     Foreground="{StaticResource Primary.Focused}">
+                <ToggleButton Content="Toggle"/>
+                <Button Content="Button"/>
+            </ToolBar>
+        </ToolBarTray>
         <!--中间部分-->
         <Grid Margin="4" Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -149,6 +173,16 @@
                                         <ListBoxItem>List Box Item 02</ListBoxItem>
                                         <ListBoxItem>List Box Item 03</ListBoxItem>
                                     </ListBox>
+                                    <RichTextBox Grid.Row="1">
+                                        <FlowDocument>
+                                            <Paragraph>
+                                                <Bold>Flow Document</Bold> in a
+                                                <Run Foreground="{StaticResource Gradient.Primary}">
+                                                    Rich Text Box.
+                                                </Run>
+                                            </Paragraph>
+                                        </FlowDocument>
+                                    </RichTextBox>
                                 </Grid>
                                 
                             </Grid>

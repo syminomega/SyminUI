@@ -82,4 +82,60 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}" TargetType="{x:Type RadioButton}">
+        <Setter Property="Margin" Value="1,2"/>
+        <Setter Property="Padding" Value="4,2"/>
+        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border x:Name="border" CornerRadius="4" Grid.Column="1"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter x:Name="contentPresenter"  Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <Border x:Name="bar" Width="2" CornerRadius="1" Margin="2,4,-2,4"
+                                Background="{StaticResource Text.Secondary}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" 
+                                        Value="{StaticResource Background.SelectedMask}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter"
+                                    Value="{StaticResource Text.Main.Disabled}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" 
+                                        Value="{StaticResource Background.FocusedMask}"/>
+                            <Setter Property="Margin" TargetName="bar"
+                                    Value="2,5,-2,5"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Background" TargetName="bar"
+                                    Value="{StaticResource PrimaryBrush}"/>
+                            <Setter Property="Background" TargetName="border" 
+                                        Value="{StaticResource Background.FocusedMask}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

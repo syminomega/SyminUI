@@ -259,11 +259,8 @@
                         <Border BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}"
+                                Effect="{StaticResource PopupShadow}"
                                 CornerRadius="8" Margin="4">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="12" Opacity="0.6"
-                                                  Color="{StaticResource Shader.ShadowColor}" />
-                            </Border.Effect>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="32" />

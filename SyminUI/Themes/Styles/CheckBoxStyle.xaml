@@ -3,7 +3,7 @@
                     xmlns:svd="clr-namespace:SyminUI.Controls.Decorations"
                     xmlns:sva="clr-namespace:SyminUI.Controls.Attach">
 
-    <Style TargetType="{x:Type CheckBox}">
+    <Style x:Key="CheckBoxDefault" TargetType="{x:Type CheckBox}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource Background.Pure}" />
         <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}" />
@@ -92,5 +92,15 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    <!--默认样式-->
+    <Style TargetType="{x:Type CheckBox}"  BasedOn="{StaticResource CheckBoxDefault}"/>
+    <!--工具栏样式-->
+    <Style x:Key="{x:Static ToolBar.CheckBoxStyleKey}" 
+           BasedOn="{StaticResource CheckBoxDefault}"
+           TargetType="{x:Type CheckBox}">
+        <Setter Property="Margin" Value="0,0,8,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 </ResourceDictionary>

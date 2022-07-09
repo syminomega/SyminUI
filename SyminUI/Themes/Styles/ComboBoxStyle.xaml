@@ -268,7 +268,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style TargetType="{x:Type ComboBox}">
+    <Style x:Key="ComboBoxDefault" TargetType="{x:Type ComboBox}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Background.Button}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
@@ -291,6 +291,8 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <!--默认下拉样式-->
+    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource ComboBoxDefault}"/>
 
     <!--内容样式-->
     <Style TargetType="{x:Type ComboBoxItem}">
@@ -350,5 +352,14 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!--工具栏下拉样式-->
+    <Style x:Key="{x:Static ToolBar.ComboBoxStyleKey}" 
+           BasedOn="{StaticResource ComboBoxDefault}"
+           TargetType="{x:Type ComboBox}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Padding" Value="4,2"/>
+    </Style>
+
 
 </ResourceDictionary>

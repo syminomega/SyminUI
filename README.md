@@ -5,7 +5,7 @@ SyminUI 是 WPF 的 UI 组件库，并使用称为 **C#UI** 的 MVU 设计模式
 
 [![dotnet package](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml)
 
-## Preview 预览 (2022-07-03)
+## Preview 预览 (2022-07-10)
 Currently is in early preview stage. **Pull requests are not available at this moment.**\
 目前处于早期预览阶段，**Pull Request 暂未全面开放**。
 
@@ -17,7 +17,7 @@ Currently is in early preview stage. **Pull requests are not available at this m
 2. Add these code to App.xaml.\
 将以下代码添加至 App.xaml 中。
 
-```
+``` xml
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -29,6 +29,44 @@ Currently is in early preview stage. **Pull requests are not available at this m
         </ResourceDictionary>
     </Application.Resources>
 ```
+## Styles For Buildin Controls 内置控件样式
+|Control            |Finished   |Info       |
+|----               |:----:     |----       |
+|Button             |√          |
+|Calendar           |√          |
+|Canvas             |           |
+|CheckBox           |√          |
+|ComboBox           |√          |
+|DataGrid           |           |
+|DatePicker         |√          |
+|DocumentViewer     |           |No plan
+|Expander           |           |
+|Frame              |           |
+|GridSplitter       |√          |
+|GroupBox           |√          |
+|Image              |           |
+|Label              |√          |
+|ListBox            |√          |
+|ListView           |           |
+|Menu               |√          |
+|PasswordBox        |√          |
+|Progress Bar       |!          |Vertical style not work
+|RadioButton        |√          |
+|Repeat Button      |           |
+|RichTextBox        |√          |
+|ScrollBar          |√          |
+|ScrollViewer       |√          |
+|Separator          |√          |
+|Slider             |√          |Tick view not work
+|StatusBar          |√          |
+|TabControl         |           |
+|TextBox            |√          |
+|Toggle Button      |√          |
+|ToolBar            |√          |No menu style for tool bar
+|ToolBarPanel       |√          |
+|ToolBarTray        |√          |
+|TreeView           |           |
+
 ## Known Issues 已知问题
 + Progress bar vertical style does not show shader effect.\
 进度条垂直样式不显示辉光效果。

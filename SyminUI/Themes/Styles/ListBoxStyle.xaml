@@ -66,7 +66,7 @@
     </Style>
     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ListBoxItemContainerDefault}"/>
 
-    <Style TargetType="{x:Type ListBox}">
+    <Style x:Key="ListBoxDefault" TargetType="{x:Type ListBox}">
         <Setter Property="Background" Value="{StaticResource Background.Pure}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -110,4 +110,6 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource ListBoxDefault}"/>
 </ResourceDictionary>

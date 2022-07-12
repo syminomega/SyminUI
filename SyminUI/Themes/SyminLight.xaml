@@ -57,6 +57,7 @@
     <SolidColorBrush x:Key="Background.Toggle" Color="#CACCDB"/>
     <SolidColorBrush x:Key="Background.Toggle.Disabled" Color="#CCCDD2"/>
     <SolidColorBrush x:Key="Background.Toolbar" Color="#DFE0E3"/>
+    <SolidColorBrush x:Key="Background.ListItem.Interlaced" Color="#10000000"/>
     <!--实色填充的系统控件：滚动条、GridSplitter等-->
     <SolidColorBrush x:Key="Background.Handler" Color="#87898A"/>
     <SolidColorBrush x:Key="Background.Handler.Focused" Color="#5E5E5E"/>

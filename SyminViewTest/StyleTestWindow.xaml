@@ -165,13 +165,17 @@
                                              Value="{Binding ElementName=ProgressVerticalSlider,Path=Value}" />
                                 <Grid Grid.Column="2">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="120"/>
+                                        <RowDefinition Height="170"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <ListBox  Margin="4" SelectedIndex="0">
-                                        <ListBoxItem>List Box Item 01</ListBoxItem>
-                                        <ListBoxItem>List Box Item 02</ListBoxItem>
-                                        <ListBoxItem>List Box Item 03</ListBoxItem>
+                                    <ListBox  Margin="4" >
+                                        <ListBoxItem>SyminOmega</ListBoxItem>
+                                        <ListBoxItem>Celeron533</ListBoxItem>
+                                        <ListBoxItem>Hello World</ListBoxItem>
+                                        <ListBoxItem>Furry Fantasy</ListBoxItem>
+                                        <ListBoxItem>Item Demo</ListBoxItem>
+                                        <ListBoxItem>Item Demo</ListBoxItem>
+                                        
                                     </ListBox>
                                     <RichTextBox Grid.Row="1">
                                         <FlowDocument>

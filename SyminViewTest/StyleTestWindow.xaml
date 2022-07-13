@@ -225,34 +225,42 @@
                 </ScrollViewer>
 
             </GroupBox>
-            <GroupBox Header="Other Styles" Grid.Column="2" Margin="12,4,4,4">
-                <StackPanel Orientation="Vertical">
-                    <UniformGrid Columns="2" Rows="2">
-                        <svd:EmbossBorder Content="Emboss" Height="100"
+            <TabControl  Grid.Column="2" Margin="12,4,4,4">
+                <TabItem Header="Decorations">
+                    <StackPanel Orientation="Vertical" Margin="4">
+                        <UniformGrid Columns="2" Rows="2">
+                            <svd:EmbossBorder Content="Emboss" Height="100"
                                           VerticalContentAlignment="Center"
                                           HorizontalContentAlignment="Center"
                                           Foreground="{StaticResource Gradient.Primary}"
                                           FontSize="24" CornerRadius="16"
                                           ContextMenu="{StaticResource ContextMenuDemo}" />
-                        <svd:CardBorder Content="Card" Height="100"
+                            <svd:CardBorder Content="Card" Height="100"
                                         Grid.Column="2" FontSize="24"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Foreground="{StaticResource Gradient.Primary}"
                                         CornerRadius="16" />
-                        <svd:SlotBorder Content="Slot" Height="100"
+                            <svd:SlotBorder Content="Slot" Height="100"
                                         VerticalContentAlignment="Center"
                                         HorizontalContentAlignment="Center"
                                         Foreground="{StaticResource Gradient.Primary}"
                                         FontSize="24" Radius="16" />
 
-                    </UniformGrid>
-                    <Separator />
-                    <svd:LightedSurface Height="80" Margin="4"
+                        </UniformGrid>
+                        <Separator />
+                        <svd:LightedSurface Height="80" Margin="4"
                                         Background="{StaticResource Background.Main}"
                                         CornerRadius="16" Content="Lighted Surface" FontSize="24" />
-                </StackPanel>
-            </GroupBox>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Empty">
+                    
+                </TabItem>
+                <TabItem Header="Disabled" IsEnabled="False">
+
+                </TabItem>
+            </TabControl>
         </Grid>
         <!--状态栏部分-->
         <StatusBar Grid.Row="2">

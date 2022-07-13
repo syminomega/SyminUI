@@ -5,7 +5,7 @@ SyminUI 是 WPF 的 UI 组件库，并使用称为 **C#UI** 的 MVU 设计模式
 
 [![dotnet package](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml)
 
-## Preview 预览 (2022-07-10)
+## Preview 预览 (2022-07-13)
 Currently is in early preview stage. **Pull requests are not available at this moment.**\
 目前处于早期预览阶段，**Pull Request 暂未全面开放**。
 
@@ -58,7 +58,7 @@ Currently is in early preview stage. **Pull requests are not available at this m
 |Separator          |√          |
 |Slider             |√          |Tick view not work
 |StatusBar          |√          |
-|TabControl         |           |
+|TabControl         |√          |Plan to add new styles
 |TextBox            |√          |
 |Toggle Button      |√          |
 |ToolBar            |√          |No menu style for tool bar

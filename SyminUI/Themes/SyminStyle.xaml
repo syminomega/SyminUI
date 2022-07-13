@@ -16,6 +16,7 @@
         <ResourceDictionary Source="Styles/CheckBoxStyle.xaml"/>
         <ResourceDictionary Source="Styles/RadioButtonStyle.xaml"/>
         <ResourceDictionary Source="Styles/GroupBoxStyle.xaml"/>
+        <ResourceDictionary Source="Styles/ExpanderStyle.xaml"/>
         <ResourceDictionary Source="Styles/SeparatorStyle.xaml"/>
         <ResourceDictionary Source="Styles/CalendarStyle.xaml"/>
         <ResourceDictionary Source="Styles/DatePickerStyle.xaml"/>
@@ -23,6 +24,7 @@
         <ResourceDictionary Source="Styles/MenuStyle.xaml"/>
         <ResourceDictionary Source="Styles/ToolBarStyle.xaml"/>
         <ResourceDictionary Source="Styles/ListBoxStyle.xaml"/>
+        <ResourceDictionary Source="Styles/TabViewStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

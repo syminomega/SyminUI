@@ -1,0 +1,236 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type TabControl}">
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="BorderThickness" Value="1,3,1,1"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{StaticResource Background.Section}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
+
+        <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid x:Name="templateRoot" 
+                              ClipToBounds="true" 
+                              SnapsToDevicePixels="true" 
+                              KeyboardNavigation.TabNavigation="Local">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="ColumnDefinition0"/>
+                            <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+                            <RowDefinition x:Name="RowDefinition1" Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TabPanel x:Name="headerPanel"
+                                      Background="Transparent" 
+                                      Grid.Column="0" IsItemsHost="true" 
+                                      Grid.Row="0" 
+                                      KeyboardNavigation.TabIndex="1" 
+                                      Panel.ZIndex="1"/>
+                        <Border x:Name="contentPanel" CornerRadius="4"
+                                    Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Grid.Column="0"  Grid.Row="1"
+                                    KeyboardNavigation.DirectionalNavigation="Contained" 
+                                    KeyboardNavigation.TabIndex="2" 
+                                    KeyboardNavigation.TabNavigation="Local">
+                            <ContentPresenter x:Name="PART_SelectedContentHost" 
+                                                  ContentSource="SelectedContent" 
+                                                  Margin="{TemplateBinding Padding}" 
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabStripPlacement" Value="Bottom">
+                            <!--设置布局-->
+                            <Setter Property="Grid.Row" TargetName="headerPanel" Value="1"/>
+                            <Setter Property="Grid.Row" TargetName="contentPanel" Value="0"/>
+                            <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                            <Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
+                            <!--设置边框-->
+                            <Setter Property="BorderThickness" Value="1,1,1,3"/>
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Left">
+                            <!--设置布局-->
+                            <Setter Property="Grid.Row" TargetName="headerPanel" Value="0"/>
+                            <Setter Property="Grid.Row" TargetName="contentPanel" Value="0"/>
+                            <Setter Property="Grid.Column" TargetName="headerPanel" Value="0"/>
+                            <Setter Property="Grid.Column" TargetName="contentPanel" Value="1"/>
+                            <Setter Property="Width" TargetName="ColumnDefinition0" Value="Auto"/>
+                            <Setter Property="Width" TargetName="ColumnDefinition1" Value="*"/>
+                            <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                            <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                            <!--设置边框-->
+                            <Setter Property="BorderThickness" Value="3,1,1,1"/>
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Right">
+                            <!--设置布局-->
+                            <Setter Property="Grid.Row" TargetName="headerPanel" Value="0"/>
+                            <Setter Property="Grid.Row" TargetName="contentPanel" Value="0"/>
+                            <Setter Property="Grid.Column" TargetName="headerPanel" Value="1"/>
+                            <Setter Property="Grid.Column" TargetName="contentPanel" Value="0"/>
+                            <Setter Property="Width" TargetName="ColumnDefinition0" Value="*"/>
+                            <Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto"/>
+                            <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                            <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                            <!--设置边框-->
+                            <Setter Property="BorderThickness" Value="1,1,3,1"/>
+                        </Trigger>
+                        <!--圆角效果-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="TabStripPlacement" Value="Top"/>
+                                <Condition Property="SelectedIndex" Value="0"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="CornerRadius" TargetName="contentPanel"
+                                        Value="0,4,4,4"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="TabStripPlacement" Value="Left"/>
+                                <Condition Property="SelectedIndex" Value="0"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="CornerRadius" TargetName="contentPanel"
+                                        Value="0,4,4,4"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="TabStripPlacement" Value="Right"/>
+                                <Condition Property="SelectedIndex" Value="0"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="CornerRadius" TargetName="contentPanel"
+                                        Value="4,0,4,4"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="TabStripPlacement" Value="Bottom"/>
+                                <Condition Property="SelectedIndex" Value="0"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="CornerRadius" TargetName="contentPanel"
+                                        Value="4,4,4,0"/>
+                        </MultiTrigger>
+                        <!--禁用效果-->
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="TextElement.Foreground" TargetName="templateRoot" 
+                                        Value="{StaticResource Text.Main.Disabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type TabItem}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Foreground" Value="{StaticResource Text.Contrast}"/>
+        <!--使用父对象的边框色-->
+        <Setter Property="Background" Value="{Binding 
+                RelativeSource={RelativeSource AncestorType={x:Type TabControl}},
+                Path=BorderBrush,Mode=OneWay,FallbackValue={StaticResource Border.MainBrush}}"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="8,2"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
+                        <Border x:Name="mainBorder" 
+                                    CornerRadius="4,4,0,0"
+                                    Background="{TemplateBinding Background}" 
+                                    Margin="0,0,0,-1">
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" 
+                                              ContentSource="Header" Focusable="False"
+                                              HorizontalAlignment="{Binding HorizontalContentAlignment, 
+                                                    RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" 
+                                              VerticalAlignment="{Binding VerticalContentAlignment, 
+                                                    RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                              Margin="{TemplateBinding Padding}"
+                                              RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        <Border x:Name="separate" Visibility="Collapsed"
+                                    HorizontalAlignment="Right"
+                                    Width="1" Margin="-1,4"
+                                    Background="{TemplateBinding Background}"/>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--靠左-->
+                        <DataTrigger Binding="{Binding TabStripPlacement, 
+                                RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" 
+                                         Value="Left" >
+                            <Setter Property="CornerRadius" TargetName="mainBorder"
+                                        Value="4,0,0,4"/>
+                            <Setter Property="Margin" TargetName="mainBorder"
+                                        Value="0,0,-1,0"/>
+                            <!--分隔符方向-->
+                            <Setter Property="Width" TargetName="separate" Value="auto"/>
+                            <Setter Property="Height" TargetName="separate" Value="1"/>
+                            <Setter Property="Margin" TargetName="separate" Value="4,-1"/>
+                            <Setter Property="HorizontalAlignment" TargetName="separate" 
+                                        Value="Stretch"/>
+                            <Setter Property="VerticalAlignment" TargetName="separate" 
+                                        Value="Bottom"/>
+                        </DataTrigger>
+                        <!--靠右-->
+                        <DataTrigger Binding="{Binding TabStripPlacement, 
+                                RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" 
+                                         Value="Right" >
+                            <Setter Property="CornerRadius" TargetName="mainBorder"
+                                        Value="0,4,4,0"/>
+                            <Setter Property="Margin" TargetName="mainBorder"
+                                        Value="-1,0,0,0"/>
+                            <!--分隔符方向-->
+                            <Setter Property="Width" TargetName="separate" Value="auto"/>
+                            <Setter Property="Height" TargetName="separate" Value="1"/>
+                            <Setter Property="Margin" TargetName="separate" Value="4,-1"/>
+                            <Setter Property="HorizontalAlignment" TargetName="separate" 
+                                        Value="Stretch"/>
+                            <Setter Property="VerticalAlignment" TargetName="separate" 
+                                        Value="Bottom"/>
+                        </DataTrigger>
+                        <!--下方-->
+                        <DataTrigger Binding="{Binding TabStripPlacement, 
+                                RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" 
+                                         Value="Bottom" >
+                            <Setter Property="CornerRadius" TargetName="mainBorder"
+                                        Value="0,0,4,4"/>
+                            <Setter Property="Margin" TargetName="mainBorder"
+                                        Value="0,-1,0,0"/>
+                        </DataTrigger>
+                        <!--未选中状态-->
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter Property="Background" Value="Transparent"
+                                        TargetName="mainBorder"/>
+                            <Setter Property="Visibility" TargetName="separate"
+                                        Value="Visible"/>
+                            <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
+                            <!--<Setter Property="Panel.ZIndex" Value="1"/>-->
+                        </Trigger>
+                        <!--高亮状态-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsSelected" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="mainBorder"
+                                        Value="{StaticResource Background.SelectedMask}"/>
+                        </MultiTrigger>
+                        <!--禁用状态-->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="TextElement.Foreground" TargetName="templateRoot" 
+                                        Value="{StaticResource Text.Main.Disabled}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

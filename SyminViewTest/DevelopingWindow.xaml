@@ -8,22 +8,12 @@
         xmlns:sve="clr-namespace:SyminUI.Effects;assembly=SyminUI"
         xmlns:local="clr-namespace:SyminViewTest"
         mc:Ignorable="d"
-        Title="Developing" Height="400" Width="500"
+        Title="Developing" Height="400" Width="300"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource Window.Normal}"
         Background="{StaticResource Background.Window}">
     <Window.Resources>
 
+
     </Window.Resources>
-    <Grid Margin="4">
-        <ListView>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Age" Width="50" DisplayMemberBinding="{Binding Age}" />
-                    <GridViewColumn Header="Mail" Width="150" DisplayMemberBinding="{Binding Mail}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-    </Grid>
 </Window>

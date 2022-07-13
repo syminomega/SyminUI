@@ -53,32 +53,32 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="24"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="24" />
         </Grid.RowDefinitions>
         <!--工具栏-->
         <ToolBarTray Margin="4,4,4,0">
-            <ToolBar Header="ToolBar" 
+            <ToolBar Header="ToolBar"
                      Foreground="{StaticResource Primary.Focused}">
-                <Button Content="Button"/>
-                <ToggleButton Content="Toggle"/>
-                <Separator/>
-                <RadioButton Content="RadioA" IsChecked="True"/>
-                <RadioButton Content="RadioB"/>
-                <TextBox Text="TextBox" Width="100"/>
-                <CheckBox Content="CheckBox"/>
-                <Separator/>
+                <Button Content="Button" />
+                <ToggleButton Content="Toggle" />
+                <Separator />
+                <RadioButton Content="RadioA" IsChecked="True" />
+                <RadioButton Content="RadioB" />
+                <TextBox Text="TextBox" Width="100" />
+                <CheckBox Content="CheckBox" />
+                <Separator />
                 <ComboBox SelectedIndex="0" Width="100">
-                    <ComboBoxItem Content="Item01"/>
-                    <ComboBoxItem Content="Item02"/>
-                    <ComboBoxItem Content="Item03"/>
+                    <ComboBoxItem Content="Item01" />
+                    <ComboBoxItem Content="Item02" />
+                    <ComboBoxItem Content="Item03" />
                 </ComboBox>
             </ToolBar>
-            <ToolBar Header="ToolBar" 
+            <ToolBar Header="ToolBar"
                      Foreground="{StaticResource Primary.Focused}">
-                <ToggleButton Content="Toggle"/>
-                <Button Content="Button"/>
+                <ToggleButton Content="Toggle" />
+                <Button Content="Button" />
             </ToolBar>
         </ToolBarTray>
         <!--中间部分-->
@@ -95,23 +95,22 @@
                         <StackPanel Orientation="Vertical">
                             <Button Content="Button Basic" />
                             <Button Content="Button Primary"
-                                Style="{StaticResource ButtonPrimary}" />
+                                    Style="{StaticResource ButtonPrimary}" />
 
                             <Button Content="Button Basic Disabled" IsEnabled="False" />
                             <Button Content="Button Primary Disabled"
-                                Style="{StaticResource ButtonPrimary}" IsEnabled="False" />
+                                    Style="{StaticResource ButtonPrimary}" IsEnabled="False" />
                             <Separator />
                             <Label Content="Label Default" />
                             <Label Content="Label Primary"
-                               Style="{StaticResource LabelPrimary}" />
+                                   Style="{StaticResource LabelPrimary}" />
                             <Label Content="Label Default Disabled" IsEnabled="False" />
                             <Label Content="Label Primary Disabled"
-                               Style="{StaticResource LabelPrimary}" IsEnabled="False" />
+                                   Style="{StaticResource LabelPrimary}" IsEnabled="False" />
                         </StackPanel>
                     </GroupBox>
-                    <Border BorderThickness="1" Margin="4" CornerRadius="4"
-                        BorderBrush="{StaticResource Border.MainBrush}">
-                        <Grid Margin="4">
+                    <Expander Header="Toggle Buttons" IsExpanded="True">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="auto" />
@@ -121,22 +120,22 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <ToggleButton Grid.Column="0" Grid.Row="0"
-                                      Content="Toggle Button" IsChecked="True" />
+                                          Content="Toggle Button" IsChecked="True" />
                             <ToggleButton Grid.Column="1" Grid.Row="0"
-                                      Style="{StaticResource SwitchButton}"
-                                      IsChecked="True" />
+                                          Style="{StaticResource SwitchButton}"
+                                          IsChecked="True" />
                             <ToggleButton Grid.Column="0" Grid.Row="1"
-                                      IsEnabled="False"
-                                      Content="Toggle Disabled" />
+                                          IsEnabled="False"
+                                          Content="Toggle Disabled" />
                             <ToggleButton Grid.Column="1" Grid.Row="1" IsEnabled="False"
-                                      Style="{StaticResource SwitchButton}" />
+                                          Style="{StaticResource SwitchButton}" />
                         </Grid>
-                    </Border>
+                    </Expander>
 
 
                 </StackPanel>
             </ScrollViewer>
-            <GroupBox Header="Control Styles" Grid.Column="1" Margin="4" >
+            <GroupBox Header="Control Styles" Grid.Column="1" Margin="4">
                 <ScrollViewer>
                     <StackPanel Orientation="Vertical" Margin="4,0">
                         <Grid>
@@ -152,9 +151,9 @@
                             </Calendar>
                             <Grid Grid.Column="1" Margin="4">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="24"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="24" />
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
                                 <Slider Grid.Column="0"
@@ -165,17 +164,17 @@
                                              Value="{Binding ElementName=ProgressVerticalSlider,Path=Value}" />
                                 <Grid Grid.Column="2">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="170"/>
-                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="170" />
+                                        <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <ListBox  Margin="4" >
+                                    <ListBox Margin="4">
                                         <ListBoxItem>SyminOmega</ListBoxItem>
                                         <ListBoxItem>Celeron533</ListBoxItem>
                                         <ListBoxItem>Hello World</ListBoxItem>
                                         <ListBoxItem>Furry Fantasy</ListBoxItem>
                                         <ListBoxItem>Item Demo</ListBoxItem>
                                         <ListBoxItem>Item Demo</ListBoxItem>
-                                        
+
                                     </ListBox>
                                     <RichTextBox Grid.Row="1">
                                         <FlowDocument>
@@ -188,23 +187,24 @@
                                         </FlowDocument>
                                     </RichTextBox>
                                 </Grid>
-                                
+
                             </Grid>
                         </Grid>
                         <UniformGrid Columns="2">
                             <TextBox Text="Text Box (Input Field)" />
                             <PasswordBox Password="12345" />
                         </UniformGrid>
-                        <ProgressBar Height="24" IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
-                                 Value="{Binding ElementName=progressSlider,Path=Value}" />
+                        <ProgressBar Height="24"
+                                     IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
+                                     Value="{Binding ElementName=progressSlider,Path=Value}" />
                         <Slider x:Name="progressSlider" Maximum="100" Minimum="0" Value="25" />
                         <UniformGrid Columns="2" Rows="2">
                             <CheckBox x:Name="ProgressCheckbox" Content="Progress Is Indeterminate" />
-                            <RadioButton Content="Radio Button A" GroupName="RadioG" IsChecked="{x:Null}"/>
+                            <RadioButton Content="Radio Button A" GroupName="RadioG" IsChecked="{x:Null}" />
                             <CheckBox Content="Indeterminate Disabled" IsChecked="{x:Null}" IsEnabled="False" />
-                            <RadioButton Content="Radio Button B" GroupName="RadioG"/>
+                            <RadioButton Content="Radio Button B" GroupName="RadioG" />
                         </UniformGrid>
-                        
+
                         <UniformGrid Columns="2" Rows="1">
                             <ComboBox SelectedIndex="0">
                                 <ComboBoxItem Content="Selection A" />
@@ -218,7 +218,7 @@
                             </ComboBox>
                         </UniformGrid>
                         <UniformGrid Columns="2">
-                            <DatePicker/>
+                            <DatePicker />
                         </UniformGrid>
 
                     </StackPanel>
@@ -229,37 +229,37 @@
                 <StackPanel Orientation="Vertical">
                     <UniformGrid Columns="2" Rows="2">
                         <svd:EmbossBorder Content="Emboss" Height="100"
-                                      VerticalContentAlignment="Center"
-                                      HorizontalContentAlignment="Center"
-                                      Foreground="{StaticResource Gradient.Primary}"
-                                      FontSize="24" CornerRadius="16"
-                                      ContextMenu="{StaticResource ContextMenuDemo}" />
+                                          VerticalContentAlignment="Center"
+                                          HorizontalContentAlignment="Center"
+                                          Foreground="{StaticResource Gradient.Primary}"
+                                          FontSize="24" CornerRadius="16"
+                                          ContextMenu="{StaticResource ContextMenuDemo}" />
                         <svd:CardBorder Content="Card" Height="100"
-                                    Grid.Column="2" FontSize="24"
-                                    HorizontalContentAlignment="Center"
-                                    VerticalContentAlignment="Center"
-                                    Foreground="{StaticResource Gradient.Primary}"
-                                    CornerRadius="16" />
+                                        Grid.Column="2" FontSize="24"
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center"
+                                        Foreground="{StaticResource Gradient.Primary}"
+                                        CornerRadius="16" />
                         <svd:SlotBorder Content="Slot" Height="100"
-                                    VerticalContentAlignment="Center"
-                                    HorizontalContentAlignment="Center"
-                                    Foreground="{StaticResource Gradient.Primary}"
-                                    FontSize="24" Radius="16" />
+                                        VerticalContentAlignment="Center"
+                                        HorizontalContentAlignment="Center"
+                                        Foreground="{StaticResource Gradient.Primary}"
+                                        FontSize="24" Radius="16" />
 
                     </UniformGrid>
                     <Separator />
                     <svd:LightedSurface Height="80" Margin="4"
-                                    Background="{StaticResource Background.Main}"
-                                    CornerRadius="16" Content="Lighted Surface" FontSize="24" />
+                                        Background="{StaticResource Background.Main}"
+                                        CornerRadius="16" Content="Lighted Surface" FontSize="24" />
                 </StackPanel>
             </GroupBox>
         </Grid>
         <!--状态栏部分-->
         <StatusBar Grid.Row="2">
-            <TextBlock Text="★"/>
-            <TextBlock Text="StatusBar"/>
-            <Separator/>
-            <TextBlock Text="Message"/>
+            <TextBlock Text="★" />
+            <TextBlock Text="StatusBar" />
+            <Separator />
+            <TextBlock Text="Message" />
         </StatusBar>
     </Grid>
 

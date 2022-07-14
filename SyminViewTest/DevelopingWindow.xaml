@@ -14,6 +14,8 @@
         Background="{StaticResource Background.Window}">
     <Window.Resources>
 
-
     </Window.Resources>
+    <StackPanel Orientation="Vertical">
+
+    </StackPanel>
 </Window>

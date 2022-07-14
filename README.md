@@ -51,7 +51,7 @@ Currently is in early preview stage. **Pull requests are not available at this m
 |PasswordBox        |√          |
 |Progress Bar       |!          |Vertical style not work
 |RadioButton        |√          |
-|Repeat Button      |           |
+|Repeat Button      |√          |Plan to add new styles
 |RichTextBox        |√          |
 |ScrollBar          |√          |
 |ScrollViewer       |√          |

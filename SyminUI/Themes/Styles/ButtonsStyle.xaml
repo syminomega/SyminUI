@@ -57,7 +57,7 @@
     </Storyboard>
 
     <!--普通按钮-->
-    <Style x:Key="ButtonBasic" TargetType="{x:Type Button}">
+    <Style x:Key="ButtonBasic" TargetType="{x:Type ButtonBase}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource Background.Button}" />
         <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
@@ -76,7 +76,7 @@
         <Setter Property="Padding" Value="20,8" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
                     <svd:EmbossBorder x:Name="border" CornerRadius="4" RenderTransformOrigin="0.5,0.5"
                                       LightBrush="{Binding Path=(sva:ShadingElement.LightBrush),
                                                     RelativeSource={RelativeSource TemplatedParent}}"
@@ -104,10 +104,10 @@
                     </svd:EmbossBorder>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsDefaulted" Value="true">
+                        <!--<Trigger Property="IsDefaulted" Value="true">
                             <Setter Property="BorderBrush" TargetName="border"
                                     Value="{StaticResource PrimaryBrush}" />
-                        </Trigger>
+                        </Trigger>-->
                         <!--切换边框效果，显示阴影-->
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="BorderBrush" TargetName="border"
@@ -211,4 +211,8 @@
         </Setter>
     </Style>
     
+    
+    <!--重复按钮-->
+    <Style TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource ButtonBasic}"/>
+
 </ResourceDictionary>

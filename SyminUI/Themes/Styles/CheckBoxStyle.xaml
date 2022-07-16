@@ -51,7 +51,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="HasContent" Value="true">
                             <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}" />
-                            <Setter Property="Padding" Value="4,-1,0,0" />
+                            <Setter Property="Padding" Value="4,0,0,0" />
                         </Trigger>
                         <!--鼠标高亮，隐藏边框，显示深度效果-->
                         <Trigger Property="IsMouseOver" Value="true">

@@ -3,7 +3,7 @@
 SyminUI is a WPF UI kit. Build interface with Neomorphism style and **C#UI** in MVU pattern (WIP).\
 SyminUI 是 WPF 的 UI 组件库，并使用称为 **C#UI** 的 MVU 设计模式进行 UI 搭建（画饼中），默认样式为新拟态风格。
 
-[![dotnet package](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml)
+[![build](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml)
 
 ## Preview 预览 (2022-07-13)
 Currently is in early preview stage. **Pull requests are not available at this moment.**\
@@ -11,11 +11,11 @@ Currently is in early preview stage. **Pull requests are not available at this m
 
 ![Styles Demo](./Images/StylesDemo.jpg)
 
-## Quick Start 快速使用
-1. Add SyminData and SyminUI reference to your project.\
-在项目中添加 SyminData 和 SyminUI 引用.
-2. Add these code to App.xaml.\
-将以下代码添加至 App.xaml 中。
+## 🧰 Quick Start 快速使用
+1. Add `SyminData` and `SyminUI` reference to your project.\
+在项目中添加 `SyminData` 和 `SyminUI` 引用.
+2. Add these code to `App.xaml`.\
+将以下代码添加至 `App.xaml` 中。
 
 ``` xml
     <Application.Resources>
@@ -29,44 +29,44 @@ Currently is in early preview stage. **Pull requests are not available at this m
         </ResourceDictionary>
     </Application.Resources>
 ```
-## Styles For Buildin Controls 内置控件样式
-|Control            |Finished   |Info       |
-|----               |:----:     |----       |
-|Button             |√          |
-|Calendar           |√          |
-|CheckBox           |√          |
-|ComboBox           |√          |
-|DataGrid           |           |
-|DatePicker         |√          |
-|DocumentViewer     |           |No plan
-|Expander           |√          |
-|Frame              |           |
-|GridSplitter       |√          |
-|GroupBox           |√          |
-|Image              |           |
-|Label              |√          |
-|ListBox            |√          |
-|ListView           |           |
-|Menu               |√          |
-|PasswordBox        |√          |
-|Progress Bar       |!          |Vertical style not work
-|RadioButton        |√          |
-|Repeat Button      |           |
-|RichTextBox        |√          |
-|ScrollBar          |√          |
-|ScrollViewer       |√          |
-|Separator          |√          |
-|Slider             |√          |Tick view not work
-|StatusBar          |√          |
-|TabControl         |√          |Plan to add new styles
-|TextBox            |√          |
-|Toggle Button      |√          |
-|ToolBar            |√          |No menu style for tool bar
-|ToolBarPanel       |√          |
-|ToolBarTray        |√          |
-|TreeView           |           |
+## 📦 Styles For Buildin Controls 内置控件样式
+| Control         | Status  | Comment
+| ----            | ----    | ----
+| Button          | ✔       | 
+| Calendar        | ✔       | 
+| CheckBox        | ✔       | 
+| ComboBox        | ✔       | 
+| DataGrid        |         | 
+| DatePicker      | ✔       | 
+| DocumentViewer  |         | No plan
+| Expander        | ✔       | 
+| Frame           |         | 
+| GridSplitter    | ✔       | 
+| GroupBox        | ✔       | 
+| Image           |         | 
+| Label           | ✔       | 
+| ListBox         | ✔       | 
+| ListView        |         | 
+| Menu            | ✔       | 
+| PasswordBox     | ✔       | 
+| Progress Bar    | ⚠       | Vertical style not work
+| RadioButton     | ✔       | 
+| Repeat Button   |         | 
+| RichTextBox     | ✔       | 
+| ScrollBar       | ✔       | 
+| ScrollViewer    | ✔       | 
+| Separator       | ✔       | 
+| Slider          | ✔       | Tick view not work
+| StatusBar       | ✔       | 
+| TabControl      | ✔       | Plan to add new styles
+| TextBox         | ✔       | 
+| Toggle Button   | ✔       | 
+| ToolBar         | ✔       | No menu style for tool bar
+| ToolBarPanel    | ✔       | 
+| ToolBarTray     | ✔       | 
+| TreeView        |         | 
 
-## Known Issues 已知问题
+## ⚠ Known Issues 已知问题
 + Progress bar vertical style does not show shader effect.\
 进度条垂直样式不显示辉光效果。
 + Progress indeterminate style does not work correctly.\
@@ -78,5 +78,5 @@ Currently is in early preview stage. **Pull requests are not available at this m
 + Expander focus visual does not work.\
 扩展框聚焦样式尚未完善。
 
-## License 许可证
+## 📄 License 许可证
 [The MIT License](./LICENSE)

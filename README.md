@@ -43,7 +43,6 @@ Currently is in early preview stage. **Pull requests are not available at this m
 |Frame              |           |
 |GridSplitter       |√          |
 |GroupBox           |√          |
-|Image              |           |
 |Label              |√          |
 |ListBox            |√          |
 |ListView           |           |

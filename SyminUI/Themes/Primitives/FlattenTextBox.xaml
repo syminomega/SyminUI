@@ -7,10 +7,11 @@
         <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="Padding" Value="0" />
+        <Setter Property="Padding" Value="4,2" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>

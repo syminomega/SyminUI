@@ -17,13 +17,12 @@
     <Window.Resources>
         <dm:DataGridDemo x:Key="DGD"/>
 
-
         <!--格子内容-->
         <Style x:Key="DataGridCellDefault" TargetType="{x:Type DataGridCell}">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Padding" Value="8,4"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <!--<Setter Property="Padding" Value="8,4"/>-->
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Template">
@@ -113,8 +112,12 @@
                                 </Grid>
 
                             </Border>
-                            <Border x:Name="separatorBorder" Width="1" 
+                            <Border x:Name="separatorV" Width="1" 
                                     HorizontalAlignment="Right"
+                                    Visibility="{TemplateBinding SeparatorVisibility}"
+                                    Background="{TemplateBinding SeparatorBrush}"/>
+                            <Border x:Name="separatorH" Height="1" 
+                                    VerticalAlignment="Bottom"
                                     Visibility="{TemplateBinding SeparatorVisibility}"
                                     Background="{TemplateBinding SeparatorBrush}"/>
                             <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" 
@@ -132,7 +135,9 @@
                                         Value="{StaticResource Background.SelectedMask}"/>
                             </MultiTrigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Visibility" TargetName="separatorBorder"
+                                <Setter Property="Visibility" TargetName="separatorV"
+                                        Value="Hidden"/>
+                                <Setter Property="Visibility" TargetName="separatorH"
                                         Value="Hidden"/>
                                 <Setter Property="Background" 
                                         Value="{StaticResource Background.FocusedMask}"/>
@@ -309,6 +314,8 @@
                                        SnapsToDevicePixels="True"/>
                             <Border Width="1" HorizontalAlignment="Right" 
                                     Background="{StaticResource Border.Separator.Main}"/>
+                            <Border Height="1" VerticalAlignment="Bottom" 
+                                    Background="{StaticResource Border.Separator.Main}"/>
                             <Polygon x:Name="Arrow" 
                                      Fill="{StaticResource Background.Handler}" 
                                      HorizontalAlignment="Right" 
@@ -356,6 +363,17 @@
             <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
             <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
             <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+
+            <Setter Property="sva:DataGridElement.TextColumnStyle">
+                <Setter.Value>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Padding" Value="4,2"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="sva:DataGridElement.EditingTextColumnStyle" Value="{StaticResource FlattenTextBox}"/>
+            <Setter Property="sva:DataGridElement.ApplyDefaultStyle" Value="True"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type DataGrid}">
@@ -439,6 +457,7 @@
             </Style.Triggers>
         </Style>
 
+
     </Window.Resources>
     <Grid>
         <DataGrid DataContext="{StaticResource DGD}"
@@ -450,16 +469,6 @@
                         RelativeSource={RelativeSource AncestorType=DataGridRow}}"/>
                 </DataTemplate>
             </DataGrid.RowHeaderTemplate>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="姓名" Binding="{Binding Name}"
-                                    EditingElementStyle="{StaticResource FlattenTextBox}"/>
-                <DataGridTextColumn Header="年龄" Binding="{Binding Age}"/>
-                <DataGridCheckBoxColumn Header="标记" Binding="{Binding Remark}"
-                                        ElementStyle="{StaticResource CheckBoxDefault}">
-                </DataGridCheckBoxColumn>
-            </DataGrid.Columns>
         </DataGrid>
-        
     </Grid>
 </Window>

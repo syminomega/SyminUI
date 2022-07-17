@@ -40,15 +40,15 @@ jobs:
     - name: Upload articraft - SyminData
       uses: actions/upload-artifact@v2
       with:
-        name: SyminData-${{ matrix.configuration }}-${{ github.sha }}
+        name: SyminData-${{ matrix.configuration }}
         path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminData.dll
     - name: Upload articraft - SyminUI Only
       uses: actions/upload-artifact@v2
       with:
-        name: SyminUIOnly-${{ matrix.configuration }}-${{ github.sha }}
+        name: SyminUIOnly-${{ matrix.configuration }}
         path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminUI.dll
     - name: Upload articraft - SyminUI
       uses: actions/upload-artifact@v2
       with:
-        name: SyminUI-${{ matrix.configuration }}-${{ github.sha }}
+        name: SyminUI-${{ matrix.configuration }}
         path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}

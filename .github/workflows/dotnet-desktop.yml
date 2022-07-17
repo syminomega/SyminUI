@@ -15,8 +15,7 @@ on:
       - 'LICENSE'
 
 jobs:
-  build:
-
+  build-SyminUI:
     runs-on: windows-latest
     strategy:
       matrix:
@@ -38,7 +37,17 @@ jobs:
       run: dotnet build --no-restore --configuration ${{ matrix.configuration }} --output bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: Upload articraft
+    - name: Upload articraft - SyminData
+      uses: actions/upload-artifact@v2
+      with:
+        name: SyminData-${{ matrix.configuration }}-${{ github.sha }}
+        path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminData.dll
+    - name: Upload articraft - SyminUI Only
+      uses: actions/upload-artifact@v2
+      with:
+        name: SyminUIOnly-${{ matrix.configuration }}-${{ github.sha }}
+        path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminUI.dll
+    - name: Upload articraft - SyminUI
       uses: actions/upload-artifact@v2
       with:
         name: SyminUI-${{ matrix.configuration }}-${{ github.sha }}

@@ -14,7 +14,6 @@ namespace SyminUI.Controls.Attach
     public class DataGridElement : DependencyObject
     {
 
-
         public static bool GetApplyDefaultStyle(DependencyObject obj)
         {
             return (bool)obj.GetValue(ApplyDefaultStyleProperty);
@@ -45,6 +44,8 @@ namespace SyminUI.Controls.Attach
 
                 UpdateTextColumnStyles(grid);
                 UpdateEditingTextColumnStyles(grid);
+                UpdateCheckBoxColumnStyles(grid);
+                UpdateEditingCheckBoxColumnStyles(grid);
             }
             else
             {
@@ -61,6 +62,8 @@ namespace SyminUI.Controls.Attach
             var grid = (DataGrid)sender;
             UpdateTextColumnStyles(grid);
             UpdateEditingTextColumnStyles(grid);
+            UpdateCheckBoxColumnStyles(grid);
+            UpdateEditingCheckBoxColumnStyles(grid);
         }
 
 
@@ -167,8 +170,114 @@ namespace SyminUI.Controls.Attach
         }
         #endregion
 
+        #region 勾选框注入
 
 
+        public static Style GetCheckBoxColumnStyle(DependencyObject obj)
+        {
+            return (Style)obj.GetValue(CheckBoxColumnStyleProperty);
+        }
+
+        public static void SetCheckBoxColumnStyle(DependencyObject obj, Style value)
+        {
+            obj.SetValue(CheckBoxColumnStyleProperty, value);
+        }
+
+        // Using a DependencyProperty as the backing store for CheckBoxColumnStyle.
+        public static readonly DependencyProperty CheckBoxColumnStyleProperty =
+            DependencyProperty.RegisterAttached("CheckBoxColumnStyle",
+                typeof(Style), typeof(DataGridElement),
+                new PropertyMetadata(default(Style),OnCheckBoxColumnStyleChanged));
+
+        private static void OnCheckBoxColumnStyleChanged(DependencyObject d,
+            DependencyPropertyChangedEventArgs e)
+        {
+            var grid = (DataGrid)d;
+            if (e.OldValue == null && e.NewValue != null)
+            {
+                UpdateCheckBoxColumnStyles(grid);
+            }
+        }
+
+        private static void UpdateCheckBoxColumnStyles(DataGrid grid)
+        {
+            var checkBoxColumnStyle = GetCheckBoxColumnStyle(grid);
+
+            if (checkBoxColumnStyle != null)
+            {
+                foreach (var column in grid.Columns.OfType<DataGridCheckBoxColumn>())
+                {
+                    var checkBoxElementStyle = new Style
+                    {
+                        BasedOn = column.ElementStyle,
+                        TargetType = checkBoxColumnStyle.TargetType
+                    };
+
+                    foreach (var setter in checkBoxColumnStyle.Setters.OfType<Setter>())
+                    {
+                        checkBoxElementStyle.Setters.Add(setter);
+                    }
+
+                    column.ElementStyle = checkBoxElementStyle;
+                }
+            }
+        }
+
+        #endregion
+
+        #region 勾选框编辑
+
+
+        public static Style GetEditingCheckBoxColumnStyle(DependencyObject obj)
+        {
+            return (Style)obj.GetValue(EditingCheckBoxColumnStyleProperty);
+        }
+
+        public static void SetEditingCheckBoxColumnStyle(DependencyObject obj, Style value)
+        {
+            obj.SetValue(EditingCheckBoxColumnStyleProperty, value);
+        }
+
+        // Using a DependencyProperty as the backing store for EditingCheckBoxColumnStyle.
+        public static readonly DependencyProperty EditingCheckBoxColumnStyleProperty =
+            DependencyProperty.RegisterAttached("EditingCheckBoxColumnStyle", 
+                typeof(Style), typeof(DataGridElement),
+                new PropertyMetadata(default(Style), OnEditingCheckBoxColumnStyleChanged));
+
+        private static void OnEditingCheckBoxColumnStyleChanged(DependencyObject d,
+            DependencyPropertyChangedEventArgs e)
+        {
+            var grid = (DataGrid)d;
+            if (e.OldValue == null && e.NewValue != null)
+            {
+                UpdateEditingCheckBoxColumnStyles(grid);
+            }
+        }
+
+        private static void UpdateEditingCheckBoxColumnStyles(DataGrid grid)
+        {
+            var editingCheckBoxColumnStyle = GetEditingCheckBoxColumnStyle(grid);
+
+            if (editingCheckBoxColumnStyle != null)
+            {
+                foreach (var column in grid.Columns.OfType<DataGridCheckBoxColumn>())
+                {
+                    var checkBoxElementStyle = new Style
+                    {
+                        BasedOn = column.EditingElementStyle,
+                        TargetType = editingCheckBoxColumnStyle.TargetType
+                    };
+
+                    foreach (var setter in editingCheckBoxColumnStyle.Setters.OfType<Setter>())
+                    {
+                        checkBoxElementStyle.Setters.Add(setter);
+                    }
+
+                    column.EditingElementStyle = checkBoxElementStyle;
+                }
+            }
+        }
+        #endregion
 
     }
 }

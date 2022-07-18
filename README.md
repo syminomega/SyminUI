@@ -75,8 +75,6 @@ Currently is in early preview stage. **Pull requests are not available at this m
 滑条的指示器样式未设计。
 + MenuItem disabled style is not finished.\
 菜单按钮禁用样式尚未完善。
-+ Expander focus visual does not work.\
-扩展框聚焦样式尚未完善。
 
 ## 📄 License 许可证
 [The MIT License](./LICENSE)

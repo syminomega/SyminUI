@@ -361,9 +361,9 @@
                            Opacity="0.7" Text="{TemplateBinding InputGestureText}" 
                            VerticalAlignment="Center"/>
                 <Path x:Name="RightArrow" Grid.Column="4" 
-                      Data="{StaticResource RightArrow}" 
-                      Stretch="Uniform" Margin="3"
-                      Fill="{StaticResource Text.Main}" 
+                      Data="M1.5,1 5,5 1.5,9" 
+                      Stretch="Uniform" Margin="3" StrokeThickness="2"
+                      Stroke="{StaticResource Text.Main}" 
                       HorizontalAlignment="Left"
                       VerticalAlignment="Center"/>
                 <Popup x:Name="PART_Popup" AllowsTransparency="true" 

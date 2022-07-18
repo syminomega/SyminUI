@@ -34,7 +34,7 @@ namespace SyminViewTest.DataModel
                     Name="Symin",
                     Age=24,
                     Remark=true,
-                    Gender=Gender.Male,
+                    Gender=Gender.Other,
                 },
                 new DataGridItem
                 {

@@ -22,13 +22,16 @@
             <Setter Property="Background" Value="{StaticResource Background.Button}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}"/>
             <Setter Property="Foreground" Value="{StaticResource Text.Main}"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="FontSize" Value="14"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type CheckBox}">
                         <Border x:Name="checkBoxBorder" 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}" 
@@ -444,6 +447,14 @@
             <Setter Property="sva:DataGridElement.EditingTextColumnStyle" Value="{StaticResource FlattenTextBox}"/>
             <Setter Property="sva:DataGridElement.CheckBoxColumnStyle" Value="{StaticResource DataGridCheckBox}"/>
             <Setter Property="sva:DataGridElement.EditingCheckBoxColumnStyle" Value="{StaticResource DataGridCheckBox}"/>
+            <Setter Property="sva:DataGridElement.ComboBoxColumnStyle">
+                <Setter.Value>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="Padding" Value="4,2"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
             <Setter Property="sva:DataGridElement.ApplyDefaultStyle" Value="True"/>
             <Setter Property="Template">
                 <Setter.Value>

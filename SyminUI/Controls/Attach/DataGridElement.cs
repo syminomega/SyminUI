@@ -46,6 +46,7 @@ namespace SyminUI.Controls.Attach
                 UpdateEditingTextColumnStyles(grid);
                 UpdateCheckBoxColumnStyles(grid);
                 UpdateEditingCheckBoxColumnStyles(grid);
+                UpdateComboBoxColumnStyles(grid);
             }
             else
             {
@@ -64,6 +65,7 @@ namespace SyminUI.Controls.Attach
             UpdateEditingTextColumnStyles(grid);
             UpdateCheckBoxColumnStyles(grid);
             UpdateEditingCheckBoxColumnStyles(grid);
+            UpdateComboBoxColumnStyles(grid);
         }
 
 
@@ -187,7 +189,7 @@ namespace SyminUI.Controls.Attach
         public static readonly DependencyProperty CheckBoxColumnStyleProperty =
             DependencyProperty.RegisterAttached("CheckBoxColumnStyle",
                 typeof(Style), typeof(DataGridElement),
-                new PropertyMetadata(default(Style),OnCheckBoxColumnStyleChanged));
+                new PropertyMetadata(default(Style), OnCheckBoxColumnStyleChanged));
 
         private static void OnCheckBoxColumnStyleChanged(DependencyObject d,
             DependencyPropertyChangedEventArgs e)
@@ -240,7 +242,7 @@ namespace SyminUI.Controls.Attach
 
         // Using a DependencyProperty as the backing store for EditingCheckBoxColumnStyle.
         public static readonly DependencyProperty EditingCheckBoxColumnStyleProperty =
-            DependencyProperty.RegisterAttached("EditingCheckBoxColumnStyle", 
+            DependencyProperty.RegisterAttached("EditingCheckBoxColumnStyle",
                 typeof(Style), typeof(DataGridElement),
                 new PropertyMetadata(default(Style), OnEditingCheckBoxColumnStyleChanged));
 
@@ -276,6 +278,61 @@ namespace SyminUI.Controls.Attach
                     column.EditingElementStyle = checkBoxElementStyle;
                 }
             }
+        }
+        #endregion
+
+        #region ComboBox列注入
+
+
+        public static Style GetComboBoxColumnStyle(DependencyObject obj)
+        {
+            return (Style)obj.GetValue(ComboBoxColumnStyleProperty);
+        }
+
+        public static void SetComboBoxColumnStyle(DependencyObject obj, Style value)
+        {
+            obj.SetValue(ComboBoxColumnStyleProperty, value);
+        }
+
+        // Using a DependencyProperty as the backing store for ComboBoxColumnStyle.
+        public static readonly DependencyProperty ComboBoxColumnStyleProperty =
+            DependencyProperty.RegisterAttached("ComboBoxColumnStyle",
+                typeof(Style), typeof(DataGridElement),
+                new PropertyMetadata(default(Style), OnComboBoxColumnStyleChanged));
+
+        private static void OnComboBoxColumnStyleChanged(DependencyObject d,
+            DependencyPropertyChangedEventArgs e)
+        {
+            var grid = (DataGrid)d;
+            if (e.OldValue == null && e.NewValue != null)
+            {
+                UpdateComboBoxColumnStyles(grid);
+            }
+        }
+
+        private static void UpdateComboBoxColumnStyles(DataGrid grid)
+        {
+            var comboBoxColumnStyle = GetComboBoxColumnStyle(grid);
+
+            if (comboBoxColumnStyle != null)
+            {
+                foreach (var column in grid.Columns.OfType<DataGridComboBoxColumn>())
+                {
+                    var comboBoxElementStyle = new Style
+                    {
+                        BasedOn = column.ElementStyle,
+                        TargetType = comboBoxColumnStyle.TargetType
+                    };
+
+                    foreach (var setter in comboBoxColumnStyle.Setters.OfType<Setter>())
+                    {
+                        comboBoxElementStyle.Setters.Add(setter);
+                    }
+
+                    column.ElementStyle = comboBoxElementStyle;
+                }
+            }
+            
         }
         #endregion
 

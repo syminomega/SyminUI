@@ -1,6 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
+    <ContextMenu x:Key="TextBoxContextMenu" >
+        <MenuItem Command="ApplicationCommands.Copy" />
+        <MenuItem Command="ApplicationCommands.Cut" />
+        <MenuItem Command="ApplicationCommands.Paste" />
+    </ContextMenu>
+
     <Style x:Key="FlattenTextBox" TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="{StaticResource Background.TextField}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>

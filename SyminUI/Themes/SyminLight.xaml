@@ -66,10 +66,18 @@
     <SolidColorBrush x:Key="Border.Section" Color="#A8ABBD"/>
     <SolidColorBrush x:Key="Border.Separator.Main" Color="#FFB0B2BD"/>
     <SolidColorBrush x:Key="Border.Separator.Menu" Color="#FFCFD1DE"/>
+    
     <LinearGradientBrush x:Key="Border.Main.Shaded" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="#FFFFFF" Offset="0"/>
-        <GradientStop Color="{StaticResource Background.MainColor}" Offset="0.5"/>
         <GradientStop Color="#CCD3DD" Offset="1"/>
+        <LinearGradientBrush.RelativeTransform>
+            <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+        </LinearGradientBrush.RelativeTransform>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="Border.CornerLighed" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#FFFFFF" Offset="0"/>
+        <GradientStop Color="#00FFFFFF" Offset="1"/>
         <LinearGradientBrush.RelativeTransform>
             <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
         </LinearGradientBrush.RelativeTransform>

@@ -4,8 +4,8 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-	  <Version>0.6.0</Version>
-	  <PackageVersion>0.6.0</PackageVersion>
+	  <Version>0.7.0</Version>
+	  <PackageVersion>0.7.0</PackageVersion>
 	  <Company>SyminStudio</Company>
   </PropertyGroup>
 

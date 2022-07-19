@@ -5,7 +5,7 @@ SyminUI 是 WPF 的 UI 组件库，并使用称为 **C#UI** 的 MVU 设计模式
 
 [![build](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml)
 
-## Preview 预览 (2022-07-13)
+## Preview 预览 (2022-07-19)
 Currently is in early preview stage. **Pull requests are not available at this moment.**\
 目前处于早期预览阶段，**Pull Request 暂未全面开放**。
 
@@ -36,14 +36,13 @@ Currently is in early preview stage. **Pull requests are not available at this m
 | Calendar        | ✔       | 
 | CheckBox        | ✔       | 
 | ComboBox        | ✔       | 
-| DataGrid        |         | 
+| DataGrid        | ✔       | 
 | DatePicker      | ✔       | 
 | DocumentViewer  |         | No plan
 | Expander        | ✔       | 
 | Frame           |         | 
 | GridSplitter    | ✔       | 
 | GroupBox        | ✔       | 
-| Image           |         | 
 | Label           | ✔       | 
 | ListBox         | ✔       | 
 | ListView        |         | 
@@ -51,7 +50,7 @@ Currently is in early preview stage. **Pull requests are not available at this m
 | PasswordBox     | ✔       | 
 | Progress Bar    | ⚠       | Vertical style not work
 | RadioButton     | ✔       | 
-| Repeat Button   |         | 
+| Repeat Button   | ✔       | More styles to add
 | RichTextBox     | ✔       | 
 | ScrollBar       | ✔       | 
 | ScrollViewer    | ✔       | 
@@ -75,8 +74,6 @@ Currently is in early preview stage. **Pull requests are not available at this m
 滑条的指示器样式未设计。
 + MenuItem disabled style is not finished.\
 菜单按钮禁用样式尚未完善。
-+ Expander focus visual does not work.\
-扩展框聚焦样式尚未完善。
 
 ## 📄 License 许可证
 [The MIT License](./LICENSE)

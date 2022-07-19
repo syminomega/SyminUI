@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace SyminViewTest.DataModel
 {
+    public enum Gender
+    {
+        Male,
+        Female,
+        Other
+    }
     public class DataGridItem
     {
         public int Id { get; set; }
         public string Name { get; set; } = "";
 
         public int Age { get; set; }
-        public bool Remark { get; set; }
+        public bool Mark { get; set; }
+        public Gender Gender { get; set; }
     }
 
     public class DataGridDemo
@@ -26,21 +33,24 @@ namespace SyminViewTest.DataModel
                     Id=0,
                     Name="Symin",
                     Age=24,
-                    Remark=true,
+                    Mark=true,
+                    Gender=Gender.Other,
                 },
                 new DataGridItem
                 {
                     Id=1,
                     Name="Mike",
                     Age=23,
-                    Remark=false,
+                    Mark=false,
+                    Gender=Gender.Male,
                 },
                 new DataGridItem
                 {
                     Id=2,
                     Name="Alice",
                     Age=25,
-                    Remark=true,
+                    Mark=true,
+                    Gender =Gender.Female,
                 }
             };
         }

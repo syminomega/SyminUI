@@ -7,6 +7,7 @@
         <ResourceDictionary Source="Primitives/CommonGeometry.xaml"/>
         <ResourceDictionary Source="Primitives/RepeatButtonTransparent.xaml"/>
         <ResourceDictionary Source="Primitives/FlattenButton.xaml"/>
+        <ResourceDictionary Source="Primitives/FlattenComboBox.xaml"/>
         <ResourceDictionary Source="Primitives/FlattenTextBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

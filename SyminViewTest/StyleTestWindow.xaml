@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:SyminViewTest"
         xmlns:svd="clr-namespace:SyminUI.Controls.Decorations;assembly=SyminUI"
         xmlns:sva="clr-namespace:SyminUI.Controls.Attach;assembly=SyminUI"
+        xmlns:dm="clr-namespace:SyminViewTest.DataModel"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Styles Demo" Height="600" Width="1000"
+        Title="Styles Demo" Height="640" Width="1100"
         Style="{StaticResource Window.Normal}" Icon="/Resources/Images/SyminUI.png">
 
     <sva:WindowElement.TitleBar>
@@ -39,6 +40,7 @@
         </Menu>
     </sva:WindowElement.TitleBar>
     <Window.Resources>
+        <dm:DataGridDemo x:Key="DGD"/>
         <ContextMenu x:Key="ContextMenuDemo">
             <MenuItem Header="MenuItem01" />
             <MenuItem Header="MenuItem02" />
@@ -135,7 +137,7 @@
 
                 </StackPanel>
             </ScrollViewer>
-            <GroupBox Header="Control Styles" Grid.Column="1" Margin="4">
+            <GroupBox Header="Controls Group" Grid.Column="1" Margin="4">
                 <ScrollViewer>
                     <StackPanel Orientation="Vertical" Margin="4,0">
                         <Grid>
@@ -226,9 +228,14 @@
 
             </GroupBox>
             <TabControl  Grid.Column="2" Margin="12,4,4,4">
-                <TabItem Header="Decorations">
+                <TabItem Header="Controls Tab">
                     <StackPanel Orientation="Vertical" Margin="4">
-                        <UniformGrid Columns="2" Rows="2">
+                        <UniformGrid Columns="3">
+                            <svd:SlotBorder Content="Slot" Height="100"
+                                        VerticalContentAlignment="Center"
+                                        HorizontalContentAlignment="Center"
+                                        Foreground="{StaticResource Gradient.Primary}"
+                                        FontSize="24" Radius="16" />
                             <svd:EmbossBorder Content="Emboss" Height="100"
                                           VerticalContentAlignment="Center"
                                           HorizontalContentAlignment="Center"
@@ -236,28 +243,25 @@
                                           FontSize="24" CornerRadius="16"
                                           ContextMenu="{StaticResource ContextMenuDemo}" />
                             <svd:CardBorder Content="Card" Height="100"
-                                        Grid.Column="2" FontSize="24"
+                                        FontSize="24"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Foreground="{StaticResource Gradient.Primary}"
                                         CornerRadius="16" />
-                            <svd:SlotBorder Content="Slot" Height="100"
-                                        VerticalContentAlignment="Center"
-                                        HorizontalContentAlignment="Center"
-                                        Foreground="{StaticResource Gradient.Primary}"
-                                        FontSize="24" Radius="16" />
-
                         </UniformGrid>
                         <Separator />
                         <svd:LightedSurface Height="80" Margin="4"
                                         Background="{StaticResource Background.Main}"
                                         CornerRadius="16" Content="Lighted Surface" FontSize="24" />
+                        <DataGrid DataContext="{StaticResource DGD}"
+                                  ItemsSource="{Binding DataCollection}"
+                                  Margin="4"/>
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Empty">
+                <TabItem Header="Empty Tab">
                     
                 </TabItem>
-                <TabItem Header="Disabled" IsEnabled="False">
+                <TabItem Header="Disabled Tab" IsEnabled="False">
 
                 </TabItem>
             </TabControl>

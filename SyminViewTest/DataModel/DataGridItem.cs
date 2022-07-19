@@ -18,7 +18,7 @@ namespace SyminViewTest.DataModel
         public string Name { get; set; } = "";
 
         public int Age { get; set; }
-        public bool Remark { get; set; }
+        public bool Mark { get; set; }
         public Gender Gender { get; set; }
     }
 
@@ -33,7 +33,7 @@ namespace SyminViewTest.DataModel
                     Id=0,
                     Name="Symin",
                     Age=24,
-                    Remark=true,
+                    Mark=true,
                     Gender=Gender.Other,
                 },
                 new DataGridItem
@@ -41,7 +41,7 @@ namespace SyminViewTest.DataModel
                     Id=1,
                     Name="Mike",
                     Age=23,
-                    Remark=false,
+                    Mark=false,
                     Gender=Gender.Male,
                 },
                 new DataGridItem
@@ -49,7 +49,7 @@ namespace SyminViewTest.DataModel
                     Id=2,
                     Name="Alice",
                     Age=25,
-                    Remark=true,
+                    Mark=true,
                     Gender =Gender.Female,
                 }
             };

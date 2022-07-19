@@ -127,8 +127,9 @@
                         <Trigger Property="IsChecked" Value="true">
                             <Setter Property="Background" TargetName="bar"
                                     Value="{StaticResource PrimaryBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
                             <Setter Property="Background" TargetName="border" 
-                                        Value="{StaticResource Background.FocusedMask}"/>
+                                        Value="{StaticResource Background.SelectedMask}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="{x:Null}">
                             

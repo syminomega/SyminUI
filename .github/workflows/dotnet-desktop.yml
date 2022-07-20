@@ -53,13 +53,13 @@ jobs:
         name: All-${{ matrix.configuration }}
         path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}
   
-    - name: Release
+    - name: Create Draft Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/') && matrix.configuration == 'Release' && matrix.dotnet-version == '6.0.x'
       # branch name can be from: GITHUB_REF#refs/heads/
       with:
         files: |
-          bin/net6.0.x/Release/SyminData.dll
-          bin/net6.0.x/Release/SyminUI.dll
+          bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminData.dll
+          bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminUI.dll
         generate_release_notes: true
         draft: true

@@ -194,7 +194,7 @@
                         </Grid>
                         <UniformGrid Columns="2">
                             <TextBox Text="Text Box (Input Field)" />
-                            <PasswordBox Password="12345" />
+                            <DatePicker />
                         </UniformGrid>
                         <ProgressBar Height="24"
                                      IsIndeterminate="{Binding ElementName=ProgressCheckbox,Path=IsChecked}"
@@ -206,22 +206,37 @@
                             <CheckBox Content="Indeterminate Disabled" IsChecked="{x:Null}" IsEnabled="False" />
                             <RadioButton Content="Radio Button B" GroupName="RadioG" />
                         </UniformGrid>
-
-                        <UniformGrid Columns="2" Rows="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
                             <ComboBox SelectedIndex="0">
                                 <ComboBoxItem Content="Selection A" />
                                 <ComboBoxItem Content="Selection B" />
                                 <ComboBoxItem Content="Selection C" />
                             </ComboBox>
-                            <ComboBox SelectedIndex="0" IsEditable="True">
+                            <ComboBox SelectedIndex="0" IsEditable="True" Grid.Row="1">
                                 <ComboBoxItem Content="Selection Editable" />
                                 <ComboBoxItem Content="Selection B" />
                                 <ComboBoxItem Content="Selection C" />
                             </ComboBox>
-                        </UniformGrid>
-                        <UniformGrid Columns="2">
-                            <DatePicker />
-                        </UniformGrid>
+                            
+                            <PasswordBox Password="12345" Grid.Row="2"/>
+                            <TreeView Margin="4" Grid.Column="1" Grid.RowSpan="3">
+                                <TreeViewItem Header="A123" IsExpanded="True">
+                                    <TreeViewItem Header="B123" IsExpanded="True" IsSelected="True">
+                                        <TreeViewItem Header="C123"/>
+                                    </TreeViewItem>
+                                    <TreeViewItem Header="B456" IsEnabled="False"/>
+                                </TreeViewItem>
+                            </TreeView>
+                        </Grid>
 
                     </StackPanel>
                 </ScrollViewer>

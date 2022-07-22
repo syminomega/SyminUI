@@ -9,10 +9,14 @@
         xmlns:local="clr-namespace:SyminViewTest"
         
         mc:Ignorable="d"
-        Title="Developing" Height="400" Width="600"
+        Title="Developing" Height="400" Width="300"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource Window.Normal}"
         Background="{StaticResource Background.Window}">
+    <Window.Resources>
+
+        
+    </Window.Resources>
 
     <Grid>
 

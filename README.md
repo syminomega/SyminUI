@@ -5,7 +5,7 @@ SyminUI 是 WPF 的 UI 组件库，并使用称为 **C#UI** 的 MVU 设计模式
 
 [![build](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml)
 
-## Preview 预览 (2022-07-19)
+## Preview 预览 (2022-07-22)
 Currently is in early preview stage. **Pull requests are not available at this moment.**\
 目前处于早期预览阶段，**Pull Request 暂未全面开放**。
 
@@ -63,7 +63,7 @@ Currently is in early preview stage. **Pull requests are not available at this m
 | ToolBar         | ✔       | No menu style for tool bar
 | ToolBarPanel    | ✔       | 
 | ToolBarTray     | ✔       | 
-| TreeView        |         | 
+| TreeView        | ✔       | 
 
 ## ⚠ Known Issues 已知问题
 + Progress bar vertical style does not show shader effect.\

@@ -7,15 +7,18 @@
         xmlns:sva="clr-namespace:SyminUI.Controls.Attach;assembly=SyminUI"
         xmlns:sve="clr-namespace:SyminUI.Effects;assembly=SyminUI"
         xmlns:local="clr-namespace:SyminViewTest"
-        
+        xmlns:dm="clr-namespace:SyminViewTest.DataModel"
+        xmlns:svcl="clr-namespace:SyminUI.Convertor.List;assembly=SyminUI"
         mc:Ignorable="d"
-        Title="Developing" Height="400" Width="300"
+        Title="Developing" Height="400" Width="600"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource Window.Normal}"
         Background="{StaticResource Background.Window}">
     <Window.Resources>
+        <dm:DataGridDemo x:Key="DGD"/>
 
-        
+
+
     </Window.Resources>
 
     <Grid>

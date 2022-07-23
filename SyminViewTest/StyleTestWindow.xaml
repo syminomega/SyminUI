@@ -40,7 +40,7 @@
         </Menu>
     </sva:WindowElement.TitleBar>
     <Window.Resources>
-        <dm:DataGridDemo x:Key="DGD"/>
+        <dm:DataGridDemo x:Key="DGD" />
         <ContextMenu x:Key="ContextMenuDemo">
             <MenuItem Header="MenuItem01" />
             <MenuItem Header="MenuItem02" />
@@ -208,13 +208,13 @@
                         </UniformGrid>
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <ComboBox SelectedIndex="0">
                                 <ComboBoxItem Content="Selection A" />
@@ -226,14 +226,14 @@
                                 <ComboBoxItem Content="Selection B" />
                                 <ComboBoxItem Content="Selection C" />
                             </ComboBox>
-                            
-                            <PasswordBox Password="12345" Grid.Row="2"/>
+
+                            <PasswordBox Password="12345" Grid.Row="2" />
                             <TreeView Margin="4" Grid.Column="1" Grid.RowSpan="3">
                                 <TreeViewItem Header="A123" IsExpanded="True">
                                     <TreeViewItem Header="B123" IsExpanded="True" IsSelected="True">
-                                        <TreeViewItem Header="C123"/>
+                                        <TreeViewItem Header="C123" />
                                     </TreeViewItem>
-                                    <TreeViewItem Header="B456" IsEnabled="False"/>
+                                    <TreeViewItem Header="B456" IsEnabled="False" />
                                 </TreeViewItem>
                             </TreeView>
                         </Grid>
@@ -242,39 +242,59 @@
                 </ScrollViewer>
 
             </GroupBox>
-            <TabControl  Grid.Column="2" Margin="12,4,4,4">
+            <TabControl Grid.Column="2" Margin="12,4,4,4">
                 <TabItem Header="Controls Tab">
-                    <StackPanel Orientation="Vertical" Margin="4">
-                        <UniformGrid Columns="3">
-                            <svd:SlotBorder Content="Slot" Height="100"
-                                        VerticalContentAlignment="Center"
-                                        HorizontalContentAlignment="Center"
-                                        Foreground="{StaticResource Gradient.Primary}"
-                                        FontSize="24" Radius="16" />
-                            <svd:EmbossBorder Content="Emboss" Height="100"
-                                          VerticalContentAlignment="Center"
-                                          HorizontalContentAlignment="Center"
-                                          Foreground="{StaticResource Gradient.Primary}"
-                                          FontSize="24" CornerRadius="16"
-                                          ContextMenu="{StaticResource ContextMenuDemo}" />
-                            <svd:CardBorder Content="Card" Height="100"
-                                        FontSize="24"
-                                        HorizontalContentAlignment="Center"
-                                        VerticalContentAlignment="Center"
-                                        Foreground="{StaticResource Gradient.Primary}"
-                                        CornerRadius="16" />
+                    <Grid Margin="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="8" />
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <UniformGrid Columns="3" Grid.Row="0">
+                            <svd:SlotBorder Content="Slot"
+                                            VerticalContentAlignment="Center"
+                                            HorizontalContentAlignment="Center"
+                                            Foreground="{StaticResource Gradient.Primary}"
+                                            FontSize="24" Radius="16" />
+                            <svd:EmbossBorder Content="Emboss"
+                                              VerticalContentAlignment="Center"
+                                              HorizontalContentAlignment="Center"
+                                              Foreground="{StaticResource Gradient.Primary}"
+                                              FontSize="24" CornerRadius="16"
+                                              ContextMenu="{StaticResource ContextMenuDemo}" />
+                            <svd:CardBorder Content="Card"
+                                            FontSize="24"
+                                            HorizontalContentAlignment="Center"
+                                            VerticalContentAlignment="Center"
+                                            Foreground="{StaticResource Gradient.Primary}"
+                                            CornerRadius="16" />
                         </UniformGrid>
-                        <Separator />
-                        <svd:LightedSurface Height="80" Margin="4"
-                                        Background="{StaticResource Background.Main}"
-                                        CornerRadius="16" Content="Lighted Surface" FontSize="24" />
+                        <Separator Grid.Row="1" />
+                        <svd:LightedSurface Height="80" Grid.Row="2"
+                                            Background="{StaticResource Background.Main}"
+                                            CornerRadius="16" Content="Lighted Surface" FontSize="24" />
                         <DataGrid DataContext="{StaticResource DGD}"
                                   ItemsSource="{Binding DataCollection}"
-                                  Margin="4"/>
-                    </StackPanel>
+                                  Margin="4" Grid.Row="3" />
+                        <ListView Margin="4" Grid.Row="4"
+                                  DataContext="{StaticResource DGD}"
+                                  ItemsSource="{Binding DataCollection}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
+                                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                                    <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Age}" />
+                                    <GridViewColumn Header="Mark" DisplayMemberBinding="{Binding Mark}" />
+                                    <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding Gender}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
                 </TabItem>
                 <TabItem Header="Empty Tab">
-                    
+
                 </TabItem>
                 <TabItem Header="Disabled Tab" IsEnabled="False">
 

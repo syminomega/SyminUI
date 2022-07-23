@@ -45,7 +45,7 @@ Currently is in early preview stage. **Pull requests are not available at this m
 | GroupBox        | ✔       | 
 | Label           | ✔       | 
 | ListBox         | ✔       | 
-| ListView        |         | 
+| ListView        | ✔       | 
 | Menu            | ✔       | 
 | PasswordBox     | ✔       | 
 | Progress Bar    | ⚠       | Vertical style not work
@@ -74,6 +74,8 @@ Currently is in early preview stage. **Pull requests are not available at this m
 滑条的指示器样式未设计。
 + MenuItem disabled style is not finished.\
 菜单按钮禁用样式尚未完善。
++ ListBox Header may not fit the row length.\
+ListBox的头部可能和内容没法对齐。
 
 ## 📄 License 许可证
 [The MIT License](./LICENSE)

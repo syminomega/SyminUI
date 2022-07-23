@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace SyminViewTest.DataModel
     {
         public DataGridDemo()
         {
-            DataCollection = new List<DataGridItem>()
+            DataCollection = new ObservableCollection<DataGridItem>()
             {
                 new DataGridItem
                 {
@@ -51,9 +52,17 @@ namespace SyminViewTest.DataModel
                     Age=25,
                     Mark=true,
                     Gender =Gender.Female,
-                }
+                },
+                new DataGridItem
+                {
+                    Id=3,
+                    Name="Bob",
+                    Age=18,
+                    Mark=true,
+                    Gender =Gender.Male,
+                },
             };
         }
-        public List<DataGridItem> DataCollection { get; set; }
+        public ObservableCollection<DataGridItem> DataCollection { get; set; }
     }
 }

@@ -13,7 +13,6 @@ namespace SyminUI.Controls.Attach
     //DataGrid样式注入
     public class DataGridElement : DependencyObject
     {
-
         public static bool GetApplyDefaultStyle(DependencyObject obj)
         {
             return (bool)obj.GetValue(ApplyDefaultStyleProperty);
@@ -61,6 +60,7 @@ namespace SyminUI.Controls.Attach
             {
                 return;
             }
+
             var grid = (DataGrid)sender;
             UpdateTextColumnStyles(grid);
             UpdateEditingTextColumnStyles(grid);
@@ -72,6 +72,7 @@ namespace SyminUI.Controls.Attach
 
 
         #region 文本列注入
+
         public static Style GetTextColumnStyle(DependencyObject obj)
         {
             return (Style)obj.GetValue(TextColumnStyleProperty);
@@ -97,6 +98,7 @@ namespace SyminUI.Controls.Attach
                 UpdateTextColumnStyles(grid);
             }
         }
+
         private static void UpdateTextColumnStyles(DataGrid grid)
         {
             var textColumnStyle = GetTextColumnStyle(grid);
@@ -123,6 +125,7 @@ namespace SyminUI.Controls.Attach
         #endregion
 
         #region 编辑列注入
+
         public static Style GetEditingTextColumnStyle(DependencyObject obj)
         {
             return (Style)obj.GetValue(EditingTextColumnStyleProperty);
@@ -172,10 +175,10 @@ namespace SyminUI.Controls.Attach
                 }
             }
         }
+
         #endregion
 
         #region 勾选框注入
-
 
         public static Style GetCheckBoxColumnStyle(DependencyObject obj)
         {
@@ -231,7 +234,6 @@ namespace SyminUI.Controls.Attach
 
         #region 勾选框编辑
 
-
         public static Style GetEditingCheckBoxColumnStyle(DependencyObject obj)
         {
             return (Style)obj.GetValue(EditingCheckBoxColumnStyleProperty);
@@ -281,6 +283,7 @@ namespace SyminUI.Controls.Attach
                 }
             }
         }
+
         #endregion
 
         #region ComboBox列注入
@@ -329,15 +332,15 @@ namespace SyminUI.Controls.Attach
                     {
                         comboBoxElementStyle.Setters.Add(setter);
                     }
+
                     column.ElementStyle = comboBoxElementStyle;
                 }
             }
-            
         }
+
         #endregion
 
         #region 编辑ComboBox列
-
 
         public static Style GetEditingComboBoxColumnStyle(DependencyObject obj)
         {
@@ -351,9 +354,9 @@ namespace SyminUI.Controls.Attach
 
         // Using a DependencyProperty as the backing store for EditingComboBoxColumnStyle.
         public static readonly DependencyProperty EditingComboBoxColumnStyleProperty =
-            DependencyProperty.RegisterAttached("EditingComboBoxColumnStyle", 
+            DependencyProperty.RegisterAttached("EditingComboBoxColumnStyle",
                 typeof(Style), typeof(DataGridElement),
-                new PropertyMetadata(default(Style),OnEditingComboBoxColumnStyleChanged));
+                new PropertyMetadata(default(Style), OnEditingComboBoxColumnStyleChanged));
 
         private static void OnEditingComboBoxColumnStyleChanged(DependencyObject d,
             DependencyPropertyChangedEventArgs e)
@@ -383,12 +386,11 @@ namespace SyminUI.Controls.Attach
                     {
                         comboBoxElementStyle.Setters.Add(setter);
                     }
+
                     column.EditingElementStyle = comboBoxElementStyle;
                 }
             }
-
         }
-
 
         #endregion
     }

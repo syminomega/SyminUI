@@ -7,6 +7,7 @@
 	  <Version>0.8.0</Version>
 	  <PackageVersion>0.8.0</PackageVersion>
 	  <Company>SyminStudio</Company>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

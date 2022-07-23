@@ -37,20 +37,31 @@ jobs:
       run: dotnet build --no-restore --configuration ${{ matrix.configuration }} --output bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: Upload articraft - SyminData
+
+    # - name: Upload articraft - SyminData
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: SyminData-${{ matrix.configuration }}
+    #     path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminData.dll
+    # - name: Upload articraft - SyminUI
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: SyminUI-${{ matrix.configuration }}
+    #     path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminUI.dll
+    # - name: Upload articraft - SyminData - nupkg
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: SyminData-${{ matrix.configuration }}-nupkg
+    #     path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminData*.nupkg
+    # - name: Upload articraft - SyminUI - nupkg
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: SyminUI-${{ matrix.configuration }}-nupkg
+    #     path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminUI*.nupkg
+    - name: Upload articraft - All in One
       uses: actions/upload-artifact@v3
       with:
-        name: SyminData-${{ matrix.configuration }}
-        path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminData.dll
-    - name: Upload articraft - SyminUI
-      uses: actions/upload-artifact@v3
-      with:
-        name: SyminUI-${{ matrix.configuration }}
-        path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminUI.dll
-    - name: Upload articraft - All
-      uses: actions/upload-artifact@v3
-      with:
-        name: All-${{ matrix.configuration }}
+        name: SyminAllInOne-${{ matrix.configuration }}
         path: bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}
   
     - name: Create Draft Release
@@ -61,5 +72,7 @@ jobs:
         files: |
           bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminData.dll
           bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/SyminUI.dll
+          bin/net${{ matrix.dotnet-version }}/${{ matrix.configuration }}/Symin*.nupkg
+
         generate_release_notes: true
         draft: true

@@ -32,7 +32,7 @@
                                       Grid.Row="0" 
                                       KeyboardNavigation.TabIndex="1" 
                                       Panel.ZIndex="1"/>
-                        <Border x:Name="contentPanel" CornerRadius="4"
+                        <Border x:Name="contentPanel" CornerRadius="0,0,4,4"
                                     Background="{TemplateBinding Background}" 
                                     BorderBrush="{TemplateBinding BorderBrush}" 
                                     BorderThickness="{TemplateBinding BorderThickness}" 
@@ -55,6 +55,8 @@
                             <Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
                             <!--设置边框-->
                             <Setter Property="BorderThickness" Value="1,1,1,3"/>
+                            <Setter Property="CornerRadius" TargetName="contentPanel"
+                                        Value="4,4,0,0"/>
                         </Trigger>
                         <Trigger Property="TabStripPlacement" Value="Left">
                             <!--设置布局-->
@@ -68,6 +70,8 @@
                             <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
                             <!--设置边框-->
                             <Setter Property="BorderThickness" Value="3,1,1,1"/>
+                            <Setter Property="CornerRadius" TargetName="contentPanel"
+                                        Value="0,4,4,0"/>
                         </Trigger>
                         <Trigger Property="TabStripPlacement" Value="Right">
                             <!--设置布局-->
@@ -81,40 +85,9 @@
                             <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
                             <!--设置边框-->
                             <Setter Property="BorderThickness" Value="1,1,3,1"/>
+                            <Setter Property="CornerRadius" TargetName="contentPanel"
+                                        Value="4,0,0,4"/>
                         </Trigger>
-                        <!--圆角效果-->
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="TabStripPlacement" Value="Top"/>
-                                <Condition Property="SelectedIndex" Value="0"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="CornerRadius" TargetName="contentPanel"
-                                        Value="0,4,4,4"/>
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="TabStripPlacement" Value="Left"/>
-                                <Condition Property="SelectedIndex" Value="0"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="CornerRadius" TargetName="contentPanel"
-                                        Value="0,4,4,4"/>
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="TabStripPlacement" Value="Right"/>
-                                <Condition Property="SelectedIndex" Value="0"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="CornerRadius" TargetName="contentPanel"
-                                        Value="4,0,4,4"/>
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="TabStripPlacement" Value="Bottom"/>
-                                <Condition Property="SelectedIndex" Value="0"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="CornerRadius" TargetName="contentPanel"
-                                        Value="4,4,4,0"/>
-                        </MultiTrigger>
                         <!--禁用效果-->
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="TextElement.Foreground" TargetName="templateRoot" 
@@ -133,7 +106,7 @@
                 RelativeSource={RelativeSource AncestorType={x:Type TabControl}},
                 Path=BorderBrush,Mode=OneWay,FallbackValue={StaticResource Border.MainBrush}}"/>
         <Setter Property="Margin" Value="0"/>
-        <Setter Property="Padding" Value="8,2"/>
+        <Setter Property="Padding" Value="8,4"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Template">
@@ -144,8 +117,7 @@
                                     CornerRadius="4,4,0,0"
                                     Background="{TemplateBinding Background}" 
                                     Margin="0,0,0,-1">
-                        </Border>
-                        <ContentPresenter x:Name="contentPresenter" 
+                            <ContentPresenter x:Name="contentPresenter" 
                                               ContentSource="Header" Focusable="False"
                                               HorizontalAlignment="{Binding HorizontalContentAlignment, 
                                                     RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" 
@@ -154,6 +126,8 @@
                                               Margin="{TemplateBinding Padding}"
                                               RecognizesAccessKey="True" 
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+
                         <Border x:Name="separate" Visibility="Collapsed"
                                     HorizontalAlignment="Right"
                                     Width="1" Margin="-1,4"

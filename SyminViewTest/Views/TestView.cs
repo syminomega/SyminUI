@@ -90,6 +90,8 @@ namespace SyminViewTest.Views
                 })
         };
 
+        public FrameworkElement ViewElement => MainView;
+
         private void TestCollection()
         {
             textCollection.Insert(1, "aaaa");
@@ -101,9 +103,5 @@ namespace SyminViewTest.Views
         }
         public event Action? EventTrigger;
 
-        public FrameworkElement GetViewElement()
-        {
-            return MainView;
-        }
     }
 }

@@ -11,5 +11,6 @@
         <cvt:ViewDefinitionToElement x:Key="VDTE"/>
     </UserControl.Resources>
     <ContentControl Focusable="False"
-            Content="{Binding ViewDefinition, Converter={StaticResource VDTE}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ViewBody}}}"/>
+            Content="{Binding ViewDefinition, Converter={StaticResource VDTE}, 
+        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ViewBody}}}"/>
 </UserControl>

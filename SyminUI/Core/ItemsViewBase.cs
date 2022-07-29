@@ -18,7 +18,7 @@ namespace SyminUI.Core
         /// <summary>
         /// 控件元素集合
         /// </summary>
-        private ObservableCollection<FrameworkElement> ViewCollection { get; } = new();
+        private ObservableCollection<System.Windows.FrameworkElement> ViewCollection { get; } = new();
         /// <summary>
         /// 数据源集合
         /// </summary>
@@ -75,12 +75,16 @@ namespace SyminUI.Core
             return this;
         }
 
-        public override FrameworkElement GetViewElement()
+        public override T ViewElement
         {
-            //Set items before create view
-            //创建视图前，设置集合对象
-            ItemReset();
-            return base.GetViewElement();
+            get
+            {
+                //Set items before create view
+                //创建视图前，设置集合对象
+                ItemReset();
+                return base.ViewElement;
+            }
+
         }
 
 
@@ -110,7 +114,7 @@ namespace SyminUI.Core
                 //转换为泛型对象
                 var itemData = item;
                 var newView = ItemViewConverter.Invoke(itemData);
-                ViewCollection.Insert(insertIndex, newView.GetViewElement());
+                ViewCollection.Insert(insertIndex, newView.ViewElement);
                 insertIndex++;
             }
         }
@@ -138,7 +142,7 @@ namespace SyminUI.Core
                 //转换为泛型对象
                 var itemData = item;
                 var newView = ItemViewConverter.Invoke(itemData);
-                ViewCollection[replaceIndex] = newView.GetViewElement();
+                ViewCollection[replaceIndex] = newView.ViewElement;
                 replaceIndex++;
             }
         }
@@ -161,7 +165,7 @@ namespace SyminUI.Core
             foreach (var item in ItemsCollection)
             {
                 var view = ItemViewConverter.Invoke(item);
-                ViewCollection.Add(view.GetViewElement());
+                ViewCollection.Add(view.ViewElement);
             }
         }
         #endregion

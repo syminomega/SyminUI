@@ -62,10 +62,10 @@ namespace SyminUI.Views
 
         public void Add(GridCell gridCell)
         {
-            System.Windows.Controls.Grid.SetColumn(gridCell.View.GetViewElement(), gridCell.Col);
-            System.Windows.Controls.Grid.SetColumnSpan(gridCell.View.GetViewElement(), gridCell.ColSpan);
-            System.Windows.Controls.Grid.SetRow(gridCell.View.GetViewElement(), gridCell.Row);
-            System.Windows.Controls.Grid.SetRowSpan(gridCell.View.GetViewElement(), gridCell.RowSpan);
+            System.Windows.Controls.Grid.SetColumn(gridCell.View.ViewElement, gridCell.Col);
+            System.Windows.Controls.Grid.SetColumnSpan(gridCell.View.ViewElement, gridCell.ColSpan);
+            System.Windows.Controls.Grid.SetRow(gridCell.View.ViewElement, gridCell.Row);
+            System.Windows.Controls.Grid.SetRowSpan(gridCell.View.ViewElement, gridCell.RowSpan);
             this.Add(gridCell.View);
         }
     }

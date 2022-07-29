@@ -28,7 +28,7 @@ namespace SyminUI.Core
         }
         protected ContentViewBase(IView view) : base()
         {
-            ViewElement.Content = view.GetViewElement();
+            ViewElement.Content = view.ViewElement;
         }
         protected ContentViewBase(State<IView> dynamicView) : base()
         {
@@ -56,7 +56,7 @@ namespace SyminUI.Core
         }
         public virtual ContentViewBase<T> Content(IView view)
         {
-            ViewElement.Content = view.GetViewElement();
+            ViewElement.Content = view.ViewElement;
             return  this;
         }
         public virtual ContentViewBase<T> Content(State<IView> dynamicView)

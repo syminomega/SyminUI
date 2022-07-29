@@ -28,22 +28,15 @@ namespace SyminUI.Core
         /// Control element
         /// 控件对象
         /// </summary>
-        public T ViewElement => _viewElement;
+        public virtual T ViewElement => _viewElement;
 
-        /// <summary>
-        /// Get the FrameworkElement to render
-        /// 获取渲染用的视图控件元素
-        /// </summary>
-        /// <returns></returns>
-        public virtual FrameworkElement GetViewElement()
-        {
-            return ViewElement;
-        }
+        FrameworkElement IView.ViewElement => ViewElement;
+
 
         //实现View嵌套的隐式转换
         public static implicit operator FrameworkElement(ElementViewBase<T> elementViewBase)
         {
-            return elementViewBase.GetViewElement();
+            return elementViewBase.ViewElement;
         }
 
         #region FrameworkElement Properties
@@ -238,7 +231,7 @@ namespace SyminUI.Core
         /// <returns></returns>
         public virtual ElementViewBase<T> ToolTip(IView tipView)
         {
-            ViewElement.ToolTip = tipView.GetViewElement();
+            ViewElement.ToolTip = tipView.ViewElement;
             return this;
         }
         /// <summary>

@@ -20,6 +20,7 @@ namespace SyminUI.Views
         {
         }
 
+
         #region Button Properties
 
         public Button ClickMode(ClickMode clickMode)

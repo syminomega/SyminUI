@@ -15,13 +15,24 @@
         Style="{StaticResource Window.Normal}"
         Background="{StaticResource Background.Window}">
     <Window.Resources>
-        <dm:DataGridDemo x:Key="DGD"/>
-
-
 
     </Window.Resources>
 
     <Grid>
+        <Border Height="32">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="Black" Offset="0.5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <TranslateTransform X="-0.5"/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+            </Border.Background>
 
+        </Border>
     </Grid>
 </Window>

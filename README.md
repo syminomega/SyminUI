@@ -48,7 +48,7 @@ Currently is in early preview stage. **Pull requests are not available at this m
 | ListView        | ✔       | 
 | Menu            | ✔       | 
 | PasswordBox     | ✔       | 
-| Progress Bar    | ⚠       | Vertical style not work
+| Progress Bar    | ✔       |
 | RadioButton     | ✔       | 
 | Repeat Button   | ✔       | More styles to add
 | RichTextBox     | ✔       | 
@@ -66,10 +66,6 @@ Currently is in early preview stage. **Pull requests are not available at this m
 | TreeView        | ✔       | 
 
 ## ⚠ Known Issues 已知问题
-+ Progress bar vertical style does not show shader effect.\
-进度条垂直样式不显示辉光效果。
-+ Progress indeterminate style does not work correctly.\
-进度条 indeterminate 状态不能正常显示。
 + Slider view tick placement does not work.\
 滑条的指示器样式未设计。
 + MenuItem disabled style is not finished.\

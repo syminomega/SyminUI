@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Controls;
 
-namespace SyminUI.Convertor.Slider
+namespace SyminUI.Convertor.Range
 {
     public class ValueToRangeWidth : IMultiValueConverter
     {

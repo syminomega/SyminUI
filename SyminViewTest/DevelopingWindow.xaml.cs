@@ -22,6 +22,7 @@ namespace SyminViewTest
         public DevelopingWindow()
         {
             InitializeComponent();
+            var linearBrush = new LinearGradientBrush();
         }
     }
 }

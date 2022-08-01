@@ -17,7 +17,21 @@
         <GradientStop Color="{StaticResource PrimaryColor}"/>
         <GradientStop Color="{StaticResource SecondaryColor}" Offset="1"/>
     </LinearGradientBrush>
-    
+
+    <LinearGradientBrush x:Key="Gradient.Primary.Indeterminate" StartPoint="0,1" EndPoint="1,0">
+        <GradientStop Color="{StaticResource PrimaryColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.7"/>
+        <GradientStop Color="{StaticResource PrimaryColor}" Offset="0.8"/>
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+    </LinearGradientBrush>
+
     <Color x:Key="DangerColor">#EB2E1F</Color>
     <Color x:Key="Danger.LightColor">#FFCFCF</Color>
     <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>

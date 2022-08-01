@@ -28,7 +28,7 @@ namespace SyminUI.Core
         public void Add(IView item)
         {
             _children.Add(item);
-            ViewElement.Children.Add(item.GetViewElement());
+            ViewElement.Children.Add(item.ViewElement);
         }
         /// <summary>
         /// 添加视图元素集合
@@ -39,7 +39,7 @@ namespace SyminUI.Core
             foreach (var item in viewCollection)
             {
                 _children.Add(item);
-                ViewElement.Children.Add(item.GetViewElement());
+                ViewElement.Children.Add(item.ViewElement);
             }
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace SyminUI.Core
         {
             if (_children.Remove(item))
             {
-                ViewElement.Children.Remove(item.GetViewElement());
+                ViewElement.Children.Remove(item.ViewElement);
                 return true;
             }
             return false;
@@ -69,7 +69,7 @@ namespace SyminUI.Core
                 //判断释放有对象移除
                 if (_children.Remove(item))
                 {
-                    ViewElement.Children.Remove(item.GetViewElement());
+                    ViewElement.Children.Remove(item.ViewElement);
                     count++;
                 }
             }

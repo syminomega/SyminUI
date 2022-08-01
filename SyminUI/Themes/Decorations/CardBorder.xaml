@@ -12,8 +12,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type svd:CardBorder}">
-                    <Border>
-                        <svd:LightedSurface CornerRadius="{TemplateBinding CornerRadius}"
+                    <Border x:Name="mainBorder">
+                        <svd:LightedSurface  CornerRadius="{TemplateBinding CornerRadius}"
                                             Foreground="{TemplateBinding Foreground}"
                                             Background="{TemplateBinding Background}"
                                             BorderBrush="{TemplateBinding BorderBrush}"
@@ -28,13 +28,19 @@
                                               Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                               TextElement.Foreground="{TemplateBinding Foreground}" />
-                            <svd:LightedSurface.Effect>
-                                <DropShadowEffect BlurRadius="12" Color="{StaticResource Shader.ShadowColor}"
-                                                  Opacity="0.6" />
-                            </svd:LightedSurface.Effect>
+                            
                         </svd:LightedSurface>
-
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="12" Color="{StaticResource Shader.ShadowColor}"
+                                              Opacity="0.6" />
+                        </Border.Effect>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ShaderEnabled" Value="False">
+                            <Setter Property="Effect" TargetName="mainBorder"
+                                    Value="{x:Null}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

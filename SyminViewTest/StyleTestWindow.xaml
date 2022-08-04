@@ -10,7 +10,9 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Styles Demo" Height="640" Width="1100"
-        Style="{StaticResource Window.Normal}" Icon="/Resources/Images/SyminUI.png">
+        Style="{StaticResource Window.Normal}" Icon="/Resources/Images/SyminUI.png"
+        Selector.SelectionChanged="TabControl_SelectionChanged"
+        Loaded="Window_Loaded">
 
     <sva:WindowElement.TitleBar>
         <Menu>
@@ -308,7 +310,7 @@
             <TextBlock Text="★" />
             <TextBlock Text="StatusBar" />
             <Separator />
-            <TextBlock Text="Message" />
+            <TextBlock x:Name="textMessage" Text="Message" />
         </StatusBar>
     </Grid>
 

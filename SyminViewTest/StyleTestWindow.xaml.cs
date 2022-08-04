@@ -23,5 +23,16 @@ namespace SyminViewTest
         {
             InitializeComponent();
         }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(!_loaded ) return;
+            textMessage.Text = "选项变化" + e.OriginalSource;
+        }
+        private bool _loaded = false;
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _loaded = true;
+        }
     }
 }

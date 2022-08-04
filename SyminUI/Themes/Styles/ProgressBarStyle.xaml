@@ -126,14 +126,14 @@
         <Setter Property="Foreground" Value="{StaticResource Gradient.Primary}"/>
         <Setter Property="Background" Value="{StaticResource Background.Main}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Height" Value="24"/>
+        <Setter Property="Height" Value="20"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template" Value="{StaticResource ProgressHorizontalDefault}"/>
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Vertical">
                 <Setter Property="Template" Value="{StaticResource ProgressVerticalDefault}"/>
                 <Setter Property="Height" Value="auto"/>
-                <Setter Property="Width" Value="24"/>
+                <Setter Property="Width" Value="20"/>
             </Trigger>
         </Style.Triggers>
     </Style>

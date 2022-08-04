@@ -243,7 +243,8 @@
                 </ScrollViewer>
 
             </GroupBox>
-            <TabControl Grid.Column="2" Margin="12,4,4,4">
+            <TabControl Grid.Column="2"
+                        Style="{StaticResource NavigationTabControl}">
                 <TabItem Header="Controls Tab">
                     <Grid Margin="4">
                         <Grid.RowDefinitions>

@@ -51,6 +51,20 @@ namespace SyminUI.Controls.Decorations
                 new PropertyMetadata(200.0));
 
 
+        /// <summary>
+        /// Enable or disable the border effect
+        /// </summary>
+        public bool ShaderEnabled
+        {
+            get => (bool)GetValue(ShaderEnabledProperty);
+            set => SetValue(ShaderEnabledProperty, value);
+        }
+
+        // Using a DependencyProperty as the backing store for ShaderEnabled.
+        public static readonly DependencyProperty ShaderEnabledProperty =
+            DependencyProperty.Register("ShaderEnabled",
+                typeof(bool), typeof(CardBorder),
+                new PropertyMetadata(true));
 
     }
 }

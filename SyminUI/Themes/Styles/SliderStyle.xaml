@@ -21,7 +21,7 @@
             <Ellipse x:Name="grip" Width="20" Height="20" Fill="{StaticResource Background.Button}"
                      StrokeThickness="1">
                 <Ellipse.Effect>
-                    <DropShadowEffect BlurRadius="16" Opacity="0.6"
+                    <DropShadowEffect BlurRadius="12" Opacity="0.4"
                                       Color="{StaticResource Shader.ShadowColor}" />
                 </Ellipse.Effect>
             </Ellipse>

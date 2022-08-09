@@ -30,25 +30,6 @@ namespace SyminViewTest
             NodeTest.NodeItemSource = AddNode;
         }
 
-        TestView? _testView;
-
-        public void SetEventTriggerTest(TestView testView)
-        {
-            _testView = testView;
-            _testView.EventTrigger += ShowTestMessage;
-            this.Unloaded += CanvasTestWindow_Unloaded;
-        }
-
-        private void CanvasTestWindow_Unloaded(object sender, RoutedEventArgs e)
-        {
-            _testView!.EventTrigger -= ShowTestMessage;
-        }
-
-        private void ShowTestMessage()
-        {
-            MessageBox.Show("事件触发消息!");
-        }
-
         private void TestButton_Click(object sender, RoutedEventArgs e)
         {
             AddNode.InputNumberA.Value = 1;

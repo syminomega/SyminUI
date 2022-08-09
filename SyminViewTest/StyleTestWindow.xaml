@@ -10,7 +10,9 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Styles Demo" Height="640" Width="1100"
-        Style="{StaticResource Window.Normal}" Icon="/Resources/Images/SyminUI.png">
+        Style="{StaticResource Window.Normal}" Icon="/Resources/Images/SyminUI.png"
+        Selector.SelectionChanged="TabControl_SelectionChanged"
+        Loaded="Window_Loaded">
 
     <sva:WindowElement.TitleBar>
         <Menu>
@@ -276,7 +278,7 @@
                         <Separator Grid.Row="1" />
                         <svd:LightedSurface Height="80" Grid.Row="2"
                                             Background="{StaticResource Background.Main}"
-                                            CornerRadius="16" Content="Lighted Surface" FontSize="24" />
+                                            CornerRadius="16" Content="Move Mouse Here" FontSize="24" />
                         <DataGrid DataContext="{StaticResource DGD}"
                                   ItemsSource="{Binding DataCollection}"
                                   Margin="4" Grid.Row="3" />
@@ -295,7 +297,7 @@
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Empty Tab">
+                <TabItem Header="Second Tab">
 
                 </TabItem>
                 <TabItem Header="Disabled Tab" IsEnabled="False">
@@ -308,7 +310,7 @@
             <TextBlock Text="★" />
             <TextBlock Text="StatusBar" />
             <Separator />
-            <TextBlock Text="Message" />
+            <TextBlock x:Name="textMessage" Text="Message" />
         </StatusBar>
     </Grid>
 

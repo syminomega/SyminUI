@@ -15,80 +15,35 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CalendarButton}">
                     <Grid>
-                        <VisualStateManager.VisualStateGroups>
-                            <!-- 鼠标悬浮效果 -->
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0:0:0.1" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="MouseOver">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To="1"
-                                                         Storyboard.TargetName="Background"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To=".5"
-                                                         Storyboard.TargetName="Background"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <!-- 选中的对象 -->
-                            <VisualStateGroup x:Name="SelectionStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="Unselected" />
-                                <VisualState x:Name="Selected">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To="1"
-                                                         Storyboard.TargetName="SelectedBorder"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0"
-                                                            To="{StaticResource Text.ContrastColor}"
-                                                            Storyboard.TargetName="NormalText"
-                                                            Storyboard.TargetProperty="(TextElement.Foreground)
-                                                                .(SolidColorBrush.Color)" />
-                                        </Storyboard>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <!-- 激活状态 -->
-                            <VisualStateGroup x:Name="ActiveStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="Active" />
-                                <VisualState x:Name="Inactive">
-                                    <Storyboard>
-                                        <ColorAnimation Duration="0"
-                                                        To="{StaticResource Text.SecondaryColor}"
-                                                        Storyboard.TargetName="NormalText"
-                                                        Storyboard.TargetProperty="(TextElement.Foreground)
-                                                                .(SolidColorBrush.Color)" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-
-                        </VisualStateManager.VisualStateGroups>
-
-                        <Border x:Name="SelectedBorder" Margin="2" Opacity="0"
+                        <Rectangle x:Name="SelectionMark" Margin="2" Visibility="Hidden"
+                                   StrokeThickness="{TemplateBinding BorderThickness}"
+                                   Fill="{StaticResource Background.SelectedMask}"
+                                   RadiusX="4" RadiusY="4" />
+                        <Border x:Name="SelectedBorder" Margin="2" Visibility="Hidden"
                                 CornerRadius="4" Background="{StaticResource PrimaryBrush}" />
                         <ContentPresenter x:Name="NormalText"
                                           TextElement.Foreground="{StaticResource Text.Main}"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        <Rectangle x:Name="Background" Margin="2"
-                                   StrokeThickness="{TemplateBinding BorderThickness}"
-                                   Fill="{StaticResource Background.SelectedMask}"
-                                   Opacity="0" RadiusX="4" RadiusY="4" />
                     </Grid>
-
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasSelectedDays" Value="True">
+                            <Setter Property="Visibility" TargetName="SelectedBorder"
+                                    Value="Visible" />
+                            <Setter Property="TextElement.Foreground" TargetName="NormalText"
+                                    Value="{StaticResource Text.Contrast}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="SelectionMark"
+                                    Value="Visible" />
+                            <Setter Property="Background" TargetName="SelectedBorder"
+                                    Value="{StaticResource Primary.Focused}" />
+                        </Trigger>
+                        <Trigger Property="IsInactive" Value="True">
+                            <Setter Property="TextElement.Foreground" TargetName="NormalText"
+                                    Value="{StaticResource Text.Secondary}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -105,50 +60,6 @@
                 <ControlTemplate TargetType="{x:Type CalendarDayButton}">
                     <Grid>
                         <VisualStateManager.VisualStateGroups>
-                            <!-- 鼠标效果 -->
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0:0:0.1" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="MouseOver">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To="1"
-                                                         Storyboard.TargetName="HighlightBackground"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To="1"
-                                                         Storyboard.TargetName="HighlightBackground"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To="0"
-                                                         Storyboard.TargetName="HighlightBackground"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                        <DoubleAnimation Duration="0" To=".6"
-                                                         Storyboard.TargetName="NormalText"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <VisualStateGroup x:Name="SelectionStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="Unselected" />
-                                <VisualState x:Name="Selected">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To="1"
-                                                         Storyboard.TargetName="SelectedBackground"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
                             <!-- 激活状态 -->
                             <VisualStateGroup x:Name="ActiveStates">
                                 <VisualStateGroup.Transitions>
@@ -165,52 +76,26 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            <!-- 今日状态 -->
-                            <VisualStateGroup x:Name="DayStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="RegularDay" />
-                                <VisualState x:Name="Today">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To="1"
-                                                         Storyboard.TargetName="TodayBackground"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                        <ColorAnimation Duration="0"
-                                                        To="{StaticResource Text.ContrastColor}"
-                                                        Storyboard.TargetName="NormalText"
-                                                        Storyboard.TargetProperty="(TextElement.Foreground)
-                                                                .(SolidColorBrush.Color)" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <!-- 画叉 -->
-                            <VisualStateGroup x:Name="BlackoutDayStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="NormalDay" />
-                                <VisualState x:Name="BlackoutDay">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0" To=".4"
-                                                         Storyboard.TargetName="Blackout"
-                                                         Storyboard.TargetProperty="Opacity" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
+
                         </VisualStateManager.VisualStateGroups>
-                        <!-- 今日背景 -->
-                        <Rectangle x:Name="TodayBackground" Opacity="0"
-                                   Fill="{StaticResource PrimaryBrush}"
-                                   RadiusX="4" RadiusY="4" />
+                        
                         <!-- 选中背景 -->
-                        <Rectangle x:Name="SelectedBackground" Opacity="0"
+                        <Rectangle x:Name="SelectedBackground" Visibility="Hidden"
                                    Fill="{StaticResource Background.FocusedMask}"
                                    RadiusX="4" RadiusY="4" />
+                        
                         <!-- 鼠标划过背景 -->
-                        <Rectangle x:Name="HighlightBackground" Opacity="0"
+                        <Rectangle x:Name="HighlightBackground" Visibility="Hidden"
                                    Fill="{StaticResource Background.SelectedMask}"
                                    RadiusX="4" RadiusY="4" />
+                        
+                        <!-- 今日背景 -->
+                        <Rectangle x:Name="TodayBackground" Visibility="Hidden"
+                                   Fill="{StaticResource PrimaryBrush}"
+                                   Stroke="{StaticResource SecondaryBrush}"
+                                   StrokeThickness="0"
+                                   RadiusX="4" RadiusY="4" />
+                        
                         <ContentPresenter x:Name="NormalText"
                                           TextElement.Foreground="{StaticResource Text.Main}"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -223,6 +108,33 @@
                               StrokeThickness="2" Margin="4" Opacity="0"
                               RenderTransformOrigin="0.5,0.5" Stretch="Uniform" />
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="HighlightBackground" 
+                                    Value="Visible"/>
+                            <Setter Property="Fill" TargetName="TodayBackground"
+                                    Value="{StaticResource Primary.Focused}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="StrokeThickness" TargetName="TodayBackground" 
+                                    Value="1"/>
+                            <Setter Property="Visibility" TargetName="SelectedBackground" 
+                                    Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsToday" Value="True">
+                            <Setter Property="TextElement.Foreground" TargetName="NormalText"
+                                    Value="{StaticResource Text.Contrast}"/>
+                            <Setter Property="Visibility" TargetName="TodayBackground" 
+                                    Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsBlackedOut" Value="True">
+                            <Setter Property="Visibility" TargetName="Blackout" 
+                                    Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <!--TODO:设置禁用效果-->
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

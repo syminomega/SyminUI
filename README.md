@@ -5,10 +5,7 @@ SyminUI 是 WPF 的 UI 组件库，并使用称为 **C#UI** 的 MVU 设计模式
 
 [![build](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/syminomega/SyminUI/actions/workflows/dotnet-desktop.yml)
 
-## Preview 预览 (2022-07-22)
-Currently is in early preview stage. **Pull requests are not available at this moment.**\
-目前处于早期预览阶段，**Pull Request 暂未全面开放**。
-
+## Preview 总览
 ![Styles Demo](./Images/StylesDemo.jpg)
 
 ## 🧰 Quick Start 快速使用
@@ -29,41 +26,79 @@ Currently is in early preview stage. **Pull requests are not available at this m
         </ResourceDictionary>
     </Application.Resources>
 ```
-## 📦 Styles For Buildin Controls 内置控件样式
-| Control         | Status  | Comment
-| ----            | ----    | ----
-| Button          | ✔       | 
-| Calendar        | ✔       | 
-| CheckBox        | ✔       | 
-| ComboBox        | ✔       | 
-| DataGrid        | ✔       | 
-| DatePicker      | ✔       | 
-| DocumentViewer  |         | No plan
-| Expander        | ✔       | 
-| Frame           |         | 
-| GridSplitter    | ✔       | 
-| GroupBox        | ✔       | 
-| Label           | ✔       | 
-| ListBox         | ✔       | 
-| ListView        | ✔       | 
-| Menu            | ✔       | 
-| PasswordBox     | ✔       | 
-| Progress Bar    | ✔       |
-| RadioButton     | ✔       | 
-| Repeat Button   | ✔       | More styles to add
-| RichTextBox     | ✔       | 
-| ScrollBar       | ✔       | 
-| ScrollViewer    | ✔       | 
-| Separator       | ✔       | 
-| Slider          | ✔       | Tick view not work
-| StatusBar       | ✔       | 
-| TabControl      | ✔       | Plan to add new styles
-| TextBox         | ✔       | 
-| Toggle Button   | ✔       | 
-| ToolBar         | ✔       | No menu style for tool bar
-| ToolBarPanel    | ✔       | 
-| ToolBarTray     | ✔       | 
-| TreeView        | ✔       | 
+## 🛠️ MVU Design (Working In Progress)
+
+Introducing the new way to design the user interface.\
+使用全新的设计模式制作用户界面！
+
+```c#
+public class TestView : IView
+    {
+        readonly State<string> myText = "My Text";
+
+        //测试可切换控件
+        readonly State<IView> dynamicView = new Label("Label A");
+        readonly State<string> inputText = "Input Message Here";
+
+        readonly ObservableCollection<string> textCollection = new()
+        {
+            "1111",
+            "2222",
+            "3333"
+        };
+
+        public VStack MainView => new VStack
+        {
+            new HStack
+            {
+                new Label(myText),
+                new Button("Change Value Button")
+                    .OnClick(() => { myText.Value = "Text Changed!"; })
+            },
+            new HStack
+            {
+                new Button("Open Canvas")
+                    .OnClick(() =>
+                    {
+                        CanvasTestWindow testWindow = new();
+                        testWindow.Show();
+                    }),
+                new Label("Label In HStack"),
+            }.HorizontalAlignment(HorizontalAlignment.Center),
+            new Grid()
+                {
+                    new ContentView(dynamicView)
+                        .GridLayout(0, 0),
+                    new Button("Change Content")
+                        .OnClick(() => { dynamicView.Value = new Label("Changed View"); })
+                        .GridLayout(0, 1),
+                    new InputField(inputText)
+                        .GridLayout(1, 0),
+                    new Button("Show Input Value")
+                        .OnClick(() => MessageBox.Show(inputText.Value))
+                        .GridLayout(1, 1),
+                }
+                .Cols("2*", ("*", 200, 400))
+                .Rows("auto", "auto"),
+            new Button("Add List Item")
+                .OnClick(TestCollection),
+            new ItemsView()
+                .Foreach(textCollection, x => new HStack
+                {
+                    new Label("List Items"),
+                    new Button(x),
+                })
+        };
+
+        public FrameworkElement ViewElement => MainView;
+
+        private void TestCollection()
+        {
+            textCollection.Insert(1, "Inserted Item");
+        }
+    }
+```
+![MVU Demo](./Images/MVUDemo.jpg)
 
 ## ⚠ Known Issues 已知问题
 + Slider view tick placement does not work.\

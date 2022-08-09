@@ -4,14 +4,14 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <Version>0.5.1</Version>
+	  <Version>0.5.2</Version>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <Authors>Symin</Authors>
 	  <Company>SyminStudio</Company>
 	  <RepositoryUrl>https://github.com/syminomega/SyminUI</RepositoryUrl>
 	  <Copyright>Copyright (c) 2022 SyminStudio</Copyright>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	  <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 </Project>

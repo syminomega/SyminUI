@@ -278,7 +278,7 @@
                         <Separator Grid.Row="1" />
                         <svd:LightedSurface Height="80" Grid.Row="2"
                                             Background="{StaticResource Background.Main}"
-                                            CornerRadius="16" Content="Lighted Surface" FontSize="24" />
+                                            CornerRadius="16" Content="Move Mouse Here" FontSize="24" />
                         <DataGrid DataContext="{StaticResource DGD}"
                                   ItemsSource="{Binding DataCollection}"
                                   Margin="4" Grid.Row="3" />
@@ -297,7 +297,7 @@
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Empty Tab">
+                <TabItem Header="Second Tab">
 
                 </TabItem>
                 <TabItem Header="Disabled Tab" IsEnabled="False">

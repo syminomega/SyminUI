@@ -65,7 +65,7 @@
     
     <SolidColorBrush x:Key="Background.Button" Color="#F1F2F6"/>
     <SolidColorBrush x:Key="Background.Button.Disabled" Color="#E8E9EC"/>
-    <SolidColorBrush x:Key="Background.TextField" Color="#FBFBFB"/>
+    <SolidColorBrush x:Key="Background.TextField" Color="#F1F2F6"/>
     <SolidColorBrush x:Key="Background.Label" Color="#F2F2F2"/>
     <SolidColorBrush x:Key="Background.StatusBar" Color="#FFD5D7DD"/>
     <SolidColorBrush x:Key="Background.Toggle" Color="#CACCDB"/>

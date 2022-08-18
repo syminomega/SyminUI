@@ -19,7 +19,7 @@
                     <ControlTemplate.Resources>
                         <!--聚焦对象-->
                         <Storyboard x:Key="TextBox.FocusEffect">
-                            <DoubleAnimation To="0.6" Duration="0:0:0.2"
+                            <DoubleAnimation To="0.5" Duration="0:0:0.2"
                                              Storyboard.TargetName="Border"
                                              Storyboard.TargetProperty="Intensity" />
                         </Storyboard>

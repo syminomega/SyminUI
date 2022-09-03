@@ -336,7 +336,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabControl}">
                     <ControlTemplate.Resources>
-                        
+
                         <Storyboard x:Key="FadeIn">
                             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity"
                                                            Storyboard.TargetName="PART_SelectedContentHost">

@@ -37,12 +37,19 @@
 
                                 <!--功能按钮-->
                                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                    <Viewbox Stretch="Uniform" Width="35" Margin="6,9,6,3">
-                                        <Path Fill="{StaticResource Text.Main}" Width="1024" Height="1024"
+                                    <Button Style="{StaticResource ButtonFlatten}"
+                                            sva:BorderElement.CornerRadius="0" Padding="0"
+                                            Background="{TemplateBinding Background}">
+                                        <Viewbox Stretch="Uniform" Width="35" Margin="6,9,6,9">
+                                            <Path Fill="{StaticResource Text.Main}" Width="1024" Height="1024"
                                               Data="M923 571H130.7c-27.6 0-50-22.4-50-50s22.4-50 50-50
                                               H923c27.6 0 50 22.4 50 50s-22.4 50-50 50z" />
-                                    </Viewbox>
-                                    <Viewbox Stretch="Uniform" Width="35" Margin="6,9,6,3">
+                                        </Viewbox>
+                                    </Button>
+                                    <Button Style="{StaticResource ButtonFlatten}"
+                                            sva:BorderElement.CornerRadius="0" Padding="0"
+                                            Background="{TemplateBinding Background}">
+                                    <Viewbox Stretch="Uniform" Width="35" Margin="6,9,6,9">
                                         <Path Fill="{StaticResource Text.Main}" Width="1024" Height="1024"
                                               Data="M770.9 923.3H253.1c-83.8 0-151.9-68.2-151.9-151.9
                                               V253.6c0-83.8 68.2-151.9 151.9-151.9h517.8
@@ -53,19 +60,24 @@
                                               c39.7 0 71.9-32.3 71.9-71.9V253.6
                                               c0-39.7-32.3-71.9-71.9-71.9H253.1z" />
                                     </Viewbox>
-                                    <Viewbox Stretch="Uniform" Width="35" Margin="6,9,6,3">
-                                        <Grid>
-                                            <Path Fill="{StaticResource Text.Main}" Width="1024" Height="1024"
+                                    </Button>
+                                    <Button Style="{StaticResource ButtonFlatten}"
+                                            sva:BorderElement.CornerRadius="0" Padding="0"
+                                            Background="{TemplateBinding Background}">
+                                        <Viewbox Stretch="Uniform" Width="35" Margin="6,9,6,9">
+                                            <Grid>
+                                                <Path Fill="{StaticResource Text.Main}" Width="1024" Height="1024"
                                                   Data="M109.9 935.8c-19.5-19.5-19.5-51.2 0-70.7l759.3-759.3
                                                   c19.5-19.5 51.2-19.5 70.7 0s19.5 51.2 0 70.7L180.6 935.8
                                                   c-19.6 19.6-51.2 19.6-70.7 0z" />
-                                            <Path Fill="{StaticResource Text.Main}" Width="1024" Height="1024"
+                                                <Path Fill="{StaticResource Text.Main}" Width="1024" Height="1024"
                                                   Data="M869.1 935.8L109.9 176.5c-19.5-19.5-19.5-51.2 0-70.7
                                                   s51.2-19.5 70.7 0l759.3 759.3c19.5 19.5 19.5 51.2 0 
                                                   70.7-19.6 19.6-51.2 19.6-70.8 0z" />
 
-                                        </Grid>
-                                    </Viewbox>
+                                            </Grid>
+                                        </Viewbox>
+                                    </Button>
                                 </StackPanel>
                             </Grid>
                             <!--窗体内容-->

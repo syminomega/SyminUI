@@ -230,7 +230,7 @@
                                 <ComboBoxItem Content="Selection C" />
                             </ComboBox>
 
-                            <PasswordBox Password="12345" Grid.Row="2" />
+                            <PasswordBox Password="12345" Grid.Row="2"/>
                             <TreeView Margin="4" Grid.Column="1" Grid.RowSpan="3">
                                 <TreeViewItem Header="A123" IsExpanded="True">
                                     <TreeViewItem Header="B123" IsExpanded="True" IsSelected="True">

@@ -13,6 +13,25 @@ namespace SyminUI.Controls.Attach
     public class TabElement : DependencyObject
     {
 
+
+        public static HorizontalAlignment GetHorizontalTitleAlignment(DependencyObject obj)
+        {
+            return (HorizontalAlignment)obj.GetValue(HorizontalTitleAlignmentProperty);
+        }
+
+        public static void SetHorizontalTitleAlignment(DependencyObject obj, HorizontalAlignment value)
+        {
+            obj.SetValue(HorizontalTitleAlignmentProperty, value);
+        }
+
+        // Using a DependencyProperty as the backing store for TitleAlignment.
+        public static readonly DependencyProperty HorizontalTitleAlignmentProperty =
+            DependencyProperty.RegisterAttached("HorizontalTitleAlignment",
+                typeof(HorizontalAlignment), typeof(TabElement),
+                new PropertyMetadata(default(HorizontalAlignment)));
+
+
+
         public static bool GetUseFadeIn(DependencyObject obj)
         {
             return (bool)obj.GetValue(UseFadeInProperty);
@@ -29,6 +48,7 @@ namespace SyminUI.Controls.Attach
                 typeof(bool), typeof(TabElement),
                 new PropertyMetadata(false, OnUseFadeInChanged));
 
+        //切换选项卡时使用渐变浮现效果
         private static void OnUseFadeInChanged(DependencyObject d,
             DependencyPropertyChangedEventArgs e)
         {
@@ -46,6 +66,7 @@ namespace SyminUI.Controls.Attach
         private static void TabControl_FadeInEffect(object sender, SelectionChangedEventArgs e)
         {
             var tabControl = (TabControl)sender;
+            //判断是子控件消息还是Tab消息
             if (e.Source.GetType() != typeof(TabControl))
             {
                 e.Handled = true;

@@ -149,7 +149,8 @@
                           Style="{StaticResource ComboBoxToggleButton}"/>
             <Border x:Name="border" 
                     Margin="{TemplateBinding BorderThickness}">
-                <TextBox x:Name="PART_EditableTextBox" Padding="6,4"
+                <TextBox x:Name="PART_EditableTextBox" Padding="6,4" 
+                         Style="{StaticResource FlattenTextBox}"
                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
                          IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}" 
                          Margin="{TemplateBinding Padding}" 
@@ -286,7 +287,7 @@
         <Style.Triggers>
             <Trigger Property="IsEditable" Value="true">
                 <Setter Property="IsTabStop" Value="false"/>
-                <Setter Property="Padding" Value="-2"/>
+                <Setter Property="Padding" Value="3"/>
                 <Setter Property="Template" Value="{StaticResource ComboBoxEditableTemplate}"/>
             </Trigger>
         </Style.Triggers>

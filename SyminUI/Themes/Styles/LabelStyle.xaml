@@ -5,7 +5,7 @@
     <Style x:Key="LabelBasic" TargetType="{x:Type Label}">
         <Setter Property="Background" Value="{StaticResource Background.Label}" />
         <Setter Property="Foreground" Value="{StaticResource Text.Main}" />
-        <Setter Property="BorderBrush" Value="{StaticResource Border.MainBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Text.Main.Disabled}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Margin" Value="4" />
@@ -34,9 +34,6 @@
                             <Setter Property="TextElement.Foreground" TargetName="contentPresenter"
                                     Value="{Binding Path=(sva:ShadingElement.DisabledForeground),
                                                 RelativeSource={RelativeSource TemplatedParent}}" />
-                            <Setter Property="BorderBrush" TargetName="contentBorder"
-                                    Value="{Binding Path=(sva:ShadingElement.DisabledForeground),
-                                                RelativeSource={RelativeSource TemplatedParent}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -45,24 +42,21 @@
     </Style>
 
     <Style TargetType="{x:Type Label}" BasedOn="{StaticResource LabelBasic}">
-        <Setter Property="BorderThickness" Value="0" />
+        
     </Style>
 
     <Style x:Key="LabelPrimary" TargetType="{x:Type Label}" BasedOn="{StaticResource LabelBasic}">
         <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
         <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Primary.Disabled}" />
     </Style>
 
     <Style x:Key="LabelDanger" TargetType="{x:Type Label}" BasedOn="{StaticResource LabelBasic}">
         <Setter Property="Foreground" Value="{StaticResource DangerBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource DangerBrush}" />
         <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Danger.Disabled}" />
     </Style>
 
     <Style x:Key="LabelSuccess" TargetType="{x:Type Label}" BasedOn="{StaticResource LabelBasic}">
         <Setter Property="Foreground" Value="{StaticResource SuccessBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource SuccessBrush}" />
         <Setter Property="sva:ShadingElement.DisabledForeground" Value="{StaticResource Success.Disabled}" />
     </Style>
 </ResourceDictionary>

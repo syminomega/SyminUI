@@ -29,6 +29,7 @@ namespace SyminUI.Controls.Attach
                 typeof(bool), typeof(TabElement),
                 new PropertyMetadata(false, OnUseFadeInChanged));
 
+        //切换选项卡时使用渐变浮现效果
         private static void OnUseFadeInChanged(DependencyObject d,
             DependencyPropertyChangedEventArgs e)
         {
@@ -46,6 +47,7 @@ namespace SyminUI.Controls.Attach
         private static void TabControl_FadeInEffect(object sender, SelectionChangedEventArgs e)
         {
             var tabControl = (TabControl)sender;
+            //判断是子控件消息还是Tab消息
             if (e.Source.GetType() != typeof(TabControl))
             {
                 e.Handled = true;

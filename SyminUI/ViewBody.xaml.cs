@@ -19,12 +19,12 @@ namespace SyminUI
     /// <summary>
     /// ViewBody.xaml 的交互逻辑
     /// </summary>
+    [Obsolete("Please use inheritance of ViewContainer")]
     public partial class ViewBody : UserControl
     {
         public ViewBody()
         {
             InitializeComponent();
-
         }
 
 

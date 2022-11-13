@@ -15,6 +15,7 @@ namespace SyminUI.Core
         /// 视图元素控件实例
         /// </summary>
         public FrameworkElement ViewElement { get; }
+        
     }
     public interface IView<T> : IView where T : FrameworkElement
     {

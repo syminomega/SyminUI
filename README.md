@@ -32,8 +32,13 @@ Introducing the new way to design the user interface.\
 使用全新的设计模式制作用户界面！
 
 ```c#
-public class TestView : IView
+public class TestView : ViewContainer
     {
+        /// <summary>
+        /// 提供视图
+        /// </summary>
+        public override IView ViewProvider => MainView;
+
         readonly State<string> myText = "My Text";
 
         //测试可切换控件
@@ -89,8 +94,6 @@ public class TestView : IView
                     new Button(x),
                 })
         };
-
-        public FrameworkElement ViewElement => MainView;
 
         private void TestCollection()
         {

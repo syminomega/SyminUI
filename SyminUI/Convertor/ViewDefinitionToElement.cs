@@ -15,7 +15,7 @@ namespace SyminUI.Convertor
     [ValueConversion(typeof(IView), typeof(FrameworkElement))]
     public class ViewDefinitionToElement : IValueConverter
     {
-        public object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object? Convert(object? value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null) return null;
             var viewDefinition = (IView)value;

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SyminUI"
              xmlns:cvt ="clr-namespace:SyminUI.Convertor"
-             mc:Ignorable="d" 
+             mc:Ignorable="d" x:Name="Self"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <cvt:ViewDefinitionToElement x:Key="VDTE"/>

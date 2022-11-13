@@ -9,11 +9,17 @@ using SyminUI;
 using System.Windows;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
+using System.Windows.Automation.Peers;
 
 namespace SyminViewTest.Views
 {
-    public class TestView : IView
+    public class TestView : ViewContainer
     {
+        /// <summary>
+        /// 提供视图
+        /// </summary>
+        public override IView ViewProvider => MainView;
+
         readonly State<string> myText = "My Text";
 
         //测试可切换控件
@@ -27,13 +33,19 @@ namespace SyminViewTest.Views
             "3333"
         };
 
-        public VStack MainView => new VStack
+        //主要视图
+        private VStack MainView => new VStack
         {
             new HStack
             {
                 new Label(myText),
                 new Button("Change Value Button")
-                    .OnClick(() => { myText.Value = "Text Changed!"; })
+                    .OnClick(() => { myText.Value = "Text Changed!"; }),
+                new Button("Close Window").OnClick(() =>
+                {
+                    //获取宿主窗口并关闭
+                    GetHostWindow<ViewTestWindow>().Close();
+                }),
             },
             new HStack
             {
@@ -70,11 +82,10 @@ namespace SyminViewTest.Views
                 })
         };
 
-        public FrameworkElement ViewElement => MainView;
-
         private void TestCollection()
         {
             textCollection.Insert(1, "Inserted Item");
         }
+
     }
 }

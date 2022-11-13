@@ -8,11 +8,6 @@
         xmlns:v ="clr-namespace:SyminViewTest.Views"
         mc:Ignorable="d"
         Style="{StaticResource Window.Normal}"
-        Title="CSharp UI View" Height="450" Width="400">
-    <Grid>
-        <Grid.Resources>
-            <v:TestView x:Key="TV"/>
-        </Grid.Resources>
-        <sv:ViewBody ViewDefinition="{StaticResource ResourceKey=TV}"/>
-    </Grid>
+        Title="CSharp UI View" Height="450" Width="450">
+    <v:TestView/>
 </Window>

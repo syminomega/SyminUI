@@ -4,8 +4,8 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-	  <Version>1.1.0</Version>
-	  <PackageVersion>1.1.0</PackageVersion>
+	  <Version>1.1.1</Version>
+	  <PackageVersion>1.1.1</PackageVersion>
 	  <Company>SyminStudio</Company>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <Authors>Symin</Authors>
@@ -14,6 +14,8 @@
 	  <PackageTags>WPF;Theme;Controls</PackageTags>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <PackageReleaseNotes>Modify the property implementation of ElementViewBase. Now you can ignore the property order while initializing.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

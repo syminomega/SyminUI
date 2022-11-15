@@ -9,7 +9,6 @@ using SyminUI;
 using System.Windows;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
-using System.Windows.Automation.Peers;
 
 namespace SyminViewTest.Views
 {

@@ -9,19 +9,26 @@ using System.Windows.Controls;
 
 namespace SyminUI.Core
 {
+    /// <summary>
+    /// 视图
+    /// </summary>
     public interface IView
     {
         /// <summary>
         /// 视图元素控件实例
         /// </summary>
-        public FrameworkElement ViewElement { get; }
+        public FrameworkElement Element { get; }
         
     }
+    /// <summary>
+    /// 视图
+    /// </summary>
+    /// <typeparam name="T">WPF Control Type</typeparam>
     public interface IView<T> : IView where T : FrameworkElement
     {
         /// <summary>
         /// 视图元素控件实例
         /// </summary>
-        public new T ViewElement { get; }
+        public new T Element { get; }
     }
 }

@@ -20,26 +20,26 @@ namespace SyminUI.Core
         protected ElementViewBase()
         {
             T viewControl = new();
-            _viewElement = viewControl;
+            Element = viewControl;
         }
 
-        private readonly T _viewElement;
         /// <summary>
         /// Control element
         /// 控件对象
         /// </summary>
-        public virtual T ViewElement => _viewElement;
+        public virtual T Element { get; }
 
-        FrameworkElement IView.ViewElement => ViewElement;
+        FrameworkElement IView.Element => Element;
 
 
         //实现View嵌套的隐式转换
         public static implicit operator FrameworkElement(ElementViewBase<T> elementViewBase)
         {
-            return elementViewBase.ViewElement;
+            return elementViewBase.Element;
         }
 
 
+        //TODO:迁移到扩展方法
         #region FrameworkElement Events
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace SyminUI.Core
         {
             if (!_sizeChangedListened)
             {
-                ViewElement.SizeChanged += ViewElement_SizeChanged;
+                Element.SizeChanged += ViewElement_SizeChanged;
                 _sizeChangedListened = true;
             }
             SizeChanged += action;
@@ -71,7 +71,7 @@ namespace SyminUI.Core
         {
             if (!_loadedListened)
             {
-                ViewElement.Loaded += ViewElement_Loaded;
+                Element.Loaded += ViewElement_Loaded;
                 _loadedListened = true;
             }
 
@@ -91,7 +91,7 @@ namespace SyminUI.Core
         {
             if (!_unloadedListened)
             {
-                ViewElement.Unloaded += ViewElement_Unloaded;
+                Element.Unloaded += ViewElement_Unloaded;
                 _unloadedListened = true;
             }
             Unload += action;

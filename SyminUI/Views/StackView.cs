@@ -12,7 +12,7 @@ namespace SyminUI.Views
     {
         public StackView(Orientation orientation)
         {
-            ViewElement.Orientation = orientation;
+            Element.Orientation = orientation;
         }
     }
 }

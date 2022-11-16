@@ -20,7 +20,7 @@ namespace SyminUI.Views
         /// <param name="text"></param>
         public Text(string text) : base()
         {
-            ViewElement.Text = text;
+            Element.Text = text;
         }
         /// <summary>
         /// TextBlock
@@ -29,7 +29,7 @@ namespace SyminUI.Views
         /// <param name="dynamicText"></param>
         public Text(State<string> dynamicText) : base()
         {
-            ViewElement.SetBinding(TextBlock.TextProperty, (Binding)dynamicText);
+            Element.SetBinding(TextBlock.TextProperty, (Binding)dynamicText);
         }
 
         #region TextBlock Properties
@@ -37,12 +37,12 @@ namespace SyminUI.Views
 
         public Text BaselineOffset(double offset)
         {
-            ViewElement.BaselineOffset = offset;
+            Element.BaselineOffset = offset;
             return this;
         }
         public Text BaselineOffset(State<double> offset)
         {
-            ViewElement.SetBinding(TextBlock.BaselineOffsetProperty, (Binding)offset);
+            Element.SetBinding(TextBlock.BaselineOffsetProperty, (Binding)offset);
             return this;
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace SyminUI.Views
         /// <returns></returns>
         public Text FontFamily(FontFamily fontFamily)
         {
-            ViewElement.FontFamily = fontFamily;
+            Element.FontFamily = fontFamily;
             return this;
         }
         /// <summary>
@@ -64,87 +64,87 @@ namespace SyminUI.Views
         /// <returns></returns>
         public Text FontFamily(State<FontFamily> dynamicFontFamily)
         {
-            ViewElement.SetBinding(TextBlock.FontFamilyProperty, (Binding)dynamicFontFamily);
+            Element.SetBinding(TextBlock.FontFamilyProperty, (Binding)dynamicFontFamily);
             return this;
         }
         public Text FontSize(double size)
         {
-            ViewElement.FontSize = size;
+            Element.FontSize = size;
             return this;
         }
         public Text FontSize(State<double> dynamicSize)
         {
-            ViewElement.SetBinding(TextBlock.FontSizeProperty, (Binding)dynamicSize);
+            Element.SetBinding(TextBlock.FontSizeProperty, (Binding)dynamicSize);
             return this;
         }
         public Text FontStretch(FontStretch fontStretch)
         {
-            ViewElement.FontStretch = fontStretch;
+            Element.FontStretch = fontStretch;
             return this;
         }
         public Text FontStretch(State<FontStretch> dynamicFontStretch)
         {
-            ViewElement.SetBinding(TextBlock.FontStretchProperty, (Binding)dynamicFontStretch);
+            Element.SetBinding(TextBlock.FontStretchProperty, (Binding)dynamicFontStretch);
             return this;
         }
         public Text FontStyle(FontStyle fontStyle)
         {
-            ViewElement.FontStyle = fontStyle;
+            Element.FontStyle = fontStyle;
             return this;
         }
         public Text FontStyle(State<FontStyle> dynamicFontStyle)
         {
-            ViewElement.SetBinding(TextBlock.FontStyleProperty, (Binding)dynamicFontStyle);
+            Element.SetBinding(TextBlock.FontStyleProperty, (Binding)dynamicFontStyle);
             return this;
         }
         public Text FontWeight(FontWeight fontWeight)
         {
-            ViewElement.FontWeight = fontWeight;
+            Element.FontWeight = fontWeight;
             return this;
         }
         public Text FontWeight(State<FontWeight> dynamicFontWeight)
         {
-            ViewElement.SetBinding(TextBlock.FontWeightProperty, (Binding)dynamicFontWeight);
+            Element.SetBinding(TextBlock.FontWeightProperty, (Binding)dynamicFontWeight);
             return this;
         }
         public Text Foreground(Brush foreground)
         {
-            ViewElement.Foreground = foreground;
+            Element.Foreground = foreground;
             return this;
         }
         public Text Foreground(State<Brush> dynamicForeground)
         {
-            ViewElement.SetBinding(TextBlock.ForegroundProperty, (Binding)dynamicForeground);
+            Element.SetBinding(TextBlock.ForegroundProperty, (Binding)dynamicForeground);
             return this;
         }
         public Text SetHyphenation(bool enabled)
         {
-            ViewElement.IsHyphenationEnabled = enabled;
+            Element.IsHyphenationEnabled = enabled;
             return this;
         }
         public Text SetHyphenation(State<bool> enabled)
         {
-            ViewElement.SetBinding(TextBlock.IsHyphenationEnabledProperty, (Binding)enabled);
+            Element.SetBinding(TextBlock.IsHyphenationEnabledProperty, (Binding)enabled);
             return this;
         }
         public Text LineHeight(double lineHeight)
         {
-            ViewElement.LineHeight = lineHeight;
+            Element.LineHeight = lineHeight;
             return this;
         }
         public Text LineHeight(State<double> dynamicLineHeight)
         {
-            ViewElement.SetBinding(TextBlock.LineHeightProperty, (Binding)dynamicLineHeight);
+            Element.SetBinding(TextBlock.LineHeightProperty, (Binding)dynamicLineHeight);
             return this;
         }
         public Text LineStackingStrategy(LineStackingStrategy strategy)
         {
-            ViewElement.LineStackingStrategy = strategy;
+            Element.LineStackingStrategy = strategy;
             return this;
         }
         public Text LineStackingStrategy(State<LineStackingStrategy> dynamicStrategy)
         {
-            ViewElement.SetBinding(TextBlock.LineStackingStrategyProperty, (Binding)dynamicStrategy);
+            Element.SetBinding(TextBlock.LineStackingStrategyProperty, (Binding)dynamicStrategy);
             return this;
         }
         /// <summary>
@@ -159,7 +159,7 @@ namespace SyminUI.Views
         public Text Padding(double left, double top, double right, double bottom)
         {
             var padding = new Thickness(left, top, right, bottom);
-            ViewElement.Padding = padding;
+            Element.Padding = padding;
             return this;
         }
         /// <summary>
@@ -170,7 +170,7 @@ namespace SyminUI.Views
         /// <returns></returns>
         public Text Padding(Thickness padding)
         {
-            ViewElement.Padding = padding;
+            Element.Padding = padding;
             return this;
         }
         /// <summary>
@@ -181,39 +181,39 @@ namespace SyminUI.Views
         /// <returns></returns>
         public Text Padding(State<Thickness> dynamicPadding)
         {
-            ViewElement.SetBinding(TextBlock.PaddingProperty, (Binding)dynamicPadding);
+            Element.SetBinding(TextBlock.PaddingProperty, (Binding)dynamicPadding);
             return this;
         }
         public Text TextAlignment(TextAlignment textAlignment)
         {
-            ViewElement.TextAlignment = textAlignment;
+            Element.TextAlignment = textAlignment;
             return this;
         }
         public Text TextAlignment(State<TextAlignment> dynamicTextAlignment)
         {
-            ViewElement.SetBinding(TextBlock.TextAlignmentProperty, (Binding)dynamicTextAlignment);
+            Element.SetBinding(TextBlock.TextAlignmentProperty, (Binding)dynamicTextAlignment);
             return this;
         }
         public Text TextDecorations(TextDecorationCollection textDecorations)
         {
-            ViewElement.TextDecorations = textDecorations;
+            Element.TextDecorations = textDecorations;
             return this;
         }
         //TODO:动态Decorations?
         public Text TextEffects(TextEffectCollection textEffects)
         {
-            ViewElement.TextEffects = textEffects;
+            Element.TextEffects = textEffects;
             return this;
         }
         //TODO:动态TextEffects?
         public Text TextTrimming(TextTrimming trimming)
         {
-            ViewElement.TextTrimming = trimming;
+            Element.TextTrimming = trimming;
             return this;
         }
         public Text TextWrapping(TextWrapping wrapping)
         {
-            ViewElement.TextWrapping = wrapping;
+            Element.TextWrapping = wrapping;
             return this;
         }
 

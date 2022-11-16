@@ -25,13 +25,13 @@ namespace SyminUI.Views
 
         public Button ClickMode(ClickMode clickMode)
         {
-            ViewElement.ClickMode = clickMode;
+            Element.ClickMode = clickMode;
             return this;
         }
 
         public Button ClickMode(State<ClickMode> clickMode)
         {
-            ViewElement.SetBinding(ButtonBase.ClickModeProperty, (Binding)clickMode);
+            Element.SetBinding(ButtonBase.ClickModeProperty, (Binding)clickMode);
             return this;
         }
 
@@ -43,7 +43,7 @@ namespace SyminUI.Views
         {
             if (!_onClickListened)
             {
-                ViewElement.Click += ViewElement_Click;
+                Element.Click += ViewElement_Click;
                 _onClickListened = true;
             }
             OnClickAction += action;

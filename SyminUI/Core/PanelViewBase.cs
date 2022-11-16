@@ -28,7 +28,7 @@ namespace SyminUI.Core
         public void Add(IView item)
         {
             _children.Add(item);
-            ViewElement.Children.Add(item.ViewElement);
+            Element.Children.Add(item.Element);
         }
         /// <summary>
         /// 添加视图元素集合
@@ -39,7 +39,7 @@ namespace SyminUI.Core
             foreach (var item in viewCollection)
             {
                 _children.Add(item);
-                ViewElement.Children.Add(item.ViewElement);
+                Element.Children.Add(item.Element);
             }
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace SyminUI.Core
         {
             if (_children.Remove(item))
             {
-                ViewElement.Children.Remove(item.ViewElement);
+                Element.Children.Remove(item.Element);
                 return true;
             }
             return false;
@@ -69,7 +69,7 @@ namespace SyminUI.Core
                 //判断释放有对象移除
                 if (_children.Remove(item))
                 {
-                    ViewElement.Children.Remove(item.ViewElement);
+                    Element.Children.Remove(item.Element);
                     count++;
                 }
             }
@@ -81,7 +81,7 @@ namespace SyminUI.Core
         public void Clear()
         {
             _children.Clear();
-            ViewElement.Children.Clear();
+            Element.Children.Clear();
         }
         /// <summary>
         /// 是否包含视图元素
@@ -120,12 +120,12 @@ namespace SyminUI.Core
         #region Panel Properites
         public PanelViewBase<T> Background(Brush background)
         {
-            ViewElement.Background = background;
+            Element.Background = background;
             return this;
         }
         public PanelViewBase<T> Background(State<Brush> dynamicBackground)
         {
-            ViewElement.SetBinding(Panel.BackgroundProperty, (Binding)dynamicBackground);
+            Element.SetBinding(Panel.BackgroundProperty, (Binding)dynamicBackground);
             return this;
         }
         //TODO:IsItemsHost

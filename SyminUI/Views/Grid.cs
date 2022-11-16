@@ -32,7 +32,7 @@ namespace SyminUI.Views
                 {
                     rowDef.MaxHeight = rowSize.Max.Value;
                 }
-                ViewElement.RowDefinitions.Add(rowDef);
+                Element.RowDefinitions.Add(rowDef);
             }
 
 
@@ -54,7 +54,7 @@ namespace SyminUI.Views
                 {
                     colDef.MaxWidth = colSize.Max.Value;
                 }
-                ViewElement.ColumnDefinitions.Add(colDef);
+                Element.ColumnDefinitions.Add(colDef);
             }
             return this;
         }
@@ -62,10 +62,10 @@ namespace SyminUI.Views
 
         public void Add(GridCell gridCell)
         {
-            System.Windows.Controls.Grid.SetColumn(gridCell.View.ViewElement, gridCell.Col);
-            System.Windows.Controls.Grid.SetColumnSpan(gridCell.View.ViewElement, gridCell.ColSpan);
-            System.Windows.Controls.Grid.SetRow(gridCell.View.ViewElement, gridCell.Row);
-            System.Windows.Controls.Grid.SetRowSpan(gridCell.View.ViewElement, gridCell.RowSpan);
+            System.Windows.Controls.Grid.SetColumn(gridCell.View.Element, gridCell.Col);
+            System.Windows.Controls.Grid.SetColumnSpan(gridCell.View.Element, gridCell.ColSpan);
+            System.Windows.Controls.Grid.SetRow(gridCell.View.Element, gridCell.Row);
+            System.Windows.Controls.Grid.SetRowSpan(gridCell.View.Element, gridCell.RowSpan);
             this.Add(gridCell.View);
         }
     }

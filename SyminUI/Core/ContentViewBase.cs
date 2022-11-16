@@ -11,26 +11,29 @@ using SyminUI.Convertor;
 
 namespace SyminUI.Core
 {
-    public abstract class ContentViewBase<T> : ControlViewBase<T> 
+    public abstract class ContentViewBase<T> : ControlViewBase<T>, IContentView
         where T : ContentControl, new()
     {
-        protected ContentViewBase() : base()
+        protected ContentViewBase()
         {
+        }
 
-        }
-        protected ContentViewBase(string text) : base()
+        protected ContentViewBase(string text)
         {
-            ViewElement.Content = text;
+            Element.Content = text;
         }
-        protected ContentViewBase(State<string> dynamicText) : base()
+
+        protected ContentViewBase(State<string> dynamicText)
         {
-            ViewElement.SetBinding(ContentControl.ContentProperty, (Binding)dynamicText);
+            Element.SetBinding(ContentControl.ContentProperty, (Binding)dynamicText);
         }
-        protected ContentViewBase(IView view) : base()
+
+        protected ContentViewBase(IView view)
         {
-            ViewElement.Content = view.ViewElement;
+            Element.Content = view.Element;
         }
-        protected ContentViewBase(State<IView> dynamicView) : base()
+
+        protected ContentViewBase(State<IView> dynamicView)
         {
             Binding binding = new("Value")
             {
@@ -39,41 +42,9 @@ namespace SyminUI.Core
             };
             //Warning!!!!
             //TODO:不知道绑定的视图切换后，对于state里面的PropertyChanged事件是否会解除占用
-            ViewElement.SetBinding(ContentControl.ContentProperty, binding);
+            Element.SetBinding(ContentControl.ContentProperty, binding);
         }
 
-
-        #region ContentControl Properties
-        public virtual ContentViewBase<T> Content(string text)
-        {
-            ViewElement.Content = text;
-            return  this;
-        }
-        public virtual ContentViewBase<T> Content(State<string> dynamicText)
-        {
-            ViewElement.SetBinding(ContentControl.ContentProperty, (Binding)dynamicText);
-            return  this;
-        }
-        public virtual ContentViewBase<T> Content(IView view)
-        {
-            ViewElement.Content = view.ViewElement;
-            return  this;
-        }
-        public virtual ContentViewBase<T> Content(State<IView> dynamicView)
-        {
-            Binding binding = new("Value")
-            {
-                Source = dynamicView,
-                Converter = new ViewDefinitionToElement()
-            };
-            //TODO:不知道绑定的视图切换后，对于state里面的PropertyChanged事件是否会解除占用
-            ViewElement.SetBinding(ContentControl.ContentProperty, binding);
-            return  this;
-        }
-        //TODO:ContentStringFormat
-        //TODO:ContentTemplate
-        //TODO:ContentTemplateSelector
-
-        #endregion
+        ContentControl IContentView.ViewElement => this.Element;
     }
 }

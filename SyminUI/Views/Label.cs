@@ -37,34 +37,13 @@ namespace SyminUI.Views
         {
 
         }
-
-
-
+        
         #region Label Properties
         //TODO:Target
         #endregion
 
         #region Override
-        public override Label Content(string text)
-        {
-            return (Label)base.Content(text);
-        }
-
-        public override Label Content(State<string> dynamicText)
-        {
-            return (Label)base.Content(dynamicText);
-        }
-
-        public override Label Content(IView view)
-        {
-            return (Label)base.Content(view);
-        }
-
-        public override Label Content(State<IView> dynamicView)
-        {
-            return (Label)base.Content(dynamicView);
-        }
-
+   
         public override ElementViewBase<System.Windows.Controls.Label> OnLoaded(Action action)
         {
             return (Label)base.OnLoaded(action);

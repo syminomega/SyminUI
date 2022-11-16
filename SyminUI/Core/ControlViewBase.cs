@@ -10,12 +10,14 @@ using System.Windows.Controls;
 
 namespace SyminUI.Core
 {
-    public abstract class ControlViewBase<T> : ElementViewBase<T>
+    public abstract class ControlViewBase<T> : ElementViewBase<T>, IControlView
         where T : Control, new()
     {
         protected ControlViewBase() : base()
         {
 
         }
+
+        Control IControlView.ViewElement => this.Element;
     }
 }

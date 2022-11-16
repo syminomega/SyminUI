@@ -44,7 +44,7 @@ namespace SyminUI
         public ViewContainer()
         {
             Focusable = false;
-            base.Content = ViewProvider.ViewElement;
+            base.Content = ViewProvider.Element;
         }
 
     }

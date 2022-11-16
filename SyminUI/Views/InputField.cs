@@ -14,7 +14,7 @@ namespace SyminUI.Views
 
         public InputField(State<string> dynamicText)
         {
-            ViewElement.SetBinding(TextBox.TextProperty, (Binding)dynamicText);
+            Element.SetBinding(TextBox.TextProperty, (Binding)dynamicText);
         }
         //TODO:完成InputField
     }

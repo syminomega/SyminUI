@@ -28,7 +28,7 @@ namespace SyminUI.Core
         protected ItemsViewBase() : base()
         {
             //设置数据源
-            ViewElement.ItemsSource = ViewCollection;
+            Element.ItemsSource = ViewCollection;
             //初始化默认转换器
             ItemViewConverter = item =>
             {
@@ -75,14 +75,14 @@ namespace SyminUI.Core
             return this;
         }
 
-        public override T ViewElement
+        public override T Element
         {
             get
             {
                 //Set items before create view
                 //创建视图前，设置集合对象
                 ItemReset();
-                return base.ViewElement;
+                return base.Element;
             }
 
         }
@@ -114,7 +114,7 @@ namespace SyminUI.Core
                 //转换为泛型对象
                 var itemData = item;
                 var newView = ItemViewConverter.Invoke(itemData);
-                ViewCollection.Insert(insertIndex, newView.ViewElement);
+                ViewCollection.Insert(insertIndex, newView.Element);
                 insertIndex++;
             }
         }
@@ -142,7 +142,7 @@ namespace SyminUI.Core
                 //转换为泛型对象
                 var itemData = item;
                 var newView = ItemViewConverter.Invoke(itemData);
-                ViewCollection[replaceIndex] = newView.ViewElement;
+                ViewCollection[replaceIndex] = newView.Element;
                 replaceIndex++;
             }
         }
@@ -165,7 +165,7 @@ namespace SyminUI.Core
             foreach (var item in ItemsCollection)
             {
                 var view = ItemViewConverter.Invoke(item);
-                ViewCollection.Add(view.ViewElement);
+                ViewCollection.Add(view.Element);
             }
         }
         #endregion

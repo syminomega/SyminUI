@@ -19,7 +19,7 @@ namespace SyminUI.Convertor
         {
             if (value == null) return null;
             var viewDefinition = (IView)value;
-            var content = viewDefinition.ViewElement;
+            var content = viewDefinition.Element;
             return content;
         }
 

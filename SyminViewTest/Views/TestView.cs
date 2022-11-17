@@ -39,7 +39,10 @@ namespace SyminViewTest.Views
             {
                 new Label(myText),
                 new Button("Change Value Button")
-                    .OnClick(() => { myText.Value = "Text Changed!"; }),
+                    .OnClick(() => {
+                        myText.Value = "Text Changed!";
+                        Console.WriteLine("Change Button Pressed!");
+                    }),
                 new Button("Close Window").OnClick(() =>
                 {
                     //获取宿主窗口并关闭

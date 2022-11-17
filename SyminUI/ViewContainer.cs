@@ -20,15 +20,17 @@ namespace SyminUI
     /// <summary>
     /// MVU容器
     /// </summary>
-    public class ViewContainer : ContentControl
+    public class ViewContainer: ContentControl
     {
         /// <summary>
         /// 视图View提供方法，重载此属性以自定义View对象
         /// </summary>
         public virtual IView ViewProvider =>
             new Text("Empty view. Try to override ViewProvider.")
-                .HorizontalAlignment(HorizontalAlignment.Center)
-                .VerticalAlignment(VerticalAlignment.Center);
+                 .HorizontalAlignment(HorizontalAlignment.Center)
+                 .VerticalAlignment(VerticalAlignment.Center);
+
+
 
 
         /// <summary>
@@ -44,7 +46,13 @@ namespace SyminUI
         public ViewContainer()
         {
             Focusable = false;
-            base.Content = ViewProvider.Element;
+            Binding binding = new(nameof(IView.Element))
+            {
+                Source = ViewProvider,
+                Mode = BindingMode.OneWay
+            };
+            base.SetBinding(ContentProperty, binding);
+            //base.Content = ViewProvider.Element;
         }
 
     }

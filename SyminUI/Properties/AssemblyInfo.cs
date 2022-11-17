@@ -1,3 +1,4 @@
+using SyminUI;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -16,3 +17,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("4bb0f21d-2e29-48f9-829f-eafa8e6cc27b")]
 
+// 使用热重载管理器
+[assembly: System.Reflection.Metadata.MetadataUpdateHandler(typeof(HotReloadManager))]

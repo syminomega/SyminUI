@@ -8,6 +8,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows;
 using SyminUI.Core;
+using System.Xml.Linq;
 
 namespace SyminUI.Views
 {
@@ -32,19 +33,10 @@ namespace SyminUI.Views
             Element.SetBinding(TextBlock.TextProperty, (Binding)dynamicText);
         }
 
-        #region TextBlock Properties
-        //TODO:Background
 
-        public Text BaselineOffset(double offset)
-        {
-            Element.BaselineOffset = offset;
-            return this;
-        }
-        public Text BaselineOffset(State<double> offset)
-        {
-            Element.SetBinding(TextBlock.BaselineOffsetProperty, (Binding)offset);
-            return this;
-        }
+        #region TextBlock Properties
+
+
         /// <summary>
         /// Set Text FontFamily
         /// 设置文本字体
@@ -215,6 +207,39 @@ namespace SyminUI.Views
         {
             Element.TextWrapping = wrapping;
             return this;
+        }
+
+        #endregion
+    }
+
+    public static class TextExtension
+    {
+        #region TextBlock Properties
+        //TODO:Background
+
+        /// <summary>
+        /// Set text baseline offset
+        /// 设置文本基线偏移
+        /// </summary>
+        /// <param name="view"></param>
+        /// <param name="offset"></param>
+        /// <returns></returns>
+        public static T BaselineOffset<T>(this T view, double offset) where T : Text
+        {
+            view.Element.BaselineOffset = offset;
+            return view;
+        }
+        /// <summary>
+        /// Set text baseline offset
+        /// 设置文本基线偏移
+        /// </summary>
+        /// <param name="view"></param>
+        /// <param name="offset"></param>
+        /// <returns></returns>
+        public static T BaselineOffset<T>(this T view, State<double> offset) where T : Text
+        {
+            view.Element.SetBinding(TextBlock.BaselineOffsetProperty, (Binding)offset);
+            return view;
         }
 
         #endregion

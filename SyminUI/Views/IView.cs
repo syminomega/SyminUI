@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SyminUI.Core
+namespace SyminUI.Views
 {
     /// <summary>
     /// 视图
@@ -18,7 +18,7 @@ namespace SyminUI.Core
         /// 视图元素控件实例
         /// </summary>
         public FrameworkElement Element { get; }
-        
+
     }
     /// <summary>
     /// 视图

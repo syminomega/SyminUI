@@ -1,4 +1,4 @@
-﻿using SyminUI.Core;
+﻿using SyminUI.Views;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Data;
 
-namespace SyminUI.Core;
+namespace SyminUI.Views;
 
 /// <summary>
 /// ElementView basic properties and events 

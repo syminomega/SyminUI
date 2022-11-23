@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Data;
 
-namespace SyminUI.Core
+namespace SyminUI
 {
     public class State<T> : INotifyPropertyChanged
     {

@@ -1,5 +1,4 @@
-﻿using SyminUI.Core;
-using SyminUI.Views;
+﻿using SyminUI.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +45,7 @@ namespace SyminViewTest.Views
                 new Button("Close Window").OnClick(() =>
                 {
                     //获取宿主窗口并关闭
-                    GetHostWindow<ViewTestWindow>().Close();
+                    HostWindow().Close();
                 }),
             },
             new HStack

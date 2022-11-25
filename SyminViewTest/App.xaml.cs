@@ -17,12 +17,11 @@ namespace SyminViewTest
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
+            
             var builder = ViewApplication.CreateBuilder();
             var services = builder.Services;
 
-            var serviceProvider = builder.ApplyServices();
-
+            var app = builder.Build();
 
         }
     }

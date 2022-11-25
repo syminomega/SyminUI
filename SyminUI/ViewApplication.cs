@@ -12,30 +12,47 @@ namespace SyminUI
     /// <summary>
     /// 程序构建工具
     /// </summary>
-    public static class ViewApplication
+    public class ViewApplication
     {
-        internal static IServiceProvider ServiceProvider { get; set; } = null!;
+        private static ViewApplication? _current;
 
-        public static ViewApplicationBuilder CreateBuilder()
+        /// <summary>
+        /// Get the <see cref="ViewApplication"/> instance of current application.
+        /// 获取当前程序的 <see cref="ViewApplication"/> 实例。
+        /// </summary>
+        public static ViewApplication Current
         {
-            var builder = new ViewApplicationBuilder();
+            get
+            {
+                if (_current == null)
+                {
+                    throw new NullReferenceException("ViewApplication has not been built. ");
+                }
 
-            return builder;
+                return _current;
+            }
+            private set => _current = value;
+        }
+
+        internal ViewApplication(IServiceProvider serviceProvider)
+        {
+            ServiceProvider = serviceProvider;
+            Current = this;
         }
 
         /// <summary>
-        /// 打开指定类型窗口
+        /// The service provider of this view application.
         /// </summary>
-        /// <typeparam name="T">窗口类型</typeparam>
-        /// <param name="app"></param>
-        /// <returns></returns>
-        public static T OpenWindow<T>(this Application app) where T : Window
-        {
-            var window = ServiceProvider.GetRequiredService<T>();
-            window.Show();
-            return window;
-        }
+        public IServiceProvider ServiceProvider { get; }
 
-        //public static Window OpenWindowWithView<T>() where T : Window
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewApplicationBuilder"/> class.
+        /// </summary>
+        /// <returns>The <see cref="ViewApplicationBuilder"/>.</returns>
+        public static ViewApplicationBuilder CreateBuilder()
+        {
+            var builder = new ViewApplicationBuilder();
+            return builder;
+        }
     }
 }

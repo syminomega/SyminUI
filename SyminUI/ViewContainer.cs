@@ -31,6 +31,12 @@ namespace SyminUI
                 .HorizontalAlignment(HorizontalAlignment.Center)
                 .VerticalAlignment(VerticalAlignment.Center);
 
+        public void GetViewFromProvider<T>() where T : IViewProvider
+        {
+            //TODO:
+            //app.services.get<T>
+        }
+
         /// <summary>
         /// 获取View所在窗口
         /// </summary>
@@ -70,4 +76,6 @@ namespace SyminUI
         }
 
     }
+
+
 }

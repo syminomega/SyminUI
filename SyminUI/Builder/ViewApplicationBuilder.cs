@@ -19,23 +19,21 @@ namespace SyminUI.Builder
         {
             Services = new ServiceCollection();
         }
+
         /// <summary>
-        /// Services for the application
+        /// A collection of services for the application to compose.
         /// </summary>
         public IServiceCollection Services { get; }
 
         /// <summary>
-        /// Generate the global used service provider
-        /// 生成全局使用的 Service Provider
+        /// Build the <see cref="ViewApplication"/>.
+        /// 创建 <see cref="ViewApplication"/> 实例
         /// </summary>
-        /// <returns></returns>
-        public IServiceProvider ApplyServices()
+        public ViewApplication Build()
         {
-            var provider = Services.BuildServiceProvider();
-            //赋予当前进程全局
-            ViewApplication.ServiceProvider = provider;
-            return provider;
+            var app = new ViewApplication(Services.BuildServiceProvider());
+            //TODO:添加config
+            return app;
         }
-
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SyminUI.Views
+namespace SyminUI
 {
     /// <summary>
     /// 视图

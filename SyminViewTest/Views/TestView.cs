@@ -8,15 +8,18 @@ using SyminUI;
 using System.Windows;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
+using System.Windows.Data;
+using System.Globalization;
+using System.Windows.Automation.Peers;
 
 namespace SyminViewTest.Views
 {
-    public class TestView : ViewContainer
+    public class TestView : ViewProvider
     {
         /// <summary>
         /// 提供视图
         /// </summary>
-        public override IView ViewProvider => MainView;
+        public override IView Body => MainView;
 
         readonly State<string> myText = "My Text";
 
@@ -30,6 +33,8 @@ namespace SyminViewTest.Views
             "2222",
             "3333"
         };
+
+
 
         //主要视图
         private VStack MainView => new VStack
@@ -45,7 +50,7 @@ namespace SyminViewTest.Views
                 new Button("Close Window").OnClick(() =>
                 {
                     //获取宿主窗口并关闭
-                    HostWindow().Close();
+                    HostWindow?.Close();
                 }),
             },
             new HStack
@@ -87,6 +92,7 @@ namespace SyminViewTest.Views
         {
             textCollection.Insert(1, "Inserted Item");
         }
+
 
     }
 }

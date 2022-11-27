@@ -1,14 +1,14 @@
-﻿using SyminUI.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SyminUI.Core
 {
-    public interface IPanelView : IEnumerable<IView>, ICollection<IView>
+    internal interface IViewRenderer
     {
-
+        public void UpdateView();
     }
 }

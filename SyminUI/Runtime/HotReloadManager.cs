@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Loader;
 using System.Windows;
+using System.Diagnostics;
 
 namespace SyminUI.Runtime
 {
@@ -13,6 +14,7 @@ namespace SyminUI.Runtime
     /// </summary>
     internal static class HotReloadManager
     {
+        public static List<RuntimeViewInfo> ViewInfos { get; } = new();
         /// <summary>
         /// 清理热重载缓存
         /// </summary>
@@ -38,8 +40,12 @@ namespace SyminUI.Runtime
             {
                 return;
             }
-
-
+            //TODO:按类型进行视图更新
+            foreach (var viewInfo in ViewInfos)
+            {
+                viewInfo.ViewRenderer.UpdateView();
+            }
+            
         }
 
     }

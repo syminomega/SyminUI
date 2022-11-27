@@ -4,10 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyminViewTest"
-        xmlns:sv ="clr-namespace:SyminUI;assembly=SyminUI"
-        xmlns:v ="clr-namespace:SyminViewTest.Views"
+        xmlns:vr ="clr-namespace:SyminViewTest.ViewRenderers"
         mc:Ignorable="d"
         Style="{StaticResource Window.Normal}"
         Title="CSharp UI View" Height="450" Width="450">
-    <v:TestView/>
+    <vr:TestViewRenderer Grid.Row="1" x:Name="ViewTestControl"/>
 </Window>

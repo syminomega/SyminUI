@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime.Loader;
 using System.Windows;
 using System.Diagnostics;
+using SyminUI.Views;
 
 namespace SyminUI.Runtime
 {
@@ -40,12 +41,24 @@ namespace SyminUI.Runtime
             {
                 return;
             }
-            //TODO:按类型进行视图更新
-            foreach (var viewInfo in ViewInfos)
+            //找到需要更新的类型
+            foreach (var updatedType in updatedTypes)
             {
-                viewInfo.ViewRenderer.UpdateView();
+                //找到所有 ViewProvider
+                if (updatedType.IsAssignableTo(typeof(IViewProvider)))
+                {
+                    var views = ViewInfos
+                        .Where(x => x.ViewType == updatedType)
+                        .ToList();
+                    //更新该类型的所有视图
+                    foreach (var viewInfo in views)
+                    {
+                        viewInfo.ViewRenderer.UpdateView();
+                    }
+                }
+
             }
-            
+
         }
 
     }

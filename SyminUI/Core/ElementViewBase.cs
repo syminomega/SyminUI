@@ -29,14 +29,7 @@ namespace SyminUI.Core
         public virtual T Element { get; }
 
         FrameworkElement IView.Element => Element;
-
-
-        //实现View嵌套的隐式转换
-        public static implicit operator FrameworkElement(ElementViewBase<T> elementViewBase)
-        {
-            return elementViewBase.Element;
-        }
-
+        
 
         //TODO:迁移到扩展方法
         #region FrameworkElement Events

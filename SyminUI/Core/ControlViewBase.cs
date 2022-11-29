@@ -13,11 +13,6 @@ namespace SyminUI.Core
     public abstract class ControlViewBase<T> : ElementViewBase<T>, IControlView
         where T : Control, new()
     {
-        protected ControlViewBase() : base()
-        {
-
-        }
-
-        Control IControlView.ViewElement => this.Element;
+        Control IControlView.Element => this.Element;
     }
 }

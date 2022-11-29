@@ -44,6 +44,6 @@ namespace SyminUI.Core
             Element.SetBinding(ContentControl.ContentProperty, binding);
         }
 
-        ContentControl IContentView.ViewElement => this.Element;
+        ContentControl IContentView.Element => this.Element;
     }
 }

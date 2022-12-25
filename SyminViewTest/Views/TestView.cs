@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Collections.ObjectModel;
 using System.Windows.Data;
 using System.Globalization;
-using System.Windows.Automation.Peers;
+using System.ComponentModel.DataAnnotations;
 
 namespace SyminViewTest.Views
 {
@@ -21,11 +21,9 @@ namespace SyminViewTest.Views
         /// </summary>
         public override IView Body => MainView;
 
-        readonly State<string> myText = "My Text";
-
         //测试可切换控件
         readonly State<IView> dynamicView = new Label("Label A");
-        readonly State<string> inputText = "Input Message Here";
+        readonly State<int> inputNum = 123;
 
         readonly ObservableCollection<string> textCollection = new()
         {
@@ -34,18 +32,15 @@ namespace SyminViewTest.Views
             "3333"
         };
 
-
-
         //主要视图
         private VStack MainView => new VStack
         {
             new HStack
             {
-                new Label(myText),
+                new Label(inputNum),
                 new Button("Change Value Button")
                     .OnClick(() => {
-                        myText.Value = "Text Changed!";
-                        Console.WriteLine("Change Button Pressed!");
+                        Console.WriteLine("Button Pressed!");
                     }),
                 new Button("Close Window").OnClick(() =>
                 {
@@ -70,10 +65,10 @@ namespace SyminViewTest.Views
                     new Button("Change Content")
                         .OnClick(() => { dynamicView.Value = new Label("Changed View"); })
                         .GridLayout(0, 1),
-                    new InputField(inputText)
+                    new InputField(inputNum)
                         .GridLayout(1, 0),
                     new Button("Show Input Value")
-                        .OnClick(() => MessageBox.Show(inputText.Value))
+                        .OnClick(() => MessageBox.Show(inputNum.Value.ToString()))
                         .GridLayout(1, 1),
                 }
                 .Cols("2*", ("*", 200, 400))

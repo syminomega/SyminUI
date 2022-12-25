@@ -24,8 +24,8 @@ namespace SyminUI.Views
         /// <summary>
         /// Label
         /// </summary>
-        /// <param name="dynamicText"></param>
-        public Label(State<string> dynamicText) : base(dynamicText)
+        /// <param name="dynamicContent"></param>
+        public Label(IState dynamicContent) : base(dynamicContent)
         {
 
         }

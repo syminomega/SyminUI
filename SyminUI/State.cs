@@ -8,7 +8,8 @@ using System.Windows.Data;
 
 namespace SyminUI
 {
-    public class State<T> : INotifyPropertyChanged
+
+    public class State<T> : INotifyPropertyChanged, IState
     {
         private T? _value;
         public T? Value
@@ -21,22 +22,41 @@ namespace SyminUI
             }
         }
 
+        /// <inheritdoc/>
         public event PropertyChangedEventHandler? PropertyChanged;
+        /// <inheritdoc/>
+        public Binding GetBinding()
+        {
+            Binding binding = new(nameof(Value))
+            {
+                Source = this,
+                //TODO:绑定失败的时候高亮UI，或者重置数据
+                NotifyOnValidationError= true,
+            };
+            return binding;
+        }
 
+        /// <summary>
+        /// 允许隐式从泛型创建State对象
+        /// </summary>
+        /// <param name="valueIn"></param>
         public static implicit operator State<T>(T? valueIn)
         {
-            State<T> state = new();
-            state.Value = valueIn;
+            State<T> state = new()
+            {
+                Value = valueIn
+            };
             return state;
         }
 
         public static explicit operator Binding(State<T> stateIn)
         {
-            Binding textBinding = new(nameof(Value));
-            textBinding.Source = stateIn;
-            return textBinding;
+            Binding binding = new(nameof(Value))
+            {
+                Source = stateIn
+            };
+            return binding;
         }
 
-        //TODO:添加Binding的Convertor与运算
     }
 }

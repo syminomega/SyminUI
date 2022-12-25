@@ -22,9 +22,9 @@ namespace SyminUI.Core
             Element.Content = text;
         }
 
-        protected ContentViewBase(State<string> dynamicText)
+        protected ContentViewBase(IState dynamicContent)
         {
-            Element.SetBinding(ContentControl.ContentProperty, (Binding)dynamicText);
+            Element.SetBinding(ContentControl.ContentProperty, dynamicContent.GetBinding());
         }
 
         protected ContentViewBase(IView view)

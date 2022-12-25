@@ -52,6 +52,7 @@ namespace SyminUI
         {
 
             HotReloadManager.ViewInfos.Add(_runtimeViewInfo);
+            //this.Dispatcher.
             if (_hostWindow != null)
             {
                 _hostWindow.Closed += HostWindowClosed;

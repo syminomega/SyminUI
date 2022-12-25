@@ -12,9 +12,9 @@ namespace SyminUI.Views
     public class InputField : ControlViewBase<TextBox>
     {
 
-        public InputField(State<string> dynamicText)
+        public InputField(IState dynamicText)
         {
-            Element.SetBinding(TextBox.TextProperty, (Binding)dynamicText);
+            Element.SetBinding(TextBox.TextProperty, dynamicText.GetBinding());
         }
         //TODO:完成InputField
     }

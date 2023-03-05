@@ -1,4 +1,5 @@
 ﻿using SyminUI.Convertor;
+using SyminUI.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace SyminUI.Core
+namespace SyminUI.Views
 {
     /// <summary>
     /// ContentView properties and events
@@ -25,7 +26,7 @@ namespace SyminUI.Core
 
         public static T Content<T>(this T view, string text) where T : IContentView
         {
-            view.ViewElement.Content = text;
+            view.Element.Content = text;
             return view;
         }
         /// <summary>
@@ -37,12 +38,12 @@ namespace SyminUI.Core
         /// <returns></returns>
         public static T Content<T>(this T view, State<string> dynamicText) where T : IContentView
         {
-            view.ViewElement.SetBinding(ContentControl.ContentProperty, (Binding)dynamicText);
+            view.Element.SetBinding(ContentControl.ContentProperty, (Binding)dynamicText);
             return view;
         }
         public static T Content<T>(this T view, IView childView) where T : IContentView
         {
-            view.ViewElement.Content = childView.Element;
+            view.Element.Content = childView.Element;
             return view;
         }
         public static T Content<T>(this T view, State<IView> dynamicView) where T : IContentView
@@ -53,7 +54,7 @@ namespace SyminUI.Core
                 Converter = new ViewDefinitionToElement()
             };
             //TODO:不知道绑定的视图切换后，对于state里面的PropertyChanged事件是否会解除占用
-            view.ViewElement.SetBinding(ContentControl.ContentProperty, binding);
+            view.Element.SetBinding(ContentControl.ContentProperty, binding);
             return view;
         }
 

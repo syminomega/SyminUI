@@ -1,5 +1,4 @@
-﻿using SyminUI.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +22,9 @@ namespace SyminUI.Core
             Element.Content = text;
         }
 
-        protected ContentViewBase(State<string> dynamicText)
+        protected ContentViewBase(IState dynamicContent)
         {
-            Element.SetBinding(ContentControl.ContentProperty, (Binding)dynamicText);
+            Element.SetBinding(ContentControl.ContentProperty, dynamicContent.GetBinding());
         }
 
         protected ContentViewBase(IView view)
@@ -45,6 +44,6 @@ namespace SyminUI.Core
             Element.SetBinding(ContentControl.ContentProperty, binding);
         }
 
-        ContentControl IContentView.ViewElement => this.Element;
+        ContentControl IContentView.Element => this.Element;
     }
 }

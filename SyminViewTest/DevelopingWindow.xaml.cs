@@ -22,7 +22,21 @@ namespace SyminViewTest
         public DevelopingWindow()
         {
             InitializeComponent();
-            var linearBrush = new LinearGradientBrush();
+            Loaded += DevelopingWindow_Loaded;
+        }
+
+        private void DevelopingWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var text = new TextBlock();
+            text.Text = "123";
+
+            content1.Content = text;
+            content2.Content = text;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

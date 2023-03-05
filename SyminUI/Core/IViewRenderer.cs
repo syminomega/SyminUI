@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SyminUI.Core
 {
-    //TODO:
-    public static class ControlViewExtension
+    internal interface IViewRenderer
     {
-
+        public void UpdateView();
     }
 }

@@ -10,6 +10,6 @@ namespace SyminUI.Core
 {
     public interface IControlView
     {
-        public Control ViewElement { get; }
+        public Control Element { get; }
     }
 }

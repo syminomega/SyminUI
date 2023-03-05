@@ -1,5 +1,4 @@
-﻿using SyminUI.Core;
-using SyminUI.Views;
+﻿using SyminUI.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +8,22 @@ using SyminUI;
 using System.Windows;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
+using System.Windows.Data;
+using System.Globalization;
+using System.ComponentModel.DataAnnotations;
 
 namespace SyminViewTest.Views
 {
-    public class TestView : ViewContainer
+    public class TestView : ViewProvider
     {
         /// <summary>
         /// 提供视图
         /// </summary>
-        public override IView ViewProvider => MainView;
-
-        readonly State<string> myText = "My Text";
+        public override IView Body => MainView;
 
         //测试可切换控件
         readonly State<IView> dynamicView = new Label("Label A");
-        readonly State<string> inputText = "Input Message Here";
+        readonly State<int> inputNum = 123;
 
         readonly ObservableCollection<string> textCollection = new()
         {
@@ -37,13 +37,15 @@ namespace SyminViewTest.Views
         {
             new HStack
             {
-                new Label(myText),
+                new Label(inputNum),
                 new Button("Change Value Button")
-                    .OnClick(() => { myText.Value = "Text Changed!"; }),
+                    .OnClick(() => {
+                        Console.WriteLine("Button Pressed!");
+                    }),
                 new Button("Close Window").OnClick(() =>
                 {
                     //获取宿主窗口并关闭
-                    GetHostWindow<ViewTestWindow>().Close();
+                    HostWindow?.Close();
                 }),
             },
             new HStack
@@ -63,10 +65,10 @@ namespace SyminViewTest.Views
                     new Button("Change Content")
                         .OnClick(() => { dynamicView.Value = new Label("Changed View"); })
                         .GridLayout(0, 1),
-                    new InputField(inputText)
+                    new InputField(inputNum)
                         .GridLayout(1, 0),
                     new Button("Show Input Value")
-                        .OnClick(() => MessageBox.Show(inputText.Value))
+                        .OnClick(() => MessageBox.Show(inputNum.Value.ToString()))
                         .GridLayout(1, 1),
                 }
                 .Cols("2*", ("*", 200, 400))
@@ -85,6 +87,7 @@ namespace SyminViewTest.Views
         {
             textCollection.Insert(1, "Inserted Item");
         }
+
 
     }
 }

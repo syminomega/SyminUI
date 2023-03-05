@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Data;
 
-namespace SyminUI.Core;
+namespace SyminUI.Views;
 
 /// <summary>
 /// ElementView basic properties and events 
@@ -281,5 +281,6 @@ public static class ElementViewExtension
         return view;
     }
 
+    //TODO:完善剩余
     #endregion
 }

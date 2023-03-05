@@ -10,6 +10,6 @@ namespace SyminUI.Core
 {
     public interface IContentView
     {
-        public ContentControl ViewElement { get; }
+        public ContentControl Element { get; }
     }
 }

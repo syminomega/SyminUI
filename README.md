@@ -8,6 +8,12 @@ SyminUI 是 WPF 的 UI 组件库，并使用称为 **C#UI** 的 MVU 设计模式
 ## Preview 总览
 ![Styles Demo](./Images/StylesDemo.jpg)
 
+## ⭐ Next Step
+1. Separate the theme and MVU architecture into different packages.\
+将主题文件和MVU架构拆分到不同的项目中。
+2. Add dark theme.\
+添加深色主题支持。
+
 ## 🧰 Quick Start 快速使用
 1. Add `SyminData` and `SyminUI` reference to your project.\
 在项目中添加 `SyminData` 和 `SyminUI` 引用.
